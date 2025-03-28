@@ -1,81 +1,348 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramesh Roshan Das Guru - Academic Profile</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>Ramesh Roshan Das Guru | Marketing Scholar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.8;
+            color: #333;
+        }
+        .navbar {
+            background-color: var(--primary);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 5rem 0 4rem;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 3rem;
+        }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .section-title {
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: var(--secondary);
+        }
+        .pub-item {
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--secondary);
+            padding-left: 1rem;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--secondary);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--secondary);
+        }
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            transition: all 0.3s;
+        }
+        .social-icon:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        .project-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            height: 100%;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="profile">
-                <img src="profile.jpg" alt="Profile Picture" class="profile-img">
-                <h1>Ramesh Roshan Das Guru</h1>
-                <p>Marketing Scholar | Consumer Behavior Researcher</p>
-                <div class="social">
-                    <a href="https://twitter.com/rrdguru" target="_blank">𝕏</a>
-                    <a href="https://www.researchgate.net/profile/Ramesh-Roshan-Das-Guru" target="_blank">ResearchGate</a>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Dr. R.R. Das Guru</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero text-center">
+        <div class="container">
+            <img src="profile.jpg" alt="Dr. Ramesh Roshan Das Guru" class="profile-img rounded-circle mb-4">
+            <h1 class="display-4 fw-bold mb-3">Dr. Ramesh Roshan Das Guru</h1>
+            <p class="lead mb-4">Marketing Scholar | Sustainability Researcher | Educator</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="https://www.researchgate.net/profile/YOUR_PROFILE" class="social-icon" target="_blank">
+                    <i class="fab fa-researchgate"></i>
+                </a>
+                <a href="https://twitter.com/YOUR_HANDLE" class="social-icon" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="mailto:r.roshan@aus.swiss" class="social-icon">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container py-5">
+        <section id="about" class="mb-5 py-3">
+            <h2 class="section-title">About Me</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <p class="lead">I bridge marketing theory with sustainable business practice through rigorous research and engaging pedagogy.</p>
+                    <p>With a unique background combining engineering, sustainability studies, and marketing science, I investigate how product quality shapes long-term consumer behavior - particularly in durable goods and emerging technologies like electric vehicles.</p>
+                    <p>My research has been published in top-tier journals including the <em>European Journal of Marketing</em>, and I'm currently exploring the intersection of sustainability metrics with customer-experienced product quality.</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card bg-light p-4">
+                        <h5 class="mb-3">Research Focus</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Consumer-Brand Relationships</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Product Quality & Sustainability</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Marketing Analytics</li>
+                            <li><i class="fas fa-check-circle text-secondary me-2"></i> AI in Marketing</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </header>
-
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Consumer behavior researcher specializing in brand loyalty dynamics and product quality perceptions. My work bridges marketing theory and practical business applications, with a focus on longitudinal studies and emerging markets.</p>
         </section>
 
-        <section id="education">
-            <h2>Education</h2>
-            <div class="entry">
-                <h3>PhD in Marketing</h3>
-                <p>University of [Add Institution] | [Year]</p>
+        <section id="research" class="mb-5 py-3">
+            <h2 class="section-title">Selected Publications</h2>
+            <div class="pub-item">
+                <h4>Customers' experienced product quality: scale development and validation</h4>
+                <p class="text-muted">European Journal of Marketing, 54(4), 645-670 (2020)</p>
+                <p>Developed and validated a comprehensive scale measuring customers' holistic product quality evaluations across durable goods categories.</p>
+                <a href="https://doi.org/10.1108/EJM-02-2018-0105" class="btn btn-sm btn-outline-secondary" target="_blank">
+                    <i class="fas fa-external-link-alt me-1"></i> Read on EJM
+                </a>
             </div>
-            <!-- Add more degrees as needed -->
+            <div class="pub-item">
+                <h4>Role of brand attachment and satisfaction in driving customer behaviors for durables</h4>
+                <p class="text-muted">European Journal of Marketing, 58(1), 217-254 (2024)</p>
+                <p>Longitudinal study revealing how brand attachment evolves differently from satisfaction in predicting customer behaviors.</p>
+                <a href="https://doi.org/10.1108/EJM-05-2022-0365" class="btn btn-sm btn-outline-secondary" target="_blank">
+                    <i class="fas fa-external-link-alt me-1"></i> Read on EJM
+                </a>
+            </div>
+            <a href="#pubModal" class="btn btn-primary mt-3" data-bs-toggle="modal">
+                View All Publications
+            </a>
         </section>
 
-        <section id="publications">
-            <h2>Publications</h2>
-            
-            <div class="pub">
-                <h3>Customers’ Experienced Product Quality: Scale Development and Validation</h3>
-                <p>European Journal of Marketing (2020)</p>
-                <a href="https://doi.org/10.1108/EJM-03-2019-0234" target="_blank">Journal Link</a>
-            </div>
-            
-            <div class="pub">
-                <h3>Role of Brand Attachment and Satisfaction in Driving Customer Behaviors for Durables</h3>
-                <p>European Journal of Marketing (2024)</p>
-                <a href="[ADD DOI LINK]" target="_blank">Journal Link</a>
-            </div>
-
-            <h3>Under Review</h3>
-            <div class="pub">
-                <h4>How Satisfaction and Brand Attachment Shape Loyalty Over Time</h4>
-                <p>Journal of Business Research</p>
-            </div>
-
-            <!-- Add other publications following similar pattern -->
-        </section>
-
-        <section id="current-work">
-            <h2>Current Projects</h2>
-            <div class="project">
-                <h3>From Perception to Preference: How Quality Shapes Brand Equity</h3>
-                <p>In preparation for submission</p>
-            </div>
-            <div class="project">
-                <h3>Digitalization and Healthcare Service Quality in Post-Pandemic Bihar</h3>
-                <p>Mixed-methods study in progress</p>
+        <section id="education" class="mb-5 py-3">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item ps-4">
+                    <h4>Ph.D. in Management</h4>
+                    <p class="text-muted mb-1">University of Geneva, Switzerland | 2020</p>
+                    <p>Thesis: "Customer-Experienced Product Quality in Durable Goods"</p>
+                </div>
+                <div class="timeline-item ps-4">
+                    <h4>M.Sc. Energy Management & Sustainability</h4>
+                    <p class="text-muted mb-1">EPFL, Switzerland | 2013</p>
+                </div>
+                <div class="timeline-item ps-4">
+                    <h4>B.E. Electrical & Electronics Engineering</h4>
+                    <p class="text-muted mb-1">Manipal Institute of Technology, India | 2005</p>
+                </div>
             </div>
         </section>
 
-        <footer>
-            <p>Contact: R.Roshan@AUS.SWISS</p>
-            <p>GitHub: <a href="https://github.com/rrdguru" target="_blank">@rrdguru</a></p>
-        </footer>
+        <section id="projects" class="mb-5 py-3">
+            <h2 class="section-title">Current Projects</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card project-card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">EV Consumer Experience in India</h4>
+                            <p class="card-text">Longitudinal study tracking product quality perceptions and sustainability attitudes among Indian EV owners through a custom mobile app.</p>
+                            <div class="d-flex flex-wrap gap-1 mt-3">
+                                <span class="badge bg-secondary">Sustainability</span>
+                                <span class="badge bg-secondary">Product Quality</span>
+                                <span class="badge bg-secondary">Emerging Markets</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <small class="text-muted">Collaborators: American University of Switzerland, UC Davis</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card project-card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Quality → Brand Equity → Repurchase</h4>
+                            <p class="card-text">Examining the mediating role of brand equity in transforming quality perceptions into long-term repurchase behavior for durable goods.</p>
+                            <div class="d-flex flex-wrap gap-1 mt-3">
+                                <span class="badge bg-secondary">Brand Equity</span>
+                                <span class="badge bg-secondary">Longitudinal</span>
+                                <span class="badge bg-secondary">Durable Goods</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="mb-5 py-3">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card border-0 bg-light p-4 h-100">
+                        <h5 class="mb-3">Contact Information</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-envelope me-2 text-secondary"></i> r.roshan@aus.swiss</li>
+                            <li class="mb-2"><i class="fas fa-phone me-2 text-secondary"></i> +91 82945 71924</li>
+                            <li><i class="fas fa-map-marker-alt me-2 text-secondary"></i> Based in Switzerland & India</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="https://www.researchgate.net/profile/YOUR_PROFILE" class="btn btn-outline-primary me-2" target="_blank">
+                                <i class="fab fa-researchgate me-1"></i> ResearchGate
+                            </a>
+                            <a href="https://twitter.com/YOUR_HANDLE" class="btn btn-outline-primary" target="_blank">
+                                <i class="fab fa-twitter me-1"></i> Twitter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0">
+                    <div class="card border-0 bg-light p-4 h-100">
+                        <h5 class="mb-3">Academic Profiles</h5>
+                        <p>Connect with me on academic networks:</p>
+                        <a href="https://scholar.google.com/citations?user=YOUR_ID" class="btn btn-sm btn-outline-secondary mb-2" target="_blank">
+                            <i class="fas fa-graduation-cap me-1"></i> Google Scholar
+                        </a>
+                        <a href="ORCID_URL" class="btn btn-sm btn-outline-secondary mb-2" target="_blank">
+                            <i class="fas fa-id-badge me-1"></i> ORCID
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
+
+    <!-- Publication Modal -->
+    <div class="modal fade" id="pubModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">All Publications</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="text-secondary mb-3">Published</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <strong>Customers' experienced product quality: scale development and validation</strong><br>
+                            European Journal of Marketing, 54(4), 645-670 (2020)<br>
+                            <a href="https://doi.org/10.1108/EJM-02-2018-0105" class="small">DOI: 10.1108/EJM-02-2018-0105</a>
+                        </li>
+                        <li class="mb-3">
+                            <strong>Role of brand attachment and satisfaction in driving customer behaviors for durables</strong><br>
+                            European Journal of Marketing, 58(1), 217-254 (2024)<br>
+                            <a href="https://doi.org/10.1108/EJM-05-2022-0365" class="small">DOI: 10.1108/EJM-05-2022-0365</a>
+                        </li>
+                    </ul>
+
+                    <h6 class="text-secondary mb-3 mt-4">Under Review</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">How Satisfaction and Brand Attachment Shape Loyalty Over Time (Journal of Business Research)</li>
+                        <li class="mb-2">Understanding Product Field Quality: Failure Characteristics as Triggers of Boycotting and Complaining (MSOM)</li>
+                    </ul>
+
+                    <h6 class="text-secondary mb-3 mt-4">Work in Progress</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-1">From Perception to Preference: How Quality Shapes Brand Equity</li>
+                        <li class="mb-1">Unfolding Over Time: Longitudinal Investigation of Product Quality</li>
+                        <li class="mb-1">Quality, Satisfaction, and Attachment: Comparative Examination</li>
+                        <li class="mb-1">Do satisfied customers really pay more? (Longitudinal study)</li>
+                        <li class="mb-1">Destination Identity and Familiarity in Transforming Non-Visitors</li>
+                        <li class="mb-1">Digitalization and Healthcare Service Quality in Post-Pandemic Bihar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-3">&copy; 2024 Dr. Ramesh Roshan Das Guru. All rights reserved.</p>
+            <p class="small text-light">Built with Bootstrap 5 • Hosted on GitHub Pages</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
