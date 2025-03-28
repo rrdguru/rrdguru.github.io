@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramesh Roshan Das Guru | Marketing Scholar</title>
+    <title>Dr. Ramesh Roshan Das Guru | Marketing Scholar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2c3e50;
+            --primary: #34495e;
             --secondary: #3498db;
-            --accent: #e74c3c;
+            --accent: #2ecc71;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
         }
         body {
-            font-family: 'Lato', sans-serif;
-            line-height: 1.8;
-            color: #333;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+            color: #444;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto', sans-serif;
         }
         .navbar {
             background-color: var(--primary);
@@ -32,21 +38,22 @@
             width: 180px;
             height: 180px;
             object-fit: cover;
-            border: 5px solid white;
+            border: 4px solid white;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         .section-title {
-            color: var(--primary);
+            color: var(--dark);
             position: relative;
             display: inline-block;
             margin-bottom: 1.5rem;
+            font-weight: 600;
         }
         .section-title:after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -8px;
             left: 0;
-            width: 50%;
+            width: 40%;
             height: 3px;
             background: var(--secondary);
         }
@@ -54,6 +61,11 @@
             margin-bottom: 1.5rem;
             border-left: 3px solid var(--secondary);
             padding-left: 1rem;
+            transition: all 0.3s;
+        }
+        .pub-item:hover {
+            border-left-color: var(--accent);
+            background-color: rgba(52, 152, 219, 0.05);
         }
         .timeline {
             position: relative;
@@ -75,12 +87,12 @@
         .timeline-item:before {
             content: '';
             position: absolute;
-            left: 0;
+            left: -2rem;
             top: 5px;
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
-            background: var(--primary);
+            background: white;
             border: 3px solid var(--secondary);
         }
         .social-icon {
@@ -110,18 +122,44 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
+        .course-badge {
+            background-color: rgba(52, 152, 219, 0.1);
+            color: var(--secondary);
+            border-radius: 30px;
+            padding: 0.5rem 1rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
         footer {
             background: var(--primary);
             color: white;
             padding: 3rem 0;
             margin-top: 3rem;
         }
+        .btn-primary {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+        }
+        .btn-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        .btn-outline-primary {
+            color: var(--secondary);
+            border-color: var(--secondary);
+        }
+        .btn-outline-primary:hover {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+        }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Dr. R.R. Das Guru</a>
+            <a class="navbar-brand fw-bold" href="#">Dr. Ramesh Roshan Das Guru</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -129,7 +167,8 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#teaching">Teaching</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
@@ -141,9 +180,9 @@
         <div class="container">
             <img src="rr.jpg" alt="Dr. Ramesh Roshan Das Guru" class="profile-img rounded-circle mb-4">
             <h1 class="display-4 fw-bold mb-3">Dr. Ramesh Roshan Das Guru</h1>
-            <p class="lead mb-4">Marketing Scholar | Sustainability Researcher | Educator</p>
+            <p class="lead mb-4">Marketing Scholar | Consumer Behavior | Sustainable Consumption</p>
             <div class="d-flex justify-content-center gap-3">
-                <a href="https://www.researchgate.net/profile/YOUR_PROFILE" class="social-icon" target="_blank">
+                <a href="https://www.researchgate.net/profile/Ramesh-Roshan-Das-Guru" class="social-icon" target="_blank">
                     <i class="fab fa-researchgate"></i>
                 </a>
                 <a href="https://twitter.com/YOUR_HANDLE" class="social-icon" target="_blank">
@@ -161,18 +200,23 @@
             <h2 class="section-title">About Me</h2>
             <div class="row">
                 <div class="col-lg-8">
-                    <p class="lead">I bridge marketing theory with sustainable business practice through rigorous research and engaging pedagogy.</p>
-                    <p>With a unique background combining engineering, sustainability studies, and marketing science, I investigate how product quality shapes long-term consumer behavior - particularly in durable goods and emerging technologies like electric vehicles.</p>
-                    <p>My research has been published in top-tier journals including the <em>European Journal of Marketing</em>, and I'm currently exploring the intersection of sustainability metrics with customer-experienced product quality.</p>
+                    <p>I'm a marketing scholar with a unique journey from industry to academia. After working in engineering and IT sectors, I pursued my passion for understanding consumer behavior and product quality, earning my PhD from the University of Geneva.</p>
+                    
+                    <p>My research explores how product quality shapes consumer-brand relationships and sustainable consumption patterns. I'm particularly interested in how quality perceptions can be leveraged to encourage more sustainable consumer choices.</p>
+                    
+                    <p>In the classroom, I emphasize critical thinking and practical applications, helping students see marketing not just as a business function but as a skillset for becoming smarter, more sustainable consumers themselves.</p>
+                    
+                    <p>Currently, I'm collaborating with researchers across continents on projects ranging from electric vehicle adoption to tourism destination marketing and healthcare service quality.</p>
                 </div>
                 <div class="col-lg-4">
                     <div class="card bg-light p-4">
-                        <h5 class="mb-3">Research Focus</h5>
+                        <h5 class="mb-3">Research Interests</h5>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Consumer-Brand Relationships</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Product Quality & Sustainability</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Marketing Analytics</li>
-                            <li><i class="fas fa-check-circle text-secondary me-2"></i> AI in Marketing</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Product Quality & Consumer Behavior</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Sustainable Consumption</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Brand Relationships</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-secondary me-2"></i> Tourism Marketing</li>
+                            <li><i class="fas fa-check-circle text-secondary me-2"></i> Healthcare Service Quality</li>
                         </ul>
                     </div>
                 </div>
@@ -180,75 +224,136 @@
         </section>
 
         <section id="research" class="mb-5 py-3">
-            <h2 class="section-title">Selected Publications</h2>
+            <h2 class="section-title">Research</h2>
+            <p>My research examines how consumers experience product quality and how these experiences shape their relationships with brands over time. I'm particularly interested in applying these insights to promote sustainable consumption.</p>
+            
+            <h4 class="mt-4 mb-3">Selected Publications</h4>
             <div class="pub-item">
-                <h4>Customers' experienced product quality: scale development and validation</h4>
+                <h5>Customers' experienced product quality: scale development and validation</h5>
                 <p class="text-muted">European Journal of Marketing, 54(4), 645-670 (2020)</p>
-                <p>Developed and validated a comprehensive scale measuring customers' holistic product quality evaluations across durable goods categories.</p>
-                <a href="https://doi.org/10.1108/EJM-02-2018-0105" class="btn btn-sm btn-outline-secondary" target="_blank">
-                    <i class="fas fa-external-link-alt me-1"></i> Read on EJM
+                <p>This study develops and validates a comprehensive scale for measuring how customers experience product quality across durable goods categories.</p>
+                <a href="https://doi.org/10.1108/EJM-02-2018-0105" class="btn btn-sm btn-outline-primary" target="_blank">
+                    <i class="fas fa-external-link-alt me-1"></i> View Publication
                 </a>
             </div>
             <div class="pub-item">
-                <h4>Role of brand attachment and satisfaction in driving customer behaviors for durables</h4>
+                <h5>Role of brand attachment and satisfaction in driving customer behaviors for durables</h5>
                 <p class="text-muted">European Journal of Marketing, 58(1), 217-254 (2024)</p>
-                <p>Longitudinal study revealing how brand attachment evolves differently from satisfaction in predicting customer behaviors.</p>
-                <a href="https://doi.org/10.1108/EJM-05-2022-0365" class="btn btn-sm btn-outline-secondary" target="_blank">
-                    <i class="fas fa-external-link-alt me-1"></i> Read on EJM
+                <p>This longitudinal study reveals how brand attachment evolves differently from satisfaction in predicting customer behaviors for durable goods.</p>
+                <a href="https://doi.org/10.1108/EJM-05-2022-0365" class="btn btn-sm btn-outline-primary" target="_blank">
+                    <i class="fas fa-external-link-alt me-1"></i> View Publication
                 </a>
             </div>
+            
+            <h4 class="mt-4 mb-3">Current Research Projects</h4>
+            <ul>
+                <li><strong>Electric Vehicle Consumer Experience in India</strong> - Tracking how quality perceptions influence adoption of sustainable transportation</li>
+                <li><strong>Quality → Brand Equity → Repurchase</strong> - Examining how quality perceptions build brand equity and drive repurchase</li>
+                <li><strong>Destination Identity and Familiarity</strong> - Understanding how tourism destinations can convert non-visitors to visitors</li>
+                <li><strong>Healthcare Service Quality in Post-Pandemic Bihar</strong> - Assessing the impact of digitalization on healthcare service quality</li>
+            </ul>
+            
             <a href="#pubModal" class="btn btn-primary mt-3" data-bs-toggle="modal">
-                View All Publications
+                View All Publications & Projects
             </a>
         </section>
 
-        <section id="education" class="mb-5 py-3">
-            <h2 class="section-title">Education</h2>
+        <section id="teaching" class="mb-5 py-3">
+            <h2 class="section-title">Teaching Philosophy & Courses</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>My teaching approach bridges theory with practice, drawing on my industry experience to make marketing concepts tangible and applicable. I design courses that promote critical thinking through case studies, simulations, and real-world projects.</p>
+                    
+                    <p>I believe marketing education should empower students not just as future business leaders but as informed consumers who can make sustainable choices. My courses consistently receive strong evaluations (4.35+/5) for their practical relevance and engaging delivery.</p>
+                    
+                    <h5 class="mt-4">Courses Taught</h5>
+                    <div class="d-flex flex-wrap">
+                        <span class="course-badge">Marketing Management</span>
+                        <span class="course-badge">Consumer Behavior</span>
+                        <span class="course-badge">Brand Management</span>
+                        <span class="course-badge">Marketing Research</span>
+                        <span class="course-badge">Product & Brand Management</span>
+                        <span class="course-badge">Services Marketing</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h5 class="mt-4 mt-lg-0">Courses I Can Develop</h5>
+                    <div class="d-flex flex-wrap">
+                        <span class="course-badge">Sustainable Marketing</span>
+                        <span class="course-badge">AI in Marketing</span>
+                        <span class="course-badge">Quality Management</span>
+                        <span class="course-badge">Consumer Psychology</span>
+                        <span class="course-badge">Digital Marketing Analytics</span>
+                        <span class="course-badge">Marketing for Non-Marketers</span>
+                    </div>
+                    
+                    <div class="card bg-light p-4 mt-4">
+                        <h5>Teaching Innovation: Sustainable Consumer Choices</h5>
+                        <p>A course I'm developing that helps students apply marketing principles to analyze their own consumption patterns and make more sustainable choices. This interdisciplinary approach combines consumer behavior, sustainability metrics, and decision-making frameworks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="mb-5 py-3">
+            <h2 class="section-title">Experience</h2>
             <div class="timeline">
-                <div class="timeline-item ps-4">
-                    <h4>Ph.D. in Management</h4>
-                    <p class="text-muted mb-1">University of Geneva, Switzerland | 2020</p>
-                    <p>Thesis: "Customer-Experienced Product Quality in Durable Goods"</p>
+                <div class="timeline-item">
+                    <h4>Visiting Researcher</h4>
+                    <p class="text-muted mb-1">American University of Switzerland, La Tour-de-Peilz, Switzerland | 2024 – Present</p>
+                    <p>Collaborating on research projects examining sustainable consumption and product quality perceptions.</p>
                 </div>
-                <div class="timeline-item ps-4">
-                    <h4>M.Sc. Energy Management & Sustainability</h4>
-                    <p class="text-muted mb-1">EPFL, Switzerland | 2013</p>
+                <div class="timeline-item">
+                    <h4>Assistant Professor</h4>
+                    <p class="text-muted mb-1">Indian Institute of Management (IIM), Bodhgaya, India | 2021 – 2024</p>
+                    <p>Taught marketing courses to MBA students, supervised student projects, and conducted research on consumer behavior and brand relationships.</p>
                 </div>
-                <div class="timeline-item ps-4">
-                    <h4>B.E. Electrical & Electronics Engineering</h4>
-                    <p class="text-muted mb-1">Manipal Institute of Technology, India | 2005</p>
+                <div class="timeline-item">
+                    <h4>Research Associate</h4>
+                    <p class="text-muted mb-1">FactWorks GmbH, Berlin, Germany | 2018 – 2020</p>
+                    <p>Conducted market research and data analysis for international clients, focusing on consumer behavior and product quality perceptions.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Project Engineer</h4>
+                    <p class="text-muted mb-1">Infosys Limited, Mysore, India | 2006 – 2011</p>
+                    <p>Managed IT projects for international clients, developing technical solutions and ensuring quality delivery.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Management Trainee</h4>
+                    <p class="text-muted mb-1">Steel Authority of India Limited (SAIL), Rourkela, India | 2005 – 2006</p>
+                    <p>Worked in the electrical maintenance department of a steel plant, gaining hands-on experience in industrial operations.</p>
                 </div>
             </div>
         </section>
 
         <section id="projects" class="mb-5 py-3">
-            <h2 class="section-title">Current Projects</h2>
+            <h2 class="section-title">Featured Projects</h2>
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="card project-card h-100">
                         <div class="card-body">
-                            <h4 class="card-title">EV Consumer Experience in India</h4>
-                            <p class="card-text">Longitudinal study tracking product quality perceptions and sustainability attitudes among Indian EV owners through a custom mobile app.</p>
+                            <h4 class="card-title">Electric Vehicle Consumer Experience Study</h4>
+                            <p class="card-text">This longitudinal project tracks how Indian consumers experience electric vehicles, focusing on how quality perceptions influence adoption of sustainable transportation. The study addresses a critical gap in understanding how product quality shapes sustainable consumption in emerging markets.</p>
                             <div class="d-flex flex-wrap gap-1 mt-3">
-                                <span class="badge bg-secondary">Sustainability</span>
+                                <span class="badge bg-secondary">Sustainable Consumption</span>
                                 <span class="badge bg-secondary">Product Quality</span>
                                 <span class="badge bg-secondary">Emerging Markets</span>
                             </div>
                         </div>
                         <div class="card-footer bg-transparent">
-                            <small class="text-muted">Collaborators: American University of Switzerland, UC Davis</small>
+                            <small class="text-muted">Collaborating with researchers from American University of Switzerland and UC Davis</small>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="card project-card h-100">
                         <div class="card-body">
-                            <h4 class="card-title">Quality → Brand Equity → Repurchase</h4>
-                            <p class="card-text">Examining the mediating role of brand equity in transforming quality perceptions into long-term repurchase behavior for durable goods.</p>
+                            <h4 class="card-title">Tourism Destination Marketing</h4>
+                            <p class="card-text">This project examines how destination identity and familiarity influence potential tourists' decision-making processes. The research aims to help tourism destinations better understand how to convert non-visitors to visitors through effective marketing strategies.</p>
                             <div class="d-flex flex-wrap gap-1 mt-3">
-                                <span class="badge bg-secondary">Brand Equity</span>
-                                <span class="badge bg-secondary">Longitudinal</span>
-                                <span class="badge bg-secondary">Durable Goods</span>
+                                <span class="badge bg-secondary">Tourism Marketing</span>
+                                <span class="badge bg-secondary">Consumer Decision-Making</span>
+                                <span class="badge bg-secondary">Destination Branding</span>
                             </div>
                         </div>
                     </div>
@@ -257,7 +362,7 @@
         </section>
 
         <section id="contact" class="mb-5 py-3">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title">Contact</h2>
             <div class="row">
                 <div class="col-md-6">
                     <div class="card border-0 bg-light p-4 h-100">
@@ -268,7 +373,7 @@
                             <li><i class="fas fa-map-marker-alt me-2 text-secondary"></i> Based in Switzerland & India</li>
                         </ul>
                         <div class="mt-4">
-                            <a href="https://www.researchgate.net/profile/YOUR_PROFILE" class="btn btn-outline-primary me-2" target="_blank">
+                            <a href="https://www.researchgate.net/profile/Ramesh-Roshan-Das-Guru" class="btn btn-outline-primary me-2" target="_blank">
                                 <i class="fab fa-researchgate me-1"></i> ResearchGate
                             </a>
                             <a href="https://twitter.com/YOUR_HANDLE" class="btn btn-outline-primary" target="_blank">
@@ -298,7 +403,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">All Publications</h5>
+                    <h5 class="modal-title">Publications & Research Projects</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -324,12 +429,12 @@
 
                     <h6 class="text-secondary mb-3 mt-4">Work in Progress</h6>
                     <ul class="list-unstyled">
-                        <li class="mb-1">From Perception to Preference: How Quality Shapes Brand Equity</li>
-                        <li class="mb-1">Unfolding Over Time: Longitudinal Investigation of Product Quality</li>
-                        <li class="mb-1">Quality, Satisfaction, and Attachment: Comparative Examination</li>
-                        <li class="mb-1">Do satisfied customers really pay more? (Longitudinal study)</li>
-                        <li class="mb-1">Destination Identity and Familiarity in Transforming Non-Visitors</li>
-                        <li class="mb-1">Digitalization and Healthcare Service Quality in Post-Pandemic Bihar</li>
+                        <li class="mb-2"><strong>From Perception to Preference:</strong> How Quality Shapes Brand Equity</li>
+                        <li class="mb-2"><strong>Unfolding Over Time:</strong> Longitudinal Investigation of Product Quality</li>
+                        <li class="mb-2"><strong>Quality, Satisfaction, and Attachment:</strong> Comparative Examination</li>
+                        <li class="mb-2"><strong>Do satisfied customers really pay more?</strong> A Longitudinal study</li>
+                        <li class="mb-2"><strong>Destination Identity and Familiarity</strong> in Transforming Non-Visitors</li>
+                        <li class="mb-2"><strong>Digitalization and Healthcare Service Quality</strong> in Post-Pandemic Bihar</li>
                     </ul>
                 </div>
             </div>
