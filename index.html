@@ -138,4 +138,330 @@
             border-radius: 50%;
             background: var(--secondary);
             border: 3px solid white;
-            box-shadow: 0 0 0 2px var(--accent
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        /* Badges & Icons */
+        .course-badge {
+            background-color: #EDF2F7;
+            color: var(--primary);
+            border-radius: 4px;
+            padding: 0.4rem 0.8rem;
+            margin: 0.3rem 0.3rem 0 0;
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid #E2E8F0;
+        }
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50%;
+            margin-right: 0.8rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .social-icon:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Dr. Ramesh Roshan Das Guru</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#teaching">Teaching</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#leadership">Leadership</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero text-center">
+        <div class="container">
+            <img src="rr.jpg" alt="Dr. Ramesh Roshan Das Guru" class="profile-img rounded-circle mb-4">
+            <h1 class="display-5 fw-bold mb-2">Dr. Ramesh Roshan Das Guru</h1>
+            <h2 class="h4 fw-light mb-4 text-light">Senior Assistant Professor of Marketing | South Asian University</h2>
+            <p class="lead mb-4" style="max-width: 700px; margin: 0 auto; font-size: 1.1rem; color: #E2E8F0;">
+                Bridging rigorous quantitative research with real-world management practice to understand product quality, brand dynamics, and sustainable consumption.
+            </p>
+            <div class="d-flex justify-content-center mt-4">
+                <a href="https://scholar.google.com/citations?user=BUsJnvUAAAAJ&hl=en" class="social-icon" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://www.researchgate.net/profile/Ramesh-Roshan-Das-Guru" class="social-icon" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                <a href="https://orcid.org/0000-0003-1144-2835" class="social-icon" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
+                <a href="https://x.com/R_R_D_Guru" class="social-icon" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container py-4">
+        
+        <section id="about" class="mb-5">
+            <h2 class="section-title">Profile</h2>
+            <div class="row gx-5">
+                <div class="col-lg-8">
+                    <p>I am a marketing academic with a foundation in engineering and industry, currently serving as a Senior Assistant Professor at the newly established Faculty of Management at South Asian University (SAU), New Delhi. My academic journey is driven by a dedication to bridging the gap between rigorous quantitative research and actionable management practice.</p>
+                    
+                    <p>My core research examines how product quality shapes consumer-brand relationships over time, with a forward-looking agenda emphasizing sustainable consumption. By leveraging over five years of prior industry experience in technology and manufacturing, I bring a data-driven, problem-solving perspective to both my research and my classroom.</p>
+                    
+                    <p>In addition to research and teaching, I am actively engaged in institution building, student mentorship, and international academic collaborations across Europe, the Americas, and Asia.</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card p-4 h-100 bg-light border-0">
+                        <h5 class="mb-3"><i class="fas fa-microscope text-secondary me-2"></i> Research Foci</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2 border-bottom pb-2">Product Quality & Consumer Behavior</li>
+                            <li class="mb-2 border-bottom pb-2">Longitudinal Brand Relationships</li>
+                            <li class="mb-2 border-bottom pb-2">Sustainable Consumption & EV Adoption</li>
+                            <li class="mb-2 border-bottom pb-2">Quantitative Methods in Marketing</li>
+                            <li class="pt-1">Tourism & Healthcare Service Quality</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="leadership" class="mb-5 py-4">
+            <h2 class="section-title">Academic Leadership & Mentorship</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card p-4 h-100 border-0 bg-white" style="box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
+                        <h4 class="h5 mb-3"><i class="fas fa-users-cog text-secondary me-2"></i> Institutional Building</h4>
+                        <p class="mb-0">As a founding faculty member at the Faculty of Management, South Asian University, I am heavily involved in academic governance and program design. I currently lead the <strong>Placement Initiatives</strong> for the faculty, working to bridge our emerging academic talent with industry opportunities.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card p-4 h-100 border-0 bg-white" style="box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
+                        <h4 class="h5 mb-3"><i class="fas fa-user-graduate text-secondary me-2"></i> Doctoral Supervision</h4>
+                        <p class="mb-0">I am committed to developing the next generation of researchers. Currently, I serve as:</p>
+                        <ul class="mt-2 mb-0 pl-3">
+                            <li>Primary Guide for <strong>1 Ph.D. Scholar</strong></li>
+                            <li>Co-Guide for <strong>1 Executive Ph.D. Scholar</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="mb-5">
+            <h2 class="section-title">Research & Publications</h2>
+            <p class="lead text-muted mb-4">A transparent view of my publication record and active research pipeline.</p>
+            
+            <h3 class="pub-category">Published Papers</h3>
+            <div class="pub-item">
+                <h5>Role of brand attachment and satisfaction in driving customer behaviors for durables: A longitudinal study</h5>
+                <p class="text-muted small mb-2"><em>European Journal of Marketing</em>, 58(1), 217-254 (2024)</p>
+                <p class="mb-2">This longitudinal study reveals how brand attachment evolves differently from satisfaction in predicting customer behaviors for durable goods.</p>
+                <a href="https://doi.org/10.1108/EJM-01-2022-0028" class="text-decoration-none small text-secondary fw-bold" target="_blank">DOI: 10.1108/EJM-01-2022-0028 <i class="fas fa-external-link-alt ms-1"></i></a>
+            </div>
+            
+            <div class="pub-item">
+                <h5>Customers' experienced product quality: scale development and validation</h5>
+                <p class="text-muted small mb-2"><em>European Journal of Marketing</em>, 54(4), 645-670 (2020)</p>
+                <p class="mb-2">Develops and validates a comprehensive multidimensional scale for measuring how customers experience product quality across durable goods categories.</p>
+                <a href="https://doi.org/10.1108/EJM-03-2018-0156" class="text-decoration-none small text-secondary fw-bold" target="_blank">DOI: 10.1108/EJM-03-2018-0156 <i class="fas fa-external-link-alt ms-1"></i></a>
+            </div>
+
+            <h3 class="pub-category">Under Review</h3>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="card p-3 h-100 bg-light border-0">
+                        <h6 class="fw-bold text-dark">How Satisfaction and Brand Attachment Shape Loyalty Over Time</h6>
+                        <p class="small text-muted mb-0">Currently under review at <em>Journal of Business Research</em></p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card p-3 h-100 bg-light border-0">
+                        <h6 class="fw-bold text-dark">Understanding Product Field Quality: Failure Characteristics as Triggers of Boycotting and Complaining</h6>
+                        <p class="small text-muted mb-0">Currently under review at <em>Manufacturing & Service Operations Management (MSOM)</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="pub-category">Selected Work in Progress</h3>
+            <div class="card border-0 bg-white" style="box-shadow: 0 2px 10px rgba(0,0,0,0.03);">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item border-light py-3">
+                        <span class="badge bg-secondary mb-1">Data Collection Completed</span><br>
+                        <strong>Longitudinal Study on Electric Vehicle Consumer Experience in India</strong><br>
+                        <span class="small text-muted">Co-Investigator | Collaborative effort with American Univ. of Switzerland, Univ. of Geneva, and UC Davis.</span>
+                    </li>
+                    <li class="list-group-item border-light py-3">
+                        <span class="badge bg-light text-dark border mb-1">Final Revisions</span><br>
+                        <strong>From Perception to Preference: How Quality Shapes Brand Equity and Drives Repurchase</strong>
+                    </li>
+                    <li class="list-group-item border-light py-3">
+                        <span class="badge bg-light text-dark border mb-1">Final Revisions</span><br>
+                        <strong>Unfolding Over Time: A Longitudinal Investigation of Customers' Experienced Product Quality and its Effect on Long Term Loyalty</strong>
+                    </li>
+                    <li class="list-group-item py-3">
+                        <span class="badge bg-light text-dark border mb-1">Data Collection Completed</span><br>
+                        <strong>Scaling Excellence or Diluting Quality? The Expansion Dilemma in Management Education</strong>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="experience" class="mb-5">
+            <h2 class="section-title">Academic & Professional Journey</h2>
+            <div class="row">
+                <div class="col-md-8">
+                    <h4 class="mb-4 text-secondary">Academic Appointments</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-date">Sept 2025 – Present</span>
+                            <h5 class="mb-1">Senior Assistant Professor</h5>
+                            <p class="fw-bold text-dark mb-1">South Asian University, New Delhi, India</p>
+                            <p class="small">Founding faculty member driving academic development in a newly established Faculty of Management. Leading undergraduate, postgraduate, and doctoral program designs, placement initiatives, and academic governance.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-date">Jun 12, 2025 – Sept 2025</span>
+                            <h5 class="mb-1">Assistant Professor of Marketing</h5>
+                            <p class="fw-bold text-dark mb-1">Indian Institute of Management (IIM) Ranchi, India</p>
+                            <p class="small">Taught Marketing Management at the postgraduate level; contributed to executive education and Management Development Programs.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-date">Mar 2025 – Present</span>
+                            <h5 class="mb-1">Global Visiting Faculty</h5>
+                            <p class="fw-bold text-dark mb-1">Tecnológico de Monterrey, Guadalajara, Mexico</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-date">Nov 2024 – Present</span>
+                            <h5 class="mb-1">Visiting Researcher and Mentor</h5>
+                            <p class="fw-bold text-dark mb-1">American University of Switzerland</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-date">Nov 2021 – Oct 2024</span>
+                            <h5 class="mb-1">Assistant Professor of Marketing</h5>
+                            <p class="fw-bold text-dark mb-1">Indian Institute of Management (IIM) Bodhgaya, India</p>
+                            <p class="small">Delivered core/elective marketing courses; supported institutional administration including international and alumni affairs.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-date">Jan 2015 – Dec 2020</span>
+                            <h5 class="mb-1">Research Assistant and Instructor</h5>
+                            <p class="fw-bold text-dark mb-1">GSEM, University of Geneva, Switzerland</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <h4 class="mb-4 text-secondary">Education</h4>
+                    <div class="card p-4 border-0 bg-light mb-4">
+                        <h6 class="fw-bold mb-0">Ph.D. in Management</h6>
+                        <p class="small text-muted mb-2">University of Geneva, Switzerland (2020)</p>
+                        <hr class="my-2">
+                        <h6 class="fw-bold mb-0">M.Sc. in Energy Mgmt. & Sustainability</h6>
+                        <p class="small text-muted mb-2">EPFL, Lausanne, Switzerland (2013)</p>
+                        <hr class="my-2">
+                        <h6 class="fw-bold mb-0">B.E. in Electrical & Electronics Eng.</h6>
+                        <p class="small text-muted mb-0">Manipal Institute of Technology, India (2005)</p>
+                    </div>
+
+                    <h4 class="mb-3 mt-5 text-secondary">Prior Industry Experience</h4>
+                    <div class="timeline">
+                        <div class="timeline-item mb-3">
+                            <h6 class="fw-bold mb-0">Consultant</h6>
+                            <p class="small text-muted mb-1">Fact Works GmbH, Berlin (2019)</p>
+                        </div>
+                        <div class="timeline-item mb-3">
+                            <h6 class="fw-bold mb-0">Junior Manager</h6>
+                            <p class="small text-muted mb-1">Steel Authority of India (SAIL) (2007-2011)</p>
+                        </div>
+                        <div class="timeline-item mb-0">
+                            <h6 class="fw-bold mb-0">Software Engineer</h6>
+                            <p class="small text-muted mb-1">Infosys, India (2005-2006)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="teaching" class="mb-5">
+            <h2 class="section-title">Teaching</h2>
+            <p>I design courses that promote critical thinking through data-driven problem solving, leveraging tools like R, Python, and AI to tackle contemporary business challenges.</p>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h5 class="mb-3">Graduate & Executive Level</h5>
+                    <div class="d-flex flex-wrap">
+                        <span class="course-badge">Marketing Management</span>
+                        <span class="course-badge">Product & Brand Management</span>
+                        <span class="course-badge">Rural Marketing</span>
+                        <span class="course-badge">Luxury & Fashion Marketing</span>
+                        <span class="course-badge">Advanced Marketing Research</span>
+                        <span class="course-badge">Data-Driven Decision Making</span>
+                        <span class="course-badge">Digital Marketing & Analytics</span>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0">
+                    <h5 class="mb-3">Undergraduate & Doctoral Level</h5>
+                    <div class="d-flex flex-wrap">
+                        <span class="course-badge">Principles of Marketing</span>
+                        <span class="course-badge">Business Research Methods</span>
+                        <span class="course-badge">Introduction to Research Methods</span>
+                        <span class="course-badge">Data Analysis & Vis. (R/Python)</span>
+                        <span class="course-badge">Strategic Marketing (Doctoral)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="mb-2">
+            <div class="card bg-primary text-white border-0 p-5 rounded-4" style="background: linear-gradient(135deg, var(--primary) 0%, #2a4365 100%);">
+                <div class="row align-items-center">
+                    <div class="col-md-8 mb-4 mb-md-0">
+                        <h2 class="text-white mb-3">Get in Touch</h2>
+                        <p class="lead mb-0 text-light opacity-75">Interested in research collaboration, academic speaking, or placement networking at SAU? I am always open to connecting.</p>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <ul class="list-unstyled mb-0 text-start text-md-end">
+                            <li class="mb-2 h5"><i class="fas fa-envelope me-2 opacity-75"></i> rameshroshandg@gmail.com</li>
+                            <li class="mb-2 h5"><i class="fas fa-phone me-2 opacity-75"></i> +91 829 457 1924</li>
+                            <li class="h6 mt-3 text-light opacity-75"><i class="fas fa-map-marker-alt me-2"></i> New Delhi, India</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-2">&copy; 2026 Dr. Ramesh Roshan Das Guru. All rights reserved.</p>
+            <p class="small text-white-50">Academic Portfolio • Hosted on GitHub Pages</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
