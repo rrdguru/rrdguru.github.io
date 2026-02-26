@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --sidebar-bg: #002147; /* Oxford Blue */
+            --sidebar-bg: #002147;
             --sidebar-text: #e2e8f0;
             --accent: #4a90e2;
             --text-main: #334155;
@@ -23,6 +23,7 @@
             color: var(--text-main);
             background-color: var(--bg-light);
             line-height: 1.6;
+            margin: 0;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -30,7 +31,6 @@
             color: var(--heading-color);
         }
 
-        /* Desktop Split Layout */
         @media (min-width: 992px) {
             .sidebar {
                 position: fixed;
@@ -46,7 +46,6 @@
             }
         }
 
-        /* Sidebar Styling */
         .sidebar {
             background-color: var(--sidebar-bg);
             color: var(--sidebar-text);
@@ -128,10 +127,10 @@
             transform: translateY(-3px);
         }
 
-        /* Main Content Styling */
         .main-content {
             padding: 4rem 5%;
             background-color: #ffffff;
+            min-height: 100vh;
         }
 
         .content-section {
@@ -157,7 +156,6 @@
             background-color: var(--accent);
         }
 
-        /* Publication & Project Items */
         .academic-item {
             margin-bottom: 1.5rem;
             padding-bottom: 1.5rem;
@@ -181,7 +179,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Grids & Cards for compact viewing */
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -193,6 +190,7 @@
             padding: 1.5rem;
             border-radius: 8px;
             border: 1px solid var(--border-color);
+            height: 100%;
         }
 
         .info-card h4 {
@@ -215,7 +213,6 @@
             border: 1px solid #cbd5e1;
         }
 
-        /* Timeline compact */
         .timeline-compact {
             border-left: 2px solid var(--border-color);
             padding-left: 1.5rem;
@@ -256,7 +253,7 @@
         <h1 style="margin-top:-10px;">Das Guru</h1>
         <h2>Senior Assistant Professor</h2>
         
-        <p class="small opacity-75 mt-3 mb-0">Bridging rigorous quantitative research with real-world management practice.</p>
+        <p class="small opacity-75 mt-3 mb-0">Bridging rigorous quantitative research with real-world management practice, while fostering student communities and career ecosystems.</p>
 
         <ul class="contact-list">
             <li><i class="fas fa-university"></i> South Asian University, New Delhi</li>
@@ -276,8 +273,8 @@
 
         <section id="about" class="content-section">
             <h3 class="section-title">Academic Profile</h3>
-            <p>I am a marketing academic dedicated to exploring how product quality shapes consumer-brand relationships and drives sustainable consumption. With a Ph.D. from the University of Geneva [cite: 11] and over five years of prior industry experience in engineering and technology[cite: 7], my approach bridges rigorous quantitative methodologies with practical business fundamentals.</p>
-            <p>Currently serving as a Senior Assistant Professor at South Asian University (SAU)[cite: 16], I am deeply involved in institution building, academic governance, and doctoral supervision. I advocate for an educational approach where critical thinking and core literature remain central, even as we integrate advanced analytics and AI into the modern business curriculum.</p>
+            <p>I am a marketing academic dedicated to exploring how product quality shapes consumer-brand relationships and drives sustainable consumption. With a Ph.D. from the University of Geneva and over five years of prior industry experience in engineering and technology, my approach bridges rigorous quantitative methodologies with practical business fundamentals.</p>
+            <p>Currently serving as a Senior Assistant Professor at South Asian University (SAU), I am deeply involved in institution building, academic governance, and doctoral supervision. I advocate for an educational approach where critical thinking and core literature remain central, even as we integrate advanced analytics and AI into the modern business curriculum.</p>
         </section>
 
         <section id="interests" class="content-section">
@@ -310,26 +307,26 @@
             <h3 class="section-title">Selected Publications & Pipeline</h3>
             
             <div class="academic-item">
-                <div class="academic-title">Role of brand attachment and satisfaction in driving customer behaviors for durables: A longitudinal study [cite: 69, 70]</div>
-                <div class="academic-meta"><strong>Published</strong> • <em>European Journal of Marketing</em>, 58(1), 217-254 (2024) [cite: 71]</div>
+                <div class="academic-title">Role of brand attachment and satisfaction in driving customer behaviors for durables: A longitudinal study</div>
+                <div class="academic-meta"><strong>Published</strong> • <em>European Journal of Marketing</em>, 58(1), 217-254 (2024)</div>
                 <p class="small mb-1">Reveals how brand attachment evolves differently from satisfaction in predicting customer behaviors for durable goods.</p>
                 <a href="https://doi.org/10.1108/EJM-01-2022-0028" class="small text-decoration-none fw-bold" target="_blank">DOI Link <i class="fas fa-external-link-alt ms-1" style="font-size: 0.75rem;"></i></a>
             </div>
 
             <div class="academic-item">
-                <div class="academic-title">Customers' experienced product quality: scale development and validation [cite: 67]</div>
-                <div class="academic-meta"><strong>Published</strong> • <em>European Journal of Marketing</em>, 54(4), 645-670 (2020) [cite: 68]</div>
+                <div class="academic-title">Customers' experienced product quality: scale development and validation</div>
+                <div class="academic-meta"><strong>Published</strong> • <em>European Journal of Marketing</em>, 54(4), 645-670 (2020)</div>
                 <p class="small mb-1">Develops and validates a comprehensive multidimensional scale for measuring how customers experience product quality.</p>
             </div>
 
             <div class="academic-item">
-                <div class="academic-title">How Satisfaction and Brand Attachment Shape Loyalty Over Time [cite: 74]</div>
-                <div class="academic-meta"><strong>Under Review</strong> • <em>Journal of Business Research</em> [cite: 75]</div>
+                <div class="academic-title">How Satisfaction and Brand Attachment Shape Loyalty Over Time</div>
+                <div class="academic-meta"><strong>Under Review</strong> • <em>Journal of Business Research</em></div>
             </div>
 
             <div class="academic-item">
-                <div class="academic-title">Understanding Product Field Quality: Failure Characteristics as Triggers of Boycotting and Complaining [cite: 76]</div>
-                <div class="academic-meta"><strong>Under Review</strong> • <em>Manufacturing Service Operations Management</em> [cite: 77]</div>
+                <div class="academic-title">Understanding Product Field Quality: Failure Characteristics as Triggers of Boycotting and Complaining</div>
+                <div class="academic-meta"><strong>Under Review</strong> • <em>Manufacturing Service Operations Management</em></div>
             </div>
         </section>
 
@@ -339,24 +336,24 @@
                     <h3 class="section-title">Academic Appointments</h3>
                     <div class="timeline-compact">
                         <div class="timeline-item-compact">
-                            <div class="timeline-date">Sept 2025 – Present [cite: 17]</div>
-                            <div class="fw-bold">Senior Assistant Professor [cite: 16]</div>
-                            <div class="small text-muted">South Asian University, New Delhi [cite: 16]</div>
+                            <div class="timeline-date">Sept 2025 – Present</div>
+                            <div class="fw-bold">Senior Assistant Professor</div>
+                            <div class="small text-muted">South Asian University, New Delhi</div>
                         </div>
                         <div class="timeline-item-compact">
-                            <div class="timeline-date">Jun 2025 – Sept 2025 [cite: 20]</div>
-                            <div class="fw-bold">Assistant Professor of Marketing [cite: 19]</div>
-                            <div class="small text-muted">IIM Ranchi, India [cite: 19]</div>
+                            <div class="timeline-date">Jun 2025 – Sept 2025</div>
+                            <div class="fw-bold">Assistant Professor of Marketing</div>
+                            <div class="small text-muted">IIM Ranchi, India</div>
                         </div>
                         <div class="timeline-item-compact">
-                            <div class="timeline-date">Nov 2021 – Oct 2024 [cite: 23]</div>
-                            <div class="fw-bold">Assistant Professor of Marketing [cite: 22]</div>
-                            <div class="small text-muted">IIM Bodhgaya, India [cite: 22]</div>
+                            <div class="timeline-date">Nov 2021 – Oct 2024</div>
+                            <div class="fw-bold">Assistant Professor of Marketing</div>
+                            <div class="small text-muted">IIM Bodhgaya, India</div>
                         </div>
                         <div class="timeline-item-compact">
-                            <div class="timeline-date">Jan 2015 – Dec 2020 [cite: 26]</div>
-                            <div class="fw-bold">Research Assistant and Instructor [cite: 25]</div>
-                            <div class="small text-muted">GSEM Geneva, Switzerland [cite: 25]</div>
+                            <div class="timeline-date">Jan 2015 – Dec 2020</div>
+                            <div class="fw-bold">Research Assistant and Instructor</div>
+                            <div class="small text-muted">GSEM Geneva, Switzerland</div>
                         </div>
                     </div>
                 </div>
@@ -366,7 +363,7 @@
                     <div class="info-card mb-4">
                         <h4 style="font-size: 1rem;"><i class="fas fa-users-cog text-secondary"></i> Institutional Service</h4>
                         <ul class="small ps-3 mb-0">
-                            <li class="mb-1">Placement In-Charge, Faculty of Management, SAU</li>
+                            <li class="mb-1">Head of Career Development & Student Success, SAU</li>
                             <li class="mb-1">Primary Guide: 1 Ph.D. Scholar</li>
                             <li>Co-Guide: 1 Executive Ph.D. Scholar</li>
                         </ul>
