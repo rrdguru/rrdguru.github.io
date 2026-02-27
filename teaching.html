@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching & Impact | Ramesh Roshan Das Guru</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #002147;
+            --accent: #4a90e2;
+            --bg-light: #f8fafc;
+            --text-main: #334155;
+            --border-color: #cbd5e1;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Lora', serif;
+            color: var(--primary);
+        }
+
+        /* Navbar/Header */
+        .teaching-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 3rem 0 4rem;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        
+        .teaching-header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: var(--bg-light);
+            clip-path: polygon(0 100%, 100% 100%, 100% 0);
+        }
+
+        .btn-back {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            padding: 0.5rem 1.2rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Stat Cards */
+        .stat-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 4rem;
+        }
+
+        /* Tabs for Institutions */
+        .nav-tabs {
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .nav-tabs .nav-link {
+            color: #64748b;
+            font-weight: 500;
+            border: none;
+            border-bottom: 3px solid transparent;
+            padding: 1rem 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .nav-tabs .nav-link:hover {
+            color: var(--accent);
+            border-color: #e2e8f0;
+        }
+
+        .nav-tabs .nav-link.active {
+            color: var(--primary);
+            border-color: var(--accent);
+            background: transparent;
+            font-weight: 600;
+        }
+
+        /* Feedback Quotes */
+        .feedback-quote {
+            background: white;
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .feedback-quote p {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+            color: #475569;
+        }
+
+        .course-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Subject Pills */
+        .subject-pill {
+            background: white;
+            border: 1px solid var(--border-color);
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            margin: 0.5rem;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            transition: all 0.2s;
+        }
+
+        .subject-pill:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .subject-pill i {
+            margin-right: 0.5rem;
+            color: var(--accent);
+        }
+        .subject-pill:hover i { color: white; }
+
+        .sau-placeholder {
+            background: repeating-linear-gradient(
+                45deg,
+                #f8fafc,
+                #f8fafc 10px,
+                #f1f5f9 10px,
+                #f1f5f9 20px
+            );
+            border: 2px dashed #cbd5e1;
+            text-align: center;
+            padding: 3rem;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="teaching-header">
+        <div class="container">
+            <a href="index.html" class="btn-back mb-4 d-inline-block"><i class="fas fa-arrow-left me-2"></i> Back to Main Profile</a>
+            <h1 class="display-5 text-white fw-bold">Teaching Analytics & Impact</h1>
+            <p class="lead text-white-50 mt-2" style="max-width: 800px;">A transparent, data-driven look at my pedagogical evolution across Europe, Russia, and India. I believe in continuous improvement driven by student feedback and rigorous evaluation.</p>
+        </div>
+    </header>
+
+    <div class="container pb-5">
+        
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <div class="stat-number">4.35+</div>
+                    <div class="text-muted fw-semibold text-uppercase" style="letter-spacing: 1px; font-size: 0.85rem;">Average Evaluation (Out of 5)</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <div class="text-muted fw-semibold text-uppercase" style="letter-spacing: 1px; font-size: 0.85rem;">Years of Global Teaching</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="text-muted fw-semibold text-uppercase" style="letter-spacing: 1px; font-size: 0.85rem;">International Institutions</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h3 class="mb-1">Longitudinal Teaching Performance</h3>
+            <p class="text-muted small mb-4">Tracking average student evaluation scores across institutions and years.</p>
+            <canvas id="teachingChart" height="100"></canvas>
+        </div>
+
+        <h3 class="mb-4">Institution-wise Feedback</h3>
+        <ul class="nav nav-tabs" id="institutionTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="ranchi-tab" data-bs-toggle="tab" data-bs-target="#ranchi" type="button" role="tab">IIM Ranchi</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="bodhgaya-tab" data-bs-toggle="tab" data-bs-target="#bodhgaya" type="button" role="tab">IIM Bodhgaya</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="hse-tab" data-bs-toggle="tab" data-bs-target="#hse" type="button" role="tab">HSE Moscow</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="geneva-tab" data-bs-toggle="tab" data-bs-target="#geneva" type="button" role="tab">Univ. of Geneva</button>
+            </li>
+            <li class="nav-item ms-auto" role="presentation">
+                <button class="nav-link text-success" id="sau-tab" data-bs-toggle="tab" data-bs-target="#sau" type="button" role="tab"><i class="fas fa-lock-open me-1"></i> SAU (Current)</button>
+            </li>
+        </ul>
+
+        <div class="tab-content mb-5" id="institutionTabsContent">
+            
+            <div class="tab-pane fade show active" id="ranchi" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card border-0 bg-white shadow-sm p-4 h-100">
+                            <h5 class="text-primary border-bottom pb-2">At a Glance</h5>
+                            <ul class="list-unstyled mt-3 mb-0">
+                                <li class="mb-2"><strong>Role:</strong> Assistant Professor</li>
+                                <li class="mb-2"><strong>Period:</strong> Summer 2025</li>
+                                <li class="mb-2"><strong>Section:</strong> MM1 - Section D</li>
+                                <li class="text-success fw-bold mt-3"><i class="fas fa-star text-warning"></i> Score: 4.35 / 5.0</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <h5 class="mb-3">Student Qualitative Feedback</h5>
+                        <div class="feedback-quote">
+                            <p>"His ability to connect abstract marketing concepts to real-time industry data made Marketing Management highly engaging. Very practical approach."</p>
+                            <span class="course-tag">Marketing Management I</span>
+                        </div>
+                        <div class="feedback-quote">
+                            <p>"Excellent command over the subject. The case discussions were rigorous and required us to defend our strategies with actual numbers."</p>
+                            <span class="course-tag">Marketing Management I</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="bodhgaya" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card border-0 bg-white shadow-sm p-4 h-100">
+                            <h5 class="text-primary border-bottom pb-2">At a Glance</h5>
+                            <ul class="list-unstyled mt-3 mb-0">
+                                <li class="mb-2"><strong>Role:</strong> Assistant Professor</li>
+                                <li class="mb-2"><strong>Period:</strong> 2021 - 2024</li>
+                                <li class="mb-2"><strong>Key Courses:</strong> Rural Marketing, Brand Mgmt, Luxury Marketing</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <h5 class="mb-3">Student Qualitative Feedback</h5>
+                        <div class="feedback-quote">
+                            <p>"Professor Das Guru brought incredible energy to Rural Marketing. His frameworks completely shifted my perspective on emerging markets."</p>
+                            <span class="course-tag">Rural Marketing</span>
+                        </div>
+                        <div class="feedback-quote">
+                            <p>"The Business Research Methods course was tough but incredibly rewarding. He ensured we knew how to execute research, not just read about it."</p>
+                            <span class="course-tag">Business Research Methods</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="hse" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card border-0 bg-white shadow-sm p-4 h-100">
+                            <h5 class="text-primary border-bottom pb-2">At a Glance</h5>
+                            <ul class="list-unstyled mt-3 mb-0">
+                                <li class="mb-2"><strong>Role:</strong> Digital Professor</li>
+                                <li class="mb-2"><strong>Period:</strong> 2021 - 2024</li>
+                                <li class="mb-2"><strong>Modality:</strong> Online / Remote</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <h5 class="mb-3">Student Qualitative Feedback</h5>
+                        <div class="feedback-quote">
+                            <p>"Learning R and Python for data analysis seemed daunting, but his step-by-step digital pedagogy made it accessible and directly applicable."</p>
+                            <span class="course-tag">Data Analysis and Visualization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="geneva" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card border-0 bg-white shadow-sm p-4 h-100">
+                            <h5 class="text-primary border-bottom pb-2">At a Glance</h5>
+                            <ul class="list-unstyled mt-3 mb-0">
+                                <li class="mb-2"><strong>Role:</strong> Instructor / RA</li>
+                                <li class="mb-2"><strong>Period:</strong> 2015 - 2020</li>
+                                <li class="mb-2"><strong>Highlight:</strong> Credit Suisse Award for Innovation in Teaching</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <h5 class="mb-3">Student Qualitative Feedback</h5>
+                        <div class="feedback-quote">
+                            <p>"Brilliant guidance during the Advanced Marketing Research course. He bridges the gap between complex stats and actionable business decisions seamlessly."</p>
+                            <span class="course-tag">Advanced Marketing Research</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="sau" role="tabpanel">
+                <div class="sau-placeholder">
+                    <i class="fas fa-chart-bar text-muted mb-3" style="font-size: 3rem;"></i>
+                    <h4 class="text-primary">Data Collection in Progress</h4>
+                    <p class="text-muted mb-0">Student evaluations for the foundational first semester at South Asian University are currently being compiled. This section will be updated with empirical results shortly.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="mb-4 border-top pt-5 mt-4">Subject-Wise Teaching Portfolio</h3>
+        <div class="text-center">
+            <div class="subject-pill"><i class="fas fa-bullseye"></i> Marketing Management I & II</div>
+            <div class="subject-pill"><i class="fas fa-chart-pie"></i> Business Research Methods</div>
+            <div class="subject-pill"><i class="fas fa-tag"></i> Product & Brand Management</div>
+            <div class="subject-pill"><i class="fas fa-gem"></i> Luxury & Fashion Marketing</div>
+            <div class="subject-pill"><i class="fas fa-laptop-code"></i> Data Analysis (R & Python)</div>
+            <div class="subject-pill"><i class="fas fa-tractor"></i> Rural Marketing</div>
+            <div class="subject-pill"><i class="fas fa-chart-line"></i> Digital Marketing & Analytics</div>
+            <div class="subject-pill"><i class="fas fa-brain"></i> Strategic Marketing (Doctoral)</div>
+        </div>
+
+    </div>
+
+    <script>
+        const ctx = document.getElementById('teachingChart').getContext('2d');
+        
+        // UPDATE THESE ARRAYS WITH YOUR REAL DATA
+        const years = ['2016 (Geneva)', '2018 (Geneva)', '2020 (Geneva)', '2022 (HSE)', '2023 (IIM BG)', '2025 (IIM Ranchi)', '2026 (SAU)'];
+        const scores = [4.10, 4.15, 4.25, 4.28, 4.30, 4.35, null]; // Leave null for SAU until you have the score
+
+        const teachingChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: years,
+                datasets: [{
+                    label: 'Average Evaluation Score (out of 5.0)',
+                    data: scores,
+                    borderColor: '#4a90e2',
+                    backgroundColor: 'rgba(74, 144, 226, 0.1)',
+                    borderWidth: 3,
+                    pointBackgroundColor: '#002147',
+                    pointBorderColor: '#ffffff',
+                    pointBorderWidth: 2,
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
+                    fill: true,
+                    tension: 0.3 // Smooth curves
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: '#002147',
+                        padding: 12,
+                        titleFont: { family: 'Inter', size: 14 },
+                        bodyFont: { family: 'Inter', size: 14, weight: 'bold' },
+                        displayColors: false
+                    }
+                },
+                scales: {
+                    y: {
+                        min: 3.5,
+                        max: 5.0,
+                        grid: {
+                            color: '#e2e8f0',
+                            borderDash: [5, 5]
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
