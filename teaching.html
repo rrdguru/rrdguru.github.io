@@ -22,6 +22,8 @@
             color: var(--text-main);
             background-color: var(--bg-light);
             line-height: 1.7;
+            margin: 0;
+            padding: 0;
         }
 
         h1, h2, h3, h4, h5 {
@@ -29,7 +31,6 @@
             color: var(--primary);
         }
 
-        /* Navbar/Header */
         .teaching-header {
             background-color: var(--primary);
             color: white;
@@ -65,7 +66,6 @@
             color: var(--primary);
         }
 
-        /* Stat Cards */
         .stat-card {
             background: white;
             border-radius: 10px;
@@ -91,7 +91,6 @@
             font-family: 'Inter', sans-serif;
         }
 
-        /* Chart Container */
         .chart-container {
             background: white;
             border-radius: 12px;
@@ -101,7 +100,6 @@
             margin-bottom: 4rem;
         }
 
-        /* Tabs for Institutions */
         .nav-tabs {
             border-bottom: 2px solid var(--border-color);
             margin-bottom: 2rem;
@@ -114,6 +112,7 @@
             border-bottom: 3px solid transparent;
             padding: 1rem 1.5rem;
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         .nav-tabs .nav-link:hover {
@@ -128,7 +127,6 @@
             font-weight: 600;
         }
 
-        /* Feedback Quotes */
         .feedback-quote {
             background: white;
             border-left: 4px solid var(--accent);
@@ -151,33 +149,6 @@
             color: var(--accent);
             font-weight: 600;
         }
-
-        /* Subject Pills */
-        .subject-pill {
-            background: white;
-            border: 1px solid var(--border-color);
-            padding: 1rem 1.5rem;
-            border-radius: 50px;
-            display: inline-flex;
-            align-items: center;
-            margin: 0.5rem;
-            font-weight: 500;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-            transition: all 0.2s;
-        }
-
-        .subject-pill:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-            transform: translateY(-2px);
-        }
-
-        .subject-pill i {
-            margin-right: 0.5rem;
-            color: var(--accent);
-        }
-        .subject-pill:hover i { color: white; }
 
         .sau-placeholder {
             background: repeating-linear-gradient(
@@ -210,7 +181,7 @@
             <div class="col-md-4">
                 <div class="stat-card">
                     <div class="stat-number">4.35+</div>
-                    <div class="text-muted fw-semibold text-uppercase" style="letter-spacing: 1px; font-size: 0.85rem;">Average Evaluation (Out of 5)</div>
+                    <div class="text-muted fw-semibold text-uppercase" style="letter-spacing: 1px; font-size: 0.85rem;">Peak Average Evaluation</div>
                 </div>
             </div>
             <div class="col-md-4">
@@ -270,11 +241,11 @@
                     <div class="col-md-8">
                         <h5 class="mb-3">Student Qualitative Feedback</h5>
                         <div class="feedback-quote">
-                            <p>"His ability to connect abstract marketing concepts to real-time industry data made Marketing Management highly engaging. Very practical approach."</p>
+                            <p>"[Insert your best quote from the IIM Ranchi CSV here regarding practical approach]"</p>
                             <span class="course-tag">Marketing Management I</span>
                         </div>
                         <div class="feedback-quote">
-                            <p>"Excellent command over the subject. The case discussions were rigorous and required us to defend our strategies with actual numbers."</p>
+                            <p>"[Insert your second best quote from the IIM Ranchi CSV here regarding case discussions]"</p>
                             <span class="course-tag">Marketing Management I</span>
                         </div>
                     </div>
@@ -289,19 +260,15 @@
                             <ul class="list-unstyled mt-3 mb-0">
                                 <li class="mb-2"><strong>Role:</strong> Assistant Professor</li>
                                 <li class="mb-2"><strong>Period:</strong> 2021 - 2024</li>
-                                <li class="mb-2"><strong>Key Courses:</strong> Rural Marketing, Brand Mgmt, Luxury Marketing</li>
+                                <li class="mb-2"><strong>Key Courses:</strong> Rural Marketing, Brand Mgmt</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-8">
                         <h5 class="mb-3">Student Qualitative Feedback</h5>
                         <div class="feedback-quote">
-                            <p>"Professor Das Guru brought incredible energy to Rural Marketing. His frameworks completely shifted my perspective on emerging markets."</p>
+                            <p>"[Insert quote from Bodhgaya PDF here regarding energy and perspective]"</p>
                             <span class="course-tag">Rural Marketing</span>
-                        </div>
-                        <div class="feedback-quote">
-                            <p>"The Business Research Methods course was tough but incredibly rewarding. He ensured we knew how to execute research, not just read about it."</p>
-                            <span class="course-tag">Business Research Methods</span>
                         </div>
                     </div>
                 </div>
@@ -322,7 +289,7 @@
                     <div class="col-md-8">
                         <h5 class="mb-3">Student Qualitative Feedback</h5>
                         <div class="feedback-quote">
-                            <p>"Learning R and Python for data analysis seemed daunting, but his step-by-step digital pedagogy made it accessible and directly applicable."</p>
+                            <p>"[Insert quote from HSE Moscow PDF here regarding digital pedagogy]"</p>
                             <span class="course-tag">Data Analysis and Visualization</span>
                         </div>
                     </div>
@@ -337,14 +304,14 @@
                             <ul class="list-unstyled mt-3 mb-0">
                                 <li class="mb-2"><strong>Role:</strong> Instructor / RA</li>
                                 <li class="mb-2"><strong>Period:</strong> 2015 - 2020</li>
-                                <li class="mb-2"><strong>Highlight:</strong> Credit Suisse Award for Innovation in Teaching</li>
+                                <li class="mb-2"><strong>Highlight:</strong> Credit Suisse Award for Innovation</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-8">
                         <h5 class="mb-3">Student Qualitative Feedback</h5>
                         <div class="feedback-quote">
-                            <p>"Brilliant guidance during the Advanced Marketing Research course. He bridges the gap between complex stats and actionable business decisions seamlessly."</p>
+                            <p>"[Insert quote from Geneva PDF here regarding bridging stats and business]"</p>
                             <span class="course-tag">Advanced Marketing Research</span>
                         </div>
                     </div>
@@ -360,26 +327,13 @@
             </div>
         </div>
 
-        <h3 class="mb-4 border-top pt-5 mt-4">Subject-Wise Teaching Portfolio</h3>
-        <div class="text-center">
-            <div class="subject-pill"><i class="fas fa-bullseye"></i> Marketing Management I & II</div>
-            <div class="subject-pill"><i class="fas fa-chart-pie"></i> Business Research Methods</div>
-            <div class="subject-pill"><i class="fas fa-tag"></i> Product & Brand Management</div>
-            <div class="subject-pill"><i class="fas fa-gem"></i> Luxury & Fashion Marketing</div>
-            <div class="subject-pill"><i class="fas fa-laptop-code"></i> Data Analysis (R & Python)</div>
-            <div class="subject-pill"><i class="fas fa-tractor"></i> Rural Marketing</div>
-            <div class="subject-pill"><i class="fas fa-chart-line"></i> Digital Marketing & Analytics</div>
-            <div class="subject-pill"><i class="fas fa-brain"></i> Strategic Marketing (Doctoral)</div>
-        </div>
-
     </div>
 
     <script>
         const ctx = document.getElementById('teachingChart').getContext('2d');
         
-        // UPDATE THESE ARRAYS WITH YOUR REAL DATA
-        const years = ['2016 (Geneva)', '2018 (Geneva)', '2020 (Geneva)', '2022 (HSE)', '2023 (IIM BG)', '2025 (IIM Ranchi)', '2026 (SAU)'];
-        const scores = [4.10, 4.15, 4.25, 4.28, 4.30, 4.35, null]; // Leave null for SAU until you have the score
+        const years = ['2016-2020 (Geneva)', '2021-2024 (HSE/Bodhgaya)', '2025 (IIM Ranchi)', '2026 (SAU)'];
+        const scores = [4.10, 4.25, 4.35, null]; 
 
         const teachingChart = new Chart(ctx, {
             type: 'line',
@@ -397,7 +351,7 @@
                     pointRadius: 6,
                     pointHoverRadius: 8,
                     fill: true,
-                    tension: 0.3 // Smooth curves
+                    tension: 0.3
                 }]
             },
             options: {
