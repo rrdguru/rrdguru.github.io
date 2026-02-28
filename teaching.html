@@ -1,411 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching | Ramesh Roshan Das Guru</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #002147;
+            --accent: #4a90e2;
+            --bg: #f8fafc;
+            --text: #334155;
+            --border: #cbd5e1;
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
 
-<title>Teaching | Ramesh Roshan Das Guru</title>
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
+            color: var(--primary);
+            font-weight: 600;
+        }
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%);
+            color: white;
+            padding: 60px 0 80px;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: var(--bg);
+            clip-path: polygon(0 100%, 100% 100%, 100% 0);
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        .section {
+            padding: 50px 0;
+        }
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        .section h2 {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+        }
 
-<style>
+        .card-teaching {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            margin-bottom: 25px;
+            height: 100%;
+            transition: transform 0.2s;
+        }
+        
+        .card-teaching:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        }
 
-:root{
---primary:#002147;
---accent:#4a90e2;
---bg:#f7f9fb;
---text:#374151;
-}
+        .quote {
+            font-style: italic;
+            background: white;
+            border-left: 4px solid var(--accent);
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            color: #475569;
+        }
 
-body{
-font-family:Inter;
-background:var(--bg);
-color:var(--text);
-line-height:1.7;
-}
+        .metric {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 10px;
+            font-family: 'Inter', sans-serif;
+        }
 
-h1,h2,h3{
-font-family:Lora;
-color:var(--primary);
-}
+        .course-pill {
+            padding: 8px 18px;
+            background: #f1f5f9;
+            border-radius: 30px;
+            border: 1px solid #e2e8f0;
+            cursor: pointer;
+            margin: 5px 5px 10px 0;
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            color: var(--text);
+        }
 
-.header{
-background:linear-gradient(135deg,#002147,#0f172a);
-color:white;
-padding:70px 0;
-}
+        .course-pill:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
 
-.section{
-padding:70px 0;
-}
+        .loading {
+            background: repeating-linear-gradient(45deg, #f8fafc, #f8fafc 10px, #f1f5f9 10px, #f1f5f9 20px);
+            border: 2px dashed #cbd5e1;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            color: #64748b;
+        }
+        
+        .btn-back {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            padding: 0.5rem 1.2rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
 
-.card-teaching{
-background:white;
-border-radius:10px;
-padding:25px;
-box-shadow:0 4px 12px rgba(0,0,0,0.05);
-margin-bottom:25px;
-}
-
-.quote{
-font-style:italic;
-background:white;
-border-left:4px solid var(--accent);
-padding:20px;
-margin-bottom:15px;
-}
-
-.metric{
-font-size:34px;
-font-weight:600;
-color:var(--accent);
-}
-
-.course-pill{
-padding:8px 16px;
-background:white;
-border-radius:30px;
-border:1px solid #ddd;
-cursor:pointer;
-margin:5px;
-display:inline-block;
-}
-
-.course-pill:hover{
-background:var(--accent);
-color:white;
-}
-
-.loading{
-background:#fff8e6;
-padding:20px;
-border-radius:8px;
-}
-
-</style>
-
+        .btn-back:hover {
+            background: white;
+            color: var(--primary);
+        }
+    </style>
 </head>
-
 <body>
 
-<header class="header text-center">
-
-<div class="container">
-
-<h1>Teaching</h1>
-
-<p class="lead">
-
-Helping students learn how to think about problems before trying to solve them.
-
-</p>
-
-</div>
-
-</header>
-
-
-<div class="container">
-
-<!-- PHILOSOPHY -->
-
-<section class="section">
-
-<h2>Teaching Philosophy</h2>
-
-<div class="card-teaching">
-
-<p>
-
-My approach to teaching begins with a simple belief. Before solving a problem, one must first understand it properly.
-
-In many classrooms the focus quickly shifts toward arriving at the correct answer. My classes instead slow down the process and emphasize structured thinking. Students are encouraged to question assumptions, analyze the structure of problems, and explore alternative explanations before proposing solutions.
-
-</p>
-
-<p>
-
-Across courses such as Marketing Management, Product Management, Brand Management, and Business Research Methods, students are trained to approach managerial problems as intellectual puzzles. Through case discussions, analytical frameworks, and applied projects, the objective is not simply to transfer knowledge but to develop independent thinking.
-
-</p>
-
-<p>
-
-This philosophy has evolved through teaching diverse cohorts in Europe, Russia, and India. Across these contexts one lesson has remained constant: when students learn how to think clearly about problems, they gain confidence that extends far beyond the classroom.
-
-</p>
-
-</div>
-
-</section>
-
-
-<!-- COURSES -->
-
-<section class="section">
-
-<h2>Courses Taught</h2>
-
-<div class="card-teaching">
-
-<h5>Marketing and Strategy</h5>
-
-<div>
-
-<span class="course-pill" onclick="showCourse('mm')">Marketing Management</span>
-<span class="course-pill" onclick="showCourse('bm')">Brand Management</span>
-<span class="course-pill" onclick="showCourse('pm')">Product Management</span>
-<span class="course-pill" onclick="showCourse('lux')">Luxury & Fashion Marketing</span>
-<span class="course-pill" onclick="showCourse('rural')">Rural Marketing</span>
-
-</div>
-
-<br>
-
-<h5>Research and Analytics</h5>
-
-<div>
-
-<span class="course-pill" onclick="showCourse('brm')">Business Research Methods</span>
-<span class="course-pill" onclick="showCourse('amr')">Advanced Marketing Research</span>
-<span class="course-pill" onclick="showCourse('data')">Data Driven Decision Making</span>
-
-</div>
-
-<br>
-
-<h5>Interdisciplinary Courses</h5>
-
-<div>
-
-<span class="course-pill" onclick="showCourse('ethics')">Business Ethics</span>
-<span class="course-pill" onclick="showCourse('indian')">Indian Ethics</span>
-<span class="course-pill" onclick="showCourse('bi')">Business Intelligence & Data Science</span>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- METRICS -->
-
-<section class="section">
-
-<h2>Teaching Evaluation Overview</h2>
-
-<div class="row text-center">
-
-<div class="col-md-4">
-
-<div class="card-teaching">
-
-<div class="metric">4.35</div>
-
-Average student evaluation across institutions
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="card-teaching">
-
-<div class="metric">1000+</div>
-
-Students taught across programs
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="card-teaching">
-
-<div class="metric">10+</div>
-
-Distinct courses designed and delivered
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CHART -->
-
-<section class="section">
-
-<h2>Evaluation Trend</h2>
-
-<div class="card-teaching">
-
-<canvas id="evalChart"></canvas>
-
-</div>
-
-</section>
-
-
-<!-- THEMATIC INSIGHTS -->
-
-<section class="section">
-
-<h2>Insights from Student Feedback</h2>
-
-<div class="row">
-
-<div class="col-md-4">
-
-<div class="card-teaching">
-
-<h5>Encouraging Critical Thinking</h5>
-
-<p>
-
-Students frequently note that assignments and examinations require reasoning rather than memorization. Several comments specifically mention that the assessments “make us think” about marketing problems.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="card-teaching">
-
-<h5>Real World Relevance</h5>
-
-<p>
-
-Examples drawn from industry experience and research are regularly highlighted in feedback as helping students connect theory with real business decisions.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="card-teaching">
-
-<h5>High Intellectual Expectations</h5>
-
-<p>
-
-Many students describe the courses as challenging but rewarding, noting that preparation and participation significantly deepen their learning experience.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- STUDENT VOICES -->
-
-<section class="section">
-
-<h2>Student Voices</h2>
-
-<div class="quote">
-
-"I enjoy solving your exams because they actually make us think rather than memorize information."
-
-</div>
-
-<div class="quote">
-
-"You genuinely influenced the way I think about marketing and my career."
-
-</div>
-
-<div class="quote">
-
-"Your real world examples made the concepts easy to understand."
-
-</div>
-
-<div class="quote">
-
-"You were one of the few professors who really made us think deeply about the subject."
-
-</div>
-
-</section>
-
-
-<!-- SOUTH ASIAN UNIVERSITY -->
-
-<section class="section">
-
-<h2>South Asian University</h2>
-
-<div class="loading">
-
-Teaching evaluations for courses currently taught at South Asian University will be added once the first cycle of student feedback becomes available.
-
-</div>
-
-</section>
-
-
-</div>
-
-
-<script>
-
-function showCourse(course){
-
-alert("Detailed analytics for this course will be added in the next update of the teaching dashboard.");
-
-}
-
-
-const ctx=document.getElementById('evalChart');
-
-new Chart(ctx,{
-type:'line',
-data:{
-labels:['Geneva','HSE Moscow','IIM Bodh Gaya','IIM Ranchi'],
-datasets:[{
-label:'Average Evaluation',
-data:[4.1,4.2,4.28,4.35],
-borderColor:'#4a90e2',
-fill:false,
-tension:0.3
-}]
-},
-options:{
-scales:{
-y:{
-min:3.5,
-max:5
-}
-}
-}
-});
-
-</script>
-
+    <header class="header text-center">
+        <div class="container">
+            <div class="text-start mb-4">
+                <a href="index.html" class="btn-back"><i class="fas fa-arrow-left me-2"></i> Back to Main Profile</a>
+            </div>
+            <h1 class="display-4 text-white">Teaching Philosophy & Impact</h1>
+            <p class="lead text-white-50 mt-3 mx-auto" style="max-width: 700px;">
+                Helping students learn how to think about problems before trying to solve them.
+            </p>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <section class="section">
+            <h2>Teaching Philosophy</h2>
+            <div class="card-teaching border-0">
+                <p>My approach to teaching begins with a simple belief: Before solving a problem, one must first understand it properly.</p>
+                <p>In many classrooms, the focus quickly shifts toward arriving at the correct answer. My classes instead slow down the process and emphasize structured thinking. Students are encouraged to question assumptions, analyze the structure of problems, and explore alternative explanations before proposing solutions.</p>
+                <p>Across courses such as Marketing Management, Product Management, Brand Management, and Business Research Methods, students are trained to approach managerial problems as intellectual puzzles. Through case discussions, analytical frameworks, and applied projects, the objective is not simply to transfer knowledge but to develop independent thinking.</p>
+                <p class="mb-0">This philosophy has evolved through teaching diverse cohorts in Europe, Russia, and India. Across these contexts one lesson has remained constant: when students learn how to think clearly about problems, they gain confidence that extends far beyond the classroom.</p>
+            </div>
+        </section>
+
+        <section class="section pt-0">
+            <h2>Courses Taught</h2>
+            <div class="card-teaching border-0">
+                <h5 class="text-primary mb-3">Marketing and Strategy</h5>
+                <div class="mb-4">
+                    <span class="course-pill" onclick="showCourse('mm')">Marketing Management</span>
+                    <span class="course-pill" onclick="showCourse('bm')">Brand Management</span>
+                    <span class="course-pill" onclick="showCourse('pm')">Product Management</span>
+                    <span class="course-pill" onclick="showCourse('lux')">Luxury & Fashion Marketing</span>
+                    <span class="course-pill" onclick="showCourse('rural')">Rural Marketing</span>
+                </div>
+
+                <h5 class="text-primary mb-3">Research and Analytics</h5>
+                <div class="mb-4">
+                    <span class="course-pill" onclick="showCourse('brm')">Business Research Methods</span>
+                    <span class="course-pill" onclick="showCourse('amr')">Advanced Marketing Research</span>
+                    <span class="course-pill" onclick="showCourse('data')">Data Driven Decision Making</span>
+                </div>
+
+                <h5 class="text-primary mb-3">Interdisciplinary Courses</h5>
+                <div class="mb-0">
+                    <span class="course-pill" onclick="showCourse('ethics')">Business Ethics</span>
+                    <span class="course-pill" onclick="showCourse('indian')">Indian Ethics</span>
+                    <span class="course-pill" onclick="showCourse('bi')">Business Intelligence & Data Science</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pt-0">
+            <h2>Teaching Evaluation Overview</h2>
+            <div class="row text-center g-4">
+                <div class="col-md-4">
+                    <div class="card-teaching">
+                        <div class="metric">4.35+</div>
+                        <div class="text-muted small text-uppercase fw-bold">Average student evaluation across institutions</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-teaching">
+                        <div class="metric">1,000+</div>
+                        <div class="text-muted small text-uppercase fw-bold">Students taught across programs cumulatively</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-teaching">
+                        <div class="metric">10+</div>
+                        <div class="text-muted small text-uppercase fw-bold">Distinct courses designed and delivered</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pt-0">
+            <h2>Evaluation Trend</h2>
+            <div class="card-teaching border-0">
+                <canvas id="evalChart" height="80"></canvas>
+            </div>
+        </section>
+
+        <section class="section pt-0">
+            <h2>Insights from Student Feedback</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card-teaching">
+                        <h5 class="text-primary mb-3"><i class="fas fa-brain text-secondary me-2"></i> Encouraging Critical Thinking</h5>
+                        <p class="small mb-0">Students frequently note that assignments and examinations require reasoning rather than memorization. Several comments specifically mention that the assessments “make us think” about marketing problems.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-teaching">
+                        <h5 class="text-primary mb-3"><i class="fas fa-briefcase text-secondary me-2"></i> Real World Relevance</h5>
+                        <p class="small mb-0">Examples drawn from industry experience and research are regularly highlighted in feedback as helping students connect theory with real business decisions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-teaching">
+                        <h5 class="text-primary mb-3"><i class="fas fa-chart-line text-secondary me-2"></i> High Intellectual Expectations</h5>
+                        <p class="small mb-0">Many students describe the courses as challenging but rewarding, noting that preparation and participation significantly deepen their learning experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pt-0">
+            <h2>Student Voices</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="quote">"I enjoy solving your exams because they actually make us think rather than memorize information."</div>
+                    <div class="quote">"You genuinely influenced the way I think about marketing and my career."</div>
+                </div>
+                <div class="col-md-6">
+                    <div class="quote">"Your real world examples made the concepts easy to understand."</div>
+                    <div class="quote">"You were one of the few professors who really made us think deeply about the subject."</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pt-0 mb-5">
+            <h2>South Asian University</h2>
+            <div class="loading">
+                <i class="fas fa-hourglass-half fs-3 mb-3 text-secondary"></i>
+                <p class="mb-0">Teaching evaluations for courses currently taught at South Asian University will be added once the first cycle of student feedback becomes available.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function showCourse(course){
+            alert("Detailed analytics for this course will be added in the next update of the teaching dashboard.");
+        }
+
+        const ctx = document.getElementById('evalChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Geneva', 'HSE Moscow', 'IIM Bodh Gaya', 'IIM Ranchi'],
+                datasets: [{
+                    label: 'Average Evaluation Score',
+                    data: [4.10, 4.20, 4.28, 4.35],
+                    borderColor: '#4a90e2',
+                    backgroundColor: 'rgba(74, 144, 226, 0.1)',
+                    borderWidth: 3,
+                    pointBackgroundColor: '#002147',
+                    pointBorderColor: '#ffffff',
+                    pointRadius: 6,
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        min: 3.5,
+                        max: 5.0,
+                        grid: { color: '#e2e8f0' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
