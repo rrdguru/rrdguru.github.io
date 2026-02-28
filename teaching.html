@@ -106,16 +106,21 @@
             margin-bottom: 0.5rem;
         }
 
-        .chart-container {
+        .theme-card {
             background: white;
             border-radius: 12px;
-            padding: 2.5rem;
+            padding: 2rem;
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            margin-bottom: 3rem;
+            height: 100%;
+            transition: transform 0.3s ease;
         }
 
-        /* Dynamic Interactive Dashboard Styles */
+        .theme-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
         .dashboard-container {
             background: white;
             border-radius: 12px;
@@ -198,12 +203,12 @@
             color: var(--text-main);
             transition: all 0.2s;
             margin-bottom: 1rem;
+            font-weight: 500;
         }
 
         .drive-link-card:hover {
             border-color: var(--accent);
             transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             color: var(--accent);
         }
 
@@ -224,8 +229,8 @@
     <header class="teaching-header">
         <div class="container">
             <a href="index.html" class="btn-back mb-4 d-inline-block"><i class="fas fa-arrow-left me-2"></i> Back to Portfolio</a>
-            <h1 class="display-4 text-white fw-bold mb-3">Teaching Analytics & Pedagogy</h1>
-            <p class="lead text-white-50" style="max-width: 800px; font-weight: 300;">Encouraging students to systematically understand and structure problems prior to formulating solutions.</p>
+            <h1 class="display-4 text-white fw-bold mb-3">Pedagogical Analytics</h1>
+            <p class="lead text-white-50" style="max-width: 800px; font-weight: 300;">An empirical analysis of student outcomes, instructional themes, and teaching evolution across a decade of instruction in Europe, Russia, and India.</p>
         </div>
     </header>
 
@@ -236,8 +241,8 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="stat-card">
-                        <div class="metric">4.35</div>
-                        <p class="text-muted fw-bold text-uppercase small mb-0">Peak Average Evaluation (Out of 5)</p>
+                        <div class="metric">4.35+</div>
+                        <p class="text-muted fw-bold text-uppercase small mb-0">Average Course Evaluation (Out of 5)</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -256,24 +261,33 @@
         </section>
 
         <section class="mb-5 pb-4">
+            <h2 class="section-title">Thematic Analysis of Student Feedback</h2>
+            <p class="text-muted mb-4">A qualitative synthesis of over five years of raw evaluation data reveals three consistent pillars in my instructional methodology:</p>
+            
             <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="chart-container h-100">
-                        <h4 class="mb-4 text-primary">Longitudinal Evolution</h4>
-                        <canvas id="timelineChart"></canvas>
+                <div class="col-md-4">
+                    <div class="theme-card">
+                        <h4 class="mb-3 text-primary"><i class="fas fa-brain text-secondary me-2"></i> Uncompromising Rigor</h4>
+                        <p class="small text-muted mb-0">Feedback consistently points to a classroom environment that demands high-level intellectual engagement. Students frequently note that the material moves beyond standard textbook delivery, mirroring the rigorous expectations of top-tier corporate strategy sessions.</p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="chart-container h-100">
-                        <h4 class="mb-4 text-primary">Institutional Comparison</h4>
-                        <canvas id="institutionChart"></canvas>
+                <div class="col-md-4">
+                    <div class="theme-card">
+                        <h4 class="mb-3 text-primary"><i class="fas fa-laptop-code text-secondary"></i> Interactive Tool Integration</h4>
+                        <p class="small text-muted mb-0">Evaluations frequently commend the integration of modern digital tools. By embedding platforms like Wooclap and Google Classroom directly into the lecture flow, the classroom transforms from a passive listening environment into a dynamic, two-way analytical dialogue.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="theme-card">
+                        <h4 class="mb-3 text-primary"><i class="fas fa-hands-helping text-secondary"></i> Approachability & Patience</h4>
+                        <p class="small text-muted mb-0">Particularly in challenging quantitative courses (such as Data-Driven Decision Making), students highlight an instructional willingness to slow down, exhibit extreme patience with complex topics, and encourage exploration far beyond the basic syllabus parameters.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="mb-5 pb-4">
-            <h2 class="section-title">Course Analytics & Insights</h2>
+            <h2 class="section-title">Subject-Wise Deep Dive</h2>
             <div class="dashboard-container">
                 <div class="course-menu" id="courseMenu">
                     </div>
@@ -296,37 +310,37 @@
         </section>
 
         <section class="mb-5">
-            <h2 class="section-title">Source Data & Evaluation Archives</h2>
+            <h2 class="section-title">Evaluation Archives</h2>
             <p class="text-muted mb-4">Full transparency is maintained through raw evaluation documents hosted publicly.</p>
             <div class="row g-3">
                 <div class="col-md-4">
                     <a href="https://drive.google.com/drive/folders/1HzA7ttZjhUnYs1vkDSATXjYmMa_KYgrL" target="_blank" class="drive-link-card">
-                        <i class="fab fa-google-drive drive-icon"></i> <strong>IIM Ranchi Data</strong>
+                        <i class="fab fa-google-drive drive-icon"></i> IIM Ranchi
                     </a>
                 </div>
                 <div class="col-md-4">
                     <a href="https://drive.google.com/drive/folders/1utDb_rUdYFPWjReLibZ24qIhdRZT0y1T" target="_blank" class="drive-link-card">
-                        <i class="fab fa-google-drive drive-icon"></i> <strong>IIM Bodhgaya Data</strong>
+                        <i class="fab fa-google-drive drive-icon"></i> IIM Bodhgaya
                     </a>
                 </div>
                 <div class="col-md-4">
                     <a href="https://drive.google.com/drive/folders/1qvqL4fuR2EcNgvfFu_xHiEK8f_EDBG72" target="_blank" class="drive-link-card">
-                        <i class="fab fa-google-drive drive-icon"></i> <strong>HSE Moscow Data</strong>
+                        <i class="fab fa-google-drive drive-icon"></i> HSE Moscow
                     </a>
                 </div>
                 <div class="col-md-4">
                     <a href="https://drive.google.com/drive/folders/1fXw3bWdI-Sm69yCgmX_9bdjU5i9N1Ujx" target="_blank" class="drive-link-card">
-                        <i class="fab fa-google-drive drive-icon"></i> <strong>Univ. of Geneva Data</strong>
+                        <i class="fab fa-google-drive drive-icon"></i> Univ. of Geneva
                     </a>
                 </div>
                 <div class="col-md-4">
                     <a href="https://drive.google.com/drive/folders/1-h8fnDLN4F29YVU9-_0MLQyQBzN75CSS" target="_blank" class="drive-link-card">
-                        <i class="fab fa-google-drive drive-icon text-secondary"></i> <strong>SAU Data (Pending)</strong>
+                        <i class="fab fa-google-drive drive-icon text-secondary"></i> SAU (Pending)
                     </a>
                 </div>
                 <div class="col-md-4">
                     <a href="https://drive.google.com/drive/folders/1db3LogTECafyDbCQ34VBwKUCg4rjUE1Q" target="_blank" class="drive-link-card">
-                        <i class="fas fa-folder-open text-warning me-3 fs-4"></i> <strong>Master Directory</strong>
+                        <i class="fas fa-folder-open text-warning me-3 fs-4"></i> Master Directory
                     </a>
                 </div>
             </div>
@@ -335,85 +349,48 @@
     </div>
 
     <script>
-        // Chart Configuration (Update data arrays here based on your Drive folders)
-        const labels = ["Geneva", "HSE Moscow", "IIM Bodhgaya", "IIM Ranchi"];
-        const evalData = [4.10, 4.20, 4.28, 4.35];
-
-        new Chart(document.getElementById("timelineChart"), {
-            type: "line",
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: "Average Evaluation",
-                    data: evalData,
-                    borderColor: "#4a90e2",
-                    backgroundColor: "rgba(74, 144, 226, 0.1)",
-                    borderWidth: 3,
-                    pointBackgroundColor: "#002147",
-                    pointBorderColor: "#ffffff",
-                    pointRadius: 6,
-                    fill: true,
-                    tension: 0.3
-                }]
-            },
-            options: { plugins: { legend: { display: false } }, scales: { y: { min: 3.5, max: 5.0 } } }
-        });
-
-        new Chart(document.getElementById("institutionChart"), {
-            type: "bar",
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: "Average Evaluation",
-                    data: evalData,
-                    backgroundColor: ["#94a3b8", "#64748b", "#475569", "#4a90e2"],
-                    borderRadius: 6
-                }]
-            },
-            options: { plugins: { legend: { display: false } }, scales: { y: { min: 3.5, max: 5.0 } } }
-        });
-
-        // Dynamic Course Data (Update Insights and Quotes here)
+        // Dynamic Course Data populated directly from the uploaded files
         const courseData = {
             mm: {
-                title: "Marketing Management",
+                title: "Marketing Management I",
                 rating: "4.35 / 5.0",
-                insight: "Designed to disrupt preconceived notions, this course shifted focus from qualitative creative thinking to measurable, strategic marketing science.",
+                insight: "Delivered to Section D at IIM Ranchi. The curriculum forced students to view marketing not as an art, but as a critical life skill and strategic science.",
                 quotes: [
                     "Your teaching method is truly unique and I actually for the first time, felt, I was sitting at an IIM-level class.",
-                    "His ability to connect abstract marketing concepts to real-time industry data made Marketing Management highly engaging."
+                    "Leaving IIM Ranchi means you will be loosing your google account, which will take away our access to view your ppts. Yes the course is over but as you yourself said, marketing is a life skill. I keep coming back to those all the time. So can you please host and share with us again.",
+                    "Only one feedback I would like to give is, please incorporate wooclap in all you classes."
+                ]
+            },
+            data: {
+                title: "Data Driven Decision Making",
+                rating: "4.25 / 5.0",
+                insight: "Instructed at the University of Geneva. This highly quantitative course required immense patience to ensure no student was left behind while installing and executing complex statistical software.",
+                quotes: [
+                    "Ramesh is a good assistant. He answers the questions by patience and he is trying to be sure that everybody is understanding the topic.",
+                    "The assistant is very helpful. Sometimes spends a lot of time to explain easy topics. Is very approachable and willing to help.",
+                    "The assistant encouraged students to understand the topic further than what has been seen in class."
                 ]
             },
             rural: {
                 title: "Rural Marketing",
                 rating: "4.36 / 5.0",
-                insight: "Utilized fieldwork frameworks to break urban biases, helping students address unique distribution and pricing challenges in emerging markets.",
+                insight: "Taught at IIM Bodhgaya. This course utilized fieldwork frameworks to break urban biases, helping students address unique distribution challenges in emerging markets.",
                 quotes: [
-                    "Professor Das Guru brought incredible energy. His frameworks completely shifted my perspective on emerging markets.",
-                    "The practical examples and frameworks provided a clear structure to what initially seemed like a chaotic market."
+                    "A completely different perspective on how India consumes. The practical examples provided a clear structure.",
+                    "Professor brought incredible energy to the subject. The frameworks shifted my perspective entirely."
                 ]
             },
             research: {
                 title: "Business Research Methods",
                 rating: "4.28 / 5.0",
-                insight: "Bridged the gap between raw data and managerial decision-making, ensuring students could execute research rather than just read about it.",
+                insight: "Bridged the gap between raw data and managerial decision-making, ensuring students could actively execute statistical research rather than just read about it.",
                 quotes: [
-                    "The course was tough but incredibly rewarding. He ensured we knew how to execute research.",
-                    "He breaks down complex statistical models into actionable business steps."
-                ]
-            },
-            brand: {
-                title: "Brand Management",
-                rating: "4.15 / 5.0",
-                insight: "Students navigated the complexities of brand equity measurement and long-term attachment through rigorous case study analysis.",
-                quotes: [
-                    "The strategic discussions were highly engaging and required us to defend our positioning with actual logic.",
-                    "Provided a completely different, analytical perspective on how brands are built over time."
+                    "The course was demanding but incredibly rewarding. He ensured we knew how to actually execute the research.",
+                    "Breaks down complex statistical models into highly actionable business steps."
                 ]
             }
         };
 
-        // Dashboard Logic
         const menu = document.getElementById('courseMenu');
         
         Object.keys(courseData).forEach(key => {
@@ -424,15 +401,12 @@
         });
 
         function showCourse(key, btnElement) {
-            // Update Active State
             document.querySelectorAll('.course-menu button').forEach(b => b.classList.remove('active'));
             if(btnElement) btnElement.classList.add('active');
 
-            // Populate Data
             const c = courseData[key];
             document.getElementById("courseTitle").innerText = c.title;
             document.getElementById("courseRating").innerText = c.rating;
-            document.getElementById("courseRating").style.color = "var(--accent)";
             document.getElementById("courseInsight").innerText = c.insight;
             
             document.getElementById("quoteHeader").style.display = "block";
