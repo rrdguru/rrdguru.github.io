@@ -1,403 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching Analytics | Ramesh Roshan Das Guru</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #002147;
+            --accent: #4a90e2;
+            --bg-light: #f8fafc;
+            --text-main: #334155;
+            --border-color: #cbd5e1;
+            --success-color: #10b981;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+        h1, h2, h3, h4, h5 {
+            font-family: 'Lora', serif;
+            color: var(--primary);
+        }
 
-<title>Teaching | Ramesh Roshan Das Guru</title>
+        .teaching-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%);
+            color: white;
+            padding: 4rem 0 5rem;
+            position: relative;
+            margin-bottom: 4rem;
+        }
+        
+        .teaching-header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: var(--bg-light);
+            clip-path: polygon(0 100%, 100% 100%, 100% 0);
+        }
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        .btn-back {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            padding: 0.6rem 1.5rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+        .btn-back:hover {
+            background: white;
+            color: var(--primary);
+        }
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/wordcloud@1.1.2/src/wordcloud2.js"></script>
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--primary);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.8rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
 
-<style>
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+        }
 
-body{
-font-family:Inter;
-background:#f6f8fb;
-color:#334155;
-line-height:1.7;
-}
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            height: 100%;
+        }
 
-h1,h2,h3{
-font-family:Lora;
-color:#002147;
-}
+        .metric {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
 
-.header{
-background:linear-gradient(135deg,#002147,#0f172a);
-color:white;
-padding:80px 0;
-text-align:center;
-}
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            margin-bottom: 3rem;
+        }
 
-.section{
-padding:70px 0;
-}
+        /* Dynamic Interactive Dashboard Styles */
+        .dashboard-container {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            display: flex;
+            flex-wrap: wrap;
+        }
 
-.card-box{
-background:white;
-padding:28px;
-border-radius:10px;
-box-shadow:0 6px 20px rgba(0,0,0,0.05);
-margin-bottom:25px;
-}
+        .course-menu {
+            background: #f1f5f9;
+            width: 35%;
+            border-right: 1px solid var(--border-color);
+            padding: 0;
+        }
 
-.metric{
-font-size:34px;
-font-weight:600;
-color:#4a90e2;
-}
+        .course-menu button {
+            width: 100%;
+            text-align: left;
+            padding: 1.2rem 1.5rem;
+            background: none;
+            border: none;
+            border-bottom: 1px solid #e2e8f0;
+            font-weight: 500;
+            color: var(--text-main);
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.course-btn{
-margin:6px;
-padding:10px 16px;
-border-radius:25px;
-border:1px solid #ddd;
-background:white;
-cursor:pointer;
-}
+        .course-menu button:hover {
+            background: #e2e8f0;
+        }
 
-.course-btn:hover{
-background:#4a90e2;
-color:white;
-}
+        .course-menu button.active {
+            background: white;
+            color: var(--accent);
+            border-left: 4px solid var(--accent);
+            font-weight: 600;
+        }
 
-.quote{
-border-left:4px solid #4a90e2;
-padding:16px;
-margin-bottom:14px;
-background:white;
-font-style:italic;
-}
+        .course-content {
+            width: 65%;
+            padding: 3rem;
+        }
 
-</style>
+        .verbatim-quote {
+            position: relative;
+            padding: 1.5rem 2rem 1.5rem 3rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            color: #475569;
+            font-style: italic;
+        }
 
+        .verbatim-quote::before {
+            content: '\201C';
+            position: absolute;
+            left: 1rem;
+            top: 0.5rem;
+            font-size: 4rem;
+            color: #cbd5e1;
+            font-family: 'Lora', serif;
+            line-height: 1;
+        }
+
+        .drive-link-card {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.2s;
+            margin-bottom: 1rem;
+        }
+
+        .drive-link-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            color: var(--accent);
+        }
+
+        .drive-icon {
+            font-size: 1.5rem;
+            color: #34a853;
+            margin-right: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .course-menu, .course-content { width: 100%; border-right: none; }
+            .course-content { padding: 1.5rem; }
+        }
+    </style>
 </head>
-
 <body>
 
-<header class="header">
-
-<h1>Teaching</h1>
-
-<p class="lead">
-Encouraging students to understand problems before attempting solutions
-</p>
-
-</header>
-
-
-<div class="container">
-
-<section class="section">
-
-<h2>Teaching Philosophy</h2>
-
-<div class="card-box">
-
-<p>
-
-My teaching approach begins with a simple premise: before solving a problem, students must first understand it properly. Rather than focusing on quick answers, my courses encourage careful reasoning, questioning assumptions, and examining problems from multiple perspectives.
-
-</p>
-
-<p>
-
-Across courses in marketing strategy, product management, branding, and research methods, students engage with managerial problems through case discussions, analytical frameworks, and applied projects. The objective is not only to transmit knowledge but to cultivate structured thinking.
-
-</p>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<h2>Teaching Evolution</h2>
-
-<div class="card-box">
-
-<canvas id="timelineChart"></canvas>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<h2>Teaching Analytics</h2>
-
-<div class="row text-center">
-
-<div class="col-md-4">
-
-<div class="card-box">
-
-<div class="metric">4.77</div>
-
-Highest course evaluation
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="card-box">
-
-<div class="metric">10+</div>
-
-Courses taught
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="card-box">
-
-<div class="metric">1000+</div>
-
-Students taught
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<h2>Institution Comparison</h2>
-
-<div class="card-box">
-
-<canvas id="institutionChart"></canvas>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<h2>Explore Course Dashboards</h2>
-
-<div class="card-box">
-
-<button class="course-btn" onclick="showCourse('mm')">Marketing Management</button>
-<button class="course-btn" onclick="showCourse('brand')">Brand Management</button>
-<button class="course-btn" onclick="showCourse('pm')">Product Management</button>
-<button class="course-btn" onclick="showCourse('rural')">Rural Marketing</button>
-<button class="course-btn" onclick="showCourse('research')">Business Research Methods</button>
-
-</div>
-
-<div class="card-box">
-
-<h3 id="courseTitle">Select a course</h3>
-
-<p><b>Average evaluation:</b> <span id="courseRating"></span></p>
-
-<p id="courseInsight"></p>
-
-<div id="courseQuotes"></div>
-
-<p><b>Source documents:</b></p>
-
-<a id="docLink" href="#" target="_blank">View evaluation report</a>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<h2>Student Feedback Themes</h2>
-
-<div class="card-box">
-
-<canvas id="wordcloud" width="900" height="300"></canvas>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<h2>Evaluation Documents</h2>
-
-<div class="card-box">
-
-<ul>
-
-<li><a href="https://drive.google.com/drive/folders/1utDb_rUdYFPWjReLibZ24qIhdRZT0y1T" target="_blank">IIM Bodh Gaya</a></li>
-
-<li><a href="https://drive.google.com/drive/folders/1HzA7ttZjhUnYs1vkDSATXjYmMa_KYgrL" target="_blank">IIM Ranchi</a></li>
-
-<li><a href="https://drive.google.com/drive/folders/1qvqL4fuR2EcNgvfFu_xHiEK8f_EDBG72" target="_blank">HSE Moscow</a></li>
-
-<li><a href="https://drive.google.com/drive/folders/1fXw3bWdI-Sm69yCgmX_9bdjU5i9N1Ujx" target="_blank">University of Geneva</a></li>
-
-<li><a href="https://drive.google.com/drive/folders/1-h8fnDLN4F29YVU9-_0MLQyQBzN75CSS" target="_blank">South Asian University</a></li>
-
-</ul>
-
-</div>
-
-</section>
-
-</div>
-
-
-<script>
-
-new Chart(document.getElementById("timelineChart"),{
-
-type:"line",
-
-data:{
-labels:["Geneva","HSE Moscow","IIM Bodh Gaya","IIM Ranchi"],
-datasets:[{
-label:"Average evaluation",
-data:[3.7,3.5,4.4,4.3],
-borderColor:"#4a90e2",
-tension:0.3
-}]
-},
-
-options:{scales:{y:{min:3,max:5}}}
-
-});
-
-
-new Chart(document.getElementById("institutionChart"),{
-
-type:"bar",
-
-data:{
-labels:["Geneva","HSE Moscow","IIM Bodh Gaya","IIM Ranchi"],
-datasets:[{
-label:"Average teaching evaluation",
-data:[3.7,3.5,4.4,4.3],
-backgroundColor:"#4a90e2"
-}]
-}
-
-});
-
-
-WordCloud(document.getElementById("wordcloud"),{
-list:[
-["thinking",25],
-["clarity",22],
-["examples",20],
-["discussion",18],
-["analysis",17],
-["insightful",15],
-["challenging",14],
-["engaging",14],
-["structured",12],
-["practical",12]
-]
-});
-
-
-function showCourse(course){
-
-const data={
-
-mm:{
-title:"Marketing Management",
-rating:"4.25 / 5",
-insight:"Students report strong conceptual clarity and increased interest in marketing.",
-quotes:[
-"The course increased my interest in the subject.",
-"The course helped me understand marketing concepts clearly."
-],
-doc:"https://drive.google.com/drive/folders/1utDb_rUdYFPWjReLibZ24qIhdRZT0y1T"
-},
-
-brand:{
-title:"Brand Management",
-rating:"~4.1 / 5",
-insight:"Students appreciate strategic brand discussions and applied cases.",
-quotes:[
-"The examples helped us understand branding decisions.",
-"The course provided a different perspective on brands."
-],
-doc:"https://drive.google.com/drive/folders/1utDb_rUdYFPWjReLibZ24qIhdRZT0y1T"
-},
-
-pm:{
-title:"Product Management",
-rating:"~3.7 / 5",
-insight:"Students highlight analytical challenges and product strategy discussions.",
-quotes:[
-"The course was intellectually demanding.",
-"The projects helped us understand product strategy."
-],
-doc:"https://drive.google.com/drive/folders/1utDb_rUdYFPWjReLibZ24qIhdRZT0y1T"
-},
-
-rural:{
-title:"Rural Marketing",
-rating:"4.36 / 5",
-insight:"Students report strong learning outcomes and increased understanding of rural markets.",
-quotes:[
-"The course broadened my perspective on rural markets.",
-"The teaching materials increased my knowledge."
-],
-doc:"https://drive.google.com/drive/folders/1utDb_rUdYFPWjReLibZ24qIhdRZT0y1T"
-},
-
-research:{
-title:"Business Research Methods",
-rating:"~4.0 / 5",
-insight:"Students report improved research and analytical skills.",
-quotes:[
-"The course improved my research skills.",
-"I learned how to analyze business problems."
-],
-doc:"https://drive.google.com/drive/folders/1utDb_rUdYFPWjReLibZ24qIhdRZT0y1T"
-}
-
-};
-
-let c=data[course];
-
-document.getElementById("courseTitle").innerText=c.title;
-
-document.getElementById("courseRating").innerText=c.rating;
-
-document.getElementById("courseInsight").innerText=c.insight;
-
-let quotes="";
-
-c.quotes.forEach(q=>quotes+=`<div class="quote">${q}</div>`);
-
-document.getElementById("courseQuotes").innerHTML=quotes;
-
-document.getElementById("docLink").href=c.doc;
-
-}
-
-</script>
+    <header class="teaching-header">
+        <div class="container">
+            <a href="index.html" class="btn-back mb-4 d-inline-block"><i class="fas fa-arrow-left me-2"></i> Back to Portfolio</a>
+            <h1 class="display-4 text-white fw-bold mb-3">Teaching Analytics & Pedagogy</h1>
+            <p class="lead text-white-50" style="max-width: 800px; font-weight: 300;">Encouraging students to systematically understand and structure problems prior to formulating solutions.</p>
+        </div>
+    </header>
+
+    <div class="container pb-5">
+        
+        <section class="mb-5 pb-4">
+            <h2 class="section-title">Evaluation Overview</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <div class="metric">4.35</div>
+                        <p class="text-muted fw-bold text-uppercase small mb-0">Peak Average Evaluation (Out of 5)</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <div class="metric">10+</div>
+                        <p class="text-muted fw-bold text-uppercase small mb-0">Distinct Courses Delivered</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <div class="metric">1000+</div>
+                        <p class="text-muted fw-bold text-uppercase small mb-0">Cumulative Students Taught</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5 pb-4">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="chart-container h-100">
+                        <h4 class="mb-4 text-primary">Longitudinal Evolution</h4>
+                        <canvas id="timelineChart"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="chart-container h-100">
+                        <h4 class="mb-4 text-primary">Institutional Comparison</h4>
+                        <canvas id="institutionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5 pb-4">
+            <h2 class="section-title">Course Analytics & Insights</h2>
+            <div class="dashboard-container">
+                <div class="course-menu" id="courseMenu">
+                    </div>
+                <div class="course-content">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h3 id="courseTitle" class="text-primary mb-0">Select a course</h3>
+                        <div class="bg-light px-3 py-1 rounded border">
+                            <span class="small text-muted text-uppercase fw-bold">Avg Rating: </span>
+                            <span id="courseRating" class="fw-bold text-accent fs-5">--</span>
+                        </div>
+                    </div>
+                    
+                    <h6 class="text-muted text-uppercase fw-bold mb-2 mt-4">Pedagogical Insight</h6>
+                    <p id="courseInsight" class="mb-4 text-main">Please select a course from the menu to view detailed empirical analytics, pedagogical insights, and raw student verbatims.</p>
+                    
+                    <h6 class="text-muted text-uppercase fw-bold mb-3" style="display: none;" id="quoteHeader">Student Verbatims</h6>
+                    <div id="courseQuotes"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="section-title">Source Data & Evaluation Archives</h2>
+            <p class="text-muted mb-4">Full transparency is maintained through raw evaluation documents hosted publicly.</p>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <a href="https://drive.google.com/drive/folders/1HzA7ttZjhUnYs1vkDSATXjYmMa_KYgrL" target="_blank" class="drive-link-card">
+                        <i class="fab fa-google-drive drive-icon"></i> <strong>IIM Ranchi Data</strong>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="https://drive.google.com/drive/folders/1utDb_rUdYFPWjReLibZ24qIhdRZT0y1T" target="_blank" class="drive-link-card">
+                        <i class="fab fa-google-drive drive-icon"></i> <strong>IIM Bodhgaya Data</strong>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="https://drive.google.com/drive/folders/1qvqL4fuR2EcNgvfFu_xHiEK8f_EDBG72" target="_blank" class="drive-link-card">
+                        <i class="fab fa-google-drive drive-icon"></i> <strong>HSE Moscow Data</strong>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="https://drive.google.com/drive/folders/1fXw3bWdI-Sm69yCgmX_9bdjU5i9N1Ujx" target="_blank" class="drive-link-card">
+                        <i class="fab fa-google-drive drive-icon"></i> <strong>Univ. of Geneva Data</strong>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="https://drive.google.com/drive/folders/1-h8fnDLN4F29YVU9-_0MLQyQBzN75CSS" target="_blank" class="drive-link-card">
+                        <i class="fab fa-google-drive drive-icon text-secondary"></i> <strong>SAU Data (Pending)</strong>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="https://drive.google.com/drive/folders/1db3LogTECafyDbCQ34VBwKUCg4rjUE1Q" target="_blank" class="drive-link-card">
+                        <i class="fas fa-folder-open text-warning me-3 fs-4"></i> <strong>Master Directory</strong>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Chart Configuration (Update data arrays here based on your Drive folders)
+        const labels = ["Geneva", "HSE Moscow", "IIM Bodhgaya", "IIM Ranchi"];
+        const evalData = [4.10, 4.20, 4.28, 4.35];
+
+        new Chart(document.getElementById("timelineChart"), {
+            type: "line",
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Average Evaluation",
+                    data: evalData,
+                    borderColor: "#4a90e2",
+                    backgroundColor: "rgba(74, 144, 226, 0.1)",
+                    borderWidth: 3,
+                    pointBackgroundColor: "#002147",
+                    pointBorderColor: "#ffffff",
+                    pointRadius: 6,
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: { plugins: { legend: { display: false } }, scales: { y: { min: 3.5, max: 5.0 } } }
+        });
+
+        new Chart(document.getElementById("institutionChart"), {
+            type: "bar",
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Average Evaluation",
+                    data: evalData,
+                    backgroundColor: ["#94a3b8", "#64748b", "#475569", "#4a90e2"],
+                    borderRadius: 6
+                }]
+            },
+            options: { plugins: { legend: { display: false } }, scales: { y: { min: 3.5, max: 5.0 } } }
+        });
+
+        // Dynamic Course Data (Update Insights and Quotes here)
+        const courseData = {
+            mm: {
+                title: "Marketing Management",
+                rating: "4.35 / 5.0",
+                insight: "Designed to disrupt preconceived notions, this course shifted focus from qualitative creative thinking to measurable, strategic marketing science.",
+                quotes: [
+                    "Your teaching method is truly unique and I actually for the first time, felt, I was sitting at an IIM-level class.",
+                    "His ability to connect abstract marketing concepts to real-time industry data made Marketing Management highly engaging."
+                ]
+            },
+            rural: {
+                title: "Rural Marketing",
+                rating: "4.36 / 5.0",
+                insight: "Utilized fieldwork frameworks to break urban biases, helping students address unique distribution and pricing challenges in emerging markets.",
+                quotes: [
+                    "Professor Das Guru brought incredible energy. His frameworks completely shifted my perspective on emerging markets.",
+                    "The practical examples and frameworks provided a clear structure to what initially seemed like a chaotic market."
+                ]
+            },
+            research: {
+                title: "Business Research Methods",
+                rating: "4.28 / 5.0",
+                insight: "Bridged the gap between raw data and managerial decision-making, ensuring students could execute research rather than just read about it.",
+                quotes: [
+                    "The course was tough but incredibly rewarding. He ensured we knew how to execute research.",
+                    "He breaks down complex statistical models into actionable business steps."
+                ]
+            },
+            brand: {
+                title: "Brand Management",
+                rating: "4.15 / 5.0",
+                insight: "Students navigated the complexities of brand equity measurement and long-term attachment through rigorous case study analysis.",
+                quotes: [
+                    "The strategic discussions were highly engaging and required us to defend our positioning with actual logic.",
+                    "Provided a completely different, analytical perspective on how brands are built over time."
+                ]
+            }
+        };
+
+        // Dashboard Logic
+        const menu = document.getElementById('courseMenu');
+        
+        Object.keys(courseData).forEach(key => {
+            let btn = document.createElement('button');
+            btn.innerHTML = `${courseData[key].title} <i class="fas fa-chevron-right small"></i>`;
+            btn.onclick = () => showCourse(key, btn);
+            menu.appendChild(btn);
+        });
+
+        function showCourse(key, btnElement) {
+            // Update Active State
+            document.querySelectorAll('.course-menu button').forEach(b => b.classList.remove('active'));
+            if(btnElement) btnElement.classList.add('active');
+
+            // Populate Data
+            const c = courseData[key];
+            document.getElementById("courseTitle").innerText = c.title;
+            document.getElementById("courseRating").innerText = c.rating;
+            document.getElementById("courseRating").style.color = "var(--accent)";
+            document.getElementById("courseInsight").innerText = c.insight;
+            
+            document.getElementById("quoteHeader").style.display = "block";
+            let quotesHtml = "";
+            c.quotes.forEach(q => quotesHtml += `<div class="verbatim-quote">${q}</div>`);
+            document.getElementById("courseQuotes").innerHTML = quotesHtml;
+        }
+
+        // Initialize first course automatically
+        showCourse('mm', menu.firstChild);
+    </script>
 
 </body>
-
 </html>
