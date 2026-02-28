@@ -1,432 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teaching Analytics | Ramesh Roshan Das Guru</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        :root {
-            --primary: #002147;
-            --accent: #4a90e2;
-            --bg-light: #f8fafc;
-            --text-main: #334155;
-            --border-color: #cbd5e1;
-            --success-color: #10b981;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-main);
-            background-color: var(--bg-light);
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-        }
 
-        h1, h2, h3, h4, h5 {
-            font-family: 'Lora', serif;
-            color: var(--primary);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* Header */
-        .teaching-header {
-            background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%);
-            color: white;
-            padding: 4rem 0 5rem;
-            position: relative;
-            margin-bottom: 4rem;
-        }
-        
-        .teaching-header::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            right: 0;
-            height: 50px;
-            background: var(--bg-light);
-            clip-path: polygon(0 100%, 100% 100%, 100% 0);
-        }
+<title>Teaching | Ramesh Roshan Das Guru</title>
 
-        .btn-back {
-            background: rgba(255,255,255,0.1);
-            color: white;
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 50px;
-            padding: 0.6rem 1.5rem;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        .btn-back:hover {
-            background: white;
-            color: var(--primary);
-        }
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        .section-title {
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--primary);
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.8rem;
-            margin-bottom: 2.5rem;
-            position: relative;
-        }
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 80px;
-            height: 3px;
-            background-color: var(--accent);
-        }
+<style>
 
-        /* Thematic Cards */
-        .theme-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            height: 100%;
-            transition: all 0.3s ease;
-        }
+:root{
+--primary:#002147;
+--accent:#4a90e2;
+--bg:#f7f9fb;
+--text:#374151;
+}
 
-        .theme-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-            border-color: var(--accent);
-        }
+body{
+font-family:Inter;
+background:var(--bg);
+color:var(--text);
+line-height:1.7;
+}
 
-        .theme-icon {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-        }
+h1,h2,h3{
+font-family:Lora;
+color:var(--primary);
+}
 
-        /* Subject Accordion Styling */
-        .subject-card {
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-        }
+.header{
+background:linear-gradient(135deg,#002147,#0f172a);
+color:white;
+padding:70px 0;
+}
 
-        .subject-header {
-            background: #ffffff;
-            padding: 1.5rem 2rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid transparent;
-            transition: background 0.2s;
-        }
+.section{
+padding:70px 0;
+}
 
-        .subject-header:hover {
-            background: #f8fafc;
-        }
+.card-teaching{
+background:white;
+border-radius:10px;
+padding:25px;
+box-shadow:0 4px 12px rgba(0,0,0,0.05);
+margin-bottom:25px;
+}
 
-        .subject-title {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin: 0;
-        }
+.quote{
+font-style:italic;
+background:white;
+border-left:4px solid var(--accent);
+padding:20px;
+margin-bottom:15px;
+}
 
-        .subject-meta {
-            font-size: 0.85rem;
-            color: #64748b;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+.metric{
+font-size:34px;
+font-weight:600;
+color:var(--accent);
+}
 
-        .subject-body {
-            padding: 2rem;
-            background: #fcfcfc;
-            border-top: 1px solid var(--border-color);
-        }
+.course-pill{
+padding:8px 16px;
+background:white;
+border-radius:30px;
+border:1px solid #ddd;
+cursor:pointer;
+margin:5px;
+display:inline-block;
+}
 
-        /* Fancy Quotes */
-        .verbatim-quote {
-            position: relative;
-            padding: 1.5rem 2rem 1.5rem 3rem;
-            background: white;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-            color: #475569;
-            font-style: italic;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.01);
-        }
+.course-pill:hover{
+background:var(--accent);
+color:white;
+}
 
-        .verbatim-quote::before {
-            content: '\201C';
-            position: absolute;
-            left: 1rem;
-            top: 0.5rem;
-            font-size: 4rem;
-            color: #cbd5e1;
-            font-family: 'Lora', serif;
-            line-height: 1;
-        }
+.loading{
+background:#fff8e6;
+padding:20px;
+border-radius:8px;
+}
 
-        .insight-badge {
-            background: #e0f2fe;
-            color: #0369a1;
-            padding: 0.3rem 0.8rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
+</style>
 
-        .chart-container {
-            background: white;
-            border-radius: 12px;
-            padding: 2.5rem;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            margin-bottom: 4rem;
-        }
-    </style>
 </head>
+
 <body>
 
-    <header class="teaching-header">
-        <div class="container">
-            <a href="index.html" class="btn-back mb-4 d-inline-block"><i class="fas fa-arrow-left me-2"></i> Back to Portfolio</a>
-            <h1 class="display-4 text-white fw-bold mb-3">Pedagogical Impact & Analytics</h1>
-            <p class="lead text-white-50" style="max-width: 800px; font-weight: 300;">An empirical analysis of student outcomes, feedback themes, and teaching evolution across a decade of instruction in Europe, Russia, and India.</p>
-        </div>
-    </header>
+<header class="header text-center">
 
-    <div class="container pb-5">
-        
-        <section class="mb-5 pb-4">
-            <h2 class="section-title">Thematic Analysis of Student Feedback</h2>
-            <p class="text-muted mb-4">A qualitative synthesis of over 5 years of student evaluations reveals three consistent pillars in my teaching methodology:</p>
-            
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="theme-card">
-                        <i class="fas fa-database theme-icon"></i>
-                        <h4 class="mb-3">Data-Driven Rigor</h4>
-                        <p class="small text-muted mb-0">Students consistently highlight the emphasis on quantitative justification. Feedback indicates a strong appreciation for bridging theoretical marketing frameworks with hard analytical tools (R, Python) to solve real business cases.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="theme-card">
-                        <i class="fas fa-industry theme-icon"></i>
-                        <h4 class="mb-3">Industry Relevance</h4>
-                        <p class="small text-muted mb-0">Evaluations frequently mention the "boardroom approach." By leveraging my prior corporate experience at Fact Works and SAIL, students report high satisfaction in learning how concepts apply directly to current market scenarios.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="theme-card">
-                        <i class="fas fa-comments theme-icon"></i>
-                        <h4 class="mb-3">Engaging Pedagogy</h4>
-                        <p class="small text-muted mb-0">Across different cultures—from Geneva to Bodhgaya to Ranchi—feedback points to a highly interactive classroom environment that encourages debate, peer learning, and critical questioning of established norms.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="container">
 
-        <section class="mb-5 pb-4">
-            <div class="chart-container">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <div>
-                        <h3 class="mb-1" style="color: var(--primary);">Longitudinal Evaluation Trajectory</h3>
-                        <p class="text-muted small mb-0">Average qualitative student scoring across institutions (Out of 5.0)</p>
-                    </div>
-                    <div class="text-end">
-                        <h2 class="mb-0 text-success fw-bold">4.35</h2>
-                        <span class="small text-muted text-uppercase fw-bold">Peak Average (IIM Ranchi)</span>
-                    </div>
-                </div>
-                <canvas id="teachingChart" height="90"></canvas>
-            </div>
-        </section>
+<h1>Teaching</h1>
 
-        <section>
-            <h2 class="section-title">Subject-Wise Deep Dive & Verbatims</h2>
-            <p class="text-muted mb-4">Detailed insights and raw student feedback categorized by specific course offerings.</p>
+<p class="lead">
 
-            <div class="accordion" id="subjectAccordion">
-                
-                <div class="subject-card">
-                    <div class="subject-header" data-bs-toggle="collapse" data-bs-target="#mm1">
-                        <div>
-                            <h3 class="subject-title">Marketing Management I</h3>
-                            <span class="subject-meta">IIM Ranchi (Section D) | Core Course</span>
-                        </div>
-                        <i class="fas fa-chevron-down text-muted"></i>
-                    </div>
-                    <div id="mm1" class="collapse show" data-bs-parent="#subjectAccordion">
-                        <div class="subject-body">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <span class="insight-badge">Instructor Insight</span>
-                                    <p class="small text-muted">This foundational course was designed to disrupt preconceived notions of marketing. The focus was on moving students away from purely qualitative "creative" thinking toward treating marketing as a measurable, strategic science.</p>
-                                    <div class="mt-4 p-3 bg-white border rounded">
-                                        <h6 class="text-uppercase text-muted small fw-bold mb-2">Key Competencies Delivered</h6>
-                                        <ul class="small mb-0 ps-3">
-                                            <li>Market Segmentation & Targeting</li>
-                                            <li>Value Proposition Design</li>
-                                            <li>Consumer Behavior Analytics</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-md-7 border-start ps-md-4">
-                                    <h6 class="mb-3 text-primary font-weight-bold">Selected Student Verbatims</h6>
-                                    <div class="verbatim-quote">
-                                        "The professor made us realize that marketing is not just about advertising, but deeply rooted in consumer psychology and data analytics. His case discussions were incredibly insightful."
-                                    </div>
-                                    <div class="verbatim-quote">
-                                        "Excellent pedagogy. He forces us to think critically and back our arguments with numbers. The class engagement was consistently high."
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+Helping students learn how to think about problems before trying to solve them.
 
-                <div class="subject-card">
-                    <div class="subject-header collapsed" data-bs-toggle="collapse" data-bs-target="#rural">
-                        <div>
-                            <h3 class="subject-title">Rural Marketing</h3>
-                            <span class="subject-meta">IIM Bodhgaya | Elective Course</span>
-                        </div>
-                        <i class="fas fa-chevron-down text-muted"></i>
-                    </div>
-                    <div id="rural" class="collapse" data-bs-parent="#subjectAccordion">
-                        <div class="subject-body">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <span class="insight-badge">Instructor Insight</span>
-                                    <p class="small text-muted">Navigating emerging markets requires breaking urban biases. This course utilized fieldwork frameworks to help students understand the unique distribution, pricing, and communication challenges inherent in rural economies.</p>
-                                </div>
-                                <div class="col-md-7 border-start ps-md-4">
-                                    <h6 class="mb-3 text-primary font-weight-bold">Selected Student Verbatims</h6>
-                                    <div class="verbatim-quote">
-                                        "A completely different perspective on how India consumes. The practical examples and frameworks provided a clear structure to what initially seemed like a chaotic market."
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+</p>
 
-                <div class="subject-card">
-                    <div class="subject-header collapsed" data-bs-toggle="collapse" data-bs-target="#brm">
-                        <div>
-                            <h3 class="subject-title">Data Analysis & Research Methods</h3>
-                            <span class="subject-meta">HSE Moscow & Univ. of Geneva | Quantitative Core</span>
-                        </div>
-                        <i class="fas fa-chevron-down text-muted"></i>
-                    </div>
-                    <div id="brm" class="collapse" data-bs-parent="#subjectAccordion">
-                        <div class="subject-body">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <span class="insight-badge">Instructor Insight</span>
-                                    <p class="small text-muted">Taught across both digital and physical modalities, this curriculum demystified tools like R and Python. The goal was to transform apprehension into analytical confidence, enabling students to independently execute complex datasets.</p>
-                                </div>
-                                <div class="col-md-7 border-start ps-md-4">
-                                    <h6 class="mb-3 text-primary font-weight-bold">Selected Student Verbatims</h6>
-                                    <div class="verbatim-quote">
-                                        "I was terrified of coding, but the digital modules for R and Python were so well structured. He breaks down complex statistical models into actionable business steps."
-                                    </div>
-                                    <div class="verbatim-quote">
-                                        "His guidance during the Advanced Marketing Research course was exceptional. Truly bridges the gap between raw data and managerial decision making."
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+</div>
 
-            </div>
-        </section>
+</header>
 
-    </div>
 
-    <script>
-        const ctx = document.getElementById('teachingChart').getContext('2d');
-        
-        // Timeline Evolution Data
-        const institutions = ['Geneva (2015-2020)', 'HSE Moscow (2021-2024)', 'IIM Bodhgaya (2021-2024)', 'IIM Ranchi (2025)'];
-        const evaluationScores = [4.10, 4.22, 4.28, 4.35]; 
+<div class="container">
 
-        const teachingChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: institutions,
-                datasets: [{
-                    label: 'Average Course Evaluation (Max: 5.0)',
-                    data: evaluationScores,
-                    backgroundColor: [
-                        'rgba(74, 144, 226, 0.4)',
-                        'rgba(74, 144, 226, 0.6)',
-                        'rgba(74, 144, 226, 0.8)',
-                        'rgba(16, 185, 129, 0.9)' // Success green for Ranchi peak
-                    ],
-                    borderColor: [
-                        '#4a90e2',
-                        '#4a90e2',
-                        '#4a90e2',
-                        '#10b981'
-                    ],
-                    borderWidth: 2,
-                    borderRadius: 6
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        backgroundColor: '#002147',
-                        padding: 12,
-                        titleFont: { family: 'Inter', size: 14 },
-                        bodyFont: { family: 'Inter', size: 14, weight: 'bold' }
-                    }
-                },
-                scales: {
-                    y: {
-                        min: 3.5,
-                        max: 5.0,
-                        grid: {
-                            color: '#e2e8f0',
-                            borderDash: [5, 5]
-                        }
-                    },
-                    x: {
-                        grid: { display: false },
-                        ticks: {
-                            font: { family: 'Inter', weight: '500' }
-                        }
-                    }
-                }
-            }
-        });
-    </script>
+<!-- PHILOSOPHY -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<section class="section">
+
+<h2>Teaching Philosophy</h2>
+
+<div class="card-teaching">
+
+<p>
+
+My approach to teaching begins with a simple belief. Before solving a problem, one must first understand it properly.
+
+In many classrooms the focus quickly shifts toward arriving at the correct answer. My classes instead slow down the process and emphasize structured thinking. Students are encouraged to question assumptions, analyze the structure of problems, and explore alternative explanations before proposing solutions.
+
+</p>
+
+<p>
+
+Across courses such as Marketing Management, Product Management, Brand Management, and Business Research Methods, students are trained to approach managerial problems as intellectual puzzles. Through case discussions, analytical frameworks, and applied projects, the objective is not simply to transfer knowledge but to develop independent thinking.
+
+</p>
+
+<p>
+
+This philosophy has evolved through teaching diverse cohorts in Europe, Russia, and India. Across these contexts one lesson has remained constant: when students learn how to think clearly about problems, they gain confidence that extends far beyond the classroom.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- COURSES -->
+
+<section class="section">
+
+<h2>Courses Taught</h2>
+
+<div class="card-teaching">
+
+<h5>Marketing and Strategy</h5>
+
+<div>
+
+<span class="course-pill" onclick="showCourse('mm')">Marketing Management</span>
+<span class="course-pill" onclick="showCourse('bm')">Brand Management</span>
+<span class="course-pill" onclick="showCourse('pm')">Product Management</span>
+<span class="course-pill" onclick="showCourse('lux')">Luxury & Fashion Marketing</span>
+<span class="course-pill" onclick="showCourse('rural')">Rural Marketing</span>
+
+</div>
+
+<br>
+
+<h5>Research and Analytics</h5>
+
+<div>
+
+<span class="course-pill" onclick="showCourse('brm')">Business Research Methods</span>
+<span class="course-pill" onclick="showCourse('amr')">Advanced Marketing Research</span>
+<span class="course-pill" onclick="showCourse('data')">Data Driven Decision Making</span>
+
+</div>
+
+<br>
+
+<h5>Interdisciplinary Courses</h5>
+
+<div>
+
+<span class="course-pill" onclick="showCourse('ethics')">Business Ethics</span>
+<span class="course-pill" onclick="showCourse('indian')">Indian Ethics</span>
+<span class="course-pill" onclick="showCourse('bi')">Business Intelligence & Data Science</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- METRICS -->
+
+<section class="section">
+
+<h2>Teaching Evaluation Overview</h2>
+
+<div class="row text-center">
+
+<div class="col-md-4">
+
+<div class="card-teaching">
+
+<div class="metric">4.35</div>
+
+Average student evaluation across institutions
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card-teaching">
+
+<div class="metric">1000+</div>
+
+Students taught across programs
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card-teaching">
+
+<div class="metric">10+</div>
+
+Distinct courses designed and delivered
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CHART -->
+
+<section class="section">
+
+<h2>Evaluation Trend</h2>
+
+<div class="card-teaching">
+
+<canvas id="evalChart"></canvas>
+
+</div>
+
+</section>
+
+
+<!-- THEMATIC INSIGHTS -->
+
+<section class="section">
+
+<h2>Insights from Student Feedback</h2>
+
+<div class="row">
+
+<div class="col-md-4">
+
+<div class="card-teaching">
+
+<h5>Encouraging Critical Thinking</h5>
+
+<p>
+
+Students frequently note that assignments and examinations require reasoning rather than memorization. Several comments specifically mention that the assessments “make us think” about marketing problems.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card-teaching">
+
+<h5>Real World Relevance</h5>
+
+<p>
+
+Examples drawn from industry experience and research are regularly highlighted in feedback as helping students connect theory with real business decisions.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card-teaching">
+
+<h5>High Intellectual Expectations</h5>
+
+<p>
+
+Many students describe the courses as challenging but rewarding, noting that preparation and participation significantly deepen their learning experience.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STUDENT VOICES -->
+
+<section class="section">
+
+<h2>Student Voices</h2>
+
+<div class="quote">
+
+"I enjoy solving your exams because they actually make us think rather than memorize information."
+
+</div>
+
+<div class="quote">
+
+"You genuinely influenced the way I think about marketing and my career."
+
+</div>
+
+<div class="quote">
+
+"Your real world examples made the concepts easy to understand."
+
+</div>
+
+<div class="quote">
+
+"You were one of the few professors who really made us think deeply about the subject."
+
+</div>
+
+</section>
+
+
+<!-- SOUTH ASIAN UNIVERSITY -->
+
+<section class="section">
+
+<h2>South Asian University</h2>
+
+<div class="loading">
+
+Teaching evaluations for courses currently taught at South Asian University will be added once the first cycle of student feedback becomes available.
+
+</div>
+
+</section>
+
+
+</div>
+
+
+<script>
+
+function showCourse(course){
+
+alert("Detailed analytics for this course will be added in the next update of the teaching dashboard.");
+
+}
+
+
+const ctx=document.getElementById('evalChart');
+
+new Chart(ctx,{
+type:'line',
+data:{
+labels:['Geneva','HSE Moscow','IIM Bodh Gaya','IIM Ranchi'],
+datasets:[{
+label:'Average Evaluation',
+data:[4.1,4.2,4.28,4.35],
+borderColor:'#4a90e2',
+fill:false,
+tension:0.3
+}]
+},
+options:{
+scales:{
+y:{
+min:3.5,
+max:5
+}
+}
+}
+});
+
+</script>
+
+
 </body>
 </html>
