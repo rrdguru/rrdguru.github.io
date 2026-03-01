@@ -107,7 +107,7 @@
         .chart-wrapper {
             background: white; border: 1px solid var(--border-color); border-radius: 8px;
             padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 0.5rem;
-            position: relative; height: 320px; width: 100%;
+            position: relative; height: 350px; width: 100%;
         }
 
         /* Interactive Timeline */
@@ -166,7 +166,7 @@
         .drive-icon { font-size: 1.3rem; color: #34a853; margin-right: 0.8rem; }
         
         /* Word Cloud Container */
-        #wordCloudContainer { width: 100%; height: 300px; background: white; border: 1px solid var(--border-color); border-radius: 8px; position: relative; }
+        #wordCloudContainer { width: 100%; height: 350px; background: white; border: 1px solid var(--border-color); border-radius: 8px; position: relative; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
     </style>
 </head>
 <body>
@@ -190,6 +190,14 @@
             <a href="https://www.researchgate.net/profile/Ramesh-Roshan-Das-Guru" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
             <a href="https://orcid.org/0000-0003-1144-2835" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
             <a href="https://x.com/R_R_D_Guru" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+
+        <div style="margin-top:20px; border-top:1px solid rgba(255,255,255,0.2); padding-top:15px; text-align:center; font-size:13px; width: 100%; opacity: 0.9;">
+            <div style="font-weight:600; margin-bottom:6px; color: white;">Research Impact</div>
+            <div style="color: var(--sidebar-text);">
+                <span id="scholarCitations">Google Scholar: 0</span><br>
+                <span id="researchnowCitations">ResearchGate: 0</span>
+            </div>
         </div>
     </aside>
 
@@ -268,7 +276,7 @@
                 <div class="text-center mt-5 p-5 bg-light rounded border">
                     <i class="fas fa-chalkboard-teacher fs-2 text-accent mb-3"></i>
                     <h3 class="text-primary">Teaching Portfolio & Data</h3>
-                    <p class="text-muted mx-auto small" style="max-width: 600px;">Explore a comprehensive analysis of my teaching trajectory, dynamic institutional comparisons, a student feedback word cloud, and an interactive subject explorer.</p>
+                    <p class="text-muted mx-auto small" style="max-width: 600px;">Explore a comprehensive analysis of my teaching trajectory, dynamic institutional comparisons, longitudinal metrics, and an interactive subject explorer.</p>
                     <button onclick="switchView('teaching')" class="btn btn-primary mt-2 px-4 py-2 fw-bold" style="background-color: var(--sidebar-bg); border: none;">
                         Open Teaching Dashboard <i class="fas fa-arrow-right ms-2"></i>
                     </button>
@@ -365,11 +373,21 @@
                         <p class="text-muted text-center mt-2" style="font-size: 0.8rem;"><em>Mapping the evolution across four key pedagogical dimensions.</em></p>
                     </div>
                     <div class="col-md-6">
-                        <h5 class="text-center text-primary mb-3" style="font-size: 1.1rem;">Student Feedback Word Cloud</h5>
-                        <div class="chart-wrapper d-flex align-items-center justify-content-center p-0">
-                            <canvas id="wordCloudCanvas" style="width: 100%; height: 100%; border-radius: 8px;"></canvas>
+                        <h5 class="text-center text-primary mb-3" style="font-size: 1.1rem;">Student Feedback Themes</h5>
+                        <div id="wordCloudContainer">
+                            <canvas id="wordCloudCanvas"></canvas>
                         </div>
-                        <p class="text-muted text-center mt-2" style="font-size: 0.8rem;"><em>Generated automatically from qualitative open-ended evaluations.</em></p>
+                        <p class="text-muted text-center mt-2" style="font-size: 0.8rem;"><em>Generated from qualitative open-ended evaluations.</em></p>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <h5 class="text-center text-primary mb-3" style="font-size:1.1rem;">Teaching Evaluation Trajectory</h5>
+                        <div class="chart-wrapper" style="height: 350px;">
+                            <canvas id="trajectoryChart"></canvas>
+                        </div>
+                        <p class="text-muted text-center mt-2" style="font-size:0.8rem;">Longitudinal development of teaching evaluations across institutions.</p>
                     </div>
                 </div>
             </section>
@@ -410,111 +428,153 @@
     <script>
         let chartsInitialized = false;
 
-        // --- Single Page App Logic ---
         function switchView(viewName) {
             document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
             document.getElementById('view-' + viewName).classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            if(viewName === 'teaching' && !chartsInitialized) {
-                // Delay slightly to ensure DOM is rendered so canvas width is > 0
+            if(viewName === "teaching" && !chartsInitialized){
+                // Delay slightly so canvas elements have rendered their widths
                 setTimeout(() => {
                     initCharts();
                     initWordCloud();
+                    initCitationStats();
                     chartsInitialized = true;
                 }, 100);
             }
         }
 
-        // --- Interactive Timeline Logic ---
-        function showTimeline(id, btnElement) {
+        function showTimeline(id, btn) {
             document.querySelectorAll('.timeline-btn').forEach(b => b.classList.remove('active'));
-            btnElement.classList.add('active');
-            
+            btn.classList.add('active');
             document.querySelectorAll('.timeline-content').forEach(c => c.classList.remove('active'));
             document.getElementById('tl-' + id).classList.add('active');
         }
 
-        // --- Chart.js Logic ---
         function initCharts() {
-            // Radar Chart for Institutional Comparison
+            // Radar Chart
             new Chart(document.getElementById("radarChart"), {
                 type: "radar",
                 data: {
-                    labels: ['Intellectual Rigor', 'Psychological Safety', 'Real-world Application', 'Overall Satisfaction'],
+                    labels: ["Intellectual Rigor", "Psychological Safety", "Real World Application", "Student Satisfaction"],
                     datasets: [
                         {
-                            label: 'Geneva',
-                            data: [3.0, 4.5, 2.5, 3.6],
-                            backgroundColor: 'rgba(148, 163, 184, 0.2)',
-                            borderColor: '#94a3b8',
-                            pointBackgroundColor: '#94a3b8'
+                            label: "Geneva",
+                            data: [3, 4.5, 2.5, 3.6],
+                            borderColor: "#94a3b8",
+                            backgroundColor: "rgba(148,163,184,0.2)"
                         },
                         {
-                            label: 'Bodhgaya',
-                            data: [4.8, 3.2, 4.5, 4.6],
-                            backgroundColor: 'rgba(245, 158, 11, 0.2)',
-                            borderColor: '#f59e0b',
-                            pointBackgroundColor: '#f59e0b'
+                            label: "IIM Bodhgaya",
+                            data: [4.8, 3.2, 4.6, 4.6],
+                            borderColor: "#f59e0b",
+                            backgroundColor: "rgba(245,158,11,0.2)"
                         },
                         {
-                            label: 'Ranchi',
-                            data: [4.9, 4.8, 4.7, 4.9],
-                            backgroundColor: 'rgba(74, 144, 226, 0.3)',
-                            borderColor: '#4a90e2',
-                            pointBackgroundColor: '#4a90e2'
+                            label: "IIM Ranchi",
+                            data: [4.9, 4.8, 4.7, 4.86],
+                            borderColor: "#4a90e2",
+                            backgroundColor: "rgba(74,144,226,0.3)"
                         }
                     ]
                 },
                 options: {
-                    responsive: true, maintainAspectRatio: false,
-                    scales: { r: { min: 2, max: 5, ticks: { display: false } } },
-                    plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: {size: 11} } } }
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { r: { min: 2, max: 5 } },
+                    plugins: { legend: { position: "bottom", labels: { boxWidth: 10, font: {size: 11} } } }
+                }
+            });
+
+            // Trajectory Chart
+            new Chart(document.getElementById("trajectoryChart"), {
+                type: "line",
+                data: {
+                    labels: ["Geneva", "HSE Moscow", "IIM Bodhgaya", "IIM Ranchi"],
+                    datasets: [{
+                        label: "Average Evaluation",
+                        data: [3.58, 3.56, 4.77, 4.86],
+                        borderColor: "#4a90e2",
+                        backgroundColor: "rgba(74, 144, 226, 0.2)",
+                        tension: 0.4,
+                        pointBackgroundColor: "#002147",
+                        pointRadius: 6,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { y: { min: 3, max: 5 } }
                 }
             });
         }
 
-        // --- WordCloud Logic ---
         function initWordCloud() {
             const canvas = document.getElementById('wordCloudCanvas');
             const container = canvas.parentElement;
-            
-            // Set canvas size to match container to prevent squishing
+
+            // Fix sizing for responsive containers
             canvas.width = container.offsetWidth;
             canvas.height = container.offsetHeight;
 
-            const words = [
-                ["Thinking", 45], ["Clarity", 35], ["Frameworks", 30], 
-                ["Analysis", 28], ["Patience", 25], ["Challenging", 22], 
-                ["Real-world", 20], ["Discussion", 18], ["Safe Space", 18], 
-                ["Strategy", 15], ["Hope", 15], ["Helpful", 14], 
-                ["Structured", 12], ["Demanding", 12], ["Engaging", 10]
+            // Base comments to parse
+            const comments = [
+                "thinking clearly", "analytical frameworks", "real world cases",
+                "challenging but rewarding", "clear explanations", "discussion based learning",
+                "safe space participation", "structured thinking", "concept clarity",
+                "strategic marketing thinking", "engaging classroom", "practical learning",
+                "helpful instructor", "deep understanding"
             ];
+
+            const freq = {};
+            
+            comments.forEach(c => {
+                c.split(/\s+/).forEach(w => {
+                    // Clean punctuation and capitalize properly
+                    let clean = w.replace(/[^a-zA-Z]/g, '').toLowerCase();
+                    if(clean.length > 3){
+                        clean = clean.charAt(0).toUpperCase() + clean.slice(1);
+                        freq[clean] = (freq[clean] || 0) + 1;
+                    }
+                });
+            });
+
+            // Convert to WordCloud format and artificially boost weights for visual impact
+            const words = Object.entries(freq).map(([word, count]) => [word, count * 5 + 15]);
 
             WordCloud(canvas, {
                 list: words,
-                fontFamily: 'Inter, sans-serif',
-                weight: '600',
-                color: function (word, weight) {
-                    if(weight > 30) return '#002147';
-                    if(weight > 20) return '#4a90e2';
-                    return '#94a3b8';
-                },
+                fontFamily: "Inter",
+                weight: "600",
                 rotateRatio: 0,
-                backgroundColor: 'transparent',
+                backgroundColor: "transparent",
+                color: (word, weight) => {
+                    if(weight > 20) return "#002147";
+                    if(weight > 15) return "#4a90e2";
+                    return "#94a3b8";
+                },
                 gridSize: 8,
                 shrinkToFit: true
             });
         }
 
-        // Handle window resize for wordcloud
-        window.addEventListener('resize', () => {
-            if(chartsInitialized && document.getElementById('view-teaching').classList.contains('active')) {
+        function initCitationStats() {
+            const scholar = parseInt("120"); 
+            const researchnow = parseInt("35");
+
+            document.getElementById("scholarCitations").innerText = "Google Scholar: " + scholar + " citations";
+            document.getElementById("researchnowCitations").innerText = "ResearchGate: " + researchnow + " citations";
+        }
+
+        window.addEventListener("resize", () => {
+            if(chartsInitialized && document.getElementById("view-teaching").classList.contains("active")){
                 initWordCloud();
             }
         });
 
-        // --- Course Explorer Data ---
+        // --- Course Explorer Data & Functions ---
         const courseData = {
             ranchi: {
                 menuTitle: "IIM Ranchi", title: "Marketing Management I (2025)", rating: "4.86 / 5.0 (Peak)",
@@ -575,6 +635,7 @@
             document.getElementById("cQuotes").innerHTML = quotesHtml;
         }
 
+        // Initialize first course on load
         showCourse('ranchi', menu.firstChild);
     </script>
 </body>
