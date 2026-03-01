@@ -1,380 +1,581 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramesh Roshan Das Guru | Marketing Scholar & Educator</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/wordcloud@1.1.2/src/wordcloud2.min.js"></script>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        :root {
+            --sidebar-bg: #002147;
+            --sidebar-text: #e2e8f0;
+            --accent: #4a90e2;
+            --text-main: #334155;
+            --heading-color: #0f172a;
+            --bg-light: #f8fafc;
+            --border-color: #cbd5e1;
+            --success-color: #10b981;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif; color: var(--text-main);
+            background-color: var(--bg-light); line-height: 1.6; margin: 0; overflow-x: hidden;
+        }
 
-<title>Ramesh Roshan Das Guru | Teaching Analytics Portfolio</title>
+        h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; color: var(--heading-color); }
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        ul.airy-list { list-style-type: none; padding-left: 0; margin-bottom: 1.5rem; }
+        ul.airy-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.8rem; color: var(--text-main); }
+        ul.airy-list li::before { content: '•'; position: absolute; left: 0; color: var(--accent); font-weight: bold; font-size: 1.2rem; top: -2px; }
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-chart-wordcloud"></script>
+        /* --- Responsive Layout (Mobile First Approach) --- */
+        .sidebar {
+            background-color: var(--sidebar-bg); color: var(--sidebar-text);
+            padding: 3rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center;
+            border-bottom: 5px solid var(--accent);
+        }
+        .main-content { padding: 3rem 1.5rem; background-color: #ffffff; min-height: 100vh; position: relative; }
 
-<style>
+        @media (min-width: 992px) {
+            .sidebar { position: fixed; top: 0; left: 0; height: 100vh; width: 30%; border-right: 5px solid var(--accent); border-bottom: none; overflow-y: auto; }
+            .main-content { margin-left: 30%; width: 70%; padding: 4rem 6%; }
+        }
 
-body{
-font-family:Arial;
-background:#f4f6fa;
-}
+        .profile-img {
+            width: 160px; height: 160px; object-fit: cover; border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.15); margin-bottom: 1.5rem; box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
 
-.sidebar{
-position:fixed;
-width:30%;
-height:100vh;
-background:#0c2d48;
-color:white;
-padding:40px;
-}
+        .sidebar h1 { color: #ffffff; font-size: 2rem; font-weight: 700; margin-bottom: 0.2rem; line-height: 1.2; }
+        .sidebar h2 { color: var(--accent); font-size: 1.1rem; font-weight: 500; margin-top: 0.5rem; margin-bottom: 1.5rem; }
 
-.sidebar img{
-width:160px;
-border-radius:50%;
-margin-bottom:20px;
-}
+        .contact-list {
+            list-style: none; padding: 0; width: 100%; text-align: left;
+            margin-top: 1.5rem; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;
+        }
+        .contact-list li { margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; }
+        @media (min-width: 992px) { .contact-list li { justify-content: flex-start; } }
+        .contact-list i { width: 30px; color: var(--accent); font-size: 1.1rem; }
 
-.main{
-margin-left:30%;
-padding:50px;
-background:white;
-}
+        .social-links { margin-top: auto; padding-top: 2rem; display: flex; gap: 1rem; justify-content: center; }
+        .social-links a {
+            color: white; background: rgba(255,255,255,0.08); width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center; border-radius: 50%;
+            transition: all 0.3s ease; text-decoration: none; font-size: 1.1rem;
+        }
+        .social-links a:hover { background: var(--accent); transform: translateY(-4px); }
 
-.section{
-margin-bottom:60px;
-}
+        .section-title {
+            font-size: 1.8rem; font-weight: 600; color: var(--sidebar-bg);
+            border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; margin-bottom: 2rem; position: relative;
+        }
+        .section-title::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 60px; height: 3px; background-color: var(--accent); }
 
-.chartbox{
-border:1px solid #ddd;
-padding:25px;
-border-radius:10px;
-margin-bottom:25px;
-background:white;
-}
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .info-card {
+            background: #ffffff; padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02); height: 100%; transition: transform 0.3s ease;
+        }
+        .info-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .info-card h4 { font-size: 1.1rem; margin-bottom: 1rem; color: var(--sidebar-bg); display: flex; align-items: center; gap: 0.75rem; }
 
-.timeline{
-border-left:3px solid #0c2d48;
-padding-left:20px;
-}
+        .badge-tag {
+            background: #f1f5f9; color: #334155; padding: 0.3rem 0.7rem; border-radius: 4px;
+            font-size: 0.8rem; font-weight: 500; display: inline-block; margin: 0 0.4rem 0.4rem 0;
+            border: 1px solid #e2e8f0; transition: all 0.2s;
+        }
+        .badge-tag:hover { background: var(--accent); color: white; border-color: var(--accent); }
 
-.timeline-item{
-margin-bottom:25px;
-}
+        /* --- View Transition --- */
+        .view-section { display: none; animation: fadeIn 0.4s ease-in-out; }
+        .view-section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
-.quote{
-background:#eef2f7;
-padding:15px;
-border-radius:6px;
-margin-bottom:10px;
-font-style:italic;
-}
+        /* --- Teaching Analytics Specifics --- */
+        .stat-card {
+            background: white; border-radius: 8px; padding: 1.5rem 1rem; text-align: center;
+            border: 1px solid var(--border-color); box-shadow: 0 4px 6px rgba(0,0,0,0.02); height: 100%;
+        }
+        .metric { font-size: 2.2rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 0.5rem; }
 
-.courseMenu button{
-display:block;
-width:100%;
-border:none;
-background:#f1f4f9;
-padding:12px;
-margin-bottom:5px;
-text-align:left;
-}
+        .chart-wrapper {
+            background: white; border: 1px solid var(--border-color); border-radius: 8px;
+            padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 0.5rem;
+            position: relative; height: 320px; width: 100%;
+        }
 
-.courseMenu button.active{
-background:#0c2d48;
-color:white;
-}
+        /* Interactive Timeline */
+        .interactive-timeline { display: flex; flex-direction: column; gap: 1rem; }
+        .timeline-btn {
+            text-align: left; background: #f8fafc; border: 1px solid var(--border-color); padding: 1rem 1.5rem;
+            border-radius: 8px; font-weight: 600; color: var(--text-main); transition: 0.2s; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .timeline-btn:hover { background: #e2e8f0; }
+        .timeline-btn.active { background: var(--sidebar-bg); color: white; border-color: var(--sidebar-bg); }
+        .timeline-content {
+            background: white; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem;
+            display: none; animation: fadeIn 0.3s ease-in-out;
+        }
+        .timeline-content.active { display: block; }
 
-</style>
+        /* Course Dashboard */
+        .dashboard-container {
+            border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; background: white;
+        }
+        @media (min-width: 768px) { .dashboard-container { flex-direction: row; } }
+        
+        .course-menu { background: #f8fafc; border-bottom: 1px solid var(--border-color); display: flex; overflow-x: auto; white-space: nowrap; }
+        @media (min-width: 768px) { 
+            .course-menu { width: 30%; border-right: 1px solid var(--border-color); border-bottom: none; flex-direction: column; overflow-x: visible; white-space: normal; } 
+        }
+        
+        .course-menu button {
+            text-align: left; padding: 1rem 1.2rem; background: none; border: none; font-size: 0.9rem;
+            border-bottom: 1px solid #e2e8f0; font-weight: 500; color: var(--text-main); transition: 0.2s;
+            flex-shrink: 0;
+        }
+        @media (min-width: 768px) { .course-menu button { width: 100%; display: flex; justify-content: space-between; align-items: center; flex-shrink: 1; } }
+        .course-menu button:hover { background: #e2e8f0; }
+        .course-menu button.active { background: white; color: var(--accent); font-weight: 700; border-bottom: 2px solid var(--accent); }
+        @media (min-width: 768px) { .course-menu button.active { border-bottom: 1px solid #e2e8f0; border-left: 4px solid var(--accent); } }
+        
+        .course-content { padding: 1.5rem; width: 100%; }
+        @media (min-width: 768px) { .course-content { width: 70%; padding: 2rem; } }
 
+        .verbatim {
+            position: relative; padding: 1.2rem 1.5rem 1.2rem 2.5rem; background: #ffffff;
+            border-radius: 6px; border: 1px solid #e2e8f0; margin-bottom: 1rem; font-style: italic; color: #475569;
+            font-size: 0.95rem; line-height: 1.6; box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .verbatim.hero-quote { background: var(--sidebar-bg); color: white; border: none; font-size: 1.05rem; }
+        .verbatim.hero-quote::before { color: rgba(255,255,255,0.2); }
+        .verbatim::before { content: '\201C'; position: absolute; left: 0.8rem; top: 0.4rem; font-size: 3rem; color: #cbd5e1; font-family: 'Lora', serif; line-height: 1; }
+
+        .drive-card {
+            display: flex; align-items: center; padding: 1rem; background: white; border: 1px solid var(--border-color);
+            border-radius: 8px; text-decoration: none; color: var(--text-main); transition: 0.2s; font-weight: 500; font-size: 0.9rem;
+        }
+        .drive-card:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .drive-icon { font-size: 1.3rem; color: #34a853; margin-right: 0.8rem; }
+        
+        /* Word Cloud Container */
+        #wordCloudContainer { width: 100%; height: 300px; background: white; border: 1px solid var(--border-color); border-radius: 8px; position: relative; }
+    </style>
 </head>
-
 <body>
 
-<div class="sidebar">
-
-<img src="rr.jpg">
-
-<h2>Ramesh Roshan Das Guru</h2>
-
-<p>Senior Assistant Professor of Marketing</p>
-
-<p>
-Research Areas<br>
-Consumer Behaviour<br>
-Product Quality<br>
-Sustainable Consumption
-</p>
-
-</div>
-
-<div class="main">
-
-<section class="section">
-
-<h2>Teaching Evolution</h2>
-
-<div class="timeline">
-
-<div class="timeline-item">
-<b>University of Geneva (2018–2020)</b><br>
-Teaching Assistant phase focused on clarity and student support.<br>
-Average evaluation 3.58 / 4.
-</div>
-
-<div class="timeline-item">
-<b>HSE Moscow (2020–2022)</b><br>
-International analytics teaching in R and Python with strong technical rigor.
-</div>
-
-<div class="timeline-item">
-<b>IIM Bodh Gaya (2022–2024)</b><br>
-Core marketing and brand courses emphasizing analytical frameworks.
-</div>
-
-<div class="timeline-item">
-<b>IIM Ranchi (2025)</b><br>
-Marketing Management I with instructor rating 4.86 and preparation 5.00.
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<h2>Institutional Comparison</h2>
-
-<div class="chartbox">
-
-<canvas id="institutionChart"></canvas>
-
-</div>
-
-</section>
-
-
-
-<section class="section">
-
-<h2>Teaching Trajectory</h2>
-
-<div class="chartbox">
-
-<canvas id="trajectoryChart"></canvas>
-
-</div>
-
-</section>
-
-
-
-<section class="section">
-
-<h2>Feedback Theme Extraction</h2>
-
-<div class="chartbox">
-
-<canvas id="wordcloud"></canvas>
-
-</div>
-
-</section>
-
-
-
-<section class="section">
-
-<h2>Course Explorer</h2>
-
-<div class="row">
-
-<div class="col-md-4 courseMenu" id="menu"></div>
-
-<div class="col-md-8">
-
-<h4 id="title"></h4>
-
-<p id="insight"></p>
-
-<div id="quotes"></div>
-
-</div>
-
-</div>
-
-</section>
-
-</div>
-
-
-
-<script>
-
-new Chart(document.getElementById("trajectoryChart"),{
-
-type:"line",
-
-data:{
-
-labels:["Geneva","HSE Moscow","IIM Bodh Gaya","IIM Ranchi"],
-
-datasets:[{
-
-data:[3.58,3.55,4.6,4.86],
-
-borderColor:"#0c2d48",
-
-tension:0.3
-
-}]
-
-},
-
-options:{plugins:{legend:{display:false}}}
-
-})
-
-
-
-new Chart(document.getElementById("institutionChart"),{
-
-type:"bar",
-
-data:{
-
-labels:["Geneva","HSE Moscow","IIM Bodh Gaya","IIM Ranchi"],
-
-datasets:[{
-
-label:"Teaching Evaluation",
-
-data:[3.58,3.55,4.6,4.86],
-
-backgroundColor:["#90cdf4","#f6ad55","#68d391","#0c2d48"]
-
-}]
-
-}
-
-})
-
-
-
-const words=[
-
-["clarity",12],
-["frameworks",10],
-["real world",10],
-["interactive",8],
-["cases",8],
-["structured",7],
-["discussion",7],
-["marketing",6],
-["analysis",6],
-["participation",5],
-["thinking",5]
-
-]
-
-new Chart(document.getElementById("wordcloud"),{
-
-type:"wordCloud",
-
-data:{
-
-labels:words.map(w=>w[0]),
-
-datasets:[{
-
-data:words.map(w=>w[1])
-
-}]
-
-}
-
-})
-
-
-
-const courses={
-
-ranchi:{
-title:"Marketing Management – IIM Ranchi",
-insight:"Peak pedagogical maturity with highest evaluation scores.",
-quotes:[
-"Marketing became a life skill.",
-"One of the most hardworking professors.",
-"The classroom discussions were extremely engaging."
-]
-},
-
-bodhgaya:{
-title:"Marketing Courses – IIM Bodh Gaya",
-insight:"Concept-driven teaching emphasizing strategic thinking.",
-quotes:[
-"The subject made me think.",
-"Examples helped connect theory with practice."
-]
-},
-
-hse:{
-title:"Data Analysis in R and Python – HSE Moscow",
-insight:"Technically demanding analytics training.",
-quotes:[
-"Difficult but extremely valuable.",
-"Practical programming skills."
-]
-},
-
-geneva:{
-title:"Teaching Assistant Phase – Geneva",
-insight:"Focus on student support and conceptual clarity.",
-quotes:[
-"Always available for help.",
-"Encourages deeper understanding."
-]
-}
-
-}
-
-
-
-const menu=document.getElementById("menu")
-
-Object.keys(courses).forEach(k=>{
-
-let btn=document.createElement("button")
-
-btn.innerText=courses[k].title
-
-btn.onclick=function(){
-
-document.querySelectorAll(".courseMenu button").forEach(b=>b.classList.remove("active"))
-
-btn.classList.add("active")
-
-document.getElementById("title").innerText=courses[k].title
-document.getElementById("insight").innerText=courses[k].insight
-
-let html=""
-
-courses[k].quotes.forEach(q=>{
-html+="<div class='quote'>"+q+"</div>"
-})
-
-document.getElementById("quotes").innerHTML=html
-
-}
-
-menu.appendChild(btn)
-
-})
-
-menu.children[0].click()
-
-</script>
-
+    <aside class="sidebar">
+        <img src="rr.jpg" alt="Ramesh Roshan Das Guru" class="profile-img">
+        <h1>Ramesh Roshan</h1>
+        <h1 style="margin-top:-5px;">Das Guru</h1>
+        <h2>Senior Assistant Professor</h2>
+        
+        <p class="small opacity-75 mt-3 mb-0" style="line-height: 1.6;">Bridging rigorous quantitative research with practical management application.</p>
+
+        <ul class="contact-list">
+            <li><i class="fas fa-university"></i> South Asian Univ, New Delhi</li>
+            <li><i class="fas fa-envelope"></i> rameshroshandg@gmail.com</li>
+            <li><i class="fas fa-phone"></i> +91 829 457 1924</li>
+        </ul>
+
+        <div class="social-links">
+            <a href="https://scholar.google.com/citations?user=BUsJnvUAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+            <a href="https://www.researchgate.net/profile/Ramesh-Roshan-Das-Guru" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+            <a href="https://orcid.org/0000-0003-1144-2835" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
+            <a href="https://x.com/R_R_D_Guru" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <div id="view-portfolio" class="view-section active">
+            
+            <section class="mb-5">
+                <h3 class="section-title">Academic Profile & Industry Background</h3>
+                <ul class="airy-list">
+                    <li>Built a foundation in the corporate sector with 5+ years of experience in software engineering and heavy industrial management.</li>
+                    <li>Worked across top-tier organizations including SAIL, Infosys, and Fact Works GmbH Berlin.</li>
+                    <li>Earned a doctorate in Switzerland and instructed diverse student cohorts across Latin America, Eastern Europe, and India.</li>
+                    <li>Applying a global, empirically grounded framework to both research initiatives and classroom pedagogy.</li>
+                </ul>
+                
+                <div class="p-4 bg-light border-start border-4 border-primary rounded mt-4">
+                    <h5 class="mb-3" style="color: var(--sidebar-bg);"><i class="fas fa-building text-secondary me-2"></i> Foundational Leadership at SAU</h5>
+                    <ul class="airy-list mb-0 small">
+                        <li>Serving as a founding faculty member at the newly established Faculty of Management at South Asian University.</li>
+                        <li>Directly shaping academic governance and designing core curricula across undergraduate and postgraduate levels.</li>
+                        <li>Fostering a collaborative, high-performance departmental culture from inception.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="mb-5">
+                <h3 class="section-title">Ecosystem Building & Career Development</h3>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4><i class="fas fa-users text-secondary"></i> Student Culture</h4>
+                        <ul class="airy-list small mb-0">
+                            <li>Championing the creation of active student organizations and campus clubs.</li>
+                            <li>Cultivating peer-driven leadership networks.</li>
+                            <li>Establishing an environment that mirrors collaborative corporate settings.</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h4><i class="fas fa-briefcase text-secondary"></i> Career Advancement</h4>
+                        <ul class="airy-list small mb-0">
+                            <li>Prioritizing deep, long-term career development over standard transactional placement models.</li>
+                            <li>Forging industry partnerships to connect emerging talent with market leaders.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-5">
+                <h3 class="section-title">Research Architecture</h3>
+                <ul class="airy-list">
+                    <li>Core research investigates how perceived product quality dictates long-term consumer brand relationships.</li>
+                    <li>Employing multidimensional modeling to capture exactly how consumers experience quality.</li>
+                    <li>Expanding this framework to evaluate higher education as a service offering.</li>
+                </ul>
+                <div class="info-grid mt-4">
+                    <div class="info-card border-top border-4 border-secondary">
+                        <h4><i class="fas fa-chart-line text-secondary"></i> Core Focus</h4>
+                        <div>
+                            <span class="badge-tag">Multidimensional Quality Models</span>
+                            <span class="badge-tag">Longitudinal Brand Loyalty</span>
+                            <span class="badge-tag">Sustainable Consumption</span>
+                        </div>
+                    </div>
+                    <div class="info-card border-top border-4 border-success">
+                        <h4><i class="fas fa-university text-success"></i> Education Quality Lens</h4>
+                        <div>
+                            <span class="badge-tag">Institutional Expansion Dilemmas</span>
+                            <span class="badge-tag">Educational Quality Perception</span>
+                            <span class="badge-tag">AI & Ethics in Pedagogy</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-5">
+                <div class="text-center mt-5 p-5 bg-light rounded border">
+                    <i class="fas fa-chalkboard-teacher fs-2 text-accent mb-3"></i>
+                    <h3 class="text-primary">Teaching Portfolio & Data</h3>
+                    <p class="text-muted mx-auto small" style="max-width: 600px;">Explore a comprehensive analysis of my teaching trajectory, dynamic institutional comparisons, a student feedback word cloud, and an interactive subject explorer.</p>
+                    <button onclick="switchView('teaching')" class="btn btn-primary mt-2 px-4 py-2 fw-bold" style="background-color: var(--sidebar-bg); border: none;">
+                        Open Teaching Dashboard <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+            </section>
+        </div>
+
+
+        <div id="view-teaching" class="view-section">
+            
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 border-bottom pb-2 gap-3">
+                <h3 class="section-title border-0 mb-0 pb-0">Teaching Analytics & Evolution</h3>
+                <button onclick="switchView('portfolio')" class="btn btn-outline-secondary btn-sm rounded-pill px-4 py-2 fw-bold">
+                    <i class="fas fa-arrow-left me-2"></i> Back to Profile
+                </button>
+            </div>
+
+            <section class="mb-5">
+                <div class="verbatim hero-quote">
+                    "MM 1 was the only class where I participated in the entire term. This course felt relatable and sir made it a safe space to participate. While I was struggling so bad with all the subjects and felt like giving up, MM1 was one of the subjects that gave me hope to hang on."
+                    <div class="mt-2 text-end text-light opacity-75" style="font-size: 0.85rem; font-style: normal;">PGP Student, IIM Ranchi (2025)</div>
+                </div>
+                
+                <div class="row mt-4 g-3">
+                    <div class="col-md-4"><div class="stat-card"><div class="metric">4.86</div><div class="small fw-bold text-muted text-uppercase">Peak Rating (Out of 5.0)</div></div></div>
+                    <div class="col-md-4"><div class="stat-card"><div class="metric">12+</div><div class="small fw-bold text-muted text-uppercase">Courses Delivered</div></div></div>
+                    <div class="col-md-4"><div class="stat-card"><div class="metric">700+</div><div class="small fw-bold text-muted text-uppercase">Students Evaluated</div></div></div>
+                </div>
+            </section>
+
+            <section class="mb-5 pb-3 border-bottom">
+                <h4 class="mb-4 text-primary" style="font-size: 1.3rem;">Interactive Evolution Timeline (2018–2025)</h4>
+                <div class="row">
+                    <div class="col-md-5 mb-3 mb-md-0">
+                        <div class="interactive-timeline">
+                            <button class="timeline-btn active" onclick="showTimeline('ranchi', this)">
+                                2025: IIM Ranchi <i class="fas fa-chevron-right small d-none d-md-block"></i>
+                            </button>
+                            <button class="timeline-btn" onclick="showTimeline('bodhgaya', this)">
+                                2022-2024: IIM Bodhgaya <i class="fas fa-chevron-right small d-none d-md-block"></i>
+                            </button>
+                            <button class="timeline-btn" onclick="showTimeline('hse', this)">
+                                2021-2022: HSE Moscow <i class="fas fa-chevron-right small d-none d-md-block"></i>
+                            </button>
+                            <button class="timeline-btn" onclick="showTimeline('geneva', this)">
+                                2018-2020: Univ. of Geneva <i class="fas fa-chevron-right small d-none d-md-block"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div id="tl-ranchi" class="timeline-content active">
+                            <h5 class="text-primary mb-3">The Transformational Facilitator</h5>
+                            <ul class="airy-list small">
+                                <li><strong>Context:</strong> Marketing Management course leadership.</li>
+                                <li><strong>The Synthesis:</strong> Successfully merged high intellectual expectations with explicitly protected psychological safety.</li>
+                                <li><strong>The Result:</strong> Peak datasets achieved (4.86/5.00). Students reported the course changed career intentions and fostered deep intellectual risk-taking.</li>
+                            </ul>
+                        </div>
+                        <div id="tl-bodhgaya" class="timeline-content">
+                            <h5 class="text-primary mb-3">Independence & Rigor</h5>
+                            <ul class="airy-list small">
+                                <li><strong>Context:</strong> Independent instructor for Marketing and Brand Management.</li>
+                                <li><strong>Pedagogical Shift:</strong> Emphasized intense academic challenge and strict rigor.</li>
+                                <li><strong>Feedback Reality:</strong> Produced highly transformational learning outcomes, though early cohorts noted the environment felt intimidating. Sparked the calibration toward psychological safety.</li>
+                            </ul>
+                        </div>
+                        <div id="tl-hse" class="timeline-content">
+                            <h5 class="text-primary mb-3">Technical Complexity</h5>
+                            <ul class="airy-list small">
+                                <li><strong>Context:</strong> Online instruction of R and Python statistical models.</li>
+                                <li><strong>The Challenge:</strong> Delivering highly complex, quantitative methodologies in a remote setting.</li>
+                                <li><strong>The Result:</strong> Students reported high course difficulty perfectly balanced with exceptionally high novelty and utility of knowledge.</li>
+                            </ul>
+                        </div>
+                        <div id="tl-geneva" class="timeline-content">
+                            <h5 class="text-primary mb-3">The Empathetic Foundation</h5>
+                            <ul class="airy-list small">
+                                <li><strong>Context:</strong> Teaching Assistant for Data Driven Decision Making.</li>
+                                <li><strong>Core Strengths:</strong> Built foundational teaching identity around extreme patience, approachability, and availability.</li>
+                                <li><strong>Evolution:</strong> Early feedback on pacing led to immediate adjustments in instructional clarity and assignment structuring for international cohorts.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-5 pb-3">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <h5 class="text-center text-primary mb-3" style="font-size: 1.1rem;">Institutional Comparison (Pedagogical Focus)</h5>
+                        <div class="chart-wrapper">
+                            <canvas id="radarChart"></canvas>
+                        </div>
+                        <p class="text-muted text-center mt-2" style="font-size: 0.8rem;"><em>Mapping the evolution across four key pedagogical dimensions.</em></p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="text-center text-primary mb-3" style="font-size: 1.1rem;">Student Feedback Word Cloud</h5>
+                        <div class="chart-wrapper d-flex align-items-center justify-content-center p-0">
+                            <canvas id="wordCloudCanvas" style="width: 100%; height: 100%; border-radius: 8px;"></canvas>
+                        </div>
+                        <p class="text-muted text-center mt-2" style="font-size: 0.8rem;"><em>Generated automatically from qualitative open-ended evaluations.</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-5">
+                <h4 class="mb-4 text-primary" style="font-size: 1.3rem;">Subject-Wise Data Explorer</h4>
+                <div class="dashboard-container">
+                    <div class="course-menu" id="courseMenu"></div>
+                    <div class="course-content">
+                        <div class="d-flex justify-content-between align-items-start border-bottom pb-2 mb-3">
+                            <h5 id="cTitle" class="text-primary fw-bold mb-0"></h5>
+                            <span id="cRating" class="badge bg-success"></span>
+                        </div>
+                        <h6 class="text-uppercase text-muted mb-1" style="font-size: 0.75rem; letter-spacing: 1px;">Analytical Summary</h6>
+                        <p id="cInsight" class="text-main small mb-4" style="line-height: 1.6;"></p>
+                        
+                        <h6 class="text-uppercase text-muted" style="font-size: 0.75rem; letter-spacing: 1px;">Selected Verbatims</h6>
+                        <div id="cQuotes"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-5">
+                <h4 class="mb-3 text-primary" style="font-size: 1.3rem;">Open Data & Verification</h4>
+                <p class="text-muted mb-4 small">Raw evaluation reports and feedback documents are hosted publicly.</p>
+                <div class="row g-3">
+                    <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1HzA7ttZjhUnYs1vkDSATXjYmMa_KYgrL" target="_blank" class="drive-card"><i class="fab fa-google-drive drive-icon"></i> IIM Ranchi Data</a></div>
+                    <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1utDb_rUdYFPWjReLibZ24qIhdRZT0y1T" target="_blank" class="drive-card"><i class="fab fa-google-drive drive-icon"></i> IIM Bodhgaya Data</a></div>
+                    <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1qvqL4fuR2EcNgvfFu_xHiEK8f_EDBG72" target="_blank" class="drive-card"><i class="fab fa-google-drive drive-icon"></i> HSE Moscow Data</a></div>
+                    <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1fXw3bWdI-Sm69yCgmX_9bdjU5i9N1Ujx" target="_blank" class="drive-card"><i class="fab fa-google-drive drive-icon"></i> Geneva Data</a></div>
+                    <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1db3LogTECafyDbCQ34VBwKUCg4rjUE1Q" target="_blank" class="drive-card"><i class="fas fa-folder-open text-warning me-2 fs-5"></i> Master Directory</a></div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script>
+        let chartsInitialized = false;
+
+        // --- Single Page App Logic ---
+        function switchView(viewName) {
+            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+            document.getElementById('view-' + viewName).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if(viewName === 'teaching' && !chartsInitialized) {
+                // Delay slightly to ensure DOM is rendered so canvas width is > 0
+                setTimeout(() => {
+                    initCharts();
+                    initWordCloud();
+                    chartsInitialized = true;
+                }, 100);
+            }
+        }
+
+        // --- Interactive Timeline Logic ---
+        function showTimeline(id, btnElement) {
+            document.querySelectorAll('.timeline-btn').forEach(b => b.classList.remove('active'));
+            btnElement.classList.add('active');
+            
+            document.querySelectorAll('.timeline-content').forEach(c => c.classList.remove('active'));
+            document.getElementById('tl-' + id).classList.add('active');
+        }
+
+        // --- Chart.js Logic ---
+        function initCharts() {
+            // Radar Chart for Institutional Comparison
+            new Chart(document.getElementById("radarChart"), {
+                type: "radar",
+                data: {
+                    labels: ['Intellectual Rigor', 'Psychological Safety', 'Real-world Application', 'Overall Satisfaction'],
+                    datasets: [
+                        {
+                            label: 'Geneva',
+                            data: [3.0, 4.5, 2.5, 3.6],
+                            backgroundColor: 'rgba(148, 163, 184, 0.2)',
+                            borderColor: '#94a3b8',
+                            pointBackgroundColor: '#94a3b8'
+                        },
+                        {
+                            label: 'Bodhgaya',
+                            data: [4.8, 3.2, 4.5, 4.6],
+                            backgroundColor: 'rgba(245, 158, 11, 0.2)',
+                            borderColor: '#f59e0b',
+                            pointBackgroundColor: '#f59e0b'
+                        },
+                        {
+                            label: 'Ranchi',
+                            data: [4.9, 4.8, 4.7, 4.9],
+                            backgroundColor: 'rgba(74, 144, 226, 0.3)',
+                            borderColor: '#4a90e2',
+                            pointBackgroundColor: '#4a90e2'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    scales: { r: { min: 2, max: 5, ticks: { display: false } } },
+                    plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: {size: 11} } } }
+                }
+            });
+        }
+
+        // --- WordCloud Logic ---
+        function initWordCloud() {
+            const canvas = document.getElementById('wordCloudCanvas');
+            const container = canvas.parentElement;
+            
+            // Set canvas size to match container to prevent squishing
+            canvas.width = container.offsetWidth;
+            canvas.height = container.offsetHeight;
+
+            const words = [
+                ["Thinking", 45], ["Clarity", 35], ["Frameworks", 30], 
+                ["Analysis", 28], ["Patience", 25], ["Challenging", 22], 
+                ["Real-world", 20], ["Discussion", 18], ["Safe Space", 18], 
+                ["Strategy", 15], ["Hope", 15], ["Helpful", 14], 
+                ["Structured", 12], ["Demanding", 12], ["Engaging", 10]
+            ];
+
+            WordCloud(canvas, {
+                list: words,
+                fontFamily: 'Inter, sans-serif',
+                weight: '600',
+                color: function (word, weight) {
+                    if(weight > 30) return '#002147';
+                    if(weight > 20) return '#4a90e2';
+                    return '#94a3b8';
+                },
+                rotateRatio: 0,
+                backgroundColor: 'transparent',
+                gridSize: 8,
+                shrinkToFit: true
+            });
+        }
+
+        // Handle window resize for wordcloud
+        window.addEventListener('resize', () => {
+            if(chartsInitialized && document.getElementById('view-teaching').classList.contains('active')) {
+                initWordCloud();
+            }
+        });
+
+        // --- Course Explorer Data ---
+        const courseData = {
+            ranchi: {
+                menuTitle: "IIM Ranchi", title: "Marketing Management I (2025)", rating: "4.86 / 5.0 (Peak)",
+                insight: "Focused on treating marketing as a measurable, strategic discipline. Emphasized analytical reasoning and real-world case applications.",
+                quotes: [
+                    "Your teaching method is truly unique and I actually for the first time, felt, I was sitting at an IIM-level class.",
+                    "MM 1 was the only class where I participated in the entire term. This course felt relatable and sir made it a safe space to participate.",
+                    "Marketing is a life skill. I keep coming back to those all the time. So can you please host and share with us again."
+                ]
+            },
+            bodhgaya: {
+                menuTitle: "IIM Bodhgaya", title: "MBA & IPM Portfolios (2022-24)", rating: "4.77 / 5.0 (Highest Course)",
+                insight: "Independent instructor role requiring high intellectual expectations. Feedback highlighted a rigorous environment combined with strong conceptual learning.",
+                quotes: [
+                    "The subject made me think and I wish other subjects were taught in such a systematic manner.",
+                    "The classroom environment was strict and demanding but this course changed how I understand marketing entirely.",
+                    "The exam actually made us think rather than memorize."
+                ]
+            },
+            hse: {
+                menuTitle: "HSE Moscow", title: "Data Analysis in R & Python (2021-22)", rating: "High Novelty (4.21/5.0)",
+                insight: "Technical methodology course delivered online. Students recognized the high difficulty of the material alongside the practical utility of the skills.",
+                quotes: [
+                    "I was terrified of coding, but the digital modules were so well structured.",
+                    "The course was technically difficult, but breaking down complex statistical models into actionable steps made it highly valuable."
+                ]
+            },
+            geneva: {
+                menuTitle: "Univ. of Geneva", title: "Data Driven Decision Making (2018-20)", rating: "3.58 / 4.0 (89.5%)",
+                insight: "Early teaching phase focused on quantitative topics. Prioritized approachability, patience, and ensuring baseline comprehension in multilingual classes.",
+                quotes: [
+                    "Ramesh is a good assistant. He answers the questions by patience and he is trying to be sure that everybody is understanding.",
+                    "Always very available and answers quickly when we have problems.",
+                    "Re-explains lecture material and offers a different perspective."
+                ]
+            }
+        };
+
+        const menu = document.getElementById('courseMenu');
+        Object.keys(courseData).forEach(key => {
+            let btn = document.createElement('button');
+            btn.innerHTML = `${courseData[key].menuTitle} <i class="fas fa-chevron-right small d-none d-md-block"></i>`;
+            btn.onclick = () => showCourse(key, btn);
+            menu.appendChild(btn);
+        });
+
+        function showCourse(key, btnElement) {
+            document.querySelectorAll('.course-menu button').forEach(b => b.classList.remove('active'));
+            if(btnElement) btnElement.classList.add('active');
+
+            const c = courseData[key];
+            document.getElementById("cTitle").innerText = c.title;
+            document.getElementById("cRating").innerText = c.rating;
+            document.getElementById("cInsight").innerText = c.insight;
+            
+            let quotesHtml = "";
+            c.quotes.forEach(q => quotesHtml += `<div class="verbatim">${q}</div>`);
+            document.getElementById("cQuotes").innerHTML = quotesHtml;
+        }
+
+        showCourse('ranchi', menu.firstChild);
+    </script>
 </body>
 </html>
