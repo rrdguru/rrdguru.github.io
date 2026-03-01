@@ -22,10 +22,32 @@
         
         body {
             font-family: 'Inter', sans-serif; color: var(--text-main);
-            background-color: var(--bg-light); line-height: 1.7; margin: 0; overflow-x: hidden;
+            background-color: var(--bg-light); line-height: 1.6; margin: 0; overflow-x: hidden;
         }
 
         h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; color: var(--heading-color); }
+
+        /* --- Clean Bullet Lists --- */
+        ul.airy-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+        ul.airy-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-main);
+        }
+        ul.airy-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            top: -2px;
+        }
 
         /* --- Sidebar --- */
         @media (min-width: 992px) {
@@ -95,30 +117,26 @@
 
         /* --- Teaching Analytics Specifics --- */
         .stat-card {
-            background: white; border-radius: 8px; padding: 2rem 1.5rem; text-align: center;
+            background: white; border-radius: 8px; padding: 1.5rem 1rem; text-align: center;
             border: 1px solid var(--border-color); box-shadow: 0 4px 6px rgba(0,0,0,0.02); height: 100%;
         }
-        .metric { font-size: 2.5rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 0.5rem; }
+        .metric { font-size: 2.2rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 0.5rem; }
 
         .evolution-timeline {
             border-left: 3px solid var(--accent); padding-left: 2rem; margin-left: 1rem;
         }
-        .evo-item { position: relative; margin-bottom: 3rem; background: #f8fafc; padding: 1.5rem; border-radius: 8px; border: 1px solid #e2e8f0; }
+        .evo-item { position: relative; margin-bottom: 2rem; background: #f8fafc; padding: 1.5rem; border-radius: 8px; border: 1px solid #e2e8f0; }
         .evo-item::before {
             content: ''; position: absolute; left: -2.85rem; top: 1.5rem; width: 20px; height: 20px;
             background: white; border: 4px solid var(--accent); border-radius: 50%;
         }
-        .evo-title { font-size: 1.1rem; font-weight: 700; color: var(--sidebar-bg); display: flex; justify-content: space-between; }
-        .evo-tag { font-size: 0.75rem; background: var(--sidebar-bg); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; }
+        .evo-title { font-size: 1.1rem; font-weight: 700; color: var(--sidebar-bg); display: flex; justify-content: space-between; align-items: center; }
+        .evo-tag { font-size: 0.75rem; background: var(--sidebar-bg); color: white; padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 500; }
         
-        .feedback-loop { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; border-top: 1px dashed #cbd5e1; padding-top: 1rem; }
-        .f-box { flex: 1; min-width: 200px; }
-        .f-box h6 { font-size: 0.8rem; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 0.3rem; }
-        .f-box p { font-size: 0.9rem; margin: 0; color: var(--text-main); }
-
         .chart-wrapper {
             background: white; border: 1px solid var(--border-color); border-radius: 8px;
             padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 0.5rem;
+            min-height: 350px;
         }
 
         /* Course Dashboard */
@@ -141,7 +159,7 @@
             font-size: 0.95rem; line-height: 1.6; box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
         .verbatim.hero-quote {
-            background: var(--sidebar-bg); color: white; border: none; font-size: 1.1rem;
+            background: var(--sidebar-bg); color: white; border: none; font-size: 1.05rem;
         }
         .verbatim.hero-quote::before { color: rgba(255,255,255,0.2); }
         .verbatim::before {
@@ -150,9 +168,10 @@
 
         .drive-card {
             display: flex; align-items: center; padding: 1rem; background: white; border: 1px solid var(--border-color);
-            border-radius: 8px; text-decoration: none; color: var(--text-main); transition: 0.2s; font-weight: 500;
+            border-radius: 8px; text-decoration: none; color: var(--text-main); transition: 0.2s; font-weight: 500; font-size: 0.9rem;
         }
         .drive-card:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .drive-icon { font-size: 1.3rem; color: #34a853; margin-right: 0.8rem; }
 
         @media (max-width: 768px) { .course-menu, .course-content { width: 100%; border-right: none; } }
     </style>
@@ -165,7 +184,7 @@
         <h1 style="margin-top:-5px;">Das Guru</h1>
         <h2>Senior Assistant Professor</h2>
         
-        <p class="small opacity-75 mt-3 mb-0" style="line-height: 1.6;">Bridging rigorous quantitative research with real-world management practice to drive student success.</p>
+        <p class="small opacity-75 mt-3 mb-0" style="line-height: 1.6;">Bridging rigorous quantitative research with practical management application.</p>
 
         <ul class="contact-list">
             <li><i class="fas fa-university"></i> South Asian Univ, New Delhi</li>
@@ -187,13 +206,21 @@
         <div id="view-portfolio" class="view-section active">
             
             <section class="mb-5">
-                <h3 class="section-title">Global Insights. Institutional Impact.</h3>
-                <p style="color: var(--sidebar-bg); font-weight: 500;">My identity as a marketing academic is heavily informed by my roots in the corporate sector. Before entering academia, I spent several years working in software engineering and heavy industrial management across top-tier firms in India and Europe.</p>
-                <p>Today, my academic career is defined by a borderless perspective. I earned my doctorate in Switzerland and have since instructed diverse student cohorts across Latin America, Eastern Europe, and the Indian subcontinent. This extensive international exposure allows me to bring a distinctly global, empirically grounded framework to both my research initiatives and my classroom pedagogy.</p>
+                <h3 class="section-title">Academic Profile & Industry Background</h3>
+                <ul class="airy-list">
+                    <li>Built a foundation in the corporate sector with 5+ years of experience in software engineering and heavy industrial management.</li>
+                    <li>Worked across top-tier organizations including SAIL, Infosys, and Fact Works GmbH Berlin.</li>
+                    <li>Earned a doctorate in Switzerland and instructed diverse student cohorts across Latin America, Eastern Europe, and India.</li>
+                    <li>Applying a global, empirically grounded framework to both research initiatives and classroom pedagogy.</li>
+                </ul>
                 
                 <div class="p-4 bg-light border-start border-4 border-primary rounded mt-4">
-                    <h5 class="mb-2" style="color: var(--sidebar-bg);"><i class="fas fa-building text-secondary me-2"></i> Foundational Leadership at SAU</h5>
-                    <p class="mb-0 small">At present, I serve as a founding faculty member within the newly established Faculty of Management at South Asian University. Establishing an academic department from inception requires immense adaptability and strategic foresight. I am directly involved in shaping our academic governance, designing robust curricula, and fostering a collaborative, high-performance departmental culture.</p>
+                    <h5 class="mb-3" style="color: var(--sidebar-bg);"><i class="fas fa-building text-secondary me-2"></i> Foundational Leadership at SAU</h5>
+                    <ul class="airy-list mb-0 small">
+                        <li>Serving as a founding faculty member at the newly established Faculty of Management at South Asian University.</li>
+                        <li>Directly shaping academic governance and designing core curricula across undergraduate and postgraduate levels.</li>
+                        <li>Fostering a collaborative, high-performance departmental culture from inception.</li>
+                    </ul>
                 </div>
             </section>
 
@@ -202,22 +229,32 @@
                 <div class="info-grid">
                     <div class="info-card">
                         <h4><i class="fas fa-users text-secondary"></i> Student Culture</h4>
-                        <p class="small text-muted mb-0">I champion the creation of active student organizations and dynamic campus clubs. By supporting these initiatives, we cultivate peer-driven leadership networks and establish an environment that mirrors the collaborative demands of modern corporate settings.</p>
+                        <ul class="airy-list small mb-0">
+                            <li>Championing the creation of active student organizations and campus clubs.</li>
+                            <li>Cultivating peer-driven leadership networks.</li>
+                            <li>Establishing an environment that mirrors collaborative corporate settings.</li>
+                        </ul>
                     </div>
                     <div class="info-card">
                         <h4><i class="fas fa-briefcase text-secondary"></i> Career Advancement</h4>
-                        <p class="small text-muted mb-0">Moving away from standard transactional placement models, I prioritize deep, long-term career development. I actively forge industry partnerships that connect our emerging talent with market leaders.</p>
+                        <ul class="airy-list small mb-0">
+                            <li>Prioritizing deep, long-term career development over standard transactional placement models.</li>
+                            <li>Forging industry partnerships to connect emerging talent with market leaders.</li>
+                        </ul>
                     </div>
                 </div>
             </section>
 
             <section class="mb-5">
                 <h3 class="section-title">Research Architecture</h3>
-                <p>At its core, my research investigates how perceived product quality dictates long-term consumer-brand relationships. Recently, I have pushed this framework into new territory, adapting it to evaluate the ultimate service offering: Higher Education.</p>
-                <div class="info-grid mt-3">
+                <ul class="airy-list">
+                    <li>Core research investigates how perceived product quality dictates long-term consumer brand relationships.</li>
+                    <li>Employing multidimensional modeling to capture exactly how consumers experience quality.</li>
+                    <li>Expanding this framework to evaluate higher education as a service offering.</li>
+                </ul>
+                <div class="info-grid mt-4">
                     <div class="info-card border-top border-4 border-secondary">
                         <h4><i class="fas fa-chart-line text-secondary"></i> Core Focus</h4>
-                        <p class="small text-muted mb-3">Quantitative tracking of consumer behavior.</p>
                         <div>
                             <span class="badge-tag">Multidimensional Quality Models</span>
                             <span class="badge-tag">Longitudinal Brand Loyalty</span>
@@ -226,9 +263,9 @@
                     </div>
                     <div class="info-card border-top border-4 border-success">
                         <h4><i class="fas fa-university text-success"></i> Education Quality Lens</h4>
-                        <p class="small text-muted mb-3">Re-engineering quality metrics for academia.</p>
                         <div>
                             <span class="badge-tag">Institutional Expansion Dilemmas</span>
+                            <span class="badge-tag">Educational Quality Perception</span>
                             <span class="badge-tag">AI & Ethics in Pedagogy</span>
                         </div>
                     </div>
@@ -238,10 +275,10 @@
             <section class="mb-5">
                 <div class="text-center mt-5 p-5 bg-light rounded border">
                     <i class="fas fa-chalkboard-teacher fs-2 text-accent mb-3"></i>
-                    <h3 class="text-primary">The Reflective Practitioner</h3>
-                    <p class="text-muted mx-auto small" style="max-width: 600px;">A transparent, data-driven analysis spanning 2018–2025. Explore how I utilize longitudinal student evaluation data to continuously refine pedagogical rigor, psychological safety, and transformational outcomes.</p>
+                    <h3 class="text-primary">Teaching Portfolio & Data</h3>
+                    <p class="text-muted mx-auto small" style="max-width: 600px;">Explore a comprehensive analysis of my teaching trajectory, course evaluation metrics, extracted student themes, and an interactive subject explorer.</p>
                     <button onclick="switchView('teaching')" class="btn btn-primary mt-2 px-4 py-2 fw-bold" style="background-color: var(--sidebar-bg); border: none;">
-                        Open Teaching Analytics Dashboard <i class="fas fa-arrow-right ms-2"></i>
+                        Open Teaching Dashboard <i class="fas fa-arrow-right ms-2"></i>
                     </button>
                 </div>
             </section>
@@ -251,7 +288,7 @@
         <div id="view-teaching" class="view-section">
             
             <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
-                <h3 class="section-title border-0 mb-0 pb-0">Pedagogical Evolution & Analytics</h3>
+                <h3 class="section-title border-0 mb-0 pb-0">Teaching Portfolio & Evaluation Data</h3>
                 <button onclick="switchView('portfolio')" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
                     <i class="fas fa-arrow-left me-2"></i> Back
                 </button>
@@ -260,7 +297,7 @@
             <section class="mb-5">
                 <div class="verbatim hero-quote">
                     "MM 1 was the only class where I participated in the entire term. This course felt relatable and sir made it a safe space to participate. While I was struggling so bad with all the subjects and felt like giving up, MM1 was one of the subjects that gave me hope to hang on."
-                    <div class="mt-2 text-end text-light opacity-75" style="font-size: 0.85rem; font-style: normal;">— PGP Student, IIM Ranchi (2025)</div>
+                    <div class="mt-2 text-end text-light opacity-75" style="font-size: 0.85rem; font-style: normal;">PGP Student, IIM Ranchi (2025)</div>
                 </div>
                 
                 <div class="row mt-4">
@@ -271,73 +308,54 @@
             </section>
 
             <section class="mb-5 pb-3">
-                <h4 class="mb-4 text-primary" style="font-size: 1.3rem;">The Arc of a Reflective Educator (2018–2025)</h4>
-                <p class="text-muted small mb-4">Teaching is not static. An analysis of over 700 student evaluations across three countries reveals a distinct evolutionary trajectory—moving from baseline student support toward a masterclass environment that perfectly balances intense intellectual rigor with crucial psychological safety.</p>
+                <h4 class="mb-4 text-primary" style="font-size: 1.3rem;">Teaching Trajectory (2018 to 2025)</h4>
+                <p class="text-muted small mb-4">Evaluation data from 2018 to 2025 spans over 700 students across three countries. The feedback outlines a progression from early assistant roles to independent course leadership.</p>
                 
-                
-
                 <div class="evolution-timeline mt-4">
-                    
                     <div class="evo-item">
-                        <div class="evo-title">Phase 3: The Transformational Facilitator <span class="evo-tag">IIM Ranchi (2025)</span></div>
-                        <div class="feedback-loop">
-                            <div class="f-box">
-                                <h6>The Synthesis</h6>
-                                <p>Successfully merged high intellectual expectations with explicit psychological safety. Students felt secure taking intellectual risks during case discussions.</p>
-                            </div>
-                            <div class="f-box">
-                                <h6>The Result</h6>
-                                <p>Peak datasets: 5.00/5.00 on preparedness, 4.86/5.00 overall. Students report the course changed their career intentions and gave them "hope".</p>
-                            </div>
-                        </div>
+                        <div class="evo-title">IIM Ranchi (2025) <span class="evo-tag">Instructor</span></div>
+                        <ul class="airy-list mt-3 mb-0">
+                            <li class="small">Received strong evaluations, including a 4.86/5.00 overall instructor rating.</li>
+                            <li class="small">Combined rigorous case discussions with an environment that encouraged active student participation.</li>
+                            <li class="small">Feedback indicates the course effectively related marketing concepts to broader problem-solving skills.</li>
+                        </ul>
                     </div>
 
                     <div class="evo-item">
-                        <div class="evo-title">Phase 2: Independence & Rigor <span class="evo-tag">HSE Moscow & IIM Bodhgaya (2021-24)</span></div>
-                        <div class="feedback-loop">
-                            <div class="f-box">
-                                <h6>Pedagogical Shift</h6>
-                                <p>Transitioned to independent instructor teaching complex quantitative models and high-level marketing strategy. Emphasized intense academic challenge.</p>
-                            </div>
-                            <div class="f-box">
-                                <h6>Feedback Incorporated</h6>
-                                <p>While students praised the transformational learning, some noted the environment felt overly strict. Recognized the need to actively foster a "safe space" for debate.</p>
-                            </div>
-                        </div>
+                        <div class="evo-title">IIM Bodhgaya & HSE Moscow (2021-2024) <span class="evo-tag">Instructor</span></div>
+                        <ul class="airy-list mt-3 mb-0">
+                            <li class="small">Transitioned to independent instruction for quantitative models and marketing strategy.</li>
+                            <li class="small">Delivered high-complexity data analytics (R/Python) modules to online cohorts at HSE.</li>
+                            <li class="small">Feedback at IIM Bodhgaya highlighted strong conceptual learning alongside a structured, demanding classroom environment.</li>
+                        </ul>
                     </div>
 
                     <div class="evo-item mb-0">
-                        <div class="evo-title">Phase 1: The Empathetic Foundation <span class="evo-tag">Univ. of Geneva (2018-20)</span></div>
-                        <div class="feedback-loop">
-                            <div class="f-box">
-                                <h6>Initial Strengths</h6>
-                                <p>Consistent high marks for approachability, extreme patience, and availability while assisting in highly demanding data-driven courses.</p>
-                            </div>
-                            <div class="f-box">
-                                <h6>Feedback Incorporated</h6>
-                                <p>Early feedback highlighted issues with instructional pacing for diverse cohorts. Adapted by structuring delivery and refining assignment clarity.</p>
-                            </div>
-                        </div>
+                        <div class="evo-title">Univ. of Geneva (2018-2020) <span class="evo-tag">Teaching Assistant</span></div>
+                        <ul class="airy-list mt-3 mb-0">
+                            <li class="small">Assisted in delivering highly demanding data-driven and methodology courses.</li>
+                            <li class="small">Received consistent marks for approachability, patience, and availability.</li>
+                            <li class="small">Adapted to early feedback by adjusting instructional pacing and refining assignment instructions for international cohorts.</li>
+                        </ul>
                     </div>
-
                 </div>
             </section>
 
             <section class="mb-5 pb-3">
                 <div class="row g-4">
                     <div class="col-md-6">
-                        <h5 class="text-center text-primary mb-3" style="font-size: 1.1rem;">Longitudinal Evaluation Trajectory</h5>
+                        <h5 class="text-center text-primary mb-3" style="font-size: 1.1rem;">Institutional Evaluation Trajectory</h5>
                         <div class="chart-wrapper">
-                            <canvas id="trajectoryChart" height="200"></canvas>
+                            <canvas id="trajectoryChart" height="350"></canvas>
                         </div>
-                        <p class="text-muted text-center" style="font-size: 0.8rem;"><em>Demonstrates a decisive, sustained upward trajectory. Normalized to a 5.0 scale.</em></p>
+                        <p class="text-muted text-center mt-2" style="font-size: 0.8rem;"><em>Scores normalized to a 5.0 scale across institutions.</em></p>
                     </div>
                     <div class="col-md-6">
-                        <h5 class="text-center text-primary mb-3" style="font-size: 1.1rem;">Rigor vs. Psychological Safety Matrix</h5>
+                        <h5 class="text-center text-primary mb-3" style="font-size: 1.1rem;">Course Feedback Dynamics</h5>
                         <div class="chart-wrapper">
-                            <canvas id="scatterChart" height="200"></canvas>
+                            <canvas id="scatterChart" height="350"></canvas>
                         </div>
-                        <p class="text-muted text-center" style="font-size: 0.8rem;"><em>True transformation occurs when high cognitive demand meets high student security.</em></p>
+                        <p class="text-muted text-center mt-2" style="font-size: 0.8rem;"><em>Displays the relationship between course rigor and overall student satisfaction based on qualitative analysis.</em></p>
                     </div>
                 </div>
             </section>
@@ -351,24 +369,24 @@
                             <h5 id="cTitle" class="text-primary fw-bold mb-0"></h5>
                             <span id="cRating" class="badge bg-success"></span>
                         </div>
-                        <h6 class="text-uppercase text-muted mb-1" style="font-size: 0.75rem; letter-spacing: 1px;">Analytical Insight</h6>
-                        <p id="cInsight" class="text-main small mb-4" style="line-height: 1.5;"></p>
+                        <h6 class="text-uppercase text-muted mb-1" style="font-size: 0.75rem; letter-spacing: 1px;">Analytical Summary</h6>
+                        <p id="cInsight" class="text-main small mb-4" style="line-height: 1.6;"></p>
                         
-                        <h6 class="text-uppercase text-muted" style="font-size: 0.75rem; letter-spacing: 1px;">Student Verbatims</h6>
+                        <h6 class="text-uppercase text-muted" style="font-size: 0.75rem; letter-spacing: 1px;">Selected Verbatims</h6>
                         <div id="cQuotes"></div>
                     </div>
                 </div>
             </section>
 
             <section class="mb-5">
-                <h4 class="mb-3 text-primary" style="font-size: 1.3rem;">Open Data & Verification</h4>
-                <p class="text-muted mb-4 small">True reflective practice requires transparency. Raw evaluation reports, critical incident feedback, and overarching pedagogical analysis documents are hosted publicly.</p>
+                <h4 class="mb-3 text-primary" style="font-size: 1.3rem;">Data & Verification</h4>
+                <p class="text-muted mb-4 small">Raw evaluation reports and feedback documents are hosted publicly.</p>
                 <div class="row g-3">
                     <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1HzA7ttZjhUnYs1vkDSATXjYmMa_KYgrL" target="_blank" class="drive-card"><i class="fab fa-google-drive drive-icon"></i> IIM Ranchi Data</a></div>
                     <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1utDb_rUdYFPWjReLibZ24qIhdRZT0y1T" target="_blank" class="drive-card"><i class="fab fa-google-drive drive-icon"></i> IIM Bodhgaya Data</a></div>
                     <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1qvqL4fuR2EcNgvfFu_xHiEK8f_EDBG72" target="_blank" class="drive-card"><i class="fab fa-google-drive drive-icon"></i> HSE Moscow Data</a></div>
                     <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1fXw3bWdI-Sm69yCgmX_9bdjU5i9N1Ujx" target="_blank" class="drive-card"><i class="fab fa-google-drive drive-icon"></i> Geneva Data</a></div>
-                    <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1db3LogTECafyDbCQ34VBwKUCg4rjUE1Q" target="_blank" class="drive-card"><i class="fas fa-folder-open text-warning me-3 fs-4"></i> Master Directory</a></div>
+                    <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1db3LogTECafyDbCQ34VBwKUCg4rjUE1Q" target="_blank" class="drive-card"><i class="fas fa-folder-open text-warning me-2 fs-5"></i> Master Directory</a></div>
                 </div>
             </section>
 
@@ -395,7 +413,7 @@
             new Chart(document.getElementById("trajectoryChart"), {
                 type: "line",
                 data: {
-                    labels: ["2018", "2019", "2020", "2022", "2023", "2025 (Peak)"],
+                    labels: ["2018", "2019", "2020", "2022", "2023", "2025"],
                     datasets: [{
                         label: "Normalized Overall Score",
                         data: [3.88, 3.69, 3.58, 4.06, 4.77, 4.86],
@@ -405,6 +423,7 @@
                 },
                 options: { 
                     responsive: true, maintainAspectRatio: false,
+                    layout: { padding: 15 },
                     plugins: { legend: { display: false } }, 
                     scales: { y: { min: 3.0, max: 5.0 } } 
                 }
@@ -415,17 +434,18 @@
                 type: "bubble",
                 data: {
                     datasets: [
-                        { label: 'Geneva (High Support, Low Rigor control)', data: [{x: 3.5, y: 3.8, r: 8}], backgroundColor: '#94a3b8' },
-                        { label: 'Bodhgaya (High Rigor, Strict Environment)', data: [{x: 4.8, y: 3.9, r: 15}], backgroundColor: '#f59e0b' },
-                        { label: 'Ranchi (High Rigor + High Safety)', data: [{x: 4.9, y: 4.86, r: 22}], backgroundColor: '#10b981' }
+                        { label: 'Geneva (TA)', data: [{x: 3.5, y: 3.8, r: 10}], backgroundColor: '#94a3b8' },
+                        { label: 'Bodhgaya', data: [{x: 4.8, y: 4.1, r: 15}], backgroundColor: '#f59e0b' },
+                        { label: 'Ranchi', data: [{x: 4.6, y: 4.86, r: 20}], backgroundColor: '#10b981' }
                     ]
                 },
                 options: {
                     responsive: true, maintainAspectRatio: false,
-                    plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: {size: 9} } } },
+                    layout: { padding: 20 },
+                    plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: {size: 11} } } },
                     scales: {
-                        x: { title: { display: true, text: 'Intellectual Rigor', font: {size: 10} }, min: 3.2, max: 5.0 },
-                        y: { title: { display: true, text: 'Psychological Safety', font: {size: 10} }, min: 3.2, max: 5.0 }
+                        x: { title: { display: true, text: 'Rigor', font: {size: 11} }, min: 3.2, max: 5.0 },
+                        y: { title: { display: true, text: 'Satisfaction', font: {size: 11} }, min: 3.2, max: 5.0 }
                     }
                 }
             });
@@ -435,25 +455,25 @@
         const courseData = {
             ranchi: {
                 menuTitle: "IIM Ranchi", title: "Marketing Management I (2025)", rating: "4.86 / 5.0 (Peak)",
-                insight: "The culmination of the reflective practice arc. Successfully merged a highly demanding, IIM-level case discussion environment with explicitly protected psychological safety. Generated the highest scores in the 5-year dataset.",
+                insight: "Focused on treating marketing as a measurable, strategic discipline. Emphasized analytical reasoning and real-world case applications.",
                 quotes: [
                     "Your teaching method is truly unique and I actually for the first time, felt, I was sitting at an IIM-level class.",
                     "MM 1 was the only class where I participated in the entire term. This course felt relatable and sir made it a safe space to participate.",
-                    "Leaving IIM Ranchi means taking away our access to view your ppts... marketing is a life skill. I keep coming back to those all the time."
+                    "Marketing is a life skill. I keep coming back to those all the time. So can you please host and share with us again."
                 ]
             },
             bodhgaya: {
                 menuTitle: "IIM Bodhgaya", title: "MBA & IPM Portfolios (2022-24)", rating: "4.77 / 5.0 (Highest Course)",
-                insight: "The phase of independent methodological rigor. Students faced high intellectual expectations. Produced heavily polarized feedback: extreme transformational satisfaction coupled with notes on strict discipline and demanding standards.",
+                insight: "Independent instructor role requiring high intellectual expectations. Feedback highlighted a rigorous environment combined with strong conceptual learning.",
                 quotes: [
                     "The subject made me think and I wish other subjects were taught in such a systematic manner.",
-                    "The classroom environment was strict and demanding... but this course changed how I understand marketing entirely.",
+                    "The classroom environment was strict and demanding but this course changed how I understand marketing entirely.",
                     "The exam actually made us think rather than memorize."
                 ]
             },
             hse: {
                 menuTitle: "HSE Moscow", title: "Data Analysis in R & Python (2021-22)", rating: "High Novelty (4.21/5.0)",
-                insight: "A highly technical methodology course delivered online. Students recognized the extreme technical difficulty (4.06/5.0) but highly valued the novelty of the knowledge gained.",
+                insight: "Technical methodology course delivered online. Students recognized the high difficulty of the material alongside the practical utility of the skills.",
                 quotes: [
                     "I was terrified of coding, but the digital modules were so well structured.",
                     "The course was technically difficult, but breaking down complex statistical models into actionable steps made it highly valuable."
@@ -461,9 +481,9 @@
             },
             geneva: {
                 menuTitle: "Univ. of Geneva", title: "Data Driven Decision Making (2018-20)", rating: "3.58 / 4.0 (89.5%)",
-                insight: "The apprenticeship phase. Instructing highly quantitative material to international cohorts. Established core strengths in patience and approachability, while actively refining instructional clarity and pacing.",
+                insight: "Early teaching phase focused on quantitative topics. Prioritized approachability, patience, and ensuring baseline comprehension in multilingual classes.",
                 quotes: [
-                    "Ramesh is a good assistant. He answers the questions with patience and tries to be sure that everybody is understanding.",
+                    "Ramesh is a good assistant. He answers the questions by patience and he is trying to be sure that everybody is understanding.",
                     "Always very available and answers quickly when we have problems.",
                     "Re-explains lecture material and offers a different perspective."
                 ]
