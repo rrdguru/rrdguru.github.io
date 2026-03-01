@@ -1,29 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ramesh Roshan Das Guru | Marketing Scholar</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
 
-:root{
---sidebar-bg:#002147;
---accent:#4a90e2;
---bg-light:#f8fafc;
---border:#e2e8f0;
-}
-
 body{
 font-family:Inter;
-background:var(--bg-light);
+background:#f8fafc;
 margin:0;
 }
 
@@ -32,11 +24,11 @@ font-family:Lora;
 }
 
 .sidebar{
-background:var(--sidebar-bg);
-color:white;
-height:100vh;
 position:fixed;
 width:30%;
+height:100vh;
+background:#002147;
+color:white;
 padding:40px;
 text-align:center;
 }
@@ -47,35 +39,49 @@ border-radius:50%;
 margin-bottom:20px;
 }
 
-.main-content{
+.main{
 margin-left:30%;
 padding:60px;
 background:white;
 min-height:100vh;
 }
 
+.hero{
+margin-bottom:50px;
+}
+
+.hero-title{
+font-size:2.5rem;
+}
+
+.highlight{
+background:#f1f5f9;
+padding:25px;
+border-left:4px solid #4a90e2;
+margin-top:20px;
+}
+
 .section-title{
-font-size:1.8rem;
-margin-bottom:25px;
-border-bottom:2px solid var(--border);
+border-bottom:2px solid #e2e8f0;
 padding-bottom:10px;
+margin-bottom:25px;
 }
 
-.stat-card{
-border:1px solid var(--border);
-border-radius:10px;
-padding:30px;
-text-align:center;
+.stat{
+font-size:38px;
+font-weight:600;
+color:#4a90e2;
 }
 
-.metric{
-font-size:40px;
-font-weight:700;
-color:var(--accent);
+.card-box{
+border:1px solid #e2e8f0;
+border-radius:8px;
+padding:25px;
+height:100%;
 }
 
 .timeline{
-border-left:3px solid var(--accent);
+border-left:3px solid #4a90e2;
 padding-left:20px;
 }
 
@@ -88,31 +94,24 @@ position:relative;
 content:'';
 width:12px;
 height:12px;
-background:var(--accent);
+background:#4a90e2;
 border-radius:50%;
 position:absolute;
 left:-26px;
-top:5px;
+top:4px;
 }
 
-.dashboard{
-border:1px solid var(--border);
-border-radius:10px;
-padding:30px;
-background:white;
-}
-
-.theme-card{
-border:1px solid var(--border);
+.theme{
+border:1px solid #e2e8f0;
 padding:20px;
 border-radius:8px;
 height:100%;
 }
 
-.verbatim{
+.quote{
 background:#f8fafc;
 padding:20px;
-border-left:3px solid var(--accent);
+border-left:3px solid #4a90e2;
 margin-bottom:15px;
 font-style:italic;
 }
@@ -126,6 +125,7 @@ display:block;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -134,267 +134,292 @@ display:block;
 
 <img src="rr.jpg" class="profile-img">
 
-<h2>Ramesh Roshan Das Guru</h2>
+<h3>Ramesh Roshan Das Guru</h3>
 
 <p>Senior Assistant Professor of Marketing<br>
 South Asian University</p>
 
-<div style="margin-top:40px">
+<p style="font-size:14px;opacity:0.8">
+Marketing scholar integrating engineering analytics, consumer behavior research and management education.
+</p>
 
-<a href="https://scholar.google.com" class="text-white me-3"><i class="fa fa-graduation-cap"></i></a>
-<a href="https://orcid.org" class="text-white me-3"><i class="fab fa-orcid"></i></a>
-<a href="https://researchgate.net" class="text-white"><i class="fab fa-researchgate"></i></a>
+<div style="margin-top:30px">
+
+<a href="https://scholar.google.com" class="text-white me-3"><i class="fa fa-graduation-cap"></i></a> <a href="https://orcid.org" class="text-white me-3"><i class="fab fa-orcid"></i></a> <a href="https://researchgate.net" class="text-white me-3"><i class="fab fa-researchgate"></i></a> <a href="https://x.com" class="text-white"><i class="fab fa-twitter"></i></a>
 
 </div>
 
 </aside>
 
+<main class="main">
 
-<main class="main-content">
+<div id="home" class="view active">
 
+<section class="hero">
 
-<div id="portfolio" class="view active">
+<h1 class="hero-title">Marketing, Technology and Consumer Insight</h1>
 
-<h2 class="section-title">Research and Teaching</h2>
-
-<p>
-My research examines consumer perceptions of product quality and the long-term evolution of brand relationships. My teaching integrates this research with real-world managerial applications.
+<p class="lead">
+My work sits at the intersection of marketing strategy, consumer behavior and technological transformation. 
+With a background in engineering and analytics, I examine how product quality, innovation and sustainability shape long term consumer relationships with brands.
 </p>
 
-<button onclick="switchView('teaching')" class="btn btn-outline-primary mt-3">
+<div class="highlight">
+I currently serve as founding faculty in the Faculty of Management at South Asian University, contributing to the creation of a new management education ecosystem in South Asia.
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Professional Profile</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card-box">
+<h5>Interdisciplinary Expertise</h5>
+Engineering and IT industry experience combined with doctoral research in marketing allows me to integrate analytics, strategy and consumer psychology in teaching and research.
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card-box">
+<h5>Global Teaching Experience</h5>
+Teaching across Switzerland, Russia and India has exposed me to diverse student cohorts ranging from undergraduate programs to MBA and digital business programs.
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card-box">
+<h5>Research Agenda</h5>
+My research focuses on consumer experienced product quality, sustainable consumption and emerging technologies including electric vehicles and AI driven marketing analytics.
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="mt-5">
+
+<h2 class="section-title">Research Direction</h2>
+
+<p>
+My research explores how consumers perceive and evaluate product quality and how these perceptions influence brand loyalty, adoption of new technologies and sustainable consumption behaviors.
+</p>
+
+<ul>
+<li>Consumer experienced product quality</li>
+<li>Electric vehicle adoption and sustainability</li>
+<li>Consumer decision processes and brand relationships</li>
+<li>Analytics driven marketing insights</li>
+</ul>
+
+</section>
+
+<section class="mt-5">
+
+<h2 class="section-title">Teaching and Pedagogy</h2>
+
+<p>
+My teaching philosophy emphasizes analytical thinking, real world application and intellectual challenge. Courses are designed to move students beyond memorization toward structured reasoning and evidence based decision making.
+</p>
+
+<button onclick="switchView('teaching')" class="btn btn-outline-primary">
 Explore Teaching Analytics
 </button>
 
-</div>
+</section>
 
+</div>
 
 <div id="teaching" class="view">
 
-<div class="d-flex justify-content-between">
-
 <h2 class="section-title">Teaching Analytics Dashboard</h2>
-
-<button onclick="switchView('portfolio')" class="btn btn-outline-secondary">
-Back
-</button>
-
-</div>
-
 
 <div class="row g-4 mb-5">
 
 <div class="col-md-4">
-<div class="stat-card">
-<div class="metric">4.35+</div>
+<div class="card-box text-center">
+<div class="stat">4.35+</div>
 Average Evaluation
 </div>
 </div>
 
 <div class="col-md-4">
-<div class="stat-card">
-<div class="metric">10+</div>
+<div class="card-box text-center">
+<div class="stat">10+</div>
 Courses Delivered
 </div>
 </div>
 
 <div class="col-md-4">
-<div class="stat-card">
-<div class="metric">1000+</div>
+<div class="card-box text-center">
+<div class="stat">1000+</div>
 Students Taught
 </div>
 </div>
 
 </div>
 
-
 <h3 class="section-title">Teaching Trajectory</h3>
 
-<div class="timeline mb-5">
+<div class="timeline">
 
 <div class="timeline-item">
-<b>University of Geneva (2018-2020)</b><br>
-Teaching assistant for Branding, Data Driven Decision Making and Research Methods.
+University of Geneva 2018–2020<br>
+Teaching assistant for Branding and Data Driven Decision Making.
 </div>
 
 <div class="timeline-item">
-<b>HSE Moscow (2021-2022)</b><br>
-R and Python analytics courses delivered online to business undergraduates.
+HSE Moscow 2021–2022<br>
+Analytics courses in R and Python for business students.
 </div>
 
 <div class="timeline-item">
-<b>IIM Bodh Gaya (2022-2024)</b><br>
+IIM Bodh Gaya 2022–2024<br>
 Marketing, Product Management, Brand Management and Research Methods.
 </div>
 
 <div class="timeline-item">
-<b>IIM Ranchi (2025-)</b><br>
-Marketing Management focusing on analytical decision making and case discussions.
+IIM Ranchi 2025–<br>
+Marketing Management focusing on analytical marketing frameworks.
 </div>
 
 <div class="timeline-item">
-<b>South Asian University (Current)</b><br>
-Teaching evaluations to be added after the completion of the academic cycle.
+South Asian University<br>
+Current teaching cycle. Evaluation data will be added soon.
 </div>
 
 </div>
 
+<h3 class="section-title mt-5">Evaluation Trends</h3>
 
-
-<h3 class="section-title">Evaluation Trends</h3>
-
-<div class="dashboard mb-5">
 <canvas id="trendChart"></canvas>
-</div>
 
+<h3 class="section-title mt-5">Institution Comparison</h3>
 
-<h3 class="section-title">Evaluation by Institution</h3>
-
-<div class="dashboard mb-5">
 <canvas id="institutionChart"></canvas>
-</div>
 
+<h3 class="section-title mt-5">Themes in Student Feedback</h3>
 
-<h3 class="section-title">Themes from Student Feedback</h3>
-
-<div class="row g-4 mb-5">
+<div class="row g-4">
 
 <div class="col-md-3">
-<div class="theme-card">
-<h5>Analytical Thinking</h5>
-Students frequently report that the courses emphasize reasoning and structured problem solving rather than memorization.
+<div class="theme">
+Analytical reasoning and structured thinking.
 </div>
 </div>
 
 <div class="col-md-3">
-<div class="theme-card">
-<h5>Real World Application</h5>
-Case discussions and industry examples help translate theory into managerial decision making.
+<div class="theme">
+Application of marketing concepts to real business cases.
 </div>
 </div>
 
 <div class="col-md-3">
-<div class="theme-card">
-<h5>Intellectual Challenge</h5>
-Courses are often described as demanding but rewarding learning experiences.
+<div class="theme">
+Courses described as challenging but intellectually rewarding.
 </div>
 </div>
 
 <div class="col-md-3">
-<div class="theme-card">
-<h5>Transformational Learning</h5>
-Students frequently note that the courses change how they understand marketing problems.
+<div class="theme">
+Students report transformational learning experiences.
 </div>
 </div>
 
 </div>
 
+<h3 class="section-title mt-5">Student Feedback</h3>
 
-<h3 class="section-title">Student Verbatims</h3>
-
-<div class="verbatim">
-“The course made me think rather than memorize. The exam tested reasoning and structure of thought.”
+<div class="quote">
+The course made me think rather than memorize.
 </div>
 
-<div class="verbatim">
-“The instructor explains complex ideas using real examples which makes the subject highly engaging.”
+<div class="quote">
+Complex marketing ideas became clear through real examples.
 </div>
 
-<div class="verbatim">
-“The classroom environment is challenging but it pushes students to think deeper.”
+<div class="quote">
+A challenging classroom environment that pushes students to think deeply.
 </div>
 
-
-<h3 class="section-title">Evaluation Archive</h3>
-
-<p>All teaching analytics presented above are derived from the complete evaluation reports archived below.</p>
+<h3 class="section-title mt-5">Evaluation Archive</h3>
 
 <ul>
-<li><a href="https://drive.google.com/drive/folders/1HzA7ttZjhUnYs1vkDSATXjYmMa_KYgrL">IIM Ranchi</a></li>
-<li><a href="https://drive.google.com/drive/folders/1utDb_rUdYFPWjReLibZ24qIhdRZT0y1T">IIM Bodh Gaya</a></li>
-<li><a href="https://drive.google.com/drive/folders/1qvqL4fuR2EcNgvfFu_xHiEK8f_EDBG72">HSE Moscow</a></li>
-<li><a href="https://drive.google.com/drive/folders/1fXw3bWdI-Sm69yCgmX_9bdjU5i9N1Ujx">University of Geneva</a></li>
-<li>South Asian University (pending)</li>
+
+<li><a href="https://drive.google.com">IIM Ranchi Evaluations</a></li>
+
+<li><a href="https://drive.google.com">IIM Bodh Gaya Evaluations</a></li>
+
+<li><a href="https://drive.google.com">HSE Moscow Evaluations</a></li>
+
+<li><a href="https://drive.google.com">University of Geneva Evaluations</a></li>
+
+<li>South Asian University evaluations will be added after the current academic cycle.</li>
+
 </ul>
+
+<button onclick="switchView('home')" class="btn btn-outline-secondary mt-4">
+Back to Profile
+</button>
 
 </div>
 
 </main>
 
-
 <script>
 
-function switchView(view){
+function switchView(id){
 
 document.querySelectorAll('.view').forEach(v=>{
 v.classList.remove('active')
 })
 
-document.getElementById(view).classList.add('active')
+document.getElementById(id).classList.add('active')
 
 window.scrollTo(0,0)
 
 }
 
-
-const trendChart=new Chart(
+new Chart(
 document.getElementById('trendChart'),
 {
 type:'line',
 data:{
 labels:[
-'Geneva 2018',
-'Geneva 2019',
-'Geneva 2020',
-'HSE 2021',
-'HSE 2022',
-'IIMBG 2022',
-'IIMBG 2023',
-'IIMBG 2024',
-'IIMR 2025'
+Geneva2018='Geneva 2018',
+Geneva2019='Geneva 2019',
+Geneva2020='Geneva 2020',
+HSE2021='HSE 2021',
+HSE2022='HSE 2022',
+IIMBG2022='IIMBG 2022',
+IIMBG2023='IIMBG 2023',
+IIMBG2024='IIMBG 2024',
+IIMR2025='IIMR 2025'
 ],
 datasets:[{
 data:[3.8,3.7,3.6,3.56,3.52,4.25,4.35,4.42,4.06],
 borderColor:'#4a90e2',
-backgroundColor:'rgba(74,144,226,0.2)',
-tension:0.3,
-fill:true
+fill:false
 }]
-},
-options:{
-plugins:{legend:{display:false}},
-scales:{y:{min:3,max:5}}
 }
-}
-)
+})
 
-
-const institutionChart=new Chart(
+new Chart(
 document.getElementById('institutionChart'),
 {
 type:'bar',
 data:{
-labels:[
-'Geneva',
-'HSE Moscow',
-'IIM Bodh Gaya',
-'IIM Ranchi'
-],
+labels:['Geneva','HSE Moscow','IIM Bodh Gaya','IIM Ranchi'],
 datasets:[{
 data:[3.58,3.52,4.35,4.06],
-backgroundColor:[
-'#94a3b8',
-'#60a5fa',
-'#10b981',
-'#4a90e2'
-]
+backgroundColor:['#94a3b8','#60a5fa','#10b981','#4a90e2']
 }]
-},
-options:{
-plugins:{legend:{display:false}},
-scales:{y:{min:3,max:5}}
 }
-}
-)
+})
 
 </script>
 
