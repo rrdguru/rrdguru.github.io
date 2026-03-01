@@ -30,42 +30,49 @@
 
         h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; color: var(--heading-color); }
         
-        section { scroll-margin-top: 90px; padding: 4rem 0; }
+        /* Smooth scrolling offset for fixed navbar */
+        html { scroll-behavior: smooth; }
+        section { scroll-margin-top: 80px; padding: 4rem 0; }
 
-        /* --- Clean Bullet Lists --- */
         ul.airy-list { list-style-type: none; padding-left: 0; margin-bottom: 1.5rem; }
         ul.airy-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.8rem; color: var(--text-main); }
         ul.airy-list li::before { content: '•'; position: absolute; left: 0; color: var(--accent); font-weight: bold; font-size: 1.2rem; top: -2px; }
 
-        /* --- Navbar & Hero --- */
+        /* --- Navbar & Compact Hero --- */
         .navbar {
-            background-color: var(--primary-bg); box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 1rem 0;
+            background-color: var(--primary-bg);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 0.8rem 0;
         }
-        .navbar-brand { font-family: 'Lora', serif; font-weight: 700; font-size: 1.3rem; color: white !important; }
+        .navbar-brand { font-family: 'Lora', serif; font-weight: 700; font-size: 1.3rem; color: #ffffff !important; }
         .nav-link { color: rgba(255,255,255,0.8) !important; font-weight: 500; margin: 0 0.5rem; transition: color 0.2s; }
         .nav-link:hover { color: var(--accent) !important; }
 
         .hero {
-            background: linear-gradient(135deg, var(--primary-bg) 0%, #0f172a 100%); color: white;
-            padding: 6rem 0 5rem; text-align: center; border-bottom: 5px solid var(--accent);
+            background: linear-gradient(135deg, var(--primary-bg) 0%, #0f172a 100%);
+            color: #ffffff;
+            padding: 3rem 0 2.5rem; /* Reduced padding for a more compact header */
+            text-align: center;
+            border-bottom: 5px solid var(--accent);
         }
 
         .profile-img {
-            width: 180px; height: 180px; object-fit: cover; border-radius: 50%;
-            border: 4px solid rgba(255,255,255,0.15); margin-bottom: 1.5rem; box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            width: 140px; height: 140px; /* Reduced from 180px */
+            object-fit: cover; border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.15); margin-bottom: 1rem; box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
 
-        .social-links { display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; }
+        .social-links { display: flex; gap: 1rem; justify-content: center; margin-top: 1rem; }
         .social-links a {
-            color: white; background: rgba(255,255,255,0.1); width: 45px; height: 45px;
+            color: #ffffff; background: rgba(255,255,255,0.1); width: 40px; height: 40px;
             display: flex; align-items: center; justify-content: center; border-radius: 50%;
-            transition: all 0.3s ease; text-decoration: none; font-size: 1.2rem;
+            transition: all 0.3s ease; text-decoration: none; font-size: 1.1rem;
         }
-        .social-links a:hover { background: var(--accent); transform: translateY(-4px); }
+        .social-links a:hover { background: var(--accent); transform: translateY(-3px); }
 
         .citation-block {
-            display: inline-block; margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);
-            padding-top: 1.5rem; text-align: center; font-size: 0.9rem; color: rgba(255,255,255,0.85);
+            display: inline-block; margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 1rem; text-align: center; font-size: 0.9rem; color: rgba(255,255,255,0.9);
         }
 
         /* --- Main Content Layout --- */
@@ -104,7 +111,7 @@
             background: white; border: 4px solid var(--accent); border-radius: 50%;
         }
         .evo-title { font-size: 1.1rem; font-weight: 700; color: var(--primary-bg); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;}
-        .evo-tag { font-size: 0.75rem; background: var(--primary-bg); color: white; padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 500; }
+        .evo-tag { font-size: 0.75rem; background: var(--primary-bg); color: white; padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;}
         
         .chart-wrapper {
             background: white; border: 1px solid var(--border-color); border-radius: 8px;
@@ -125,7 +132,8 @@
         
         .course-menu button {
             text-align: left; padding: 1rem 1.2rem; background: none; border: none; font-size: 0.95rem;
-            border-bottom: 1px solid #e2e8f0; font-weight: 500; color: var(--text-main); transition: 0.2s; flex-shrink: 0;
+            border-bottom: 1px solid #e2e8f0; font-weight: 500; color: var(--text-main); transition: 0.2s;
+            flex-shrink: 0;
         }
         @media (min-width: 768px) { .course-menu button { width: 100%; display: flex; justify-content: space-between; align-items: center; flex-shrink: 1; } }
         .course-menu button:hover { background: #e2e8f0; }
@@ -140,7 +148,7 @@
             border-radius: 6px; border: 1px solid #e2e8f0; margin-bottom: 1rem; font-style: italic; color: #475569;
             font-size: 0.95rem; line-height: 1.6; box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
-        .verbatim.hero-quote { background: var(--primary-bg); color: white; border: none; font-size: 1.05rem; padding: 2rem 2.5rem 2rem 3.5rem;}
+        .verbatim.hero-quote { background: var(--primary-bg); color: #ffffff; border: none; font-size: 1.05rem; padding: 2rem 2.5rem 2rem 3.5rem;}
         .verbatim.hero-quote::before { color: rgba(255,255,255,0.15); top: 1rem; left: 1rem; font-size: 4rem;}
         .verbatim::before { content: '\201C'; position: absolute; left: 0.8rem; top: 0.4rem; font-size: 3rem; color: #cbd5e1; font-family: 'Lora', serif; line-height: 1; }
 
@@ -151,19 +159,15 @@
         .drive-card:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .drive-icon { font-size: 1.3rem; color: #34a853; margin-right: 0.8rem; }
         
-        /* --- Word Cloud Dynamic Tooltip --- */
+        /* Word Cloud Container & Tooltip */
         #wordCloudContainer { width: 100%; height: 350px; background: white; border: 1px solid var(--border-color); border-radius: 8px; position: relative; box-shadow: 0 4px 15px rgba(0,0,0,0.03); cursor: crosshair; }
-        
         #wcTooltip {
             position: absolute; opacity: 0; pointer-events: none; background: white;
             border: 1px solid var(--border-color); padding: 1rem; border-radius: 8px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.15); width: 280px; z-index: 100;
             transition: opacity 0.2s ease; transform: translate(-50%, -110%);
         }
-        
-        /* --- View Transition --- */
-        .view-section { display: none; animation: fadeIn 0.4s ease-in-out; }
-        .view-section.active { display: block; }
+
     </style>
 </head>
 <body>
@@ -176,8 +180,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#" onclick="switchView('portfolio'); return false;">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" onclick="switchView('teaching'); return false;">Teaching Analytics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#profile">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#teaching">Teaching Analytics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#archives">Data Archives</a></li>
                 </ul>
             </div>
         </div>
@@ -186,9 +192,9 @@
     <header class="hero">
         <div class="container">
             <img src="rr.jpg" alt="Ramesh Roshan Das Guru" class="profile-img">
-            <h1 class="display-4 fw-bold mb-2">Ramesh Roshan Das Guru</h1>
-            <h2 class="h4 text-accent mb-3 fw-normal">Senior Assistant Professor of Marketing</h2>
-            <p class="lead mx-auto mb-4 text-light opacity-75" style="max-width: 700px;">
+            <h1 class="display-5 fw-bold mb-1 text-white">Ramesh Roshan Das Guru</h1>
+            <h2 class="h5 text-accent mb-3 fw-normal">Senior Assistant Professor of Marketing</h2>
+            <p class="lead mx-auto mb-3 text-light opacity-75" style="max-width: 700px; font-size: 1.1rem;">
                 Bridging rigorous quantitative research with practical management application to drive institutional excellence and student success.
             </p>
             
@@ -207,119 +213,111 @@
         </div>
     </header>
 
-    <main class="container pb-5 mt-4">
+    <main class="container pb-5">
 
-        <div id="view-portfolio" class="view-section active">
+        <section id="profile">
+            <h3 class="section-title">Academic Profile & Industry Background</h3>
+            <ul class="airy-list">
+                <li>Built a foundation in the corporate sector with 5+ years of experience in software engineering and heavy industrial management.</li>
+                <li>Worked across top-tier organizations including SAIL, Infosys, and Fact Works GmbH Berlin.</li>
+                <li>Earned a doctorate in Switzerland and instructed diverse student cohorts across Latin America, Eastern Europe, and India.</li>
+                <li>Applying a global, empirically grounded framework to both research initiatives and classroom pedagogy.</li>
+            </ul>
             
-            <section id="profile" class="mb-5 pt-4">
-                <h3 class="section-title">Academic Profile & Industry Background</h3>
-                <ul class="airy-list">
-                    <li>Built a foundation in the corporate sector with 5+ years of experience in software engineering and heavy industrial management.</li>
-                    <li>Worked across top-tier organizations including SAIL, Infosys, and Fact Works GmbH Berlin.</li>
-                    <li>Earned a doctorate in Switzerland and instructed diverse student cohorts across Latin America, Eastern Europe, and India.</li>
-                    <li>Applying a global, empirically grounded framework to both research initiatives and classroom pedagogy.</li>
+            <div class="p-4 bg-light border-start border-4 border-primary rounded mt-4">
+                <h5 class="mb-3" style="color: var(--primary-bg);"><i class="fas fa-building text-secondary me-2"></i> Foundational Leadership at SAU</h5>
+                <ul class="airy-list mb-0 small">
+                    <li>Serving as a founding faculty member at the newly established Faculty of Management at South Asian University.</li>
+                    <li>Directly shaping academic governance and designing core curricula across undergraduate and postgraduate levels.</li>
+                    <li>Fostering a collaborative, high-performance departmental culture from inception.</li>
                 </ul>
-                
-                <div class="p-4 bg-light border-start border-4 border-primary rounded mt-4">
-                    <h5 class="mb-3" style="color: var(--primary-bg);"><i class="fas fa-building text-secondary me-2"></i> Foundational Leadership at SAU</h5>
-                    <ul class="airy-list mb-0 small">
-                        <li>Serving as a founding faculty member at the newly established Faculty of Management at South Asian University.</li>
-                        <li>Directly shaping academic governance and designing core curricula across undergraduate and postgraduate levels.</li>
-                        <li>Fostering a collaborative, high-performance departmental culture from inception.</li>
+            </div>
+        </section>
+
+        <section id="ecosystem" class="pt-0">
+            <h3 class="section-title">Ecosystem Building & Career Development</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4><i class="fas fa-users text-secondary"></i> Student Culture</h4>
+                    <ul class="airy-list small mb-0">
+                        <li>Championing the creation of active student organizations and campus clubs.</li>
+                        <li>Cultivating peer-driven leadership networks.</li>
+                        <li>Establishing an environment that mirrors collaborative corporate settings.</li>
                     </ul>
                 </div>
-            </section>
+                <div class="info-card">
+                    <h4><i class="fas fa-briefcase text-secondary"></i> Career Advancement</h4>
+                    <ul class="airy-list small mb-0">
+                        <li>Prioritizing deep, long-term career development over standard transactional placement models.</li>
+                        <li>Forging industry partnerships to connect emerging talent with market leaders.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-            <section class="mb-5">
-                <h3 class="section-title">Ecosystem Building & Career Development</h3>
-                <div class="info-grid">
-                    <div class="info-card">
-                        <h4><i class="fas fa-users text-secondary"></i> Student Culture</h4>
-                        <ul class="airy-list small mb-0">
-                            <li>Championing the creation of active student organizations and campus clubs.</li>
-                            <li>Cultivating peer-driven leadership networks.</li>
-                            <li>Establishing an environment that mirrors collaborative corporate settings.</li>
-                        </ul>
-                    </div>
-                    <div class="info-card">
-                        <h4><i class="fas fa-briefcase text-secondary"></i> Career Advancement</h4>
-                        <ul class="airy-list small mb-0">
-                            <li>Prioritizing deep, long-term career development over standard transactional placement models.</li>
-                            <li>Forging industry partnerships to connect emerging talent with market leaders.</li>
-                        </ul>
+        <section id="research" class="pt-0">
+            <h3 class="section-title">Research Architecture</h3>
+            <ul class="airy-list">
+                <li>Core research investigates how perceived product quality dictates long-term consumer brand relationships.</li>
+                <li>Employing multidimensional modeling to capture exactly how consumers experience quality.</li>
+                <li>Expanding this framework to evaluate higher education as a service offering.</li>
+            </ul>
+            <div class="info-grid mt-4">
+                <div class="info-card border-top border-4 border-secondary">
+                    <h4><i class="fas fa-chart-line text-secondary"></i> Core Focus</h4>
+                    <div>
+                        <span class="badge-tag">Multidimensional Quality Models</span>
+                        <span class="badge-tag">Longitudinal Brand Loyalty</span>
+                        <span class="badge-tag">Sustainable Consumption</span>
                     </div>
                 </div>
-            </section>
-
-            <section class="mb-5">
-                <h3 class="section-title">Research Architecture</h3>
-                <ul class="airy-list">
-                    <li>Core research investigates how perceived product quality dictates long-term consumer brand relationships.</li>
-                    <li>Employing multidimensional modeling to capture exactly how consumers experience quality.</li>
-                    <li>Expanding this framework to evaluate higher education as a service offering.</li>
-                </ul>
-                <div class="info-grid mt-4">
-                    <div class="info-card border-top border-4 border-secondary">
-                        <h4><i class="fas fa-chart-line text-secondary"></i> Core Focus</h4>
-                        <div>
-                            <span class="badge-tag">Multidimensional Quality Models</span>
-                            <span class="badge-tag">Longitudinal Brand Loyalty</span>
-                            <span class="badge-tag">Sustainable Consumption</span>
-                        </div>
-                    </div>
-                    <div class="info-card border-top border-4 border-success">
-                        <h4><i class="fas fa-university text-success"></i> Education Quality Lens</h4>
-                        <div>
-                            <span class="badge-tag">Institutional Expansion Dilemmas</span>
-                            <span class="badge-tag">Educational Quality Perception</span>
-                            <span class="badge-tag">AI & Ethics in Pedagogy</span>
-                        </div>
+                <div class="info-card border-top border-4 border-success">
+                    <h4><i class="fas fa-university text-success"></i> Education Quality Lens</h4>
+                    <div>
+                        <span class="badge-tag">Institutional Expansion Dilemmas</span>
+                        <span class="badge-tag">Educational Quality Perception</span>
+                        <span class="badge-tag">AI & Ethics in Pedagogy</span>
                     </div>
                 </div>
-            </section>
-
-            <section class="mb-5">
-                <div class="text-center mt-5 p-5 bg-light rounded border">
-                    <i class="fas fa-chalkboard-teacher fs-2 text-accent mb-3"></i>
-                    <h3 class="text-primary">Teaching Portfolio & Data</h3>
-                    <p class="text-muted mx-auto small" style="max-width: 600px;">Explore a comprehensive analysis of my teaching trajectory, dynamic institutional comparisons, longitudinal metrics, and an interactive subject explorer.</p>
-                    <button onclick="switchView('teaching')" class="btn btn-primary mt-2 px-4 py-2 fw-bold" style="background-color: var(--sidebar-bg); border: none;">
-                        Open Teaching Dashboard <i class="fas fa-arrow-right ms-2"></i>
-                    </button>
-                </div>
-            </section>
-        </div>
-
-
-        <div id="view-teaching" class="view-section">
-            
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 border-bottom pb-2 gap-3 pt-4">
-                <h3 class="section-title border-0 mb-0 pb-0">Teaching Analytics & Evolution</h3>
-                <button onclick="switchView('portfolio')" class="btn btn-outline-secondary btn-sm rounded-pill px-4 py-2 fw-bold">
-                    <i class="fas fa-arrow-left me-2"></i> Back to Profile
-                </button>
             </div>
 
-            <p class="text-muted mb-5">An empirical analysis of student outcomes, instructional themes, and teaching evolution derived from over five years of raw evaluation data.</p>
+            <div class="text-center mt-5 p-5 bg-light rounded border">
+                <i class="fas fa-chalkboard-teacher fs-2 text-accent mb-3"></i>
+                <h3 class="text-primary">Teaching Portfolio & Data</h3>
+                <p class="text-muted mx-auto small" style="max-width: 600px;">Explore a comprehensive analysis of my teaching trajectory, dynamic institutional comparisons, longitudinal metrics, and an interactive subject explorer.</p>
+                <a href="#teaching" class="btn fw-bold mt-2 px-4 py-2 text-white" style="background-color: var(--primary-bg); border: none;">
+                    Scroll to Teaching Analytics <i class="fas fa-arrow-down ms-2"></i>
+                </a>
+            </div>
+        </section>
 
-            <section class="mb-5">
-                <div class="verbatim hero-quote shadow-lg">
-                    "MM 1 was the only class where I participated in the entire term. This course felt relatable and sir made it a safe space to participate. While I was struggling so bad with all the subjects and felt like giving up, MM1 was one of the subjects that gave me hope to hang on."
-                    <div class="mt-3 text-end text-light opacity-75" style="font-size: 0.9rem; font-style: normal; font-weight: 500;">PGP Student, IIM Ranchi (2025)</div>
-                </div>
-                
-                <div class="row mt-5 g-4">
-                    <div class="col-md-4"><div class="stat-card"><div class="metric">4.86</div><div class="small fw-bold text-muted text-uppercase">Peak Rating (Out of 5.0)</div></div></div>
-                    <div class="col-md-4"><div class="stat-card"><div class="metric">12+</div><div class="small fw-bold text-muted text-uppercase">Courses Delivered</div></div></div>
-                    <div class="col-md-4"><div class="stat-card"><div class="metric">700+</div><div class="small fw-bold text-muted text-uppercase">Students Evaluated</div></div></div>
-                </div>
-            </section>
+        <section id="teaching">
+            <h3 class="section-title">Pedagogical Evolution & Analytics</h3>
+            <p class="text-muted mb-5">An empirical analysis of student outcomes, instructional themes, and teaching evolution derived from over five years of raw evaluation data across Europe, Russia, and India.</p>
 
-            <section class="mb-5 pb-3">
+            <div class="verbatim hero-quote shadow-lg">
+                "MM 1 was the only class where I participated in the entire term. This course felt relatable and sir made it a safe space to participate. While I was struggling so bad with all the subjects and felt like giving up, MM1 was one of the subjects that gave me hope to hang on."
+                <div class="mt-3 text-end text-white opacity-75" style="font-size: 0.9rem; font-style: normal; font-weight: 500;">— PGP Student, IIM Ranchi (2025)</div>
+            </div>
+            
+            <div class="row mt-5 g-4">
+                <div class="col-md-4"><div class="stat-card"><div class="metric">4.86</div><div class="small fw-bold text-muted text-uppercase">Peak Rating (Out of 5.0)</div></div></div>
+                <div class="col-md-4"><div class="stat-card"><div class="metric">12+</div><div class="small fw-bold text-muted text-uppercase">Courses Delivered</div></div></div>
+                <div class="col-md-4"><div class="stat-card"><div class="metric">700+</div><div class="small fw-bold text-muted text-uppercase">Students Evaluated</div></div></div>
+            </div>
+
+            <div class="mt-5 pt-4">
                 <h4 class="mb-4 text-primary" style="font-size: 1.4rem;">Teaching Trajectory (2018 to 2025)</h4>
-                <p class="text-muted mb-4">Evaluation data spanning over 700 students across three countries outlines a clear progression from early assistant roles to highly rated independent course leadership.</p>
                 
                 <div class="evolution-timeline mt-4">
+                    <div class="evo-item">
+                        <div class="evo-title">South Asian University (2025–Present) <span class="evo-tag" style="background: var(--warning-color); color: #000;">Pending Data</span></div>
+                        <ul class="airy-list mt-3 mb-0">
+                            <li class="small">Foundational faculty shaping academic governance and core curricula.</li>
+                            <li class="small">Data collection for the first academic cycle is currently in progress.</li>
+                            <li class="small">Evaluations will be updated here to reflect the ongoing pedagogical evolution.</li>
+                        </ul>
+                    </div>
                     <div class="evo-item">
                         <div class="evo-title">IIM Ranchi (2025) <span class="evo-tag">Instructor</span></div>
                         <ul class="airy-list mt-3 mb-0">
@@ -345,37 +343,35 @@
                         </ul>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <section class="mb-5 pb-3">
-                <div class="row mt-5 pt-4 g-4">
-                    <div class="col-md-12 mb-4">
-                        <h5 class="text-center text-primary mb-3">Teaching Evaluation Trajectory</h5>
-                        <div class="chart-wrapper">
-                            <canvas id="trajectoryChart"></canvas>
-                        </div>
-                        <p class="text-muted text-center mt-2 small">Longitudinal development of teaching evaluations across institutions (Normalized to 5.0 scale).</p>
+            <div class="row mt-5 pt-4 g-4">
+                <div class="col-md-12 mb-4">
+                    <h5 class="text-center text-primary mb-3">Teaching Evaluation Trajectory</h5>
+                    <div class="chart-wrapper">
+                        <canvas id="trajectoryChart"></canvas>
                     </div>
-                    <div class="col-md-6">
-                        <h5 class="text-center text-primary mb-3">Institutional Comparison</h5>
-                        <div class="chart-wrapper">
-                            <canvas id="radarChart"></canvas>
-                        </div>
-                        <p class="text-muted text-center mt-2 small">Mapping the evolution across four key pedagogical dimensions.</p>
-                    </div>
-                    
-                    <div class="col-md-6">
-                        <h5 class="text-center text-primary mb-3">Interactive Theme Explorer</h5>
-                        <div id="wordCloudContainer">
-                            <canvas id="wordCloudCanvas"></canvas>
-                            <div id="wcTooltip"></div>
-                        </div>
-                        <p class="text-muted text-center mt-2 small">Hover over concepts to view statistical frequency and associated student quotes.</p>
-                    </div>
+                    <p class="text-muted text-center mt-2 small">Longitudinal development of teaching evaluations across institutions (Normalized to 5.0 scale).</p>
                 </div>
-            </section>
+                <div class="col-md-6">
+                    <h5 class="text-center text-primary mb-3">Institutional Comparison (Radar)</h5>
+                    <div class="chart-wrapper">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                    <p class="text-muted text-center mt-2 small"><em>Hover over data points to view specific pedagogical insights and trade-offs.</em></p>
+                </div>
+                
+                <div class="col-md-6">
+                    <h5 class="text-center text-primary mb-3">Interactive Theme Explorer</h5>
+                    <div id="wordCloudContainer">
+                        <canvas id="wordCloudCanvas"></canvas>
+                        <div id="wcTooltip"></div>
+                    </div>
+                    <p class="text-muted text-center mt-2 small"><em>Hover over concepts to view statistical frequency and associated student quotes.</em></p>
+                </div>
+            </div>
 
-            <section class="mb-5 pt-4">
+            <div class="mt-5 pt-4">
                 <h4 class="mb-4 text-primary" style="font-size: 1.4rem;">Subject-Wise Data Explorer</h4>
                 <div class="dashboard-container shadow-sm">
                     <div class="course-menu" id="courseMenu"></div>
@@ -391,24 +387,24 @@
                         <div id="cQuotes"></div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="archives" class="pt-4 border-top">
-                <h3 class="section-title">Open Data & Verification</h3>
-                <p class="text-muted mb-4">Raw evaluation reports and feedback documents are hosted publicly to ensure transparent reflective practice.</p>
-                <div class="row g-3">
-                    <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1HzA7ttZjhUnYs1vkDSATXjYmMa_KYgrL" target="_blank" class="drive-card"><i class="fab fa-google-drive drive-icon"></i> IIM Ranchi Data</a></div>
-                    <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1utDb_rUdYFPWjReLibZ24qIhdRZT0y1T" target="_blank" class="drive-card"><i class="fab fa-google-drive drive-icon"></i> IIM Bodhgaya Data</a></div>
-                    <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1qvqL4fuR2EcNgvfFu_xHiEK8f_EDBG72" target="_blank" class="drive-card"><i class="fab fa-google-drive drive-icon"></i> HSE Moscow Data</a></div>
-                    <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1fXw3bWdI-Sm69yCgmX_9bdjU5i9N1Ujx" target="_blank" class="drive-card"><i class="fab fa-google-drive drive-icon"></i> Geneva Data</a></div>
-                    <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1db3LogTECafyDbCQ34VBwKUCg4rjUE1Q" target="_blank" class="drive-card"><i class="fas fa-folder-open text-warning me-2 fs-5"></i> Master Directory</a></div>
-                </div>
-            </section>
+        <section id="archives" class="pt-0">
+            <h3 class="section-title">Open Data & Verification</h3>
+            <p class="text-muted mb-4">Raw evaluation reports and feedback documents are hosted publicly to ensure transparent reflective practice.</p>
+            <div class="row g-3">
+                <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1HzA7ttZjhUnYs1vkDSATXjYmMa_KYgrL" target="_blank" class="drive-card"><i class="fab fa-google-drive drive-icon"></i> IIM Ranchi Data</a></div>
+                <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1utDb_rUdYFPWjReLibZ24qIhdRZT0y1T" target="_blank" class="drive-card"><i class="fab fa-google-drive drive-icon"></i> IIM Bodhgaya Data</a></div>
+                <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1qvqL4fuR2EcNgvfFu_xHiEK8f_EDBG72" target="_blank" class="drive-card"><i class="fab fa-google-drive drive-icon"></i> HSE Moscow Data</a></div>
+                <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1fXw3bWdI-Sm69yCgmX_9bdjU5i9N1Ujx" target="_blank" class="drive-card"><i class="fab fa-google-drive drive-icon"></i> Geneva Data</a></div>
+                <div class="col-md-4"><a href="https://drive.google.com/drive/folders/1db3LogTECafyDbCQ34VBwKUCg4rjUE1Q" target="_blank" class="drive-card"><i class="fas fa-folder-open text-warning me-2 fs-5"></i> Master Directory</a></div>
+            </div>
+        </section>
 
-        </div>
     </main>
 
-    <footer class="bg-dark text-white text-center py-4 mt-5">
+    <footer class="bg-dark text-white text-center py-4 mt-2">
         <div class="container">
             <p class="mb-0 text-white-50 small">&copy; 2026 Ramesh Roshan Das Guru. All rights reserved.</p>
         </div>
@@ -416,24 +412,19 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        let chartsInitialized = false;
+        document.addEventListener("DOMContentLoaded", () => {
+            initCharts();
+            
+            // Initialize first course in the explorer
+            const menu = document.getElementById('courseMenu');
+            if(menu.firstChild) showCourse('ranchi', menu.firstChild);
 
-        function switchView(viewName) {
-            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
-            document.getElementById('view-' + viewName).classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-
-            if(viewName === 'teaching' && !chartsInitialized) {
-                // Delay to allow container rendering
-                setTimeout(() => {
-                    initCharts();
-                    initWordCloud();
-                    chartsInitialized = true;
-                }, 200);
-            }
-        }
+            // Delay WordCloud slightly to ensure container is fully rendered and sized
+            setTimeout(initWordCloud, 500);
+        });
 
         function initCharts() {
+            // 1. Trajectory Line Chart
             new Chart(document.getElementById("trajectoryChart"), {
                 type: "line",
                 data: {
@@ -454,6 +445,7 @@
                 }
             });
 
+            // 2. Radar Chart with Custom Hover Insights
             new Chart(document.getElementById("radarChart"), {
                 type: "radar",
                 data: {
@@ -468,7 +460,19 @@
                     responsive: true, maintainAspectRatio: false,
                     layout: { padding: 10 },
                     scales: { r: { min: 2, max: 5 } },
-                    plugins: { legend: { position: "bottom", labels: { boxWidth: 12, font: {size: 11} } } }
+                    plugins: { 
+                        legend: { position: "bottom", labels: { boxWidth: 12, font: {size: 11} } },
+                        tooltip: {
+                            callbacks: {
+                                afterLabel: function(context) {
+                                    if(context.dataset.label === 'Geneva') return '\nInsight: High safety & patience, baseline rigor.';
+                                    if(context.dataset.label === 'IIM Bodhgaya') return '\nInsight: Extreme rigor & strict environment (lower safety).';
+                                    if(context.dataset.label === 'IIM Ranchi') return '\nInsight: The sweet spot. High rigor perfectly matched with high safety.';
+                                    return '';
+                                }
+                            }
+                        }
+                    }
                 }
             });
         }
@@ -478,6 +482,8 @@
             const canvas = document.getElementById('wordCloudCanvas');
             const container = document.getElementById('wordCloudContainer');
             const tooltip = document.getElementById('wcTooltip');
+
+            if (!canvas || !container) return;
 
             canvas.width = container.offsetWidth;
             canvas.height = container.offsetHeight;
@@ -502,7 +508,6 @@
 
             // Track mouse globally inside the container to position the tooltip accurately
             container.addEventListener('mousemove', function(e) {
-                // Offset tooltip slightly from mouse
                 const x = e.offsetX;
                 const y = e.offsetY;
                 tooltip.style.left = (x) + 'px';
@@ -544,10 +549,11 @@
             });
         }
 
-        window.addEventListener("resize", () => {
-            if(chartsInitialized && document.getElementById("view-teaching").classList.contains("active")){
-                setTimeout(initWordCloud, 300);
-            }
+        // Re-draw word cloud if window size changes
+        let resizeTimer;
+        window.addEventListener("resize", () => { 
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(initWordCloud, 250); 
         });
 
         // --- Course Explorer Data ---
