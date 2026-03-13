@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ramesh Roshan Das Guru | Marketing Faculty</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ─── Design System ────────────────────────────────────────────
@@ -57,31 +57,31 @@ strong{color:var(--ink);font-weight:600;}
 .ddivider{height:1px;background:rgba(255,255,255,.07);margin:.3rem 0;}
 
 /* ─── Hero ────────────────────────────────────────────────── */
-.hero{background:linear-gradient(135deg,#f0f4f8 0%,#e8eef5 50%,#edf2f8 100%);color:var(--ink);padding:5rem 0 0;position:relative;overflow:hidden;}
-.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 90% 30%,rgba(53,116,196,.05) 0%,transparent 70%);pointer-events:none;}
-.hero-photo{width:108px;height:108px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 4px 20px rgba(0,0,0,.12);flex-shrink:0;}
-.hero-name{font-size:clamp(2.1rem,4.5vw,3rem);font-weight:600;color:var(--ink);margin-bottom:.15rem;}
-.hero-title{font-size:.83rem;color:var(--muted);font-weight:400;letter-spacing:.3px;margin-bottom:.1rem;}
-.hero-inst{font-size:.8rem;color:var(--muted);font-weight:300;}
-.hero-bio{font-size:.93rem;color:var(--text);line-height:1.85;max-width:500px;margin-bottom:1.75rem;font-weight:400;}
+.hero{background:#fff;border-bottom:1px solid var(--line);color:var(--ink);padding:4.5rem 0 0;position:relative;overflow:hidden;}
+.hero-accent-bar{position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--blue),var(--sage));}
+.hero-photo{width:112px;height:112px;border-radius:50%;object-fit:cover;border:3px solid var(--line);box-shadow:0 4px 16px rgba(0,0,0,.1);flex-shrink:0;}
+.hero-name{font-size:clamp(2rem,4.5vw,2.85rem);font-weight:600;color:var(--ink);margin:.75rem 0 .2rem;line-height:1.15;}
+.hero-title{font-size:.84rem;color:var(--blue);font-weight:500;letter-spacing:.2px;margin-bottom:.1rem;}
+.hero-inst{font-size:.8rem;color:var(--muted);font-weight:400;}
+.hero-bio{font-size:.94rem;color:var(--text);line-height:1.85;max-width:500px;margin:1.25rem 0 1.75rem;font-weight:400;}
 .hero-bio strong{color:var(--ink);font-weight:600;}
 .hero-actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:1.75rem;}
-.btn-p{background:var(--blue);color:#fff;border:none;padding:.58rem 1.3rem;border-radius:6px;font-weight:500;font-size:.84rem;transition:background .2s;display:inline-flex;align-items:center;gap:.45rem;}
+.btn-p{background:var(--blue);color:#fff;border:none;padding:.6rem 1.35rem;border-radius:6px;font-weight:500;font-size:.84rem;transition:background .2s;display:inline-flex;align-items:center;gap:.45rem;}
 .btn-p:hover{background:#2a5faa;color:#fff;}
-.btn-o{background:#fff;color:var(--ink);border:1px solid var(--line);padding:.58rem 1.3rem;border-radius:6px;font-weight:400;font-size:.84rem;transition:all .2s;display:inline-flex;align-items:center;gap:.45rem;}
-.btn-o:hover{color:var(--blue);border-color:var(--blue);background:#f4f8fe;}
+.btn-o{background:#fff;color:var(--ink);border:1.5px solid var(--line);padding:.6rem 1.35rem;border-radius:6px;font-weight:500;font-size:.84rem;transition:all .2s;display:inline-flex;align-items:center;gap:.45rem;}
+.btn-o:hover{color:var(--blue);border-color:var(--blue);background:var(--smoke);}
 .soc-row{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap;}
-.soc-row a{color:var(--muted);background:#fff;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:7px;transition:all .2s;font-size:.87rem;border:1px solid var(--line);}
+.soc-row a{color:var(--muted);background:var(--smoke);width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:7px;transition:all .2s;font-size:.87rem;border:1px solid var(--line);}
 .soc-row a:hover{color:#fff;background:var(--blue);border-color:var(--blue);}
-.soc-email{font-size:.75rem;color:var(--text);margin-left:.2rem;}
+.soc-email{font-size:.78rem;color:var(--text);margin-left:.3rem;}
 /* Hero stat strip */
-.hero-strip{background:#fff;border-top:1px solid var(--line);margin-top:3rem;padding:1.5rem 0;}
+.hero-strip{background:var(--smoke);border-top:1px solid var(--line);margin-top:3rem;padding:1.4rem 0;}
 .stat-item{text-align:center;padding:0 1.5rem;border-right:1px solid var(--line);}
 .stat-item:last-child{border-right:none;}
-.stat-val{font-size:1.75rem;font-weight:600;color:var(--ink);font-family:'Inter',sans-serif;line-height:1;}
-.stat-val sup{font-size:.85rem;font-weight:400;color:var(--muted);}
-.stat-lbl{font-size:.67rem;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-top:.3rem;}
-.stat-sub{font-size:.71rem;color:var(--text);margin-top:.18rem;}
+.stat-val{font-size:1.7rem;font-weight:600;color:var(--ink);font-family:'Inter',sans-serif;line-height:1;}
+.stat-val sup{font-size:.8rem;font-weight:400;color:var(--muted);}
+.stat-lbl{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-top:.3rem;}
+.stat-sub{font-size:.7rem;color:var(--text);margin-top:.15rem;}
 
 /* ─── Section scaffolding ─────────────────────────────────── */
 .sec-label{font-size:.67rem;font-weight:500;text-transform:uppercase;letter-spacing:2px;color:var(--blue);margin-bottom:.5rem;}
@@ -175,8 +175,9 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
 .dlink{display:flex;align-items:center;gap:.7rem;padding:.9rem 1.1rem;background:#fff;border:1px solid var(--line);border-radius:9px;color:var(--text);font-size:.84rem;font-weight:400;transition:.2s;box-shadow:0 1px 4px rgba(0,0,0,.03);}
 .dlink:hover{border-color:var(--blue);color:var(--blue);box-shadow:0 5px 16px rgba(0,0,0,.07);}
 /* Reveal */
-.rv{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
-.rv.in{opacity:1;transform:none;}
+.rv{opacity:1;transform:none;}
+.rv.animate{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+.rv.animate.in{opacity:1;transform:none;}
 /* Back to top */
 #btt{position:fixed;bottom:1.75rem;right:1.75rem;width:38px;height:38px;background:var(--ink);color:#fff;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:all .25s;box-shadow:0 3px 12px rgba(0,0,0,.2);z-index:999;}
 #btt.on{opacity:1;pointer-events:all;}
@@ -239,19 +240,19 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
 
 <!-- HERO -->
 <header class="hero" id="hero">
-  <div class="container position-relative" style="z-index:2;">
-    <div class="row align-items-center g-5">
+  <div class="hero-accent-bar"></div>
+  <div class="container position-relative">
+    <div class="row align-items-start g-5">
       <div class="col-lg-7">
         <!-- Identity -->
-        <div style="display:flex;align-items:center;gap:1.1rem;margin-bottom:1.6rem;">
+        <div style="display:flex;align-items:center;gap:1.25rem;margin-bottom:.25rem;">
           <img src="rr.jpg" alt="Ramesh Roshan Das Guru" class="hero-photo">
           <div>
-            <div class="hero-title">Faculty of Marketing</div>
-            <div class="hero-inst">South Asian University · New Delhi</div>
+            <h1 class="hero-name">Ramesh Roshan<br>Das Guru</h1>
+            <div class="hero-title">Assistant Professor of Marketing</div>
+            <div class="hero-inst">South Asian University, New Delhi</div>
           </div>
         </div>
-
-        <h1 class="hero-name">Ramesh Roshan<br>Das Guru</h1>
 
         <p class="hero-bio" style="margin-top:.9rem;">I study how consumers form and revise quality judgments, and how those judgments drive brand relationships over time. Before this, I spent years working in software development, iron and steel plant operations, and strategy consulting. That sequence shapes the way I think, the way I research, and what happens inside a classroom when I teach.</p>
 
@@ -274,12 +275,12 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
       <div class="col-lg-5">
         <div style="display:flex;flex-direction:column;gap:.85rem;">
 
-          <div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.4rem 1.6rem;box-shadow:0 2px 10px rgba(0,0,0,.05);">
+          <div style="background:var(--smoke);border:1px solid var(--line);border-radius:12px;padding:1.4rem 1.6rem;">
             <div style="font-size:.75rem;color:var(--muted);font-weight:500;margin-bottom:.9rem;letter-spacing:.3px;">A bit of context</div>
             <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.65rem;">
               <li style="display:flex;align-items:flex-start;gap:.7rem;font-size:.85rem;color:var(--text);">
                 <span style="color:var(--sage);margin-top:.22rem;flex-shrink:0;"><i class="fas fa-circle" style="font-size:.42rem;"></i></span>
-                <span>Years spent in software development, iron and steel plant operations, and strategy consulting before the first lecture hall.</span>
+                <span>Worked in software development, iron and steel plant operations, and strategy consulting before ever stepping into a classroom.</span>
               </li>
               <li style="display:flex;align-items:flex-start;gap:.7rem;font-size:.85rem;color:var(--text);">
                 <span style="color:var(--sage);margin-top:.22rem;flex-shrink:0;"><i class="fas fa-circle" style="font-size:.42rem;"></i></span>
@@ -292,7 +293,7 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
             </ul>
           </div>
 
-          <div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.6rem;box-shadow:0 2px 10px rgba(0,0,0,.05);">
+          <div style="background:var(--smoke);border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:12px;padding:1.2rem 1.6rem;">
             <div style="font-size:.75rem;color:var(--muted);font-weight:500;margin-bottom:.65rem;letter-spacing:.3px;">From a student at IIM Ranchi, 2025</div>
             <p style="font-style:italic;font-size:.84rem;color:var(--text);line-height:1.8;margin:0;">"MM 1 was the only class where I participated in the entire term. While I was struggling with all subjects, it was one of the things that gave me hope to hang on."</p>
           </div>
@@ -862,8 +863,9 @@ window.addEventListener('scroll',function(){
 });
 
 /* ── Reveal on scroll ── */
-var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:0.05});
-document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
+document.querySelectorAll('.rv').forEach(function(el){el.classList.add('animate');});
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:0.04,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv.animate').forEach(function(el){obs.observe(el);});
 
 /* ── Count-up animation ── */
 function animCount(id,target,dec){
