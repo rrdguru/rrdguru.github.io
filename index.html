@@ -132,7 +132,7 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
 .stbl{width:100%;border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden;box-shadow:0 2px 14px rgba(0,0,0,.04);border:1px solid var(--line);}
 .stbl th{background:var(--smoke);color:var(--ink);padding:.75rem .9rem;font-size:.63rem;text-transform:uppercase;letter-spacing:.5px;font-weight:600;text-align:left;border-bottom:1px solid var(--line);}
 .stbl td{padding:.65rem .9rem;font-size:.78rem;border-bottom:1px solid var(--line);background:#fff;}
-.stbl tr:hover td{background:var(--smoke);}
+.stbl tr:hover td{background:#f1f5f9;}
 .stbl tr:last-child td{border-bottom:none;}
 .highlight-score { font-weight:600; color:var(--ink); }
 
@@ -190,7 +190,7 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
 <nav class="navbar navbar-expand-lg">
   <div class="container">
     <a class="navbar-brand" href="#">Ramesh Roshan Das Guru</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nv" style="border-color:rgba(255,255,255,.25);"><i class="fas fa-bars" style="color:rgba(255,255,255,.75);font-size:.85rem;"></i></button>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nv" style="border-color:rgba(255,255,255,.25);"><i class="fas fa-bars" style="color:rgba(255,255,255,.75);font-size:.85rem;"></i></button>
     <div class="collapse navbar-collapse" id="nv">
       <ul class="navbar-nav ms-auto align-items-center gap-1">
         <li class="nav-item has-drop">
@@ -247,7 +247,7 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
           </div>
         </div>
 
-        <p class="hero-bio" style="margin-top:.9rem;">I study how consumers form and revise quality judgments, and how those judgments drive brand relationships over time. Before this, I spent years working in software development, the iron and steel industry, and strategy consulting. That sequence shapes the way I think, the way I research, and what happens inside a classroom when I teach.</p>
+        <p class="hero-bio" style="margin-top:.9rem;">I study how consumers form and revise quality judgments, and how those judgments drive brand relationships over time. Before entering academia, I spent years working in software development and the iron and steel industry, later integrating strategy consulting during my doctoral research. That sequence shapes the way I think, the way I research, and what happens inside a classroom when I teach.</p>
 
         <div class="hero-actions">
           <a href="#teaching" class="btn-o"><i class="fas fa-chart-line"></i> Teaching Portfolio</a>
@@ -271,7 +271,7 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
             <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.65rem;">
               <li style="display:flex;align-items:flex-start;gap:.7rem;font-size:.85rem;color:var(--text);">
                 <span style="color:var(--blue);margin-top:.22rem;flex-shrink:0;"><i class="fas fa-circle" style="font-size:.42rem;"></i></span>
-                <span>Worked in software development, the iron and steel industry, and strategy consulting prior to pursuing a doctorate and entering academia.</span>
+                <span>Worked in software development and the iron and steel industry prior to entering academia, later bridging research with strategy consulting during doctoral studies.</span>
               </li>
               <li style="display:flex;align-items:flex-start;gap:.7rem;font-size:.85rem;color:var(--text);">
                 <span style="color:var(--blue);margin-top:.22rem;flex-shrink:0;"><i class="fas fa-circle" style="font-size:.42rem;"></i></span>
@@ -320,7 +320,7 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
         <div class="col stat-item">
           <div class="stat-val">5<sup>+</sup></div>
           <div class="stat-lbl">Industry years</div>
-          <div class="stat-sub">Before academic career</div>
+          <div class="stat-sub">Before academic entry</div>
         </div>
       </div>
     </div>
@@ -611,7 +611,7 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
             </div>
             <div class="col-6">
               <div class="card-clean text-center">
-                <div style="font-size:2rem;font-weight:600;color:var(--ink);font-family:'Inter',sans-serif;line-height:1;" id="sc2">4.86</div>
+                <div style="font-size:2rem;font-weight:600;color:var(--sage);font-family:'Inter',sans-serif;line-height:1;" id="sc2">4.86</div>
                 <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-top:.3rem;">Instructor rating</div>
                 <div style="font-size:.71rem;color:var(--text);margin-top:.15rem;">IIM Ranchi 2025</div>
               </div>
@@ -840,7 +840,7 @@ document.addEventListener("DOMContentLoaded", function() {
   try { initCharts(); } catch(e) {}
   try { initExplorer(); } catch(e) {}
   try { buildTheses(); } catch(e) {}
-  setTimeout(function(){ try { initWC(); } catch(e){} }, 800); // Slight delay for wordcloud to ensure container size is ready
+  setTimeout(function(){ try { initWC(); } catch(e){} }, 600); // Slight delay for wordcloud to ensure container size is ready
 });
 
 /* ── Count-up animation ── */
@@ -900,45 +900,49 @@ function initCharts(){
     new Chart(tEl,{type:'line',data:{
       labels:['Geneva\nBranding','Geneva\nDDDM','Geneva\nRes.Meth','HSE\nR-Prog','HSE\nR+Py','IIMBG\nPOMM','IIMBG\nRural','IIMBG\nMM1','IIMBG\nPOMM2','IIMBG\nBRM','IIMBG\nProd','IIMBG\nBrand','IIMBG\nFdn.Mktg','Ranchi\nMM1'],
       datasets:[
-        {label:'Instructor',data:[4.69,4.10,4.00,3.64,3.54,4.75,4.76,3.91,4.66,2.94,3.45,4.13,4.68,4.86],borderColor:'#3574c4',backgroundColor:'rgba(53,116,196,.05)',tension:.35,pointBackgroundColor:phPts,pointRadius:7,pointHoverRadius:10,fill:true,borderWidth:2.5},
-        {label:'Preparation',data:[5.00,4.56,4.20,3.72,3.58,4.87,4.79,4.26,4.97,4.06,3.95,4.57,4.97,5.00],borderColor:'#1c2b3a',backgroundColor:'transparent',tension:.35,pointBackgroundColor:'#1c2b3a',pointRadius:5,pointHoverRadius:7,borderWidth:2,borderDash:[5,4]}
+        {label:'Instructor',data:[4.69,4.10,4.00,3.64,3.54,4.75,4.76,3.91,4.66,2.94,3.45,4.13,4.68,4.86],borderColor:'#2563eb',backgroundColor:'rgba(37,99,235,.05)',tension:.35,pointBackgroundColor:phPts,pointRadius:6,pointHoverRadius:9,fill:true,borderWidth:2.5},
+        {label:'Preparation',data:[5.00,4.56,4.20,3.72,3.58,4.87,4.79,4.26,4.97,4.06,3.95,4.57,4.97,5.00],borderColor:'#059669',backgroundColor:'transparent',tension:.35,pointBackgroundColor:'#059669',pointRadius:4,pointHoverRadius:6,borderWidth:2,borderDash:[5,4]}
       ]},options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:20,right:20}},
-      plugins:{legend:{position:'top',labels:{boxWidth:11,font:{size:11},color:'#475569'}},tooltip:{callbacks:{title:function(c){var s=scores[c[0].dataIndex];return s.i+' - '+s.c;},label:function(c){return c.dataset.label+': '+c.raw.toFixed(2)+'/5.00';}}}},
-      scales:{y:{min:2.5,max:5.3,grid:{color:'rgba(0,0,0,.04)'},ticks:{callback:function(v){return v.toFixed(1);},font:{size:10},color:'#64748b'}},x:{grid:{display:false},ticks:{font:{size:9},maxRotation:40,color:'#64748b'}}}}
+      plugins:{legend:{position:'top',labels:{boxWidth:12,font:{size:12},color:'#475569'}},tooltip:{callbacks:{title:function(c){var s=scores[c[0].dataIndex];return s.i+' - '+s.c;},label:function(c){return c.dataset.label+': '+c.raw.toFixed(2)+'/5.00';}}}},
+      scales:{y:{min:2.5,max:5.3,grid:{color:'rgba(0,0,0,.04)'},ticks:{callback:function(v){return v.toFixed(1);},font:{size:11},color:'#64748b'}},x:{grid:{display:false},ticks:{font:{size:10},maxRotation:45,color:'#64748b'}}}}
     });
   }
-  
-  if(rEl&&!rEl._chartInit){rEl._chartInit=true;
+
+  var rEl=document.getElementById('rChart');
+  if(rEl && !rEl._chartInit){
+    rEl._chartInit=true;
     new Chart(rEl,{type:'radar',data:{
       labels:['Intellectual\nRigour','Psychological\nSafety','Real-World\nApplication','Student\nSatisfaction','Preparation'],
       datasets:[
-        {label:'Geneva (TA)',data:[2.8,4.2,2.5,3.6,4.5],borderColor:'#94a3b8',backgroundColor:'rgba(28,43,58,.05)',borderWidth:1.5},
-        {label:'HSE Moscow',data:[3.2,3.5,3.0,3.5,3.65],borderColor:'#64748b',backgroundColor:'rgba(28,43,58,.08)',borderWidth:1.5},
-        {label:'IIM Bodhgaya',data:[4.8,3.2,4.6,4.7,4.97],borderColor:'#3574c4',backgroundColor:'rgba(53,116,196,.1)',borderWidth:2},
-        {label:'IIM Ranchi 2025',data:[4.9,4.8,4.7,4.86,5.0],borderColor:'#1c2b3a',backgroundColor:'rgba(28,43,58,.15)',borderWidth:2.5}
-      ]},options:{responsive:true,maintainAspectRatio:false,layout:{padding:10},
-      scales:{r:{min:2,max:5,grid:{color:'rgba(0,0,0,.05)'},pointLabels:{font:{size:9.5},color:'#475569'},ticks:{display:false}}},
+        {label:'Geneva (TA)',data:[2.8,4.2,2.5,3.6,4.5],borderColor:'#94a3b8',backgroundColor:'rgba(148,163,184,.15)',borderWidth:1.5},
+        {label:'HSE Moscow',data:[3.2,3.5,3.0,3.5,3.65],borderColor:'#8b5cf6',backgroundColor:'rgba(139,92,246,.1)',borderWidth:1.5},
+        {label:'IIM Bodhgaya',data:[4.8,3.2,4.6,4.7,4.97],borderColor:'#f59e0b',backgroundColor:'rgba(245,158,11,.15)',borderWidth:2},
+        {label:'IIM Ranchi 2025',data:[4.9,4.8,4.7,4.86,5.0],borderColor:'#059669',backgroundColor:'rgba(5,150,105,.2)',borderWidth:2.5}
+      ]},options:{responsive:true,maintainAspectRatio:false,layout:{padding:15},
+      scales:{r:{min:2,max:5,grid:{color:'rgba(0,0,0,.05)'},pointLabels:{font:{size:10},color:'#475569'},ticks:{display:false}}},
       plugins:{
-          legend:{position:'bottom',labels:{boxWidth:11,font:{size:10},color:'#475569'}},
-          tooltip:{callbacks:{afterLabel:function(context){
-              if(context.dataset.label === 'Geneva (TA)') return '\nInsight: High safety & patience, baseline rigor.';
-              if(context.dataset.label === 'IIM Bodhgaya') return '\nInsight: Extreme rigor & strict environment (lower safety).';
-              if(context.dataset.label === 'IIM Ranchi 2025') return '\nInsight: The sweet spot. High rigor matched with high safety.';
-              return '';
-          }}}
+        legend:{position:'bottom',labels:{boxWidth:12,font:{size:11},color:'#475569'}},
+        tooltip:{callbacks:{afterLabel:function(context){
+          if(context.dataset.label === 'Geneva (TA)') return '\nInsight: High safety & patience, baseline rigor.';
+          if(context.dataset.label === 'IIM Bodhgaya') return '\nInsight: Extreme rigor & strict environment (lower safety).';
+          if(context.dataset.label === 'IIM Ranchi 2025') return '\nInsight: The sweet spot. High rigor matched with high safety.';
+          return '';
+        }}}
       }}
     });
   }
-  
-  if(bEl&&!bEl._chartInit){bEl._chartInit=true;
+
+  var bEl=document.getElementById('bChart');
+  if(bEl && !bEl._chartInit){
+    bEl._chartInit=true;
     new Chart(bEl,{type:'bar',data:{
       labels:['Marketing Core','Electives','Research / Technical'],
       datasets:[
-        {label:'Course score',data:[4.55,4.05,3.45],backgroundColor:['rgba(53,116,196,.8)','rgba(28,43,58,.8)','rgba(148,163,184,.8)'],borderColor:['#3574c4','#1c2b3a','#94a3b8'],borderWidth:1.5,borderRadius:7},
-        {label:'Instructor score',data:[4.45,3.60,3.10],backgroundColor:['rgba(53,116,196,.2)','rgba(28,43,58,.2)','rgba(148,163,184,.2)'],borderColor:['#3574c4','#1c2b3a','#94a3b8'],borderWidth:1.5,borderRadius:7}
-      ]},options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:18}},
-      plugins:{legend:{position:'top',labels:{boxWidth:11,font:{size:10},color:'#475569'}}},
-      scales:{y:{min:2.5,max:5.2,grid:{color:'rgba(0,0,0,.04)'},ticks:{callback:function(v){return v.toFixed(1);},color:'#64748b'}},x:{grid:{display:false},ticks:{color:'#475569',font:{size:10}}}}}
+        {label:'Course score',data:[4.55,4.05,3.45],backgroundColor:['rgba(5,150,105,.8)','rgba(245,158,11,.8)','rgba(220,38,38,.7)'],borderColor:['#059669','#f59e0b','#dc2626'],borderWidth:1,borderRadius:6},
+        {label:'Instructor score',data:[4.45,3.60,3.10],backgroundColor:['rgba(5,150,105,.2)','rgba(245,158,11,.2)','rgba(220,38,38,.2)'],borderColor:['#059669','#f59e0b','#dc2626'],borderWidth:1,borderRadius:6}
+      ]},options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:20}},
+      plugins:{legend:{position:'top',labels:{boxWidth:12,font:{size:11},color:'#475569'}}},
+      scales:{y:{min:2.5,max:5.2,grid:{color:'rgba(0,0,0,.04)'},ticks:{callback:function(v){return v.toFixed(1);},color:'#64748b'}},x:{grid:{display:false},ticks:{color:'#475569',font:{size:11}}}}}
     });
   }
 }
@@ -958,10 +962,10 @@ function initWC(){
   wrap.addEventListener('mousemove',function(e){tip.style.left=e.offsetX+'px';tip.style.top=(e.offsetY-12)+'px';});
   wrap.addEventListener('mouseleave',function(){tip.style.opacity=0;});
   
-  WordCloud(canvas,{list:Object.keys(d).map(function(k){return[k,d[k].w];}),fontFamily:'Inter,sans-serif',fontWeight:'700',gridSize:10,rotateRatio:0,backgroundColor:'transparent',
-    color:function(w,wt){if(wt>38)return '#1c2b3a';if(wt>27)return '#3574c4';if(wt>19)return '#475569';return '#94a3b8';},
+  WordCloud(canvas,{list:Object.keys(d).map(function(k){return[k,d[k].w];}),fontFamily:'Inter,sans-serif',fontWeight:'700',gridSize:12,rotateRatio:0,backgroundColor:'transparent',
+    color:function(w,wt){if(wt>38)return '#1e293b';if(wt>27)return '#2563eb';if(wt>19)return '#059669';return '#64748b';},
     hover:function(item){if(!item){tip.style.opacity=0;return;}var x=d[item[0]];if(!x)return;
-      tip.innerHTML='<div style="font-weight:600;color:var(--ink);margin-bottom:4px;font-size:.85rem;">'+item[0]+' <span style="background:var(--smoke);color:var(--blue);border:1px solid var(--blue);padding:.12rem .4rem;border-radius:6px;font-size:.65rem;font-weight:600;margin-left:5px;">'+x.n+' mentions</span></div><div style="font-size:.8rem;font-style:italic;color:var(--text);line-height:1.55;">"'+x.q+'"</div>';
+      tip.innerHTML='<div style="font-weight:700;color:var(--ink);margin-bottom:5px;font-size:1rem;">'+item[0]+' <span style="background:var(--blue);color:#fff;padding:.15rem .5rem;border-radius:10px;font-size:.7rem;font-weight:600;vertical-align:middle;margin-left:5px;">'+x.n+' mentions</span></div><div style="font-size:.85rem;font-style:italic;color:var(--text);line-height:1.6;">"'+x.q+'"</div>';
       tip.style.opacity=1;}
   });
 }
