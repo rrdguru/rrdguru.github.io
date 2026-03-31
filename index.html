@@ -734,13 +734,22 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
         </button>
         
         <div class="collapse mt-4" id="scorecardCollapse">
-          <div style="text-align: left;">
+          <div style="text-align: left; background: #fff; padding: 2rem; border-radius: 12px; border: 1px solid var(--line); box-shadow: 0 4px 20px rgba(0,0,0,.04);">
             <h4 style="font-size:1.1rem;color:var(--ink);margin-bottom:.4rem;font-family:'Inter',sans-serif;font-weight:600;">Comprehensive Scorecard</h4>
-            <p style="font-size:.82rem;color:var(--muted);margin-bottom:1.25rem;">All evaluated courses. IIM and SAU scores are normalized to a 5.0 scale. Geneva courses (marked *) were originally on a 1-4 scale and are converted for comparability. SAU metrics reflect weighted composites from percentage distributions.</p>
+            <p style="font-size:.82rem;color:var(--muted);margin-bottom:1.25rem;">All evaluated courses spanning 8 years. To ensure integrity and comparative accuracy across different university systems, scores are normalized to a 5.0 scale using unified constructs: <strong>Course Index</strong> (Satisfaction/Recommend), <strong>Delivery Index</strong> (Instructor/Clarity), and <strong>Preparation Index</strong> (Prep/Punctuality).</p>
             
             <div class="table-responsive">
               <table class="stbl text-start">
-                <thead><tr><th>Institution</th><th>Course</th><th>Level</th><th>Recommend %</th><th>Enthusiasm</th><th>Oral Clarity</th><th>Punctuality</th></tr></thead>
+                <thead>
+                  <tr>
+                    <th>Institution</th>
+                    <th>Course</th>
+                    <th>Level</th>
+                    <th title="Course Score / Recommend %">Course Index</th>
+                    <th title="Instructor Score / Enthusiasm">Delivery Index</th>
+                    <th title="Preparation / Punctuality">Preparation Index</th>
+                  </tr>
+                </thead>
                 <tbody id="scoreBody"></tbody>
               </table>
             </div>
@@ -833,37 +842,28 @@ document.querySelectorAll('.rv').forEach(function(el){el.classList.add('animate'
 var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:0.04,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv.animate').forEach(function(el){obs.observe(el);});
 
-/* ── Count-up ── */
-function animCount(id,target,dec){
-  var el=document.getElementById(id);if(!el)return;
-  var d=dec||0,steps=90,step=0;
-  var iv=setInterval(function(){step++;var v=target*(step/steps);
-    if(step>=steps){el.textContent=d?target.toFixed(d):Math.floor(target);clearInterval(iv);}
-    else el.textContent=d?v.toFixed(d):Math.floor(v);
-  },1000/60);
-}
-
-/* ── Score table ── */
+/* ── Unified Score Table Data ── */
 var scores=[
-  {i:'Geneva*',c:'Branding',l:'UG TA',rec:null,enth:4.85,oral:4.69,punct:5.00,ph:'P1',note:'1-4 scale converted'},
-  {i:'Geneva*',c:'Data Driven Decision Making',l:'UG TA',rec:null,enth:4.10,oral:4.10,punct:4.56,ph:'P1',note:'1-4 scale converted'},
-  {i:'Geneva*',c:'Research Methods',l:'UG TA',rec:null,enth:4.00,oral:4.00,punct:4.20,ph:'P1',note:'1-4 scale converted'},
-  {i:'HSE Moscow',c:'R Programming for Mktg Analytics',l:'UG Yr3',rec:null,enth:3.64,oral:3.64,punct:3.72,ph:'P1',note:''},
-  {i:'HSE Moscow',c:'Statistical Analysis (R + Python)',l:'UG Yr3',rec:null,enth:3.54,oral:3.54,punct:3.58,ph:'P1',note:''},
-  {i:'IIM Bodhgaya',c:'POMM 1 (IPM)',l:'IPM UG',rec:null,enth:4.75,oral:4.75,punct:4.87,ph:'P2',note:''},
-  {i:'IIM Bodhgaya',c:'Rural Marketing (PGP)',l:'PGP',rec:null,enth:4.76,oral:4.76,punct:4.79,ph:'P2',note:''},
-  {i:'IIM Bodhgaya',c:'Marketing Management 1 (PGP)',l:'PGP',rec:null,enth:3.91,oral:3.91,punct:4.26,ph:'P2',note:''},
-  {i:'IIM Bodhgaya',c:'POMM 1 (IPM) repeat',l:'IPM UG',rec:null,enth:4.66,oral:4.66,punct:4.97,ph:'P3',note:''},
-  {i:'IIM Bodhgaya',c:'Business Research Methods (IPM)',l:'IPM UG',rec:null,enth:2.94,oral:2.94,punct:4.06,ph:'P3',note:''},
-  {i:'IIM Bodhgaya',c:'Product Management (PGP)',l:'PGP',rec:null,enth:3.45,oral:3.45,punct:3.95,ph:'P3',note:''},
-  {i:'IIM Bodhgaya',c:'Brand Management (PGP)',l:'PGP',rec:null,enth:4.13,oral:4.13,punct:4.57,ph:'P3',note:''},
-  {i:'IIM Bodhgaya',c:'Foundation Mktg Mgmt (MBA-DB)',l:'MBA',rec:null,enth:4.68,oral:4.68,punct:4.97,ph:'P3',note:''},
-  {i:'IIM Ranchi',c:'Marketing Management 1 (PGP)',l:'PGP',rec:null,enth:4.86,oral:4.86,punct:5.00,ph:'P4',note:''},
-  {i:'SAU',c:'Indian Ethos & Business Ethics',l:'MBA Sem1',rec:3.89,enth:3.77,oral:3.97,punct:3.92,ph:'P5',note:'Greenfield Service'},
-  {i:'SAU',c:'IT and Systems Lab',l:'BBA Sem1',rec:3.44,enth:3.10,oral:3.41,punct:3.77,ph:'P5',note:'Greenfield Service'}
+  {i:'Geneva*',c:'Branding',l:'UG TA',course:4.85,inst:4.69,prep:5.00,ph:'P1',note:'1-4 scale converted'},
+  {i:'Geneva*',c:'Data Driven Decision Making',l:'UG TA',course:4.51,inst:4.10,prep:4.56,ph:'P1',note:'1-4 scale converted'},
+  {i:'Geneva*',c:'Research Methods',l:'UG TA',course:4.10,inst:4.00,prep:4.20,ph:'P1',note:'1-4 scale converted'},
+  {i:'HSE Moscow',c:'R Programming for Mktg Analytics',l:'UG Yr3',course:3.56,inst:3.64,prep:3.72,ph:'P1',note:''},
+  {i:'HSE Moscow',c:'Statistical Analysis (R + Python)',l:'UG Yr3',course:3.52,inst:3.54,prep:3.58,ph:'P1',note:''},
+  {i:'IIM Bodhgaya',c:'POMM 1 (IPM)',l:'IPM UG',course:4.74,inst:4.75,prep:4.87,ph:'P2',note:''},
+  {i:'IIM Bodhgaya',c:'Rural Marketing (PGP)',l:'PGP',course:4.49,inst:4.76,prep:4.79,ph:'P2',note:''},
+  {i:'IIM Bodhgaya',c:'Marketing Management 1 (PGP)',l:'PGP',course:4.11,inst:3.91,prep:4.26,ph:'P2',note:''},
+  {i:'IIM Bodhgaya',c:'POMM 1 (IPM) repeat',l:'IPM UG',course:4.68,inst:4.66,prep:4.97,ph:'P2',note:''},
+  {i:'IIM Bodhgaya',c:'Business Research Methods (IPM)',l:'IPM UG',course:3.52,inst:2.94,prep:4.06,ph:'P2',note:''},
+  {i:'IIM Bodhgaya',c:'Product Management (PGP)',l:'PGP',course:3.65,inst:3.45,prep:3.95,ph:'P2',note:''},
+  {i:'IIM Bodhgaya',c:'Brand Management (PGP)',l:'PGP',course:4.35,inst:4.13,prep:4.57,ph:'P2',note:''},
+  {i:'IIM Bodhgaya',c:'Foundation Mktg Mgmt (MBA-DB)',l:'MBA',course:4.71,inst:4.68,prep:4.97,ph:'P2',note:''},
+  {i:'IIM Ranchi',c:'Marketing Management 1 (PGP)',l:'PGP',course:4.75,inst:4.86,prep:5.00,ph:'P3',note:''},
+  {i:'SAU',c:'Indian Ethos & Business Ethics',l:'MBA Sem1',course:3.89,inst:3.87,prep:3.92,ph:'P4',note:'Greenfield Service'},
+  {i:'SAU',c:'IT and Systems Lab',l:'BBA Sem1',course:3.44,inst:3.25,prep:3.77,ph:'P4',note:'Greenfield Service'}
 ];
-var phC={P1:'#8fa0b0',P2:'#c8992a',P3:'#b04040',P4:'#3a9268',P5:'#7a8fa0'};
-var phN={P1:'Phase 1',P2:'Phase 2',P3:'Phase 3',P4:'Phase 4',P5:'Phase 5 (SAU)'};
+
+var phC={P1:'#8fa0b0',P2:'#c8992a',P3:'#3a9268',P4:'#7a8fa0'};
+var phN={P1:'Phase 1',P2:'Phase 2',P3:'Phase 3',P4:'Phase 4 (SAU)'};
 function sc(v){if(v===null)return '';if(v>=4.5)return 'cg';if(v>=4.0)return 'clg';if(v>=3.5)return 'cy';return 'cr';}
 function fv(v,note){
   if(v===null)return '<span style="color:#b0bec5;">N/A</span>';
@@ -871,23 +871,21 @@ function fv(v,note){
   if(note)s+='<br><span style="font-size:.6rem;color:var(--muted);">'+note+'</span>';
   return s;
 }
+
 var tb=document.getElementById('scoreBody');
 if(tb){scores.forEach(function(r){
   var tr=document.createElement('tr'),pc=phC[r.ph];
   tr.innerHTML='<td><span style="font-size:.75rem;font-weight:500;">'+r.i+'</span><br><span style="font-size:.6rem;background:'+pc+'18;color:'+pc+';border:1px solid '+pc+'30;padding:.1rem .4rem;border-radius:3px;font-weight:500;">'+phN[r.ph]+'</span></td>'
     +'<td style="font-size:.75rem;">'+r.c+(r.note?'<br><span style="font-size:.6rem;color:var(--muted);">'+r.note+'</span>':'')+'</td>'
     +'<td style="font-size:.72rem;color:var(--muted);">'+r.l+'</td>'
-    +'<td class="'+sc(r.rec)+'">'+fv(r.rec)+'</td>'
-    +'<td class="'+sc(r.enth)+'">'+fv(r.enth)+'</td>'
-    +'<td class="'+sc(r.oral)+'">'+fv(r.oral)+'</td>'
-    +'<td class="'+sc(r.punct)+'">'+fv(r.punct)+'</td>';
+    +'<td class="'+sc(r.course)+'">'+fv(r.course)+'</td>'
+    +'<td class="'+sc(r.inst)+'">'+fv(r.inst)+'</td>'
+    +'<td class="'+sc(r.prep)+'">'+fv(r.prep)+'</td>';
   tb.appendChild(tr);
 });}
 
 /* ── Initialization ── */
 window.addEventListener('load', function() {
-  animCount('sc1',5.00,2);
-  animCount('sc2',4.86,2);
   setTimeout(initWC,400);
   initExplorer();
   buildTheses();
@@ -914,13 +912,13 @@ var rTimer;window.addEventListener('resize',function(){clearTimeout(rTimer);rTim
 /* ── Course explorer ── */
 function initExplorer(){
   var cd={
-    ranchi:{m:'IIM Ranchi 2025',t:'Marketing Management 1, PGP Term 1, Sep 2025',r:'4.86 / 5.0',ins:'The highest-scoring evaluation in the entire dataset. Preparation hit 5.00/5.00, unanimous across 29 respondents. Psychological safety was explicitly named by students as a defining feature. Exam: 25/29 enjoyed it, 0 said useless.',q:['Your teaching method is truly unique and for the first time I felt I was sitting at an IIM-level class.','MM 1 was the only class where I participated in the entire term. Sir made it a safe space to participate.','Studying from you made me realise it is not a subject, it is a skill. Now whenever I see an advertisement I find myself analysing it through a marketing lens.','Marketing is a life skill. I keep coming back to those frameworks all the time.']},
+    ranchi:{m:'IIM Ranchi',t:'Marketing Management 1, PGP Term 1, Sep 2025',r:'4.86 / 5.0',ins:'The highest-scoring evaluation in the entire dataset. Preparation hit 5.00/5.00, unanimous across 29 respondents. Psychological safety was explicitly named by students as a defining feature. Exam: 25/29 enjoyed it, 0 said useless.',q:['Your teaching method is truly unique and for the first time I felt I was sitting at an IIM-level class.','MM 1 was the only class where I participated in the entire term. Sir made it a safe space to participate.','Studying from you made me realise it is not a subject, it is a skill. Now whenever I see an advertisement I find myself analysing it through a marketing lens.','Marketing is a life skill. I keep coming back to those frameworks all the time.']},
     fmktg:{m:'IIMBG Foundation Mktg',t:'Foundation of Marketing Management, MBA Digital Business, Oct 2023',r:'4.68 / 5.0',ins:'Clearest evidence of the pedagogical recovery after the low point of mid-2023. Marks the point where the new classroom contract became consistent.',q:['The teaching was engaging and made the subject very approachable.','A genuinely different experience from other courses this semester.','The preparation and structure were clearly visible in every class.']},
     pomm:{m:'IIMBG POMM IPM',t:'Principles of Marketing Management 1, IPM, Jan 2022 and 2023',r:'4.75 and 4.66 / 5.0',ins:'The standout IIM Bodhgaya evaluations. First-year IPM undergraduates respond most strongly to the life-skill framing. Preparation reached 4.97/5.00 in 2023.',q:['Changed my perspective on marketing entirely. Before this it was just a subject.','Most professional teacher I have had at this institution.','Strictness justified, soft from inside. This balance matters.']},
     rural:{m:'IIMBG Rural Marketing',t:'Rural Marketing, PGP Sem 6, Mar 2022 and 2023',r:'4.76 and 4.20 / 5.0',ins:'Consistently strong across both iterations. Rural Marketing naturally calls for real-world storytelling, which amplifies the pedagogy.',q:['Most disciplined and dedicated professor I have had.','The real-world examples made complex rural market dynamics finally click.']},
     brm:{m:'IIMBG BRM IPM',t:'Business Research Methods, IPM, Mar 2023',r:'2.94 / 5.0',ins:'Included here for transparency. A classroom relationship incident mid-semester led to a sustained climate deterioration in this specific cohort. Preparation held at 4.06/5.00 throughout; the knowledge and effort were never in question. The same semester produced a Brand Management score of 4.13 and a Foundation Marketing score of 4.68, demonstrating immediate recovery.',q:['Even in difficult conditions, the preparation and material quality were consistently acknowledged.','Recovery to strong scores in two other courses the same semester demonstrates the issue was specific to one classroom dynamic, not to teaching capacity.']},
-    sau_iebs:{m:'SAU: Indian Ethos',t:'Indian Ethos and Business Ethics, MBA Sem 1, Dec 2025',r:'3.89 recommend index',ins:'First semester at a greenfield SAARC university. This course is outside the primary domain of marketing. It was assigned by institutional need. 63% of students would recommend the course. 54% rated oral presentation as Excellent. 63% rated teacher attitude as Enthusiastic or Positive. The scores reflect a first-year cohort in an institution still establishing its norms.',q:['Teacher made our class interactive. Please teach us again.','it was perfect with sir, we have learned a lot of things.','Best professor.','Have to be lenient while marking. Otherwise the faculty is exceptional, gives a vibe of a proper professor, very practical.']},
-    sau_it:{m:'SAU: IT Systems Lab',t:'IT and Systems Lab, BBA Sem 1, Dec 2025',r:'3.44 recommend index',ins:'An IT lab course taught by a marketing faculty member, assigned by institutional need in the first semester of a new university. 55% of students would recommend the course. 56% rated teacher attitude as Positive or Enthusiastic. Punctuality was consistently noted. The structural mismatch between faculty expertise and course assignment is the primary driver of the scores here.',q:['overall sir is good for teaching, and the class got some fun.','I had learned about excel and how it can improve productivity.','it was good experience, learned new things.','GOOD ATTITUDE TOWARDS TEACHING.']}
+    sau_iebs:{m:'SAU: Indian Ethos',t:'Indian Ethos and Business Ethics, MBA Sem 1, Dec 2025',r:'3.87 Delivery Index',ins:'First semester at a greenfield SAARC university. This course is outside the primary domain of marketing. It was assigned by institutional need. 63% of students would recommend the course. 54% rated oral presentation as Excellent. 63% rated teacher attitude as Enthusiastic or Positive. The scores reflect a first-year cohort in an institution still establishing its norms.',q:['Teacher made our class interactive. Please teach us again.','it was perfect with sir, we have learned a lot of things.','Best professor.','Have to be lenient while marking. Otherwise the faculty is exceptional, gives a vibe of a proper professor, very practical.']},
+    sau_it:{m:'SAU: IT Systems Lab',t:'IT and Systems Lab, BBA Sem 1, Dec 2025',r:'3.25 Delivery Index',ins:'An IT lab course taught by a marketing faculty member, assigned by institutional need in the first semester of a new university. 55% of students would recommend the course. 56% rated teacher attitude as Positive or Enthusiastic. Punctuality was consistently noted. The structural mismatch between faculty expertise and course assignment is the primary driver of the scores here.',q:['overall sir is good for teaching, and the class got some fun.','I had learned about excel and how it can improve productivity.','it was good experience, learned new things.','GOOD ATTITUDE TOWARDS TEACHING.']}
   };
   var menu=document.getElementById('courseMenu');
   Object.keys(cd).forEach(function(k,idx){
