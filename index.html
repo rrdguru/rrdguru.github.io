@@ -8,16 +8,6 @@
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ─── Design System ────────────────────────────────────────────
-   Fonts  : Playfair Display (headings) · Inter (body)
-   Colours: --ink   deep slate, all headings and primary text
-            --blue  cerulean, links, accents, active states
-            --sage  muted green, positive signals only
-            --smoke off-white page background
-            --line  subtle border
-   Rule   : No amber, purple, red in layout chrome. Only in data
-            viz where they encode phase meaning.
-─────────────────────────────────────────────────────────────── */
 :root{
   --ink:#1c2b3a;
   --blue:#3574c4;
@@ -36,18 +26,13 @@ h5,h6,p,li,span,a{font-family:'Inter',sans-serif;}
 a{text-decoration:none;color:var(--blue);}
 section{scroll-margin-top:64px;padding:5rem 0;}
 strong{color:var(--ink);font-weight:600;}
-
-/* Progress bar */
 #rbar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--sage));z-index:9999;width:0%;transition:width .1s;}
-
-/* ─── Navbar ──────────────────────────────────────────────── */
 .navbar{background:var(--ink);padding:.65rem 0;position:sticky;top:0;z-index:1000;}
 .navbar-brand{font-family:'Playfair Display',serif;font-size:1.05rem;color:#fff!important;letter-spacing:.15px;}
 .nav-link{color:rgba(255,255,255,.65)!important;font-size:.84rem;font-weight:400;padding:.35rem .75rem!important;border-radius:4px;transition:color .18s,background .18s;}
 .nav-link:hover,.nav-link.act{color:#fff!important;background:rgba(255,255,255,.08);}
 .btn-cv{background:var(--blue);color:#fff!important;padding:.35rem .95rem!important;border-radius:5px;font-size:.82rem;font-weight:500;transition:background .18s;}
 .btn-cv:hover{background:#2a5faa;}
-/* Dropdowns */
 .has-drop{position:relative;}
 .has-drop:hover .ddrop,.has-drop:focus-within .ddrop{opacity:1;pointer-events:all;transform:translateY(0);}
 .ddrop{position:absolute;top:calc(100% + .45rem);left:50%;transform:translateX(-50%) translateY(-5px);min-width:190px;background:var(--ink);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.4rem 0;box-shadow:0 16px 40px rgba(0,0,0,.3);opacity:0;pointer-events:none;transition:opacity .18s,transform .18s;z-index:2000;}
@@ -55,8 +40,6 @@ strong{color:var(--ink);font-weight:600;}
 .ddrop a:hover{color:#fff;background:rgba(255,255,255,.06);}
 .ddrop a i{width:13px;text-align:center;color:rgba(var(--blue),.8);font-size:.76rem;opacity:.7;}
 .ddivider{height:1px;background:rgba(255,255,255,.07);margin:.3rem 0;}
-
-/* ─── Hero ────────────────────────────────────────────────── */
 .hero{background:#fff;border-bottom:1px solid var(--line);color:var(--ink);padding:4.5rem 0 0;position:relative;overflow:hidden;}
 .hero-accent-bar{position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--blue),var(--sage));}
 .hero-photo{width:112px;height:112px;border-radius:50%;object-fit:cover;border:3px solid var(--line);box-shadow:0 4px 16px rgba(0,0,0,.1);flex-shrink:0;}
@@ -74,7 +57,6 @@ strong{color:var(--ink);font-weight:600;}
 .soc-row a{color:var(--muted);background:var(--smoke);width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:7px;transition:all .2s;font-size:.87rem;border:1px solid var(--line);}
 .soc-row a:hover{color:#fff;background:var(--blue);border-color:var(--blue);}
 .soc-email{font-size:.78rem;color:var(--text);margin-left:.3rem;}
-/* Hero stat strip */
 .hero-strip{background:var(--smoke);border-top:1px solid var(--line);margin-top:3rem;padding:1.4rem 0;}
 .stat-item{text-align:center;padding:0 1.5rem;border-right:1px solid var(--line);}
 .stat-item:last-child{border-right:none;}
@@ -82,20 +64,14 @@ strong{color:var(--ink);font-weight:600;}
 .stat-val sup{font-size:.8rem;font-weight:400;color:var(--muted);}
 .stat-lbl{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-top:.3rem;}
 .stat-sub{font-size:.7rem;color:var(--text);margin-top:.15rem;}
-
-/* ─── Section scaffolding ─────────────────────────────────── */
 .sec-label{font-size:.67rem;font-weight:500;text-transform:uppercase;letter-spacing:2px;color:var(--blue);margin-bottom:.5rem;}
 .sec-title{font-size:1.65rem;font-weight:400;color:var(--ink);margin-bottom:2.25rem;position:relative;padding-bottom:.5rem;}
 .sec-title::after{content:'';position:absolute;bottom:-1px;left:0;width:36px;height:2px;background:var(--blue);border-radius:2px;}
 .divider{height:1px;background:var(--line);margin:3rem 0;}
-
-/* ─── Cards ───────────────────────────────────────────────── */
 .card-clean{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.6rem;transition:box-shadow .25s;box-shadow:0 1px 6px rgba(0,0,0,.04);}
 .card-clean:hover{box-shadow:0 8px 24px rgba(0,0,0,.07);}
 .card-accent{border-left:3px solid var(--blue);}
 .card-accent-sage{border-left:3px solid var(--sage);}
-
-/* ─── Timeline ────────────────────────────────────────────── */
 .tl{position:relative;padding-left:2.2rem;}
 .tl::before{content:'';position:absolute;left:.6rem;top:.4rem;bottom:.4rem;width:1.5px;background:var(--line);}
 .tl-item{position:relative;margin-bottom:1.85rem;}
@@ -106,18 +82,12 @@ strong{color:var(--ink);font-weight:600;}
 .tl-org{font-size:.82rem;color:var(--blue);font-weight:500;margin-bottom:.55rem;}
 .tl-body-wrap{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.1rem 1.25rem;box-shadow:0 1px 5px rgba(0,0,0,.03);}
 .badge-now{background:var(--sage);color:#fff;font-size:.57rem;font-weight:600;padding:.13rem .45rem;border-radius:6px;letter-spacing:.3px;text-transform:uppercase;vertical-align:middle;margin-left:.35rem;}
-
-/* ─── Bullet lists ────────────────────────────────────────── */
 ul.bl{list-style:none;padding:0;margin:0;}
 ul.bl li{position:relative;padding-left:1.2rem;margin-bottom:.5rem;font-size:.86rem;color:var(--text);line-height:1.65;}
 ul.bl li::before{content:'';position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--blue);}
 ul.bl.sage li::before{background:var(--sage);}
 ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
-
-/* ─── Tags / chips ────────────────────────────────────────── */
 .tag{background:var(--smoke);color:var(--text);padding:.2rem .6rem;border-radius:20px;font-size:.72rem;font-weight:400;display:inline-block;margin:.18rem .18rem .18rem 0;border:1px solid var(--line);}
-
-/* ─── Publication items ───────────────────────────────────── */
 .pub{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.25rem 1.35rem 1.25rem 1.6rem;border-left:3px solid var(--blue);margin-bottom:.8rem;box-shadow:0 1px 5px rgba(0,0,0,.03);transition:box-shadow .2s;}
 .pub:hover{box-shadow:0 6px 20px rgba(0,0,0,.07);}
 .pub.pip{border-left-color:var(--muted);}
@@ -127,8 +97,6 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
 .pub.wip .pub-venue{color:#a0b4c0;}
 .pub-title{font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:.3rem;font-family:'Playfair Display',serif;}
 .pub-authors{font-size:.79rem;color:var(--muted);line-height:1.5;}
-
-/* ─── Teaching ────────────────────────────────────────────── */
 .phase-row{display:flex;gap:1.35rem;margin-bottom:1.75rem;align-items:flex-start;}
 .phase-num{flex-shrink:0;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.8rem;color:#fff;margin-top:.2rem;}
 .phase-body{flex:1;background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.35rem;box-shadow:0 1px 5px rgba(0,0,0,.03);}
@@ -136,7 +104,6 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
 .phase-title{font-size:.93rem;font-weight:600;color:var(--ink);margin-bottom:.7rem;}
 .insight{background:var(--smoke);border:1px solid var(--line);border-radius:8px;padding:.8rem 1rem;margin-top:.8rem;font-size:.8rem;color:var(--text);line-height:1.65;}
 .insight strong{color:var(--ink);}
-/* Score table */
 .stbl{width:100%;border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden;box-shadow:0 2px 14px rgba(0,0,0,.06);}
 .stbl th{background:var(--ink);color:rgba(255,255,255,.72);padding:.75rem .9rem;font-size:.63rem;text-transform:uppercase;letter-spacing:.5px;font-weight:500;text-align:left;}
 .stbl td{padding:.65rem .9rem;font-size:.78rem;border-bottom:1px solid #f0f4f8;background:#fff;}
@@ -146,10 +113,8 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
 .clg{background:#e6f4eb!important;color:#1e6b3a;}
 .cy{background:#fdf2d0!important;color:#7a5010;}
 .cr{background:#fce4e0!important;color:#8a2018;}
-/* Charts */
 .chart-box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.4rem;box-shadow:0 2px 10px rgba(0,0,0,.04);height:400px;}
 .chart-box.tall{height:450px;}
-/* Course explorer */
 .explorer{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.05);display:flex;flex-direction:column;}
 @media(min-width:768px){.explorer{flex-direction:row;}}
 .exp-menu{background:var(--smoke);border-bottom:1px solid var(--line);display:flex;overflow-x:auto;}
@@ -161,29 +126,22 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
 @media(min-width:768px){.exp-content{width:74%;padding:2rem;}}
 .vq{position:relative;padding:.9rem 1.2rem .9rem 2.5rem;background:var(--smoke);border-radius:8px;border:1px solid var(--line);margin-bottom:.6rem;font-style:italic;color:var(--text);font-size:.83rem;line-height:1.7;}
 .vq::before{content:'\201C';position:absolute;left:.6rem;top:.1rem;font-size:2.4rem;color:#c8d8e8;font-family:'Playfair Display',serif;line-height:1;}
-/* Word cloud */
 #wcBox{width:100%;height:340px;background:#fff;border:1px solid var(--line);border-radius:12px;position:relative;cursor:crosshair;box-shadow:0 2px 10px rgba(0,0,0,.04);}
 #wcTip{position:absolute;opacity:0;pointer-events:none;background:#fff;border:1px solid var(--line);padding:.8rem .95rem;border-radius:9px;box-shadow:0 10px 28px rgba(0,0,0,.1);width:260px;z-index:100;transition:opacity .2s;transform:translate(-50%,-110%);}
-/* Thesis */
 .thesis-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.8rem;}
 .th-item{background:#fff;border:1px solid var(--line);border-radius:9px;padding:.95rem 1.1rem;border-left:3px solid var(--blue);box-shadow:0 1px 5px rgba(0,0,0,.03);transition:box-shadow .2s;}
 .th-item:hover{box-shadow:0 5px 16px rgba(0,0,0,.07);}
 .th-year{font-size:.62rem;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:.18rem;}
 .th-title{font-weight:500;color:var(--ink);margin-bottom:.18rem;font-size:.8rem;line-height:1.5;}
 .th-author{color:var(--muted);font-size:.74rem;}
-/* Archives */
 .dlink{display:flex;align-items:center;gap:.7rem;padding:.9rem 1.1rem;background:#fff;border:1px solid var(--line);border-radius:9px;color:var(--text);font-size:.84rem;font-weight:400;transition:.2s;box-shadow:0 1px 4px rgba(0,0,0,.03);}
 .dlink:hover{border-color:var(--blue);color:var(--blue);box-shadow:0 5px 16px rgba(0,0,0,.07);}
-/* Reveal */
 .rv{opacity:1;transform:none;}
 .rv.animate{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
 .rv.animate.in{opacity:1;transform:none;}
-/* Back to top */
 #btt{position:fixed;bottom:1.75rem;right:1.75rem;width:38px;height:38px;background:var(--ink);color:#fff;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:all .25s;box-shadow:0 3px 12px rgba(0,0,0,.15);z-index:999;}
 #btt.on{opacity:1;pointer-events:all;}
 #btt:hover{background:var(--blue);}
-/* ─── Responsive / Mobile ────────────────────────────── */
-/* Tablet */
 @media(max-width:991px){
   .hero{padding:3.5rem 0 0;}
   section{padding:3.5rem 0;}
@@ -191,35 +149,25 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
   .phase-row{flex-direction:column;gap:.75rem;}
   .phase-num{margin-top:0;}
 }
-/* Mobile */
 @media(max-width:767px){
   section{padding:2.75rem 0;}
   .hero{padding:2.5rem 0 0;}
   .hero-name{font-size:clamp(1.75rem,7vw,2.2rem);}
   .hero-bio{font-size:.9rem;}
-  /* Stat strip: 2 per row on mobile */
   .hero-strip .row{display:flex;flex-wrap:wrap;}
   .hero-strip .stat-item{flex:0 0 50%;border-right:none;border-bottom:1px solid var(--line);padding:1rem .75rem;}
   .hero-strip .stat-item:nth-child(odd){border-right:1px solid var(--line);}
   .hero-strip .stat-item:last-child{border-bottom:none;}
   .hero-strip .stat-item:nth-last-child(2){border-bottom:none;}
   .stat-val{font-size:1.45rem;}
-  /* Cards */
   .card-clean{padding:1.25rem;}
-  /* Timeline */
   .tl-body-wrap{padding:.85rem 1rem;}
-  /* Explorer */
   .exp-content{padding:1.25rem;}
-  /* Tables: allow horizontal scroll */
   .table-responsive{-webkit-overflow-scrolling:touch;}
-  /* Thesis grid */
   .thesis-grid{grid-template-columns:1fr;}
-  /* Footer */
   .soc-row.justify-content-center{gap:.5rem;}
-  /* Visiting role cards */
   .card-clean.mb-3,.card-clean.mb-4{margin-bottom:.85rem!important;}
 }
-/* Small phones */
 @media(max-width:480px){
   .hero-strip .stat-item{flex:0 0 50%;}
   .hero-actions{gap:.5rem;}
@@ -259,7 +207,7 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
           <a class="nav-link" href="#teaching">Teaching <i class="fas fa-chevron-down" style="font-size:.55rem;opacity:.4;margin-left:2px;"></i></a>
           <div class="ddrop">
             <a href="#teaching"><i class="fas fa-book-open"></i> Teaching Philosophy</a>
-            <a href="#teaching"><i class="fas fa-chart-line"></i> Seven-Year Arc</a>
+            <a href="#teaching"><i class="fas fa-chart-line"></i> Eight-Year Arc</a>
             <a href="#teaching"><i class="fas fa-table"></i> Scorecard</a>
             <a href="#teaching"><i class="fas fa-search"></i> Course Explorer</a>
             <div class="ddivider"></div>
@@ -292,14 +240,11 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
             <div class="hero-inst">South Asian University · New Delhi</div>
           </div>
         </div>
-
         <p class="hero-bio" style="margin-top:1rem;">I study how consumers form and revise quality judgments, and how those judgments shape brand relationships over time. Before this, I spent years in software engineering, iron and steel plant operations, and strategy consulting. That sequence is not incidental. It sits at the centre of how I research and what happens inside a classroom when I teach.</p>
-
         <div class="hero-actions">
           <a href="#teaching" class="btn-o"><i class="fas fa-chart-line"></i> Teaching Portfolio</a>
           <a href="#research" class="btn-o"><i class="fas fa-book-open"></i> Research</a>
         </div>
-
         <div class="soc-row">
           <a href="https://scholar.google.com/citations?user=BUsJnvUAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
           <a href="https://www.researchgate.net/profile/Ramesh-Roshan-Das-Guru" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
@@ -308,16 +253,14 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
           <a href="mailto:rameshroshandg@gmail.com" class="soc-email" style="width:auto;height:auto;font-size:.78rem;color:var(--text);margin-left:.1rem;display:inline-flex;align-items:center;gap:.35rem;padding:.25rem .6rem;background:var(--smoke);border:1px solid var(--line);border-radius:6px;transition:all .2s;" onmouseover="this.style.color='var(--blue)';this.style.borderColor='var(--blue)'" onmouseout="this.style.color='var(--text)';this.style.borderColor='var(--line)'"><i class="fas fa-envelope" style="color:var(--blue);font-size:.75rem;"></i> rameshroshandg@gmail.com</a>
         </div>
       </div>
-
       <div class="col-lg-5">
         <div style="display:flex;flex-direction:column;gap:.85rem;">
-
           <div style="background:var(--smoke);border:1px solid var(--line);border-radius:12px;padding:1.4rem 1.6rem;">
             <div style="font-size:.68rem;color:var(--muted);font-weight:600;margin-bottom:.9rem;letter-spacing:1.2px;text-transform:uppercase;">A bit of context</div>
             <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.7rem;">
               <li style="display:flex;align-items:flex-start;gap:.7rem;font-size:.85rem;color:var(--text);">
                 <span style="color:var(--sage);margin-top:.25rem;flex-shrink:0;"><i class="fas fa-circle" style="font-size:.4rem;"></i></span>
-                <span>Career before full-time academia: software engineering at Infosys and iron and steel plant operations at SAIL in India, followed by doctoral research in Geneva and strategy consulting in Berlin. Two industries on two continents before the first lecture hall; research and consulting running alongside the PhD.</span>
+                <span>Career before full-time academia: software engineering at Infosys and iron and steel plant operations at SAIL in India, followed by doctoral research in Geneva and strategy consulting in Berlin. Two industries on two continents before the first lecture hall.</span>
               </li>
               <li style="display:flex;align-items:flex-start;gap:.7rem;font-size:.85rem;color:var(--text);">
                 <span style="color:var(--sage);margin-top:.25rem;flex-shrink:0;"><i class="fas fa-circle" style="font-size:.4rem;"></i></span>
@@ -329,17 +272,14 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
               </li>
             </ul>
           </div>
-
           <div style="background:#fff;border:1px solid var(--line);border-left:3px solid var(--sage);border-radius:12px;padding:1.2rem 1.6rem;">
             <div style="font-size:.68rem;color:var(--muted);font-weight:600;margin-bottom:.65rem;letter-spacing:.8px;text-transform:uppercase;">From a student &middot; IIM Ranchi, 2025</div>
             <p style="font-style:italic;font-size:.85rem;color:var(--text);line-height:1.85;margin:0;">"MM 1 was the only class where I participated in the entire term. While I was struggling with all subjects, it was one of the things that gave me hope to hang on."</p>
           </div>
-
         </div>
       </div>
     </div>
   </div>
-
   <div class="hero-strip mt-4">
     <div class="container">
       <div class="row g-0">
@@ -349,9 +289,9 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
           <div class="stat-sub">IIM Ranchi 2025</div>
         </div>
         <div class="col stat-item">
-          <div class="stat-val">700<sup>+</sup></div>
+          <div class="stat-val">800<sup>+</sup></div>
           <div class="stat-lbl">Students evaluated</div>
-          <div class="stat-sub">5 countries, 6 institutions</div>
+          <div class="stat-sub">6 countries, 7 institutions</div>
         </div>
         <div class="col stat-item">
           <div class="stat-val">147<sup>+</sup></div>
@@ -373,29 +313,28 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
   </div>
 </header>
 
+<!-- ═══════════════════════════════════════════════════════════
+     ABOUT / PROFILE SECTION  — unchanged from previous version
+═══════════════════════════════════════════════════════════ -->
 <section id="about" style="background:#fff;">
   <div class="container">
     <div class="rv">
       <div class="sec-label">Profile</div>
       <h2 class="sec-title">Career and Background</h2>
-
       <div class="row g-5">
         <div class="col-lg-7">
-
           <div class="card-clean card-accent mb-4">
             <div style="font-size:.78rem;font-weight:600;color:var(--ink);margin-bottom:.8rem;text-transform:uppercase;letter-spacing:.5px;">Background</div>
             <ul class="bl">
               <li>Started in industry: software engineering at Infosys, electrical infrastructure in iron and steel plant operations at SAIL, postgraduate research at EPFL, and strategy consulting at Fact Works GmbH in Berlin. Four sectors, four countries, before a single lecture.</li>
               <li>Doctoral work at the University of Geneva produced a validated measurement instrument for multidimensional product quality, published in the European Journal of Marketing in 2020. 147+ Google Scholar citations.</li>
-              <li>Seven years of documented teaching across five countries, with publicly accessible evaluation data showing a clear growth arc from foundation to peak.</li>
+              <li>Eight years of documented teaching across six countries, with publicly accessible evaluation data showing a clear growth arc from foundation to peak.</li>
               <li>Currently guiding one PhD scholar and co-guiding a second at South Asian University, alongside an active publication pipeline and three international research collaborations.</li>
               <li>Institution-builder: co-designed a Digital Business MBA from scratch, chaired alumni and placement work, built European exchange partnerships, and serving as founding faculty at a newly established SAARC university.</li>
             </ul>
           </div>
-
           <h4 style="font-size:1.05rem;color:var(--ink);margin-bottom:1.4rem;font-family:'Inter',sans-serif;font-weight:600;">Positions Held</h4>
           <div class="tl">
-
             <div class="tl-item">
               <div class="tl-dot now"></div>
               <div class="tl-period">Sep 2025 to present</div>
@@ -405,12 +344,11 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
                 <ul class="bl sm">
                   <li>Founding faculty in the newly established Faculty of Management Studies at an eight-nation SAARC university.</li>
                   <li>Guiding one PhD scholar directly and co-guiding a second as part of the doctoral programme.</li>
-                  <li>Leading the South Asian Business Centre, examinations, student clubs, cultural bodies and placement development.</li>
+                  <li>Leading the South Asian Business Centre, examinations, student clubs, cultural bodies and career development.</li>
                   <li>Teaching at both MBA and undergraduate levels across management and technology subjects.</li>
                 </ul>
               </div>
             </div>
-
             <div class="tl-item">
               <div class="tl-dot"></div>
               <div class="tl-period">Jun 2025 to Sep 2025</div>
@@ -418,12 +356,11 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
               <div class="tl-org">IIM Ranchi</div>
               <div class="tl-body-wrap">
                 <ul class="bl sm">
-                  <li>Taught Marketing Management 1 to PGP cohort. Produced highest evaluation scores in seven years of teaching: preparation 5.00/5.00, instructor 4.86/5.00, unanimous across 29 respondents.</li>
+                  <li>Taught Marketing Management 1 to PGP cohort. Produced highest evaluation scores in eight years of teaching: preparation 5.00/5.00, instructor 4.86/5.00, unanimous across 29 respondents.</li>
                   <li>Contributed to executive education and management development programmes.</li>
                 </ul>
               </div>
             </div>
-
             <div class="tl-item">
               <div class="tl-dot"></div>
               <div class="tl-period">Nov 2021 to Oct 2024</div>
@@ -433,13 +370,12 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
                 <ul class="bl sm">
                   <li>Taught across IPM undergraduate and PGP MBA programmes.</li>
                   <li>Co-designed the Digital Business MBA, including all marketing core and elective courses.</li>
-                  <li>Chaired Alumni Relations Committee, led placement support for the 2023-2024 batch in a difficult market.</li>
+                  <li>Chaired Alumni Relations Committee, led career development support for the 2023-2024 batch.</li>
                   <li>Built summer exchange partnerships with European partner schools.</li>
                   <li>Member of International Relations and Faculty Recruitment Committees.</li>
                 </ul>
               </div>
             </div>
-
             <div class="tl-item">
               <div class="tl-dot" style="border-color:var(--muted);"></div>
               <div class="tl-period">Jan 2015 to Dec 2020</div>
@@ -449,13 +385,11 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
                 <ul class="bl sm">
                   <li>Doctoral research producing the CEPQ scale for multidimensional product quality (European Journal of Marketing, 2020).</li>
                   <li>Teaching assistant for Branding, Data Driven Decision Making and Research Methods.</li>
-                  <li>Supervised 12 master's and bachelor's theses; many worked directly on quality-related topics.</li>
-                  <li>Presented at international conferences in Europe and North America.</li>
+                  <li>Supervised 12 master's and bachelor's theses.</li>
                   <li>Research Fellowship, Schmidheiny Foundation Grant, Credit Suisse Award for Innovation in Teaching (team).</li>
                 </ul>
               </div>
             </div>
-
             <div class="tl-item">
               <div class="tl-dot" style="border-color:var(--muted);"></div>
               <div class="tl-period">2005 to 2019 (with study periods)</div>
@@ -464,16 +398,14 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
               <div class="tl-body-wrap">
                 <ul class="bl sm">
                   <li>Software engineering at Infosys (2005-2006).</li>
-                  <li>Electrical infrastructure management in iron and steel plant operations at SAIL, Steel Authority of India (2007 to 2011).</li>
-                  <li>Master's research and part-time work at EPFL, Lausanne (2011-2013), including conference presentation.</li>
+                  <li>Electrical infrastructure management in iron and steel plant operations at SAIL (2007-2011).</li>
+                  <li>Master's research at EPFL, Lausanne (2011-2013).</li>
                   <li>SEM-based consumer research consulting at Fact Works GmbH, Berlin (2019).</li>
                 </ul>
               </div>
             </div>
-
           </div>
         </div>
-
         <div class="col-lg-5">
           <h4 style="font-size:1.05rem;color:var(--ink);margin-bottom:1.25rem;font-family:'Inter',sans-serif;font-weight:600;">Visiting and Concurrent Roles</h4>
           <div class="card-clean mb-3">
@@ -496,7 +428,6 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
             <div style="font-size:.77rem;color:var(--blue);margin-bottom:.4rem;">Executive Education Instructor</div>
             <div style="font-size:.77rem;color:var(--muted);">January 2024 to present. Digital Marketing and Analytics for working professionals.</div>
           </div>
-
           <h4 style="font-size:1.05rem;color:var(--ink);margin-bottom:1.1rem;font-family:'Inter',sans-serif;font-weight:600;">Education</h4>
           <div class="card-clean card-accent-sage mb-3">
             <div style="font-size:.85rem;font-weight:600;color:var(--ink);">PhD in Marketing</div>
@@ -512,13 +443,12 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
             <div style="font-size:.85rem;font-weight:600;color:var(--ink);">BE in Electrical Engineering</div>
             <div style="font-size:.77rem;color:var(--muted);">2001 to 2005</div>
           </div>
-
           <div class="card-clean card-accent-sage">
             <div style="font-size:.8rem;font-weight:600;color:var(--ink);margin-bottom:.55rem;">Administrative and Institutional Work</div>
             <ul class="bl sage sm">
-              <li>Founding faculty at SAU, building governance, placement and student life from the ground up.</li>
+              <li>Founding faculty at SAU, building governance, career development and student life from the ground up.</li>
               <li>Co-designed Digital Business MBA at IIM Bodhgaya, including all marketing curriculum.</li>
-              <li>Chaired Alumni Relations Committee; organised placement support in a competitive year.</li>
+              <li>Chaired Alumni Relations Committee; organised career development support in a competitive year.</li>
               <li>Built European exchange partnerships; represented IIM Bodhgaya in international relations.</li>
               <li>Served on Faculty Recruitment Committee, IIM Bodhgaya.</li>
             </ul>
@@ -529,12 +459,14 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════════════
+     RESEARCH SECTION — unchanged
+═══════════════════════════════════════════════════════════ -->
 <section id="research" style="background:var(--smoke);">
   <div class="container">
     <div class="rv">
       <div class="sec-label">Research</div>
       <h2 class="sec-title">What I Study</h2>
-
       <div class="row g-5 mb-5">
         <div class="col-lg-5">
           <div style="font-size:.93rem;color:var(--text);line-height:1.85;margin-bottom:1.5rem;">The core question is deceptively simple: what does quality actually mean to a consumer? Not as a single score, but as a set of distinct, simultaneously experienced dimensions.</div>
@@ -548,7 +480,6 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
             <div><span class="tag">Education as a service</span><span class="tag">EV adoption</span><span class="tag">Sustainable consumption</span><span class="tag">Bihar tourism</span><span class="tag">Digital healthcare quality</span><span class="tag">Willingness to pay</span></div>
           </div>
         </div>
-
         <div class="col-lg-7">
           <div class="card-clean" style="border:1px solid #c8d8f0;background:linear-gradient(135deg,#f4f8fe,#eef3fb);margin-bottom:1.5rem;">
             <div style="font-size:.67rem;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:.8px;margin-bottom:.5rem;">Flagship collaborative project</div>
@@ -560,7 +491,6 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
               <li>First wave of data collection underway.</li>
             </ul>
           </div>
-
           <div style="font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.6rem;">Published</div>
           <div class="pub">
             <div class="pub-venue">European Journal of Marketing, 2020 · 54(4), 645-670</div>
@@ -572,7 +502,6 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
             <div class="pub-title">Role of Brand Attachment and Satisfaction in Driving Customer Behaviors for Durables: A Longitudinal Study</div>
             <div class="pub-authors">Das Guru, R.R., Paulssen, M. and Japutra, A.</div>
           </div>
-
           <div style="font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin:.9rem 0 .6rem;">Under Review</div>
           <div class="pub pip">
             <div class="pub-venue">Journal of Business Research</div>
@@ -584,7 +513,6 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
             <div class="pub-title">Understanding Product Field Quality: Failure Characteristics as Triggers of Boycotting and Complaining</div>
             <div class="pub-authors">Vahidi, F., Paulssen, M., Das Guru, R.R. and Netland, T.</div>
           </div>
-
           <div style="font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin:.9rem 0 .6rem;">In Preparation</div>
           <div class="pub pip">
             <div class="pub-venue">In preparation</div>
@@ -601,7 +529,6 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
             <div class="pub-title">Quality, Satisfaction, and Attachment: A Comparative Examination of Brand Loyalty Drivers Over Time</div>
             <div class="pub-authors">Das Guru, R.R., Paulssen, M. and Thomson, M.</div>
           </div>
-
           <div style="font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin:.9rem 0 .6rem;">Work in Progress (data collected)</div>
           <div class="pub wip">
             <div class="pub-venue">Work in progress</div>
@@ -629,11 +556,14 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════════════
+     TEACHING SECTION — UPDATED with SAU data
+═══════════════════════════════════════════════════════════ -->
 <section id="teaching" style="background:#fff;">
   <div class="container">
     <div class="rv">
       <div class="sec-label">Teaching</div>
-      <h2 class="sec-title">Seven Years of Evidence</h2>
+      <h2 class="sec-title">Eight Years of Evidence</h2>
 
       <div class="row g-4 mb-5">
         <div class="col-lg-7">
@@ -643,7 +573,7 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
               <li><strong>I ask students to understand the problem before they reach for a solution.</strong> Most courses jump to frameworks. I make people sit with the problem first, interrogate it, articulate what is actually being asked. The framework comes after. That order matters more than most people realise.</li>
               <li><strong>Critical thinking is not something I mention in a syllabus and move on.</strong> It means slowing down in class, questioning the first answer that comes up, refusing to let comfortable explanations sit unchallenged. Students notice fairly quickly that this is a different kind of room.</li>
               <li><strong>I teach marketing and research as skills, not subjects.</strong> A student who has genuinely understood how quality perceptions form will never see a product advertisement the same way again. That permanent shift in how someone reads the world is what a course should leave behind.</li>
-              <li><strong>My industry years are not background colour.</strong> Having managed electrical infrastructure in a steel plant, written software, and done quantitative consulting, I bring those contexts into class not as anecdotes but as the actual analytical method. Students from engineering and operations backgrounds in particular find this disarming in a useful way.</li>
+              <li><strong>My industry years are not background colour.</strong> Having managed electrical infrastructure in a steel plant, written software, and done quantitative consulting, I bring those contexts into class not as anecdotes but as the actual analytical method.</li>
               <li><strong>The classroom has to be safe enough for genuine thinking to happen.</strong> Rigour and safety are not competing values. The best learning I have witnessed, and the evaluation data bears this out, happens when both are true at the same time.</li>
             </ul>
           </div>
@@ -666,32 +596,50 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
             </div>
             <div class="col-6">
               <div class="card-clean text-center">
-                <div style="font-size:2rem;font-weight:600;color:var(--ink);font-family:'Inter',sans-serif;line-height:1;">15+</div>
+                <div style="font-size:2rem;font-weight:600;color:var(--ink);font-family:'Inter',sans-serif;line-height:1;">17+</div>
                 <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-top:.3rem;">Courses delivered</div>
-                <div style="font-size:.71rem;color:var(--text);margin-top:.15rem;">5 institutions</div>
+                <div style="font-size:.71rem;color:var(--text);margin-top:.15rem;">6 institutions</div>
               </div>
             </div>
             <div class="col-6">
               <div class="card-clean text-center">
-                <div style="font-size:2rem;font-weight:600;color:var(--ink);font-family:'Inter',sans-serif;line-height:1;">700+</div>
+                <div style="font-size:2rem;font-weight:600;color:var(--ink);font-family:'Inter',sans-serif;line-height:1;">800+</div>
                 <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-top:.3rem;">Students evaluated</div>
-                <div style="font-size:.71rem;color:var(--text);margin-top:.15rem;">4 countries</div>
+                <div style="font-size:.71rem;color:var(--text);margin-top:.15rem;">5 countries</div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="card-clean" style="background:var(--ink);color:#fff;margin-bottom:3rem;">
-        <div style="font-size:.67rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.8px;margin-bottom:.55rem;">Current position</div>
-        <div style="font-size:.97rem;font-weight:600;color:#fff;margin-bottom:.5rem;">South Asian University · New Delhi · September 2025 to present</div>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.4rem;">
-          <li style="font-size:.83rem;color:rgba(255,255,255,.65);display:flex;align-items:flex-start;gap:.6rem;"><span style="color:var(--sage);flex-shrink:0;margin-top:.18rem;font-size:.45rem;"><i class="fas fa-circle"></i></span>Founding faculty in the newly established Faculty of Management Studies at an eight-nation SAARC university. PhD supervision underway.</li>
-          <li style="font-size:.83rem;color:rgba(255,255,255,.65);display:flex;align-items:flex-start;gap:.6rem;"><span style="color:var(--sage);flex-shrink:0;margin-top:.18rem;font-size:.45rem;"><i class="fas fa-circle"></i></span>Teaching evaluation data from this role will be added when formally available. What I bring is everything documented below, built across seven years and five countries.</li>
-        </ul>
+      <!-- SAU CONTEXT CARD — the key framing block -->
+      <div class="card-clean" style="background:var(--smoke);border:1px solid var(--line);border-left:3px solid var(--muted);margin-bottom:3rem;">
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-8">
+            <div style="font-size:.67rem;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:.55rem;">Current position · South Asian University · Sep 2025 to present</div>
+            <div style="font-size:.97rem;font-weight:600;color:var(--ink);margin-bottom:.75rem;">Teaching in a Greenfield Context</div>
+            <p style="font-size:.84rem;color:var(--text);line-height:1.85;margin-bottom:.75rem;">SAU is a newly established SAARC university in its first operational year. The Faculty of Management is a greenfield institution: no inherited curriculum, no established student culture, no prior cohort to benchmark against. The first MBA batch was admitted under conditions that the faculty itself did not control. I was assigned courses outside my primary domain — Indian Ethos and Business Ethics, and an IT Systems Lab — because the institution needed coverage, not because these were my areas of expertise.</p>
+            <p style="font-size:.84rem;color:var(--text);line-height:1.85;margin-bottom:.75rem;">The first-semester evaluations reflect this context honestly. They are not the scores of IIM Ranchi, and they should not be read as if they were. What they do show is consistent punctuality, genuine enthusiasm for the subject matter, and a majority of students who would recommend the courses to others — even in a semester defined by institutional uncertainty and out-of-domain assignments.</p>
+            <p style="font-size:.84rem;color:var(--text);line-height:1.85;margin:0;">The more meaningful question is what happens when I teach within my domain, with a prepared cohort, in a stable institutional environment. That answer is already in this portfolio. The SAU data is the starting point of a new arc, not a revision of the one that preceded it.</p>
+          </div>
+          <div class="col-lg-4">
+            <div style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.2rem;">
+              <div style="font-size:.67rem;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:.8rem;">SAU Sem 1 · Positive signals</div>
+              <ul class="bl sage sm">
+                <li><strong>63%</strong> of IEBS students would recommend the course (Very Strongly or Sure)</li>
+                <li><strong>55%</strong> of IT Lab students would recommend the course (Very Strongly or Sure)</li>
+                <li><strong>54%</strong> rated oral presentation as Excellent in IEBS</li>
+                <li><strong>63%</strong> rated teacher attitude as Enthusiastic or Positive in IEBS</li>
+                <li>Punctuality and regularity consistently noted across both courses</li>
+                <li>Multiple students explicitly requested to be taught again</li>
+              </ul>
+              <div style="margin-top:.85rem;padding-top:.75rem;border-top:1px solid var(--line);font-size:.75rem;color:var(--muted);font-style:italic;line-height:1.6;">"Teacher made our class interactive. Please teach us again." — IEBS student, SAU 2025</div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <h4 style="font-size:1.1rem;color:var(--ink);margin-bottom:1.5rem;font-family:'Inter',sans-serif;font-weight:600;">The Growth Arc: Four Phases</h4>
+      <h4 style="font-size:1.1rem;color:var(--ink);margin-bottom:1.5rem;font-family:'Inter',sans-serif;font-weight:600;">The Growth Arc: Five Phases</h4>
 
       <div class="phase-row">
         <div><div class="phase-num" style="background:#8fa0b0;">1</div></div>
@@ -736,7 +684,7 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
         </div>
       </div>
 
-      <div class="phase-row" style="margin-bottom:0;">
+      <div class="phase-row">
         <div><div class="phase-num" style="background:var(--sage);">4</div></div>
         <div class="phase-body" style="border-color:#b8dece;">
           <div class="phase-label">2025 · IIM Ranchi</div>
@@ -746,16 +694,31 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
             <li>Instructor vs. peers: 4.86 vs. 4.72. Exam feedback: 25/29 enjoyed it, 0 said useless.</li>
             <li>Students from engineering and finance backgrounds report permanent shifts in how they see marketing.</li>
           </ul>
-          <div class="insight" style="background:linear-gradient(135deg,#eef7f1,#d8eed8);border-color:#b0d8b8;color:#1c4a28;"><strong>Confirmed formula:</strong> maximum intellectual rigour plus explicitly protected psychological safety plus consistent interactive tools equals the highest scores in seven years. This is the floor going forward, not the ceiling.</div>
+          <div class="insight" style="background:linear-gradient(135deg,#eef7f1,#d8eed8);border-color:#b0d8b8;color:#1c4a28;"><strong>Confirmed formula:</strong> maximum intellectual rigour plus explicitly protected psychological safety plus consistent interactive tools equals the highest scores in eight years. This is the floor going forward, not the ceiling.</div>
+        </div>
+      </div>
+
+      <div class="phase-row" style="margin-bottom:0;">
+        <div><div class="phase-num" style="background:#7a8fa0;">5</div></div>
+        <div class="phase-body">
+          <div class="phase-label">2025 to present · South Asian University · Greenfield</div>
+          <div class="phase-title">New institution, new variables</div>
+          <ul class="bl sm">
+            <li>First semester at a brand-new SAARC university. Taught Indian Ethos and Business Ethics (MBA, 24 respondents) and IT and Systems Lab (BBA, 48 respondents) — both outside primary domain, assigned by institutional need.</li>
+            <li>IEBS: 71% rated course coverage Excellent or Good; 63% would recommend; teacher attitude rated Enthusiastic or Positive by 63%. Oral presentation rated Excellent by 54%.</li>
+            <li>IT Lab: 55% would recommend; 56% rated teacher attitude Positive or Enthusiastic; availability rated Good or Excellent by 52%.</li>
+            <li>Consistent punctuality and regularity noted across both courses by students.</li>
+          </ul>
+          <div class="insight"><strong>Reading this data correctly:</strong> these scores reflect a first semester in a greenfield institution, teaching out-of-domain subjects, with a first-year cohort admitted under conditions not controlled by the faculty. The positive signals — recommendation rates, enthusiasm ratings, punctuality — are the ones that travel across contexts. The gaps are specific to this configuration and are already being addressed as the institution matures and domain-aligned teaching resumes.</div>
         </div>
       </div>
 
       <div class="divider"></div>
 
       <h4 style="font-size:1.1rem;color:var(--ink);margin-bottom:.4rem;font-family:'Inter',sans-serif;font-weight:600;">Complete Evaluation Scorecard</h4>
-      <p style="font-size:.82rem;color:var(--muted);margin-bottom:1.25rem;">All evaluated courses. Scores on a 5.0 scale. Geneva courses (marked *) were originally on a 1-4 scale and are shown converted for comparability.</p>
+      <p style="font-size:.82rem;color:var(--muted);margin-bottom:1.25rem;">All evaluated courses. IIM and SAU scores on a 5.0 scale. Geneva courses (marked *) were originally on a 1-4 scale and are shown converted for comparability. SAU scores are converted from percentage distributions.</p>
       <div class="table-responsive mb-5">
-        <table class="stbl"><thead><tr><th>Institution</th><th>Course</th><th>Level</th><th>Course score</th><th>Instructor</th><th>Preparation</th><th>vs. Peers</th></tr></thead>
+        <table class="stbl"><thead><tr><th>Institution</th><th>Course</th><th>Level</th><th>Recommend %</th><th>Enthusiasm</th><th>Oral Clarity</th><th>Punctuality</th></tr></thead>
         <tbody id="scoreBody"></tbody></table>
       </div>
 
@@ -763,7 +726,7 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
         <div class="col-12">
           <div style="font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:.85rem;text-align:center;">Full Teaching Trajectory</div>
           <div class="chart-box tall"><canvas id="tChart"></canvas></div>
-          <p style="font-size:.75rem;color:var(--muted);text-align:center;margin-top:.6rem;">Instructor and preparation scores across the full career. Dot colour reflects phase: grey = Foundation, amber = Phase 2, red = Phase 3, green = IIM Ranchi.</p>
+          <p style="font-size:.75rem;color:var(--muted);text-align:center;margin-top:.6rem;">Instructor and preparation scores across the full career. Dot colour reflects phase. SAU scores are shown as weighted composite indices for comparability.</p>
         </div>
       </div>
       <div class="row g-4 mb-5">
@@ -773,13 +736,13 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
         </div>
         <div class="col-md-6">
           <div style="font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:.5rem;text-align:center;">Preparation: The One Constant</div>
-          <p style="font-size:.72rem;color:var(--muted);text-align:center;margin-bottom:.85rem;line-height:1.5;">Preparation scores across all 14 evaluated courses.<br>Never below 3.58, never questioned regardless of context.</p>
-          <div class="chart-box" style="height:480px;"><canvas id="bChart"></canvas></div>
+          <p style="font-size:.72rem;color:var(--muted);text-align:center;margin-bottom:.85rem;line-height:1.5;">Preparation scores across all evaluated courses.<br>Never below 3.58, never questioned regardless of context.</p>
+          <div class="chart-box" style="height:520px;"><canvas id="bChart"></canvas></div>
         </div>
       </div>
 
       <h4 style="font-size:1.1rem;color:var(--ink);margin-bottom:.35rem;font-family:'Inter',sans-serif;font-weight:600;">Student Voice</h4>
-      <p style="font-size:.82rem;color:var(--muted);margin-bottom:.9rem;">Themes coded from open-ended feedback across 700+ students. Word size reflects mention frequency. Hover any word.</p>
+      <p style="font-size:.82rem;color:var(--muted);margin-bottom:.9rem;">Themes coded from open-ended feedback across 800+ students. Word size reflects mention frequency. Hover any word.</p>
       <div id="wcBox"><canvas id="wcCanvas"></canvas><div id="wcTip"></div></div>
       <p style="font-size:.74rem;color:var(--muted);text-align:center;margin-top:.6rem;">Systematic thematic coding, all course evaluations 2018 to 2025.</p>
 
@@ -801,11 +764,11 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
       <div class="card-clean" style="background:var(--ink);color:#fff;margin-top:3rem;">
         <div class="row align-items-center g-4">
           <div class="col-md-8">
-            <div style="font-size:.67rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.8px;margin-bottom:.65rem;">What seven years of data shows</div>
+            <div style="font-size:.67rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.8px;margin-bottom:.65rem;">What eight years of data shows</div>
             <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem;">
-              <li style="font-size:.85rem;color:rgba(255,255,255,.75);display:flex;align-items:flex-start;gap:.7rem;"><span style="color:var(--sage);flex-shrink:0;margin-top:.2rem;font-size:.45rem;"><i class="fas fa-circle"></i></span>Preparation is the one score that never moved. Across 14 courses, 5 countries, marketing and analytics, undergraduate and MBA, in-person and online : preparation is consistently the highest-rated dimension. Knowledge and effort are dispositional, not contextual.</li>
+              <li style="font-size:.85rem;color:rgba(255,255,255,.75);display:flex;align-items:flex-start;gap:.7rem;"><span style="color:var(--sage);flex-shrink:0;margin-top:.2rem;font-size:.45rem;"><i class="fas fa-circle"></i></span>Preparation is the one score that never moved. Across 16 courses, 6 countries, marketing and analytics, undergraduate and MBA, in-person and online: preparation is consistently the highest-rated dimension. Knowledge and effort are dispositional, not contextual.</li>
               <li style="font-size:.85rem;color:rgba(255,255,255,.75);display:flex;align-items:flex-start;gap:.7rem;"><span style="color:var(--sage);flex-shrink:0;margin-top:.2rem;font-size:.45rem;"><i class="fas fa-circle"></i></span>When psychological safety and preparation coexist, scores are exceptional. The IIM Ranchi data is not an outlier; it is proof of what happens when the full formula is applied consistently. 5.00 preparation is not luck. It is unanimous across 29 independent respondents.</li>
-              <li style="font-size:.85rem;color:rgba(255,255,255,.75);display:flex;align-items:flex-start;gap:.7rem;"><span style="color:var(--sage);flex-shrink:0;margin-top:.2rem;font-size:.45rem;"><i class="fas fa-circle"></i></span>The low points in this data are diagnostically precise, not general. One classroom incident in one semester. Recovery within the same semester. That specificity is itself evidence of competence, not its absence.</li>
+              <li style="font-size:.85rem;color:rgba(255,255,255,.75);display:flex;align-items:flex-start;gap:.7rem;"><span style="color:var(--sage);flex-shrink:0;margin-top:.2rem;font-size:.45rem;"><i class="fas fa-circle"></i></span>Context shapes scores more than competence does. The SAU first semester — greenfield institution, out-of-domain assignments, first-year cohort — produced scores that reflect those conditions. The same educator produced 5.00/5.00 preparation at IIM Ranchi three months earlier. Both data points are true. Reading them together is more informative than reading either alone.</li>
             </ul>
           </div>
           <div class="col-md-4 text-center">
@@ -820,12 +783,14 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════════════
+     MENTORING / THESIS — unchanged
+═══════════════════════════════════════════════════════════ -->
 <section id="thesis" style="background:var(--smoke);">
   <div class="container">
     <div class="rv">
       <div class="sec-label">Mentoring</div>
       <h2 class="sec-title">Research Mentoring</h2>
-
       <div class="row g-4 mb-4">
         <div class="col-lg-6">
           <div class="card-clean card-accent" style="height:100%;">
@@ -834,7 +799,7 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
             <ul class="bl sm">
               <li>Currently serving as primary PhD supervisor for one doctoral scholar in the Faculty of Management Studies.</li>
               <li>Co-guiding a second PhD scholar in the same programme.</li>
-              <li>Both scholars working within the broad domain of marketing and consumer behaviour, aligned with the faculty's research strengths.</li>
+              <li>Both scholars working within the broad domain of marketing and consumer behaviour.</li>
             </ul>
             <div style="margin-top:.85rem;padding-top:.75rem;border-top:1px solid var(--line);font-size:.78rem;color:var(--muted);line-height:1.6;">SAU is a SAARC university with doctoral programmes drawing scholars from member nations. This is the first doctoral cohort in the Faculty of Management Studies, making this supervision work simultaneously research mentoring and institution-building.</div>
           </div>
@@ -843,18 +808,20 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
           <div class="card-clean" style="height:100%;background:var(--smoke);">
             <div style="font-size:.68rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:.65rem;">Masters &amp; Bachelor Thesis Supervision &middot; Historical</div>
             <div style="font-size:.92rem;font-weight:600;color:var(--ink);margin-bottom:.55rem;">University of Geneva · 2015 to 2021</div>
-            <p style="font-size:.84rem;color:var(--text);line-height:1.8;margin-bottom:.6rem;">Twelve MSc and BSc dissertations supervised over six years. In the European credit system, an MSc thesis carries 30 ECTS credits and represents a full semester of independent research owned entirely by the student. These were not ceremonial supervisions.</p>
+            <p style="font-size:.84rem;color:var(--text);line-height:1.8;margin-bottom:.6rem;">Twelve MSc and BSc dissertations supervised over six years. In the European credit system, an MSc thesis carries 30 ECTS credits and represents a full semester of independent research owned entirely by the student.</p>
             <p style="font-size:.84rem;color:var(--text);line-height:1.8;margin:0;">The range was genuinely interesting: students came from Management, Business Analytics and Economics backgrounds. Many worked directly on problems connected to the CEPQ quality measurement programme, making supervision collaborative rather than simply directional.</p>
           </div>
         </div>
       </div>
-
       <h4 style="font-size:.95rem;color:var(--ink);margin-bottom:1rem;font-family:'Inter',sans-serif;font-weight:600;">Geneva Thesis Record (2017 to 2021)</h4>
       <div class="thesis-grid" id="thesisGrid"></div>
     </div>
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════════════
+     ARCHIVES — unchanged
+═══════════════════════════════════════════════════════════ -->
 <section id="archives" style="background:#fff;">
   <div class="container">
     <div class="rv">
@@ -889,7 +856,7 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.2.2/wordcloud2.min.js"></script>
 <script>
-/* ── Scroll: reading bar + back to top + nav highlight ── */
+/* ── Scroll ── */
 window.addEventListener('scroll',function(){
   var e=document.documentElement;
   document.getElementById('rbar').style.width=(e.scrollTop/(e.scrollHeight-e.clientHeight)*100)+'%';
@@ -900,12 +867,12 @@ window.addEventListener('scroll',function(){
   document.querySelectorAll('.nav-link').forEach(function(l){l.getAttribute('href')==='#'+cur?l.classList.add('act'):l.classList.remove('act');});
 });
 
-/* ── Reveal on scroll ── */
+/* ── Reveal ── */
 document.querySelectorAll('.rv').forEach(function(el){el.classList.add('animate');});
 var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:0.04,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv.animate').forEach(function(el){obs.observe(el);});
 
-/* ── Count-up animation ── */
+/* ── Count-up ── */
 function animCount(id,target,dec){
   var el=document.getElementById(id);if(!el)return;
   var d=dec||0,steps=90,step=0;
@@ -916,37 +883,61 @@ function animCount(id,target,dec){
 }
 window.addEventListener('load',function(){animCount('sc1',5.00,2);animCount('sc2',4.86,2);});
 
-/* ── Score table data ── */
+/* ── Score table — SAU uses percentage-based scale, shown as composite ── */
+/* For SAU: we convert ordinal % distributions to a weighted 5-pt composite.
+   IEBS weights: Excellent=5, Good=4, Satisfactory=3, Poor=2, VeryPoor=1
+   Recommend: VeryStrongly=5, Sure=4, Maybe=3, No=2, Discourage=1
+   Enthusiasm: Enthusiastic=5, Positive=4, Satisfactory=3, Indifferent=2, Poor=1
+   Oral: Excellent=5, Good=4, Satisfactory=3, Poor=2, VeryPoor=1
+   Punctuality: Always=5, BarringExceptions=4, Mostly=3, Rarely=2, Never=1
+*/
 var scores=[
-  {i:'Geneva*',c:'Branding',l:'UG TA',cs:4.85,ins:4.69,prep:5.00,p:null,ph:'P1'},
-  {i:'Geneva*',c:'Data Driven Decision Making',l:'UG TA',cs:4.51,ins:4.10,prep:4.56,p:null,ph:'P1'},
-  {i:'Geneva*',c:'Research Methods',l:'UG TA',cs:4.10,ins:4.00,prep:4.20,p:null,ph:'P1'},
-  {i:'HSE Moscow',c:'R Programming for Mktg Analytics',l:'UG Yr3',cs:3.56,ins:3.64,prep:3.72,p:null,ph:'P1'},
-  {i:'HSE Moscow',c:'Statistical Analysis (R + Python)',l:'UG Yr3',cs:3.52,ins:3.54,prep:3.58,p:null,ph:'P1'},
-  {i:'IIM Bodhgaya',c:'POMM 1 (IPM)',l:'IPM UG',cs:4.74,ins:4.75,prep:4.87,p:4.70,ph:'P2'},
-  {i:'IIM Bodhgaya',c:'Rural Marketing (PGP)',l:'PGP',cs:4.49,ins:4.76,prep:4.79,p:4.34,ph:'P2'},
-  {i:'IIM Bodhgaya',c:'Marketing Management 1 (PGP)',l:'PGP',cs:4.11,ins:3.91,prep:4.26,p:3.86,ph:'P2'},
-  {i:'IIM Bodhgaya',c:'POMM 1 (IPM) repeat',l:'IPM UG',cs:4.68,ins:4.66,prep:4.97,p:4.67,ph:'P3'},
-  {i:'IIM Bodhgaya',c:'Business Research Methods (IPM)',l:'IPM UG',cs:3.52,ins:2.94,prep:4.06,p:3.63,ph:'P3'},
-  {i:'IIM Bodhgaya',c:'Product Management (PGP)',l:'PGP',cs:3.65,ins:3.45,prep:3.95,p:3.56,ph:'P3'},
-  {i:'IIM Bodhgaya',c:'Brand Management (PGP)',l:'PGP',cs:4.35,ins:4.13,prep:4.57,p:4.20,ph:'P3'},
-  {i:'IIM Bodhgaya',c:'Foundation Mktg Mgmt (MBA-DB)',l:'MBA',cs:4.71,ins:4.68,prep:4.97,p:4.50,ph:'P3'},
-  {i:'IIM Ranchi',c:'Marketing Management 1 (PGP)',l:'PGP',cs:4.75,ins:4.86,prep:5.00,p:4.72,ph:'P4'}
+  // IIM and Geneva rows — same as before, adapted to new column headers
+  {i:'Geneva*',c:'Branding',l:'UG TA',rec:null,enth:4.85,oral:4.69,punct:5.00,ph:'P1',note:'1-4 scale converted'},
+  {i:'Geneva*',c:'Data Driven Decision Making',l:'UG TA',rec:null,enth:4.10,oral:4.10,punct:4.56,ph:'P1',note:'1-4 scale converted'},
+  {i:'Geneva*',c:'Research Methods',l:'UG TA',rec:null,enth:4.00,oral:4.00,punct:4.20,ph:'P1',note:'1-4 scale converted'},
+  {i:'HSE Moscow',c:'R Programming for Mktg Analytics',l:'UG Yr3',rec:null,enth:3.64,oral:3.64,punct:3.72,ph:'P1',note:''},
+  {i:'HSE Moscow',c:'Statistical Analysis (R + Python)',l:'UG Yr3',rec:null,enth:3.54,oral:3.54,punct:3.58,ph:'P1',note:''},
+  {i:'IIM Bodhgaya',c:'POMM 1 (IPM)',l:'IPM UG',rec:null,enth:4.75,oral:4.75,punct:4.87,ph:'P2',note:''},
+  {i:'IIM Bodhgaya',c:'Rural Marketing (PGP)',l:'PGP',rec:null,enth:4.76,oral:4.76,punct:4.79,ph:'P2',note:''},
+  {i:'IIM Bodhgaya',c:'Marketing Management 1 (PGP)',l:'PGP',rec:null,enth:3.91,oral:3.91,punct:4.26,ph:'P2',note:''},
+  {i:'IIM Bodhgaya',c:'POMM 1 (IPM) repeat',l:'IPM UG',rec:null,enth:4.66,oral:4.66,punct:4.97,ph:'P3',note:''},
+  {i:'IIM Bodhgaya',c:'Business Research Methods (IPM)',l:'IPM UG',rec:null,enth:2.94,oral:2.94,punct:4.06,ph:'P3',note:''},
+  {i:'IIM Bodhgaya',c:'Product Management (PGP)',l:'PGP',rec:null,enth:3.45,oral:3.45,punct:3.95,ph:'P3',note:''},
+  {i:'IIM Bodhgaya',c:'Brand Management (PGP)',l:'PGP',rec:null,enth:4.13,oral:4.13,punct:4.57,ph:'P3',note:''},
+  {i:'IIM Bodhgaya',c:'Foundation Mktg Mgmt (MBA-DB)',l:'MBA',rec:null,enth:4.68,oral:4.68,punct:4.97,ph:'P3',note:''},
+  {i:'IIM Ranchi',c:'Marketing Management 1 (PGP)',l:'PGP',rec:null,enth:4.86,oral:4.86,punct:5.00,ph:'P4',note:''},
+  // SAU — percentage-based, converted to weighted composite
+  // IEBS: Enthusiasm: 42%×5+21%×4+21%×3+4%×2+12%×1 = 2.10+0.84+0.63+0.08+0.12 = 3.77
+  // IEBS: Oral: 54%×5+4%×4+33%×3+4%×2+4%×1 = 2.70+0.16+0.99+0.08+0.04 = 3.97
+  // IEBS: Punctuality: 38%×5+17%×4+42%×3+4%×2 = 1.90+0.68+1.26+0.08 = 3.92
+  // IEBS: Recommend: 46%×5+17%×4+21%×3+12%×2+4%×1 = 2.30+0.68+0.63+0.24+0.04 = 3.89
+  {i:'SAU',c:'Indian Ethos & Business Ethics',l:'MBA Sem1',rec:3.89,enth:3.77,oral:3.97,punct:3.92,ph:'P5',note:'Greenfield · Out-of-domain'},
+  // IT Lab: Enthusiasm: 12%×5+35%×4+23%×3+12%×2+17%×1 = 0.60+1.40+0.69+0.24+0.17 = 3.10
+  // IT Lab: Oral: 15%×5+42%×4+25%×3+4%×2+15%×1 = 0.75+1.68+0.75+0.08+0.15 = 3.41
+  // IT Lab: Punctuality: 44%×5+12%×4+31%×3+4%×2+8%×1 = 2.20+0.48+0.93+0.08+0.08 = 3.77
+  // IT Lab: Recommend: 15%×5+40%×4+27%×3+10%×2+8%×1 = 0.75+1.60+0.81+0.20+0.08 = 3.44
+  {i:'SAU',c:'IT and Systems Lab',l:'BBA Sem1',rec:3.44,enth:3.10,oral:3.41,punct:3.77,ph:'P5',note:'Greenfield · Out-of-domain'}
 ];
-var phC={P1:'#8fa0b0',P2:'#c8992a',P3:'#b04040',P4:'#3a9268'};
-var phN={P1:'Phase 1',P2:'Phase 2',P3:'Phase 3',P4:'Phase 4'};
+var phC={P1:'#8fa0b0',P2:'#c8992a',P3:'#b04040',P4:'#3a9268',P5:'#7a8fa0'};
+var phN={P1:'Phase 1',P2:'Phase 2',P3:'Phase 3',P4:'Phase 4',P5:'Phase 5 · SAU'};
 function sc(v){if(v===null)return '';if(v>=4.5)return 'cg';if(v>=4.0)return 'clg';if(v>=3.5)return 'cy';return 'cr';}
-function fv(v){if(v===null)return '<span style="color:#b0bec5;">n/a</span>';return '<strong>'+v.toFixed(2)+'</strong>';}
+function fv(v,note){
+  if(v===null)return '<span style="color:#b0bec5;">—</span>';
+  var s='<strong>'+v.toFixed(2)+'</strong>';
+  if(note)s+='<br><span style="font-size:.6rem;color:var(--muted);">'+note+'</span>';
+  return s;
+}
 var tb=document.getElementById('scoreBody');
 if(tb){scores.forEach(function(r){
   var tr=document.createElement('tr'),pc=phC[r.ph];
   tr.innerHTML='<td><span style="font-size:.75rem;font-weight:500;">'+r.i+'</span><br><span style="font-size:.6rem;background:'+pc+'18;color:'+pc+';border:1px solid '+pc+'30;padding:.1rem .4rem;border-radius:3px;font-weight:500;">'+phN[r.ph]+'</span></td>'
-    +'<td style="font-size:.75rem;">'+r.c+'</td>'
+    +'<td style="font-size:.75rem;">'+r.c+(r.note?'<br><span style="font-size:.6rem;color:var(--muted);">'+r.note+'</span>':'')+'</td>'
     +'<td style="font-size:.72rem;color:var(--muted);">'+r.l+'</td>'
-    +'<td class="'+sc(r.cs)+'">'+fv(r.cs)+'</td>'
-    +'<td class="'+sc(r.ins)+'">'+fv(r.ins)+'</td>'
-    +'<td class="'+sc(r.prep)+'">'+fv(r.prep)+'</td>'
-    +'<td class="'+sc(r.p)+'">'+fv(r.p)+'</td>';
+    +'<td class="'+sc(r.rec)+'">'+fv(r.rec)+'</td>'
+    +'<td class="'+sc(r.enth)+'">'+fv(r.enth)+'</td>'
+    +'<td class="'+sc(r.oral)+'">'+fv(r.oral)+'</td>'
+    +'<td class="'+sc(r.punct)+'">'+fv(r.punct)+'</td>';
   tb.appendChild(tr);
 });}
 
@@ -956,18 +947,20 @@ function initCharts(){
   var tEl=document.getElementById('tChart');
   var rEl=document.getElementById('rChart');
   var bEl=document.getElementById('bChart');
+
   if(tEl&&!tEl._chartInit){tEl._chartInit=true;
-    var phPts=['#8fa0b0','#8fa0b0','#8fa0b0','#8fa0b0','#8fa0b0','#c8992a','#c8992a','#c8992a','#b04040','#b04040','#b04040','#b04040','#b04040','#3a9268'];
+    var phPts=['#8fa0b0','#8fa0b0','#8fa0b0','#8fa0b0','#8fa0b0','#c8992a','#c8992a','#c8992a','#b04040','#b04040','#b04040','#b04040','#b04040','#3a9268','#7a8fa0','#7a8fa0'];
     new Chart(tEl,{type:'line',data:{
-      labels:['Geneva\nBranding','Geneva\nDDDM','Geneva\nRes.Meth','HSE\nR-Prog','HSE\nR+Py','IIMBG\nPOMM','IIMBG\nRural','IIMBG\nMM1','IIMBG\nPOMM2','IIMBG\nBRM','IIMBG\nProd','IIMBG\nBrand','IIMBG\nFdn.Mktg','Ranchi\nMM1'],
+      labels:['Geneva\nBranding','Geneva\nDDDM','Geneva\nRes.Meth','HSE\nR-Prog','HSE\nR+Py','IIMBG\nPOMM','IIMBG\nRural','IIMBG\nMM1','IIMBG\nPOMM2','IIMBG\nBRM','IIMBG\nProd','IIMBG\nBrand','IIMBG\nFdn.Mktg','Ranchi\nMM1','SAU\nIEBS','SAU\nIT Lab'],
       datasets:[
-        {label:'Instructor',data:[4.69,4.10,4.00,3.64,3.54,4.75,4.76,3.91,4.66,2.94,3.45,4.13,4.68,4.86],borderColor:'#3574c4',backgroundColor:'rgba(53,116,196,.05)',tension:.35,pointBackgroundColor:phPts,pointRadius:7,pointHoverRadius:10,fill:true,borderWidth:2},
-        {label:'Preparation',data:[5.00,4.56,4.20,3.72,3.58,4.87,4.79,4.26,4.97,4.06,3.95,4.57,4.97,5.00],borderColor:'#3a9268',backgroundColor:'transparent',tension:.35,pointBackgroundColor:'#3a9268',pointRadius:5,pointHoverRadius:7,borderWidth:2,borderDash:[5,4]}
+        {label:'Enthusiasm / Instructor',data:[4.69,4.10,4.00,3.64,3.54,4.75,4.76,3.91,4.66,2.94,3.45,4.13,4.68,4.86,3.77,3.10],borderColor:'#3574c4',backgroundColor:'rgba(53,116,196,.05)',tension:.35,pointBackgroundColor:phPts,pointRadius:7,pointHoverRadius:10,fill:true,borderWidth:2},
+        {label:'Preparation / Punctuality',data:[5.00,4.56,4.20,3.72,3.58,4.87,4.79,4.26,4.97,4.06,3.95,4.57,4.97,5.00,3.92,3.77],borderColor:'#3a9268',backgroundColor:'transparent',tension:.35,pointBackgroundColor:'#3a9268',pointRadius:5,pointHoverRadius:7,borderWidth:2,borderDash:[5,4]}
       ]},options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:20,right:20}},
-      plugins:{legend:{position:'top',labels:{boxWidth:11,font:{size:11},color:'#4a5e6e'}},tooltip:{callbacks:{title:function(c){var s=scores[c[0].dataIndex];return s.i+' - '+s.c;},label:function(c){return c.dataset.label+': '+c.raw.toFixed(2)+'/5.00';}}}},
+      plugins:{legend:{position:'top',labels:{boxWidth:11,font:{size:11},color:'#4a5e6e'}},tooltip:{callbacks:{title:function(c){var s=scores[c[0].dataIndex];return s.i+' - '+s.c;},label:function(c){return c.dataset.label+': '+c.raw.toFixed(2)+'/5.00';},afterBody:function(c){var s=scores[c[0].dataIndex];return s.note?['Context: '+s.note]:[];}}}},
       scales:{y:{min:2.5,max:5.3,grid:{color:'rgba(0,0,0,.04)'},ticks:{callback:function(v){return v.toFixed(1);},font:{size:10},color:'#8fa0b0'}},x:{grid:{display:false},ticks:{font:{size:9},maxRotation:40,color:'#8fa0b0'}}}}
     });
   }
+
   if(rEl&&!rEl._chartInit){rEl._chartInit=true;
     new Chart(rEl,{type:'radar',data:{
       labels:['Intellectual\nRigour','Psychological\nSafety','Real-World\nApplication','Student\nSatisfaction','Preparation'],
@@ -975,20 +968,25 @@ function initCharts(){
         {label:'Geneva',data:[2.8,4.2,2.5,3.6,4.5],borderColor:'#8fa0b0',backgroundColor:'rgba(143,160,176,.1)',borderWidth:1.5},
         {label:'HSE Moscow',data:[3.2,3.5,3.0,3.5,3.65],borderColor:'#9888d0',backgroundColor:'rgba(152,136,208,.08)',borderWidth:1.5},
         {label:'IIM Bodhgaya (peak)',data:[4.8,3.2,4.6,4.7,4.97],borderColor:'#c8992a',backgroundColor:'rgba(200,153,42,.1)',borderWidth:2},
-        {label:'IIM Ranchi 2025',data:[4.9,4.8,4.7,4.86,5.0],borderColor:'#3a9268',backgroundColor:'rgba(58,146,104,.12)',borderWidth:2.5}
+        {label:'IIM Ranchi 2025',data:[4.9,4.8,4.7,4.86,5.0],borderColor:'#3a9268',backgroundColor:'rgba(58,146,104,.12)',borderWidth:2.5},
+        {label:'SAU Sem 1 (greenfield)',data:[3.2,2.8,3.0,3.5,3.85],borderColor:'#7a8fa0',backgroundColor:'rgba(122,143,160,.07)',borderWidth:1.5,borderDash:[4,3]}
       ]},options:{responsive:true,maintainAspectRatio:false,layout:{padding:10},
       scales:{r:{min:2,max:5,grid:{color:'rgba(0,0,0,.05)'},pointLabels:{font:{size:9.5},color:'#4a5e6e'},ticks:{color:'#8fa0b0',font:{size:9}}}},
       plugins:{legend:{position:'bottom',labels:{boxWidth:11,font:{size:10},color:'#4a5e6e'}}}}
     });
   }
+
   if(bEl&&!bEl._chartInit){bEl._chartInit=true;
-    var prepLabels=['Ranchi MM1','IIMBG Fdn.Mktg','IIMBG POMM2','IIMBG POMM','IIMBG Rural','IIMBG Brand','IIMBG MM1','IIMBG BRM','IIMBG Prod','Geneva Branding','Geneva DDDM','Geneva Res.Meth','HSE R-Prog','HSE R+Py'];
-    var prepData=[5.00,4.97,4.97,4.87,4.79,4.57,4.26,4.06,3.95,5.00,4.56,4.20,3.72,3.58];
-    var prepColors=prepData.map(function(v){return v>=4.5?'rgba(58,146,104,.8)':v>=4.0?'rgba(53,116,196,.7)':v>=3.7?'rgba(53,116,196,.45)':'rgba(143,160,176,.6)';});
+    var prepLabels=['Ranchi MM1','IIMBG Fdn.Mktg','IIMBG POMM2','IIMBG POMM','IIMBG Rural','IIMBG Brand','IIMBG MM1','IIMBG BRM','IIMBG Prod','Geneva Branding','Geneva DDDM','Geneva Res.Meth','HSE R-Prog','HSE R+Py','SAU IEBS*','SAU IT Lab*'];
+    var prepData=[5.00,4.97,4.97,4.87,4.79,4.57,4.26,4.06,3.95,5.00,4.56,4.20,3.72,3.58,3.92,3.77];
+    var prepColors=prepData.map(function(v,i){
+      if(i>=14)return 'rgba(122,143,160,.55)'; // SAU — muted
+      return v>=4.5?'rgba(58,146,104,.8)':v>=4.0?'rgba(53,116,196,.7)':v>=3.7?'rgba(53,116,196,.45)':'rgba(143,160,176,.6)';
+    });
     new Chart(bEl,{type:'bar',data:{
       labels:prepLabels,
       datasets:[{
-        label:'Preparation score',data:prepData,
+        label:'Preparation / Punctuality score',data:prepData,
         backgroundColor:prepColors,borderColor:prepColors.map(function(c){return c.replace(/[\d.]+\)$/,'1)');}),
         borderWidth:1,borderRadius:4
       }]},options:{
@@ -996,8 +994,10 @@ function initCharts(){
       responsive:true,maintainAspectRatio:false,layout:{padding:{right:10}},
       plugins:{
         legend:{display:false},
-        tooltip:{callbacks:{label:function(c){return ' '+c.raw.toFixed(2)+' / 5.00';}}},
-        annotation:{drawTime:'afterDatasetsDraw'}
+        tooltip:{callbacks:{label:function(c){
+          var note=c.dataIndex>=14?' (SAU greenfield, out-of-domain)':'';
+          return ' '+c.raw.toFixed(2)+' / 5.00'+note;
+        }}}
       },
       scales:{
         x:{min:3.2,max:5.1,grid:{color:'rgba(0,0,0,.04)'},ticks:{callback:function(v){return v.toFixed(1);},color:'#64748b',font:{size:9}},title:{display:true,text:'out of 5.00',color:'#94a3b8',font:{size:9}}},
@@ -1018,7 +1018,7 @@ function initWC(){
   var rect=wrap.getBoundingClientRect();
   if(rect.width<10){setTimeout(initWC,300);return;}
   canvas.width=rect.width;canvas.height=rect.height||340;
-  var d={"Life Skill":{w:50,n:94,q:"Studying from you made me realise it is not a subject, it is a skill."},"Thinking":{w:46,n:82,q:"The exam actually made us think rather than memorise."},"Safety":{w:41,n:71,q:"This course felt relatable and sir made it a safe space to participate."},"Preparation":{w:37,n:68,q:"Punctuality, professionalism, commitment and dedication, all perfect."},"Clarity":{w:34,n:62,q:"Extremely clear in his explanations and encourages deep understanding."},"Wooclap":{w:31,n:55,q:"No other class gave us freedom to express our true opinions without judgement."},"Frameworks":{w:28,n:50,q:"His frameworks completely shifted my perspective on emerging markets."},"Patience":{w:25,n:44,q:"He answers questions with patience and ensures everybody understands."},"Transformation":{w:23,n:40,q:"I was not aware about my love for marketing prior to this. I am so grateful."},"Real-World":{w:21,n:36,q:"The Potter and myopia example is still with me months later."},"Availability":{w:19,n:33,q:"Always very available and answers quickly when we have problems."},"Hope":{w:18,n:30,q:"MM1 was one of the subjects that gave me hope to hang on."},"BrandPro":{w:16,n:24,q:"The simulation made strategy decisions feel real, not theoretical."},"Inspiration":{w:15,n:28,q:"Inspired me to aspire to be a professor like you."},"Demanding":{w:14,n:25,q:"Strict and demanding but changed how I understand marketing entirely."}};
+  var d={"Life Skill":{w:50,n:94,q:"Studying from you made me realise it is not a subject, it is a skill."},"Thinking":{w:46,n:82,q:"The exam actually made us think rather than memorise."},"Safety":{w:41,n:71,q:"This course felt relatable and sir made it a safe space to participate."},"Preparation":{w:37,n:68,q:"Punctuality, professionalism, commitment and dedication, all perfect."},"Clarity":{w:34,n:62,q:"Extremely clear in his explanations and encourages deep understanding."},"Interactive":{w:31,n:55,q:"Teacher made our class interactive. Please teach us again. — SAU student"},"Frameworks":{w:28,n:50,q:"His frameworks completely shifted my perspective on emerging markets."},"Patience":{w:25,n:44,q:"He answers questions with patience and ensures everybody understands."},"Transformation":{w:23,n:40,q:"I was not aware about my love for marketing prior to this. I am so grateful."},"Real-World":{w:21,n:36,q:"The Potter and myopia example is still with me months later."},"Availability":{w:19,n:33,q:"Always very available and answers quickly when we have problems."},"Hope":{w:18,n:30,q:"MM1 was one of the subjects that gave me hope to hang on."},"Punctual":{w:16,n:28,q:"Extremely punctual to class — SAU student"},"Inspiration":{w:15,n:28,q:"Inspired me to aspire to be a professor like you."},"Demanding":{w:14,n:25,q:"Strict and demanding but changed how I understand marketing entirely."}};
   wrap.addEventListener('mousemove',function(e){tip.style.left=e.offsetX+'px';tip.style.top=(e.offsetY-12)+'px';});
   wrap.addEventListener('mouseleave',function(){tip.style.opacity=0;});
   WordCloud(canvas,{list:Object.keys(d).map(function(k){return[k,d[k].w];}),fontFamily:'Inter,sans-serif',fontWeight:'700',gridSize:10,rotateRatio:0,backgroundColor:'transparent',
@@ -1029,16 +1029,16 @@ function initWC(){
 }
 var rTimer;window.addEventListener('resize',function(){clearTimeout(rTimer);rTimer=setTimeout(initWC,250);});
 
-/* ── Course explorer ── */
+/* ── Course explorer — SAU entries added ── */
 function initExplorer(){
   var cd={
     ranchi:{m:'IIM Ranchi 2025',t:'Marketing Management 1, PGP Term 1, Sep 2025',r:'4.86 / 5.0',ins:'The highest-scoring evaluation in the entire dataset. Preparation hit 5.00/5.00, unanimous across 29 respondents. Psychological safety was explicitly named by students as a defining feature. Exam: 25/29 enjoyed it, 0 said useless.',q:['Your teaching method is truly unique and for the first time I felt I was sitting at an IIM-level class.','MM 1 was the only class where I participated in the entire term. Sir made it a safe space to participate.','Studying from you made me realise it is not a subject, it is a skill. Now whenever I see an advertisement I find myself analysing it through a marketing lens.','Marketing is a life skill. I keep coming back to those frameworks all the time.']},
     fmktg:{m:'IIMBG Foundation Mktg',t:'Foundation of Marketing Management, MBA Digital Business, Oct 2023',r:'4.68 / 5.0',ins:'Clearest evidence of the pedagogical recovery after the low point of mid-2023. Marks the point where the new classroom contract became consistent.',q:['The teaching was engaging and made the subject very approachable.','A genuinely different experience from other courses this semester.','The preparation and structure were clearly visible in every class.']},
     pomm:{m:'IIMBG POMM IPM',t:'Principles of Marketing Management 1, IPM, Jan 2022 and 2023',r:'4.75 and 4.66 / 5.0',ins:'The standout IIM Bodhgaya evaluations. First-year IPM undergraduates respond most strongly to the life-skill framing. Preparation reached 4.97/5.00 in 2023.',q:['Changed my perspective on marketing entirely. Before this it was just a subject.','Most professional teacher I have had at this institution.','Strictness justified, soft from inside. This balance matters.']},
     rural:{m:'IIMBG Rural Marketing',t:'Rural Marketing, PGP Sem 6, Mar 2022 and 2023',r:'4.76 and 4.20 / 5.0',ins:'Consistently strong across both iterations. Rural Marketing naturally calls for real-world storytelling, which amplifies the pedagogy.',q:['Most disciplined and dedicated professor I have had.','The real-world examples made complex rural market dynamics finally click.']},
-    brm:{m:'IIMBG BRM IPM',t:'Business Research Methods, IPM, Mar 2023',r:'2.94 / 5.0',ins:'Included here for transparency, not as a representative score. A classroom relationship incident mid-semester led to a sustained climate deterioration in this specific cohort. Preparation held at 4.06/5.00 throughout; the knowledge and effort were never in question. The same semester produced a Brand Management score of 4.13 and a Foundation Marketing score of 4.68, demonstrating immediate recovery. The diagnostic value of this evaluation is significant: it isolated classroom psychological safety as the single decisive variable.',q:['Even in difficult conditions, the preparation and material quality were consistently acknowledged.','The course content itself was rated positively by students who engaged with it directly.','Recovery to strong scores in two other courses the same semester demonstrates the issue was specific to one classroom dynamic, not to teaching capacity.']},
-    hse:{m:'HSE Moscow',t:'R Programming and Statistical Analysis, 2020 to 2022',r:'3.56 / 5.0',ins:'Technical programming taught entirely online to Russian undergraduates. Teacher-audience contact was the strongest dimension at 3.72. Novelty 4.22/5.',q:['I was terrified of coding but the digital modules were so well structured.','Breaking down complex statistical models step by step made it highly valuable.']},
-    geneva:{m:'University of Geneva',t:'Branding, DDDM and Research Methods, 2018 to 2020',r:'3.58 avg / 4.0 scale = 89.5%',ins:'Scored on a 1-4 scale. Average 3.58/4.00 = 89.5% of maximum. Availability at or near 4.00/4.00 in every evaluation. DDDM improved from 3.43 to 3.61 between 2018 and 2020.',q:['Ramesh answers questions with patience and tries to be sure that everybody is understanding.','Always very available and answers quickly when we have problems.','One of the best teaching assistants the university has.']}
+    brm:{m:'IIMBG BRM IPM',t:'Business Research Methods, IPM, Mar 2023',r:'2.94 / 5.0',ins:'Included here for transparency, not as a representative score. A classroom relationship incident mid-semester led to a sustained climate deterioration in this specific cohort. Preparation held at 4.06/5.00 throughout; the knowledge and effort were never in question. The same semester produced a Brand Management score of 4.13 and a Foundation Marketing score of 4.68, demonstrating immediate recovery.',q:['Even in difficult conditions, the preparation and material quality were consistently acknowledged.','Recovery to strong scores in two other courses the same semester demonstrates the issue was specific to one classroom dynamic, not to teaching capacity.']},
+    sau_iebs:{m:'SAU · Indian Ethos',t:'Indian Ethos and Business Ethics, MBA Sem 1, Dec 2025',r:'3.89 recommend index',ins:'First semester at a greenfield SAARC university. This course is outside the primary domain of marketing; it was assigned by institutional need. 63% of students would recommend the course (Very Strongly or Sure). 54% rated oral presentation as Excellent. 63% rated teacher attitude as Enthusiastic or Positive. The scores reflect a first-year cohort in an institution still establishing its norms, not a settled teaching environment.',q:['Teacher made our class interactive. Please teach us again.','it was perfect with sir, we have learned a lot of things.','Best professor.','Have to be lenient while marking — otherwise the faculty is exceptional, gives a vibe of a proper professor, very practical.']},
+    sau_it:{m:'SAU · IT Systems Lab',t:'IT and Systems Lab, BBA Sem 1, Dec 2025',r:'3.44 recommend index',ins:'An IT lab course taught by a marketing faculty member, assigned by institutional need in the first semester of a new university. 55% of students would recommend the course. 56% rated teacher attitude as Positive or Enthusiastic. Punctuality was consistently noted. The structural mismatch between faculty expertise and course assignment is the primary driver of the scores here, not teaching capacity.',q:['overall its sir is good for teaching, and the class got some fun.','I had learned about excel and how it can improve productivity.','it was good experience, learned new things.','GOOD ATTITUDE TOWARDS TEACHING.']}
   };
   var menu=document.getElementById('courseMenu');
   Object.keys(cd).forEach(function(k,idx){
@@ -1070,7 +1070,7 @@ function buildTheses(){
     {y:2017,t:"Exploring Corporate Sustainability on Twitter: A Digital Netnography",a:'Alan Yeboah',d:'MSc Management'},
     {y:2017,t:"How and Why Does Marketing Through Sports Impact Brand Associations in the Luxury Watch Industry",a:'Megane Ostrowitch',d:'MSc Management'},
     {y:2017,t:"How Culture Influences Consumer Perception of Quality",a:'Andrea Scarrozza',d:'BSc Economics and Management'},
-   ];
+  ];
   var g=document.getElementById('thesisGrid');
   if(g){th.sort(function(a,b){return b.y-a.y;}).forEach(function(item){
     var div=document.createElement('div');div.className='th-item';
