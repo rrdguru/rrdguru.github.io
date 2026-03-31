@@ -139,13 +139,14 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
 
 .explorer{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.05);display:flex;flex-direction:column;}
 @media(min-width:768px){.explorer{flex-direction:row;}}
-.exp-menu{background:var(--smoke);border-bottom:1px solid var(--line);display:flex;overflow-x:auto;}
-@media(min-width:768px){.exp-menu{width:26%;border-right:1px solid var(--line);border-bottom:none;flex-direction:column;overflow-x:visible;}}
+.exp-menu{background:var(--smoke);border-right:1px solid var(--line);display:flex;flex-direction:column;overflow-y:auto;max-height: 500px;}
+@media(min-width:768px){.exp-menu{width:28%; flex-shrink: 0;}}
+.exp-cat{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);padding:1.1rem 1rem .4rem;border-bottom:1px solid #ecf0f4;}
 .exp-btn{text-align:left;padding:.8rem 1rem;background:none;border:none;font-size:.79rem;border-bottom:1px solid #ecf0f4;font-weight:400;color:var(--text);width:100%;cursor:pointer;line-height:1.4;transition:.15s;flex-shrink:0;}
 .exp-btn:hover{background:#eaeff6;}
 .exp-btn.on{background:#fff;color:var(--blue);font-weight:600;border-left:3px solid var(--blue);}
-.exp-content{padding:1.6rem;width:100%;}
-@media(min-width:768px){.exp-content{width:74%;padding:2rem;}}
+.exp-content{padding:1.6rem;width:100%; overflow-y: auto; max-height: 500px;}
+@media(min-width:768px){.exp-content{width:72%;padding:2rem;}}
 .vq{position:relative;padding:.9rem 1.2rem .9rem 2.5rem;background:var(--smoke);border-radius:8px;border:1px solid var(--line);margin-bottom:.6rem;font-style:italic;color:var(--text);font-size:.83rem;line-height:1.7;}
 .vq::before{content:'\201C';position:absolute;left:.6rem;top:.1rem;font-size:2.4rem;color:#c8d8e8;font-family:'Playfair Display',serif;line-height:1;}
 
@@ -190,7 +191,10 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
   .stat-val{font-size:1.45rem;}
   .card-clean{padding:1.25rem;}
   .tl-body-wrap{padding:.85rem 1rem;}
-  .exp-content{padding:1.25rem;}
+  .exp-menu {flex-direction: row; overflow-x: auto; max-height: none; white-space: nowrap;}
+  .exp-cat {display: none;} /* Hide categories on mobile to save horizontal space */
+  .exp-btn {display: inline-block; width: auto; border-bottom: none; border-right: 1px solid #ecf0f4;}
+  .exp-content{padding:1.25rem; max-height: none;}
   .table-responsive{-webkit-overflow-scrolling:touch;}
   .thesis-grid{grid-template-columns:1fr;}
   .soc-row.justify-content-center{gap:.5rem;}
@@ -290,11 +294,11 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
               </li>
               <li style="display:flex;align-items:flex-start;gap:.7rem;font-size:.85rem;color:var(--text);">
                 <span style="color:var(--sage);margin-top:.25rem;flex-shrink:0;"><i class="fas fa-circle" style="font-size:.4rem;"></i></span>
-                <span>Doctoral work at Geneva produced a validated quality measurement scale (CEPQ), cited 147 times in top-tier academic literature.</span>
+                <span>Doctoral work at Geneva produced a validated quality measurement scale (CEPQ), cited 153+ times in top-tier academic literature.</span>
               </li>
               <li style="display:flex;align-items:flex-start;gap:.7rem;font-size:.85rem;color:var(--text);">
                 <span style="color:var(--sage);margin-top:.25rem;flex-shrink:0;"><i class="fas fa-circle" style="font-size:.4rem;"></i></span>
-                <span>Instructor across IIM Ranchi, IIM Bodhgaya, University of Geneva, HSE Moscow, Tec de Monterrey, and South Asian University.</span>
+                <span>Instructor across IIM Ranchi, IIM Bodhgaya, University of Geneva, HSE Moscow, Tec de Monterrey, and South Asian University across five countries.</span>
               </li>
             </ul>
           </div>
@@ -320,7 +324,7 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
           <div class="stat-sub">5 countries, 6 institutions</div>
         </div>
         <div class="col stat-item">
-          <div class="stat-val">147<sup>+</sup></div>
+          <div class="stat-val">153<sup>+</sup></div>
           <div class="stat-lbl">Scholar citations</div>
           <div class="stat-sub">European Journal of Marketing</div>
         </div>
@@ -502,7 +506,7 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
           <div class="pub">
             <div class="pub-venue">European Journal of Marketing, 2020 · 54(4), 645-670</div>
             <div class="pub-title">Customers' Experienced Product Quality: Scale Development and Validation</div>
-            <div class="pub-authors">Das Guru, R.R. and Paulssen, M. · 147 Google Scholar citations</div>
+            <div class="pub-authors">Das Guru, R.R. and Paulssen, M. · 153+ Google Scholar citations</div>
           </div>
           <div class="pub">
             <div class="pub-venue">European Journal of Marketing, 2024 · 58(1), 217-254</div>
@@ -650,7 +654,7 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
         <div><div class="phase-num" style="background:#c8992a;">2</div></div>
         <div class="phase-body">
           <div class="phase-label">2022 to 2024 · IIM Bodhgaya</div>
-          <div class="phase-title">Scaling Rigor & Designing Curriculum</div>
+          <div class="phase-title">Scaling Rigor & Curriculum Design</div>
           <p style="font-size:.85rem;color:var(--text);margin-bottom:0;">Generated immediate pedagogical traction with IPM undergraduate cohorts (reaching 4.97/5.00 preparation scores). Navigated the complexities of shifting classroom climates, confirming that rigorous preparation acts as a stabilizing anchor. Concurrently co-designed the Digital Business MBA curriculum.</p>
         </div>
       </div>
@@ -668,11 +672,11 @@ ul.bl.sm li{font-size:.82rem;margin-bottom:.38rem;}
         <div><div class="phase-num" style="background:#7a8fa0;">4</div></div>
         <div class="phase-body" style="background:var(--smoke); border-left:3px solid var(--muted);">
           <div class="phase-label">2025 to present · South Asian University</div>
-          <div class="phase-title">Institutional Building & Returning to Core</div>
-          <p style="font-size:.85rem;color:var(--text);margin-bottom:.5rem;">Building a new Faculty of Management from the ground up requires prioritizing long-term institutional standards over immediate popularity. SAU is a newly established SAARC university with a first-generation cohort admitted under conditions the faculty did not control.</p>
+          <div class="phase-title">Institutional Transition & Return to Core</div>
+          <p style="font-size:.85rem;color:var(--text);margin-bottom:.5rem;">Transitioning from elite MBA cohorts to a newly established, diverse university setting involves profound pedagogical shifts. The data transparently reflects the reality of adapting to new student demographics and operational demands.</p>
           <ul class="bl sm mb-0">
-            <li><strong>Semester 1 (Institutional Service):</strong> Delivered non-core subjects (Indian Ethos, IT Systems Lab) to establish baseline rigor. Applying strict IIM-level standards to a foundational, non-core setting generated expected friction. However, punctuality, regularity, and foundational structural integrity were clearly recognized by the students.</li>
-            <li><strong>Semester 2 (Analytical Core):</strong> Re-aligned teaching to my core methodological and analytical expertise. Currently delivering <em>Business Intelligence</em> and <em>Data Science</em> to undergraduate cohorts, alongside <em>Business Research Methods</em> for Masters and Executive PhD scholars.</li>
+            <li><strong>Semester 1 (Cross-Disciplinary):</strong> Delivered non-core subjects (Indian Ethos, IT Systems Lab). Applying my usual strictness to non-core classes with a first-year cohort resulted in significant friction, clearly visible in the student satisfaction metrics. Owning this reality demonstrates the complexities of cross-institutional adaptation.</li>
+            <li><strong>Semester 2 (Analytical Core):</strong> Re-aligned teaching to my core methodological expertise. Currently delivering <em>Business Intelligence</em> and <em>Data Science</em> to undergraduate cohorts, alongside <em>Business Research Methods</em> for Masters and Executive PhD scholars.</li>
           </ul>
         </div>
       </div>
@@ -893,29 +897,65 @@ var rTimer;window.addEventListener('resize',function(){clearTimeout(rTimer);rTim
 
 /* ── Course explorer ── */
 function initExplorer(){
-  var cd={
-    ranchi:{m:'IIM Ranchi',t:'Marketing Management 1, PGP Term 1, Sep 2025',r:'4.86 / 5.0',ins:'The highest-scoring evaluation in the entire dataset. Preparation hit 5.00/5.00, unanimous across 29 respondents. Psychological safety was explicitly named by students as a defining feature. Exam: 25/29 enjoyed it, 0 said useless.',q:['Your teaching method is truly unique and for the first time I felt I was sitting at an IIM-level class.','MM 1 was the only class where I participated in the entire term. Sir made it a safe space to participate.','Studying from you made me realise it is not a subject, it is a skill. Now whenever I see an advertisement I find myself analysing it through a marketing lens.','Marketing is a life skill. I keep coming back to those frameworks all the time.']},
-    fmktg:{m:'IIMBG Foundation Mktg',t:'Foundation of Marketing Management, MBA Digital Business, Oct 2023',r:'4.68 / 5.0',ins:'Clearest evidence of the pedagogical recovery after the low point of mid-2023. Marks the point where the new classroom contract became consistent.',q:['The teaching was engaging and made the subject very approachable.','A genuinely different experience from other courses this semester.','The preparation and structure were clearly visible in every class.']},
-    pomm:{m:'IIMBG POMM IPM',t:'Principles of Marketing Management 1, IPM, Jan 2022 and 2023',r:'4.75 and 4.66 / 5.0',ins:'The standout IIM Bodhgaya evaluations. First-year IPM undergraduates respond most strongly to the life-skill framing. Preparation reached 4.97/5.00 in 2023.',q:['Changed my perspective on marketing entirely. Before this it was just a subject.','Most professional teacher I have had at this institution.','Strictness justified, soft from inside. This balance matters.']},
-    rural:{m:'IIMBG Rural Marketing',t:'Rural Marketing, PGP Sem 6, Mar 2022 and 2023',r:'4.76 and 4.20 / 5.0',ins:'Consistently strong across both iterations. Rural Marketing naturally calls for real-world storytelling, which amplifies the pedagogy.',q:['Most disciplined and dedicated professor I have had.','The real-world examples made complex rural market dynamics finally click.']},
-    brm:{m:'IIMBG BRM IPM',t:'Business Research Methods, IPM, Mar 2023',r:'2.94 / 5.0',ins:'Included here for transparency. A classroom relationship incident mid-semester led to a sustained climate deterioration in this specific cohort. Preparation held at 4.06/5.00 throughout; the knowledge and effort were never in question. The same semester produced a Brand Management score of 4.13 and a Foundation Marketing score of 4.68, demonstrating immediate recovery.',q:['Even in difficult conditions, the preparation and material quality were consistently acknowledged.','Recovery to strong scores in two other courses the same semester demonstrates the issue was specific to one classroom dynamic, not to teaching capacity.']},
-    sau_iebs:{m:'SAU: Indian Ethos',t:'Indian Ethos and Business Ethics, MBA Sem 1, Dec 2025',r:'3.87 Delivery Index',ins:'A difficult semester teaching a non-core subject. The rigid structure that succeeded at IIMs met heavy resistance here. Student feedback points to the reality of adapting pedagogy across vastly different institutional contexts.',q:['Teacher made our class interactive. Please teach us again.','it was perfect with sir, we have learned a lot of things.','Best professor.','Have to be lenient while marking. Otherwise the faculty is exceptional, gives a vibe of a proper professor, very practical.']},
-    sau_it:{m:'SAU: IT Systems Lab',t:'IT and Systems Lab, BBA Sem 1, Dec 2025',r:'3.25 Delivery Index',ins:'Teaching an IT lab as a marketing professor. The structural mismatch and strict enforcement of rules led to polarized feedback. While some appreciated the discipline, the overall scores reflect the friction of cross-disciplinary assignment.',q:['overall sir is good for teaching, and the class got some fun.','I had learned about excel and how it can improve productivity.','it was good experience, learned new things.','GOOD ATTITUDE TOWARDS TEACHING.']}
-  };
-  var menu=document.getElementById('courseMenu');
-  Object.keys(cd).forEach(function(k,idx){
-    var btn=document.createElement('button');btn.className='exp-btn';btn.textContent=cd[k].m;
-    btn.addEventListener('click',function(){showC(k,btn,cd);});
-    menu.appendChild(btn);if(idx===0)showC(k,btn,cd);
+  var groups = [
+    {
+      cat: 'South Asian University (2025–)',
+      items: {
+        sau_iebs: {m:'Indian Ethos (MBA)', t:'Indian Ethos and Business Ethics, MBA Sem 1, Dec 2025', r:'3.87 Delivery Index', ins:'First semester at a greenfield SAARC university. This course is outside the primary domain of marketing. It was assigned by institutional need. 63% of students would recommend the course. The scores reflect a first-year cohort in an institution still establishing its norms.', q:['Teacher made our class interactive. Please teach us again.','it was perfect with sir, we have learned a lot of things.','Best professor.','Have to be lenient while marking. Otherwise the faculty is exceptional, gives a vibe of a proper professor, very practical.']},
+        sau_it: {m:'IT Systems Lab (BBA)', t:'IT and Systems Lab, BBA Sem 1, Dec 2025', r:'3.25 Delivery Index', ins:'Teaching an IT lab as a marketing professor. The structural mismatch and strict enforcement of rules led to polarized feedback. While some appreciated the discipline, the overall scores reflect the friction of cross-disciplinary assignment.', q:['overall sir is good for teaching, and the class got some fun.','I had learned about excel and how it can improve productivity.','it was good experience, learned new things.','GOOD ATTITUDE TOWARDS TEACHING.']}
+      }
+    },
+    {
+      cat: 'IIM Ranchi (2025)',
+      items: {
+        ranchi: {m:'Marketing Mgmt 1', t:'Marketing Management 1, PGP Term 1, Sep 2025', r:'4.86 / 5.0', ins:'The highest-scoring evaluation in the entire dataset. Preparation hit 5.00/5.00, unanimous across 29 respondents. Psychological safety was explicitly named by students as a defining feature. Exam: 25/29 enjoyed it, 0 said useless.', q:['Your teaching method is truly unique and for the first time I felt I was sitting at an IIM-level class.','MM 1 was the only class where I participated in the entire term. Sir made it a safe space to participate.','Studying from you made me realise it is not a subject, it is a skill. Now whenever I see an advertisement I find myself analysing it through a marketing lens.','Marketing is a life skill. I keep coming back to those frameworks all the time.']}
+      }
+    },
+    {
+      cat: 'IIM Bodhgaya (2021–2024)',
+      items: {
+        fmktg: {m:'Foundation Mktg', t:'Foundation of Marketing Management, MBA Digital Business, Oct 2023', r:'4.68 / 5.0', ins:'Clearest evidence of the pedagogical recovery after the low point of mid-2023. Marks the point where the new classroom contract became consistent.', q:['The teaching was engaging and made the subject very approachable.','A genuinely different experience from other courses this semester.','The preparation and structure were clearly visible in every class.']},
+        pomm: {m:'POMM (IPM)', t:'Principles of Marketing Management 1, IPM, Jan 2022 and 2023', r:'4.75 and 4.66 / 5.0', ins:'The standout IIM Bodhgaya evaluations. First-year IPM undergraduates respond most strongly to the life-skill framing. Preparation reached 4.97/5.00 in 2023.', q:['Changed my perspective on marketing entirely. Before this it was just a subject.','Most professional teacher I have had at this institution.','Strictness justified, soft from inside. This balance matters.']},
+        rural: {m:'Rural Marketing', t:'Rural Marketing, PGP Sem 6, Mar 2022 and 2023', r:'4.76 and 4.20 / 5.0', ins:'Consistently strong across both iterations. Rural Marketing naturally calls for real-world storytelling, which amplifies the pedagogy.', q:['Most disciplined and dedicated professor I have had.','The real-world examples made complex rural market dynamics finally click.']},
+        brm: {m:'BRM (IPM)', t:'Business Research Methods, IPM, Mar 2023', r:'2.94 / 5.0', ins:'Included here for transparency. A classroom relationship incident mid-semester led to a sustained climate deterioration in this specific cohort. Preparation held at 4.06/5.00 throughout; the knowledge and effort were never in question. The same semester produced a Brand Management score of 4.13 and a Foundation Marketing score of 4.68, demonstrating immediate recovery.', q:['Even in difficult conditions, the preparation and material quality were consistently acknowledged.','Recovery to strong scores in two other courses the same semester demonstrates the issue was specific to one classroom dynamic, not to teaching capacity.']}
+      }
+    },
+    {
+      cat: 'HSE Moscow & Univ of Geneva (2018-2024)',
+      items: {
+        hse: {m:'R Prog & Stat Analysis', t:'R Programming and Statistical Analysis, 2021 to 2024', r:'4.22 / 5.0 Novelty Score', ins:'Technical programming taught entirely online to Russian undergraduates. Teacher-audience contact was the strongest dimension at 3.72. Novelty 4.22/5.', q:['I was terrified of coding but the digital modules were so well structured.','Breaking down complex statistical models step by step made it highly valuable.']},
+        geneva: {m:'Branding & DDDM', t:'Branding, DDDM and Research Methods, 2018 to 2020', r:'89.5% Avg Score', ins:'Scored on a 1-4 scale. Average 3.58/4.00 = 89.5% of maximum. Availability at or near 4.00/4.00 in every evaluation. DDDM improved from 3.43 to 3.61 between 2018 and 2020.', q:['Ramesh answers questions with patience and tries to be sure that everybody is understanding.','Always very available and answers quickly when we have problems.','One of the best teaching assistants the university has.']}
+      }
+    }
+  ];
+
+  var menu = document.getElementById('courseMenu');
+  var firstBtn = null;
+
+  groups.forEach(function(g) {
+    var catDiv = document.createElement('div');
+    catDiv.className = 'exp-cat';
+    catDiv.textContent = g.cat;
+    menu.appendChild(catDiv);
+
+    Object.keys(g.items).forEach(function(k) {
+      var btn = document.createElement('button');
+      btn.className = 'exp-btn';
+      btn.textContent = g.items[k].m;
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.exp-btn').forEach(function(b){b.classList.remove('on');});
+        btn.classList.add('on');
+        document.getElementById('cTitle').textContent = g.items[k].t;
+        document.getElementById('cRating').textContent = g.items[k].r;
+        document.getElementById('cInsight').textContent = g.items[k].ins;
+        document.getElementById('cQuotes').innerHTML = g.items[k].q.map(function(q){return '<div class="vq">'+q+'</div>';}).join('');
+      });
+      menu.appendChild(btn);
+      if(!firstBtn) firstBtn = btn;
+    });
   });
-}
-function showC(key,btn,cd){
-  document.querySelectorAll('.exp-btn').forEach(function(b){b.classList.remove('on');});btn.classList.add('on');
-  var c=cd[key];
-  document.getElementById('cTitle').textContent=c.t;
-  document.getElementById('cRating').textContent=c.r;
-  document.getElementById('cInsight').textContent=c.ins;
-  document.getElementById('cQuotes').innerHTML=c.q.map(function(q){return '<div class="vq">'+q+'</div>';}).join('');
+
+  if(firstBtn) firstBtn.click();
 }
 
 /* ── Thesis grid ── */
