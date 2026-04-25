@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ group.group_name }} – Peer Evaluation</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}" />
+</head>
+<body>
+  <main class="container narrow">
+    <header>
+      <h1>{{ group.group_name }} Peer Evaluation</h1>
+      <p class="subtitle">Complete all sections carefully. Your submission is stored for grading analysis.</p>
+    </header>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert {{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="post" id="evalForm" class="card">
+      <h2>Section 1: Self-Declaration & Exact Contribution</h2>
+      <label>Your Name
+        <select name="evaluator_name" required>
+          <option value="">Select your name</option>
+          {% for student in students %}
+          <option value="{{ student }}">{{ student }}</option>
+          {% endfor %}
+        </select>
+      </label>
+
+      <fieldset>
+        <legend>Q1: Components you were primarily responsible for (select all that apply)</legend>
+        {% set components = [
+          'Literature Review/Secondary Research',
+          'Data Collection',
+          'Data Analysis (Excel/SPSS/R)',
+          'Writing & Editing the Report',
+          'Formatting & Slide Deck Design',
+          'Presentation Delivery',
+          'Project Management/Coordination'
+        ] %}
+        {% for c in components %}
+        <label class="check"><input type="checkbox" name="primary_components" value="{{ c }}"> {{ c }}</label>
+        {% endfor %}
+      </fieldset>
+
+      <label>Q2: Briefly describe your most significant contribution
+        <textarea name="self_contribution" rows="3" required></textarea>
+      </label>
+
+      <h2>Section 2: Group Dynamics & Extreme Roles</h2>
+      <label>Q3: Project Driver
+        <select name="project_driver" required>
+          <option value="">Select</option>
+          {% for student in students %}
+          <option value="{{ student }}">{{ student }}</option>
+          {% endfor %}
+          <option value="We shared this equally">We shared this equally</option>
+        </select>
+      </label>
+
+      <label>Q4: Bottleneck / Hindrance
+        <select name="bottleneck" id="bottleneckSelect" required>
+          <option value="">Select</option>
+          {% for student in students %}
+          <option value="{{ student }}">{{ student }}</option>
+          {% endfor %}
+          <option value="No one hindered the project">No one hindered the project</option>
+        </select>
+      </label>
+
+      <label id="hindranceReason" class="hidden">Please explain specifically how this person hindered the group.
+        <textarea name="bottleneck_explanation" id="bottleneckExplanation" rows="3"></textarea>
+      </label>
+
+      <h2>Section 3 & 4: Behavioral Ratings + 100-Point Value Split</h2>
+      <p class="subtitle">Rate each member (including yourself) and allocate points. Total points must equal <strong>100</strong>.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Holistic Understanding (1-5)</th>
+              <th>Meeting Reliability (1-5)</th>
+              <th>Presentation Alignment (1-5)</th>
+              <th>Points Allocation</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for student in students %}
+            <tr>
+              <td>{{ student }}</td>
+              <td><input type="number" min="1" max="5" name="availability_{{ student }}" required></td>
+              <td><input type="number" min="1" max="5" name="reliability_{{ student }}" required></td>
+              <td><input type="number" min="1" max="5" name="quality_{{ student }}" required></td>
+              <td><input type="number" min="0" max="100" class="point-input" name="points_{{ student }}" required></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <p id="pointStatus" class="status">Total Points: 0 / 100</p>
+      <button type="submit" id="submitBtn" disabled>Submit Evaluation</button>
+    </form>
+  </main>
+
+  <script>
+    const pointInputs = document.querySelectorAll('.point-input');
+    const pointStatus = document.getElementById('pointStatus');
+    const submitBtn = document.getElementById('submitBtn');
+    const bottleneckSelect = document.getElementById('bottleneckSelect');
+    const hindranceReason = document.getElementById('hindranceReason');
+    const bottleneckExplanation = document.getElementById('bottleneckExplanation');
+
+    function updatePoints() {
+      let total = 0;
+      pointInputs.forEach(input => {
+        total += parseInt(input.value || '0', 10);
+      });
+
+      pointStatus.textContent = `Total Points: ${total} / 100`;
+      const valid = total === 100;
+      pointStatus.className = valid ? 'status ok' : 'status bad';
+      submitBtn.disabled = !valid;
+    }
+
+    pointInputs.forEach(input => input.addEventListener('input', updatePoints));
+    updatePoints();
+
+    function updateHindranceField() {
+      const value = bottleneckSelect.value;
+      const needsReason = value && value !== 'No one hindered the project';
+      hindranceReason.classList.toggle('hidden', !needsReason);
+      bottleneckExplanation.required = needsReason;
+    }
+
+    bottleneckSelect.addEventListener('change', updateHindranceField);
+    updateHindranceField();
+  </script>
+</body>
+</html>
