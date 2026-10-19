@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peer Evaluation Admin</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Peer Evaluation & Automated Grading</h1>
+      <p class="subtitle">Academic dashboard for managing groups, collecting peer data, and generating AI-based grading multipliers.</p>
+    </header>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert {{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <section class="card">
+      <h2>Create Group</h2>
+      <form method="post" class="grid-form">
+        <label>Group Name
+          <input type="text" name="group_name" placeholder="e.g., BUS101 Team A" required>
+        </label>
+        <label>Student Names (one per line)
+          <textarea name="student_names" rows="8" placeholder="Alice\nBen\nCarla\nDinesh" required></textarea>
+        </label>
+        <button type="submit">Create Group + Link</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Groups</h2>
+      {% if groups %}
+      <table>
+        <thead>
+          <tr>
+            <th>Group</th>
+            <th>Members</th>
+            <th>Student Portal Link</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for group in groups %}
+          <tr>
+            <td>{{ group.group_name }}</td>
+            <td>{{ group.members }}</td>
+            <td><a href="{{ url_for('group_portal', token=group.unique_link) }}" target="_blank">{{ request.host_url }}group/{{ group.unique_link }}</a></td>
+            <td class="actions">
+              <a class="btn-sm" href="{{ url_for('download_csv', group_id=group.group_id) }}">Download Data as CSV</a>
+              <a class="btn-sm accent" href="{{ url_for('analyze', group_id=group.group_id) }}">Analyze &amp; Grade</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p>No groups yet. Create one above.</p>
+      {% endif %}
+    </section>
+  </main>
+</body>
+</html>

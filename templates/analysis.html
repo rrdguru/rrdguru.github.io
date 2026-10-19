@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Grading Report – {{ group.group_name }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>AI Evaluation Report</h1>
+      <p class="subtitle">Group: {{ group.group_name }}</p>
+      <a href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
+    </header>
+
+    <section class="card">
+      {% if report %}
+      <table>
+        <thead>
+          <tr>
+            <th>Student</th>
+            <th>Average Peer Score</th>
+            <th>Honesty Discrepancy</th>
+            <th>Group Dynamics Flag</th>
+            <th>Final Grade Multiplier</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in report %}
+          <tr>
+            <td>{{ row.student }}</td>
+            <td>{{ row.avg_peer_score }}</td>
+            <td>{{ row.honesty_discrepancy }}</td>
+            <td>{{ row.group_dynamics_flag }}</td>
+            <td><strong>{{ row.final_multiplier }}x</strong></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <p class="subtitle">Policy note: if a student is marked as "hindrance" by a majority of respondents, an automatic 0.5x cap is applied.</p>
+      {% else %}
+      <p>No evaluation submissions available yet for this group.</p>
+      {% endif %}
+    </section>
+  </main>
+</body>
+</html>
