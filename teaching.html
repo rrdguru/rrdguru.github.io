@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teaching Analytics | Ramesh Roshan Das Guru</title>
+    <title>Teaching | Ramesh Roshan Das Guru</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -264,10 +264,70 @@ h1,h2,h3,h4,h5{font-family:'Manrope',sans-serif;letter-spacing:-.035em}
 .teaching-footer .footer-inner{max-width:1180px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .teaching-footer a{color:#d5ef79;text-decoration:none}
 @media(max-width:768px){.site-nav-inner{align-items:flex-start;flex-direction:column;padding-top:14px;padding-bottom:13px;gap:12px}.site-nav-links{width:100%;gap:16px;overflow-x:auto;padding-bottom:3px}.teaching-header{padding:45px 0}.teaching-header h1{font-size:clamp(3rem,14vw,4.5rem)}.course-menu,.course-content{width:100%;border-right:none}.course-content{padding:1.5rem}.dashboard-container{display:block}}
+
+/* Minimal, system-native visual language shared with the homepage */
+:root{--primary:#1d1d1f;--accent:#0071e3;--bg-light:#f5f5f7;--text-main:#1d1d1f;--border-color:#d2d2d7;--success-color:#0071e3}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--text-main);background:var(--bg-light);line-height:1.65}
+h1,h2,h3,h4,h5{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;letter-spacing:-.045em;color:var(--text-main)}
+.site-nav{position:sticky;top:0;z-index:40;background:rgba(245,245,247,.86);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(210,210,215,.75)}
+.site-nav-inner{max-width:1180px;min-height:64px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.site-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text-main);font-weight:650;font-size:14px;letter-spacing:-.025em}
+.site-mark{width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:var(--text-main);color:white;font-size:13px;font-weight:500}
+.site-nav-links{display:flex;align-items:center;gap:22px}
+.site-nav-links a{color:#6e6e73;text-decoration:none;font-size:12px;white-space:nowrap}
+.site-nav-links a:hover,.site-nav-links .current{color:var(--text-main)}
+.site-nav-links .current{background:transparent;padding:0;font-weight:600}
+.teaching-header{background:var(--bg-light);color:var(--text-main);padding:58px 0 50px;margin:0;border-bottom:1px solid var(--border-color)}
+.teaching-header:after{display:none}
+.teaching-header h1{color:var(--text-main)!important;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:clamp(3rem,7vw,6rem);letter-spacing:-.075em;line-height:.98;font-weight:650}
+.teaching-header .lead{color:#6e6e73!important;font-size:clamp(1rem,1.7vw,1.2rem);line-height:1.65;font-weight:400!important}
+.teaching-kicker{font-size:12px;letter-spacing:.02em;text-transform:none;color:#6e6e73;margin-bottom:20px}
+.btn-back{background:transparent;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.55rem 1rem;font-size:.82rem}
+.btn-back:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.container{max-width:1180px}
+.container.pb-5{padding-top:44px}
+.section-title{font-family:inherit;font-size:clamp(1.9rem,4vw,2.7rem);letter-spacing:-.06em;font-weight:650;color:var(--text-main);border-bottom:1px solid var(--border-color);padding-bottom:1rem;margin-bottom:2rem}
+.section-title:after{background:var(--accent);width:42px;height:2px}
+.stat-card,.theme-card,.dashboard-container{border-radius:16px;box-shadow:0 2px 14px rgba(0,0,0,.035);border-color:var(--border-color)}
+.stat-card{background:#fff;text-align:left;padding:2rem}
+.metric{font-family:inherit;color:var(--text-main);font-size:clamp(2.5rem,4vw,3.4rem);letter-spacing:-.075em;font-weight:650}
+.stat-card p{font-size:11px;letter-spacing:.035em}
+.theme-card{background:#fff;padding:1.6rem;transition:transform .25s,box-shadow .25s,border-color .25s}
+.theme-card:hover{transform:translateY(-3px);border-color:#a8a8ae;box-shadow:0 10px 24px rgba(0,0,0,.05)}
+.theme-card h4{font-size:1.1rem;letter-spacing:-.03em;color:var(--text-main)!important}
+.theme-card h4 i{color:var(--accent)!important}
+.dashboard-container{background:#fff;border-radius:16px;overflow:hidden}
+.course-menu{background:#f0f0f4;border-color:var(--border-color)}
+.course-menu button{border-color:var(--border-color);font-size:.9rem}
+.course-menu button:hover{background:#e5e5ea}
+.course-menu button.active{color:var(--accent);background:#fff;border-left:3px solid var(--accent)}
+.course-content{background:#fff;padding:clamp(1.5rem,4vw,3rem)}
+.course-content h3{letter-spacing:-.04em}
+.verbatim-quote{background:#f5f5f7;border-color:#e2e2e7;border-radius:12px;color:#424245;font-size:1rem}
+.verbatim-quote:before{color:#b7b7bd}
+.drive-link-card{background:#fff;border-color:var(--border-color);border-radius:12px;box-shadow:none;padding:1.1rem 1.2rem;transition:transform .2s,border-color .2s,box-shadow .2s}
+.drive-link-card:hover{border-color:#a8a8ae;color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.04)}
+.drive-icon{color:var(--accent)}
+.teaching-footer{background:#1d1d1f;color:#d2d2d7;padding:24px 0;font-size:.78rem}
+.teaching-footer .footer-inner{max-width:1180px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.teaching-footer a{color:#7dbbff;text-decoration:none}
+.eval-method{margin-top:22px;padding:16px 18px;border:1px solid var(--border-color);border-radius:12px;background:rgba(255,255,255,.62);font-size:.82rem;color:#6e6e73;line-height:1.55}
+.reveal-on-scroll{opacity:0;transform:translateY(12px);transition:opacity .55s ease,transform .65s cubic-bezier(.2,.7,.2,1)}
+.reveal-on-scroll.in-view{opacity:1;transform:none}
+@media(max-width:768px){.site-nav-inner{align-items:flex-start;flex-direction:column;padding-top:12px;padding-bottom:12px;gap:10px}.site-nav-links{width:100%;gap:16px;overflow-x:auto;padding-bottom:3px}.site-nav-links a{font-size:12px}.teaching-header{padding:38px 0}.teaching-header h1{font-size:clamp(3rem,14vw,4.5rem)}.course-menu,.course-content{width:100%;border-right:none}.course-content{padding:1.25rem}.dashboard-container{display:block}.stat-card{padding:1.4rem}.container.pb-5{padding-top:30px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}.reveal-on-scroll{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="site-nav-inner">
+        <a class="site-brand" href="index.html"><span class="site-mark">R</span> Ramesh Roshan Das Guru</a>
+        <div class="site-nav-links">
+          <a href="index.html">Home</a><a href="index.html#research">Research</a><a href="index.html#projects">Projects</a><a class="current" href="teaching.html" aria-current="page">Teaching</a><a href="CV_RR.pdf" target="_blank" rel="noopener">Academic CV ↗</a>
+        </div>
+      </div>
+    </nav>
     <header class="teaching-header">
         <div class="container">
             <a href="index.html" class="btn-back mb-4 d-inline-block"><i class="fas fa-arrow-left me-2"></i> Back to Portfolio</a>
@@ -277,8 +337,9 @@ h1,h2,h3,h4,h5{font-family:'Manrope',sans-serif;letter-spacing:-.035em}
     </header>
 
     <div class="container pb-5">
+        <div class="eval-method">A note on interpretation: ratings and comments shown here are drawn from the teaching-evaluation records linked below. Course scores are course-specific; student comments are illustrative verbatim feedback, not a representative sample of every response.</div>
         
-        <section class="mb-5 pb-4">
+        <section id="evaluation-overview" class="mb-5 pb-4">
             <h2 class="section-title">Evaluation Overview</h2>
             <div class="row g-4">
                 <div class="col-md-4">
@@ -302,7 +363,7 @@ h1,h2,h3,h4,h5{font-family:'Manrope',sans-serif;letter-spacing:-.035em}
             </div>
         </section>
 
-        <section class="mb-5 pb-4">
+        <section id="feedback-themes" class="mb-5 pb-4">
             <h2 class="section-title">Thematic Analysis of Student Feedback</h2>
             <p class="text-muted mb-4">A qualitative synthesis of over five years of raw evaluation data reveals three consistent pillars in my instructional methodology:</p>
             
@@ -328,7 +389,7 @@ h1,h2,h3,h4,h5{font-family:'Manrope',sans-serif;letter-spacing:-.035em}
             </div>
         </section>
 
-        <section class="mb-5 pb-4">
+        <section id="course-dashboard" class="mb-5 pb-4">
             <h2 class="section-title">Subject-Wise Deep Dive</h2>
             <div class="dashboard-container">
                 <div class="course-menu" id="courseMenu">
@@ -351,7 +412,7 @@ h1,h2,h3,h4,h5{font-family:'Manrope',sans-serif;letter-spacing:-.035em}
             </div>
         </section>
 
-        <section class="mb-5">
+        <section id="evaluation-archives" class="mb-5">
             <h2 class="section-title">Evaluation Archives</h2>
             <p class="text-muted mb-4">Full transparency is maintained through raw evaluation documents hosted publicly.</p>
             <div class="row g-3">
@@ -461,5 +522,14 @@ h1,h2,h3,h4,h5{font-family:'Manrope',sans-serif;letter-spacing:-.035em}
         showCourse('mm', menu.firstChild);
     </script>
 
+<script>
+(function(){
+  const items=document.querySelectorAll('.container.pb-5 > section');
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  items.forEach(el=>el.classList.add('reveal-on-scroll'));
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');observer.unobserve(entry.target)}}),{threshold:.08});
+  items.forEach(el=>observer.observe(el));
+})();
+</script>
 </body>
 </html>
