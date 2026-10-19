@@ -1,397 +1,279 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f2ec">
-  <meta name="description" content="Ramesh Roshan Das Guru is a marketing scholar and educator studying consumer-experienced quality, brand relationships, and the thoughtful use of technology in management education.">
-  <title>Ramesh Roshan Das Guru | Marketing Scholar & Educator</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --paper: #f4f2ec;
-      --paper-deep: #ebe8df;
-      --ink: #18231f;
-      --muted: #68716b;
-      --line: #d8d8ce;
-      --green: #285a48;
-      --green-dark: #183f32;
-      --lime: #d5ef79;
-      --coral: #d8755a;
-      --white: #fffefa;
-      --serif: "Newsreader", Georgia, serif;
-      --sans: "DM Sans", sans-serif;
-      --display: "Manrope", sans-serif;
-      --mono: "DM Mono", monospace;
-      --content: 1180px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
-    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
-    a { color: inherit; }
-    a:focus-visible, button:focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
-    .wrap { width: min(var(--content), calc(100% - 56px)); margin: 0 auto; }
-    .mono { font-family: var(--mono); font-size: .7rem; letter-spacing: .09em; text-transform: uppercase; }
-    .topbar { position: sticky; top: 0; z-index: 20; background: rgba(244,242,236,.92); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(216,216,206,.8); }
-    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .wordmark { text-decoration: none; display: inline-flex; align-items: center; gap: 12px; font-family: var(--display); font-weight: 800; font-size: .92rem; letter-spacing: -.035em; white-space: nowrap; }
-    .mark { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--green); color: var(--lime); font-family: var(--serif); font-size: 1.05rem; font-weight: 500; }
-    .navlinks { display: flex; align-items: center; gap: 27px; }
-    .navlinks a { font-size: .83rem; text-decoration: none; color: var(--muted); transition: color .2s; }
-    .navlinks a:hover { color: var(--green); }
-    .navlinks .nav-cta { color: var(--white); background: var(--green); padding: 10px 16px; border-radius: 4px; }
-    .menu-toggle { display: none; border: 1px solid var(--line); border-radius: 4px; background: transparent; padding: 8px 11px; font: inherit; }
-    .hero { padding: 78px 0 70px; position: relative; overflow: hidden; }
-    .hero::after { content: ""; position: absolute; width: 470px; height: 470px; border: 1px solid rgba(40,90,72,.13); border-radius: 50%; right: -165px; top: -120px; box-shadow: 0 0 0 42px rgba(40,90,72,.025), 0 0 0 84px rgba(40,90,72,.02); pointer-events: none; }
-    .eyebrow { display: flex; align-items: center; gap: 11px; color: var(--green); margin-bottom: 28px; }
-    .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--coral); }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(260px, .65fr); gap: 64px; align-items: center; position: relative; z-index: 1; }
-    h1 { margin: 0; max-width: 800px; font-family: var(--display); font-weight: 600; letter-spacing: -.075em; line-height: .99; font-size: clamp(3.3rem, 7.4vw, 6.7rem); }
-    h1 span { color: var(--green); font-family: var(--serif); font-weight: 400; font-style: italic; letter-spacing: -.065em; }
-    .hero-lede { max-width: 690px; margin: 29px 0 0; font-size: clamp(1.05rem, 1.5vw, 1.25rem); line-height: 1.7; color: #4f5b54; }
-    .hero-lede strong { color: var(--ink); font-weight: 600; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 31px; }
-    .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 13px 18px; border: 1px solid var(--green); border-radius: 4px; font-size: .86rem; font-weight: 700; text-decoration: none; transition: transform .2s, background .2s; }
-    .button:hover { transform: translateY(-2px); }
-    .button.primary { background: var(--green); color: white; }
-    .button.secondary { color: var(--green); background: transparent; }
-    .button .arrow { font-size: 1.1rem; line-height: 1; }
-    .portrait-wrap { position: relative; width: min(100%, 330px); justify-self: end; }
-    .portrait-frame { position: relative; aspect-ratio: 4 / 5; background: var(--paper-deep); padding: 12px; border: 1px solid var(--line); transform: rotate(1.5deg); }
-    .portrait-frame img { width: 100%; height: 100%; display: block; object-fit: cover; filter: saturate(.83); }
-    .portrait-note { position: absolute; left: -34px; bottom: 27px; max-width: 210px; padding: 15px 17px; background: var(--lime); color: var(--ink); box-shadow: 0 8px 25px rgba(24,35,31,.08); font-family: var(--serif); font-size: 1.08rem; line-height: 1.2; transform: rotate(-3deg); }
-    .portrait-note small { display: block; margin-top: 8px; font: 500 .62rem var(--mono); text-transform: uppercase; letter-spacing: .08em; }
-    .signal-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,254,250,.38); }
-    .signal-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
-    .signal { padding: 23px 26px 24px 0; }
-    .signal + .signal { border-left: 1px solid var(--line); padding-left: 26px; }
-    .signal .mono { color: var(--coral); }
-    .signal p { margin: 8px 0 0; font-family: var(--serif); font-size: 1.35rem; line-height: 1.25; }
-    section.section { padding: 95px 0; }
-    .section-head { display: grid; grid-template-columns: 220px 1fr; gap: 50px; margin-bottom: 44px; align-items: start; }
-    .section-index { color: var(--coral); padding-top: 9px; }
-    h2 { font-family: var(--display); font-size: clamp(2.25rem, 4.2vw, 3.8rem); line-height: 1.04; letter-spacing: -.06em; font-weight: 600; margin: 0; }
-    .section-intro { max-width: 700px; margin: 16px 0 0; color: var(--muted); font-size: 1.02rem; }
-    .research-band { background: var(--green-dark); color: var(--white); }
-    .research-band .section-index { color: var(--lime); }
-    .research-band .section-intro { color: #c6d2ca; }
-    .research-band h2 { color: var(--white); }
-    .research-layout { display: grid; grid-template-columns: 1.05fr .95fr; gap: 62px; align-items: start; }
-    .research-statement { font-family: var(--serif); font-size: clamp(1.8rem, 3.1vw, 2.8rem); line-height: 1.2; letter-spacing: -.035em; }
-    .research-statement em { color: var(--lime); font-weight: 400; }
-    .research-copy { color: #c6d2ca; max-width: 660px; margin-top: 24px; }
-    .topic-list { border-top: 1px solid rgba(255,255,255,.2); }
-    .topic { display: flex; justify-content: space-between; gap: 20px; padding: 17px 0; border-bottom: 1px solid rgba(255,255,255,.2); }
-    .topic span:first-child { font-weight: 600; }
-    .topic span:last-child { color: var(--lime); font: .68rem var(--mono); text-transform: uppercase; text-align: right; }
-    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .project-card { min-height: 285px; padding: 25px; border: 1px solid var(--line); background: var(--white); display: flex; flex-direction: column; transition: transform .25s, box-shadow .25s; }
-    .project-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(24,35,31,.07); }
-    .project-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 29px; }
-    .project-num { font: .7rem var(--mono); color: var(--coral); }
-    .project-type { font: .64rem var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
-    .project-card h3 { font-family: var(--display); font-size: 1.45rem; letter-spacing: -.045em; line-height: 1.15; margin: 0 0 12px; }
-    .project-card p { color: var(--muted); font-size: .91rem; margin: 0 0 24px; }
-    .text-link { display: inline-flex; align-items: center; gap: 8px; color: var(--green); font-size: .82rem; font-weight: 700; text-decoration: none; margin-top: auto; width: fit-content; border-bottom: 1px solid transparent; }
-    .text-link:hover { border-color: currentColor; }
-    .teaching { background: var(--paper-deep); }
-    .teaching-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; }
-    .teaching-quote { font-family: var(--serif); font-size: clamp(2rem, 3.8vw, 3.5rem); line-height: 1.13; letter-spacing: -.04em; margin: 0; }
-    .teaching-quote span { color: var(--green); font-style: italic; }
-    .teaching-note { color: var(--muted); margin-top: 24px; max-width: 440px; }
-    .principles { border-top: 1px solid #cbcbbf; }
-    .principle { display: grid; grid-template-columns: 48px 1fr; gap: 16px; padding: 20px 0; border-bottom: 1px solid #cbcbbf; }
-    .principle-num { font: .72rem var(--mono); color: var(--coral); padding-top: 5px; }
-    .principle h3 { margin: 0 0 5px; font-family: var(--display); font-size: 1rem; }
-    .principle p { margin: 0; font-size: .9rem; color: var(--muted); }
-    .timeline { border-top: 1px solid var(--line); }
-    .timeline-item { display: grid; grid-template-columns: 190px 1fr; gap: 35px; padding: 25px 0; border-bottom: 1px solid var(--line); }
-    .timeline-date { font: .7rem var(--mono); color: var(--coral); text-transform: uppercase; padding-top: 5px; }
-    .timeline-item h3 { font-family: var(--display); font-size: 1.15rem; letter-spacing: -.025em; margin: 0 0 3px; }
-    .timeline-org { color: var(--green); font-size: .87rem; font-weight: 600; }
-    .timeline-item p { margin: 10px 0 0; color: var(--muted); font-size: .91rem; max-width: 760px; }
-    .publications { background: var(--white); }
-    .pub-layout { display: grid; grid-template-columns: .75fr 1.25fr; gap: 70px; }
-    .pub-aside { color: var(--muted); }
-    .pub-aside .big-number { display: block; font-family: var(--serif); color: var(--green); font-size: 4.5rem; line-height: 1; margin-bottom: 8px; }
-    .pub-aside p { max-width: 300px; font-size: .91rem; }
-    .pub-list { border-top: 1px solid var(--line); }
-    .pub-item { padding: 20px 0; border-bottom: 1px solid var(--line); }
-    .pub-item .mono { color: var(--coral); }
-    .pub-item h3 { margin: 7px 0; font: 500 1.27rem/1.3 var(--serif); }
-    .pub-item p { color: var(--muted); margin: 0; font-size: .86rem; }
-    .pub-status { display: inline-block; margin-top: 8px; font: .65rem var(--mono); text-transform: uppercase; color: var(--green); background: #edf2e7; padding: 4px 7px; }
-    .connect { padding: 78px 0; background: var(--lime); }
-    .connect-grid { display: flex; align-items: end; justify-content: space-between; gap: 40px; }
-    .connect h2 { max-width: 650px; }
-    .connect p { max-width: 530px; margin: 18px 0 0; color: #42513b; }
-    .connect .button { border-color: var(--ink); background: var(--ink); color: white; white-space: nowrap; }
-    footer { background: var(--ink); color: #c6d2ca; padding: 27px 0; font-size: .77rem; }
-    .footer-inner { display: flex; justify-content: space-between; gap: 24px; align-items: center; }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
-    footer a { text-decoration: none; color: var(--lime); }
-    .fineprint { color: #8e9b92; }
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: minmax(0, 1fr) 250px; gap: 35px; }
-      .section-head { grid-template-columns: 150px 1fr; gap: 25px; }
-      .research-layout, .teaching-grid, .pub-layout { gap: 38px; }
-      .project-grid { grid-template-columns: 1fr 1fr; }
-      .project-card:last-child { grid-column: span 2; min-height: 220px; }
-      .navlinks { gap: 16px; }
-    }
-    @media (max-width: 680px) {
-      .wrap { width: min(100% - 36px, var(--content)); }
-      .nav { min-height: 66px; }
-      .menu-toggle { display: inline-flex; }
-      .navlinks { display: none; position: absolute; left: 0; right: 0; top: 65px; padding: 18px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; }
-      .navlinks.open { display: flex; }
-      .navlinks a { padding: 12px 4px; }
-      .navlinks .nav-cta { text-align: center; margin-top: 7px; }
-      .hero { padding: 52px 0 46px; }
-      .hero::after { width: 280px; height: 280px; right: -150px; top: 10px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 35px; }
-      h1 { font-size: clamp(3.3rem, 15vw, 5rem); }
-      .hero-lede { font-size: 1rem; margin-top: 22px; }
-      .portrait-wrap { width: 215px; justify-self: start; margin-left: 20px; }
-      .portrait-note { left: 125px; bottom: 18px; width: 165px; font-size: .95rem; }
-      .signal-grid { grid-template-columns: 1fr; }
-      .signal { padding: 17px 0; }
-      .signal + .signal { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; }
-      .signal p { font-size: 1.2rem; }
-      section.section { padding: 66px 0; }
-      .section-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 30px; }
-      .section-index { padding: 0; }
-      .research-layout, .teaching-grid, .pub-layout { grid-template-columns: 1fr; gap: 35px; }
-      .project-grid { grid-template-columns: 1fr; }
-      .project-card, .project-card:last-child { grid-column: auto; min-height: 0; }
-      .timeline-item { grid-template-columns: 1fr; gap: 6px; padding: 20px 0; }
-      .timeline-date { padding: 0; }
-      .connect-grid { align-items: start; flex-direction: column; }
-      .connect .button { white-space: normal; }
-      .footer-inner { align-items: start; flex-direction: column; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f5f7">
+<meta name="description" content="Ramesh Roshan Das Guru is a marketing academic at South Asian University, New Delhi, working across consumer research, management education, and practical digital tools.">
+<title>Ramesh Roshan Das Guru — Scholar, Teacher, Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f5f7;--paper:#fff;--ink:#1d1d1f;--muted:#6e6e73;--line:#d2d2d7;--blue:#0071e3;--blue-dark:#0058b0;--soft:#e8e8ed;--serif:Newsreader,Georgia,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+body{font-size:16px}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+.topbar{height:66px;position:fixed;inset:0 0 auto;z-index:20;background:rgba(245,245,247,.82);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(210,210,215,.65)}
+.nav{height:100%;max-width:1440px;padding:0 5vw;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{text-decoration:none;font-size:14px;font-weight:650;letter-spacing:-.025em;white-space:nowrap}
+.brand span{color:var(--muted);font-weight:400}
+.navlinks{display:flex;align-items:center;gap:clamp(14px,2.1vw,30px)}
+.navlinks a{font-size:12px;text-decoration:none;color:var(--muted);white-space:nowrap;transition:color .2s}
+.navlinks a:hover,.navlinks a[aria-current=page]{color:var(--ink)}
+.navlinks .cv{color:var(--blue)}
+.menu-toggle{display:none;background:transparent;border:0;font:inherit;color:var(--ink);padding:8px}
+.deck{position:absolute;inset:66px 0 0;overflow:hidden}
+.track{height:100%;display:flex;transform:translateX(0);transition:transform .72s cubic-bezier(.22,.72,.18,1);will-change:transform}
+.slide{position:relative;flex:0 0 100vw;width:100vw;height:100%;overflow-y:auto;overscroll-behavior:contain;display:flex;align-items:center;justify-content:center;padding:clamp(28px,5vh,58px) 7vw 84px}
+.slide-inner{width:min(1240px,100%);margin:auto;position:relative;z-index:1}
+.kicker{font-size:12px;letter-spacing:.02em;color:var(--muted);margin-bottom:24px}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(48px,7.4vw,106px);line-height:.99;letter-spacing:-.075em;font-weight:650;max-width:850px;margin-bottom:25px}
+h1 .serif{font-family:var(--serif);font-weight:400;letter-spacing:-.045em}
+h2{font-size:clamp(38px,5.4vw,76px);line-height:1.02;letter-spacing:-.065em;font-weight:620;margin-bottom:22px}
+h3{font-size:clamp(20px,2vw,28px);letter-spacing:-.045em;line-height:1.12;font-weight:600;margin-bottom:12px}
+.lede{font-size:clamp(17px,1.65vw,21px);line-height:1.55;letter-spacing:-.018em;color:#424245;max-width:730px}
+.muted{color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:12px 19px;font-size:13px;font-weight:550;text-decoration:none;border:1px solid var(--blue);transition:transform .2s,background .2s}
+.pill:hover{transform:translateY(-2px)}
+.pill.primary{background:var(--blue);color:white}
+.pill.primary:hover{background:var(--blue-dark)}
+.pill.secondary{color:var(--blue);background:transparent}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(240px,.65fr);align-items:center;gap:7vw}
+.portrait{width:min(100%,330px);justify-self:end;position:relative}
+.portrait img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;border-radius:5px;background:#e5e5ea;box-shadow:0 28px 70px rgba(0,0,0,.11)}
+.portrait-caption{font-size:12px;color:var(--muted);margin-top:13px}
+.hero-orbit{position:absolute;width:37vw;height:37vw;max-width:550px;max-height:550px;border:1px solid #d9d9df;border-radius:50%;right:-8vw;top:2%;pointer-events:none}
+.hero-orbit:before,.hero-orbit:after{content:"";position:absolute;border:1px solid #e2e2e7;border-radius:50%;inset:9%}
+.hero-orbit:after{inset:19%}
+.slide-index{position:absolute;left:7vw;bottom:28px;color:var(--muted);font-size:11px;letter-spacing:.04em}
+.slide-index b{color:var(--ink);font-weight:550}
+.section-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:7vw;align-items:start}
+.big-statement{font-family:var(--serif);font-size:clamp(29px,3.7vw,50px);line-height:1.14;letter-spacing:-.035em;max-width:520px}
+.research-list{border-top:1px solid var(--line)}
+.list-row{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:17px 0;border-bottom:1px solid var(--line)}
+.list-row strong{font-size:15px;font-weight:550;letter-spacing:-.015em}
+.list-row span{font-size:11px;color:var(--muted);text-align:right}
+.split-visual{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.note-panel{padding:24px 25px 26px;background:#fff;border-radius:16px;min-height:190px;box-shadow:0 2px 14px rgba(0,0,0,.025)}
+.note-panel .number{font-size:12px;color:var(--blue);margin-bottom:25px}
+.note-panel p{color:var(--muted);font-size:14px;line-height:1.55;margin:0}
+.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.project{background:var(--paper);border-radius:18px;padding:24px;min-height:290px;display:flex;flex-direction:column;box-shadow:0 2px 14px rgba(0,0,0,.035);transition:transform .25s,box-shadow .25s}
+.project:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(0,0,0,.07)}
+.project .label{font-size:11px;color:var(--blue);margin-bottom:30px}
+.project p{font-size:14px;line-height:1.55;color:var(--muted);margin-bottom:20px}
+.project a,.inline-link{color:var(--blue);text-decoration:none;font-size:13px;font-weight:550;margin-top:auto;width:fit-content}
+.project a:hover,.inline-link:hover{text-decoration:underline}
+.project-note{font-size:12px;color:var(--muted);margin:15px 0 0}
+.teaching-layout{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}
+.quote{font-family:var(--serif);font-size:clamp(34px,4.5vw,62px);line-height:1.08;letter-spacing:-.04em;max-width:570px}
+.principles{border-top:1px solid var(--line)}
+.principle{display:grid;grid-template-columns:32px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.principle .n{color:var(--blue);font-size:12px;padding-top:3px}
+.principle h3{font-size:16px;letter-spacing:-.025em;margin:0 0 5px}
+.principle p{font-size:13px;color:var(--muted);line-height:1.5;margin:0}
+.journey-layout{display:grid;grid-template-columns:.7fr 1.3fr;gap:7vw}
+.timeline{border-top:1px solid var(--line)}
+.timeline-item{display:grid;grid-template-columns:135px 1fr;gap:20px;padding:14px 0;border-bottom:1px solid var(--line)}
+.timeline-item time{font-size:12px;color:var(--muted);padding-top:4px}
+.timeline-item h3{font-size:17px;margin:0 0 4px}
+.timeline-item p{font-size:13px;line-height:1.45;color:var(--muted);margin:0}
+.pub-layout{display:grid;grid-template-columns:.75fr 1.25fr;gap:7vw}
+.pub-aside{font-size:13px;color:var(--muted);max-width:270px}
+.pub-aside strong{display:block;font-family:var(--serif);font-size:66px;font-weight:400;letter-spacing:-.05em;color:var(--ink);line-height:1.1}
+.pub-list{border-top:1px solid var(--line)}
+.pub{padding:15px 0;border-bottom:1px solid var(--line)}
+.pub .venue{font-size:11px;color:var(--muted);margin-bottom:6px}
+.pub h3{font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.2;margin-bottom:5px;letter-spacing:-.02em}
+.pub p{font-size:12px;color:var(--muted);margin:0}
+.contact-row{display:flex;justify-content:space-between;align-items:end;gap:30px;border-top:1px solid var(--line);padding-top:25px;margin-top:30px}
+.contact-row p{max-width:580px;color:var(--muted);line-height:1.55;margin:0;font-size:15px}
+.deck-controls{position:fixed;z-index:30;bottom:18px;right:5vw;display:flex;align-items:center;gap:12px}
+.control-btn{height:38px;width:38px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.86);color:var(--ink);font-size:19px;display:grid;place-items:center;cursor:pointer;transition:background .2s,border-color .2s}
+.control-btn:hover{background:#fff;border-color:#aaaab0}
+.dots{display:flex;align-items:center;gap:7px;padding:0 7px}
+.dot{height:6px;width:6px;border:0;border-radius:99px;background:#b7b7bd;padding:0;cursor:pointer;transition:width .3s,background .3s}
+.dot[aria-current=true]{width:23px;background:var(--ink)}
+.progress{position:fixed;z-index:29;bottom:0;left:0;height:2px;background:var(--line);width:100%}
+.progress span{display:block;width:14.285%;height:100%;background:var(--blue);transition:width .6s}
+.reveal{opacity:0;transform:translateY(13px);transition:opacity .6s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.slide.active .reveal{opacity:1;transform:translateY(0)}
+.slide.active .reveal:nth-child(2){transition-delay:.07s}
+.slide.active .reveal:nth-child(3){transition-delay:.13s}
+.slide.active .reveal:nth-child(4){transition-delay:.19s}
+@media(max-width:900px){.nav{padding:0 22px}.navlinks{gap:14px}.navlinks a{font-size:11px}.slide{padding:30px 6vw 80px}.hero-grid{gap:5vw}.portrait{width:min(100%,260px)}.project{padding:19px;min-height:300px}.section-grid,.teaching-layout,.journey-layout,.pub-layout{gap:4vw}}
+@media(max-width:700px){html,body{height:100%;overflow:hidden}.topbar{height:58px}.nav{padding:0 18px}.brand{font-size:13px}.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:57px;left:0;right:0;background:rgba(245,245,247,.98);padding:14px 20px 20px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:16px}.navlinks.open{display:flex}.navlinks a{font-size:14px}.deck{inset:58px 0 0}.slide{align-items:flex-start;padding:32px 22px 85px}.slide-inner{margin:auto 0}.hero-grid,.section-grid,.teaching-layout,.journey-layout,.pub-layout{grid-template-columns:1fr;gap:25px}.hero-grid{align-items:start}.hero-orbit{width:80vw;height:80vw;right:-40vw;top:20%}h1{font-size:clamp(47px,13vw,74px)}h2{font-size:clamp(39px,10vw,58px)}.lede{font-size:16px}.portrait{width:125px;justify-self:start}.portrait img{aspect-ratio:1/1;border-radius:50%}.portrait-caption{font-size:10px}.hero-grid{gap:18px}.hero-grid>div:first-child{order:1}.portrait{order:0}.hero-grid .kicker{margin-bottom:15px}.actions{margin-top:20px}.split-visual{grid-template-columns:1fr 1fr;gap:9px}.note-panel{min-height:0;padding:15px;border-radius:12px}.note-panel .number{margin-bottom:12px}.note-panel p{font-size:12px}.project-grid{grid-template-columns:1fr;gap:10px;margin-top:20px}.project{min-height:0;padding:17px;border-radius:13px}.project .label{margin-bottom:10px}.project h3{font-size:21px}.project p{font-size:13px;margin-bottom:10px}.project a{margin-top:0}.list-row{padding:12px 0;gap:12px}.list-row strong{font-size:13px}.list-row span{font-size:10px}.quote{font-size:37px}.principle{padding:12px 0}.timeline-item{grid-template-columns:95px 1fr;gap:12px;padding:11px 0}.timeline-item h3{font-size:14px}.timeline-item p{font-size:11px}.pub-aside strong{font-size:45px}.pub{padding:11px 0}.pub h3{font-size:18px}.contact-row{align-items:flex-start;flex-direction:column;margin-top:18px;padding-top:18px}.deck-controls{bottom:13px;right:16px;gap:7px}.control-btn{width:34px;height:34px}.dots{gap:5px}.slide-index{left:22px;bottom:22px;font-size:10px}.slide{overflow-y:auto}.slide:nth-child(4) .slide-inner{margin-top:10px;margin-bottom:30px}}
+@media(max-height:740px) and (min-width:701px){.slide{padding-top:18px;padding-bottom:68px}.kicker{margin-bottom:14px}h1{font-size:clamp(46px,6vw,78px)}h2{font-size:clamp(34px,4vw,55px)}.lede{font-size:16px}.project{min-height:230px;padding:18px}.project .label{margin-bottom:17px}.project p{font-size:12px}.timeline-item{padding:9px 0}.slide-inner{max-height:100%;overflow-y:auto}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}.track{transition:none}.reveal{opacity:1;transform:none}}
+</style>
 </head>
 <body>
-  <header class="topbar">
-    <nav class="nav wrap" aria-label="Main navigation">
-      <a class="wordmark" href="#top" aria-label="Ramesh Roshan Das Guru, home"><span class="mark">R</span><span>Ramesh Roshan Das Guru</span></a>
-      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
-      <div class="navlinks" id="navLinks">
-        <a href="#research">Research</a>
-        <a href="#building">Projects</a>
-        <a href="#institution">Institution building</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#journey">Journey</a>
-        <a href="#writing">Publications</a>
-        <a class="nav-cta" href="CV_RR.pdf" target="_blank" rel="noopener">Academic CV ↗</a>
-      </div>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <div class="eyebrow mono">Marketing scholar · Educator · Builder</div>
-          <h1>Ideas about<br>quality, <span>made</span><br>meaningful.</h1>
-          <p class="hero-lede">I am a marketing academic at <strong>South Asian University, New Delhi</strong>. My work explores how consumers experience product quality, build relationships with brands, and make judgments over time. Alongside research and teaching, I build practical digital tools that help people learn, test ideas, and make better decisions.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="#research">Explore my work <span class="arrow">↘</span></a>
-            <a class="button secondary" href="https://scholar.google.com/citations?user=BUsJnvUAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar <span class="arrow">↗</span></a>
-          </div>
-        </div>
-        <div class="portrait-wrap">
-          <div class="portrait-frame"><img src="rr.jpg" alt="Portrait of Ramesh Roshan Das Guru" fetchpriority="high"></div>
-          <div class="portrait-note">Research should explain something that matters.<small>How I try to work</small></div>
-        </div>
-      </div>
-    </section>
-
-    <div class="signal-strip">
-      <div class="wrap signal-grid">
-        <div class="signal"><div class="mono">01 / Research</div><p>What does quality mean to the person experiencing it?</p></div>
-        <div class="signal"><div class="mono">02 / Education</div><p>How can teaching create judgment, not just recall?</p></div>
-        <div class="signal"><div class="mono">03 / Technology</div><p>How might useful tools improve real learning and work?</p></div>
-      </div>
-    </div>
-
-    <section class="section research-band" id="research">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-index mono">01 / Research agenda</div>
-          <div><h2>From what people experience<br>to what they choose.</h2><p class="section-intro">My research starts with a deceptively simple question: what does product quality mean to a customer, and what happens when that experience accumulates over time?</p></div>
-        </div>
-        <div class="research-layout">
-          <div>
-            <p class="research-statement">Quality is not simply a feature of a product. It is an <em>experienced judgment</em>, formed across encounters, expectations and outcomes.</p>
-            <p class="research-copy">My doctoral work developed and validated a scale for customers' experienced product quality. Subsequent work examines how quality perceptions connect to brand attachment, satisfaction, loyalty and willingness to pay. I am also developing research on sustainability, AI and quality, and on the gap between what consumers know and what they choose.</p>
-          </div>
-          <div class="topic-list" aria-label="Research themes">
-            <div class="topic"><span>Customer-experienced product quality</span><span>Core stream</span></div>
-            <div class="topic"><span>Brand attachment and loyalty over time</span><span>Longitudinal</span></div>
-            <div class="topic"><span>AI, sustainability and quality judgments</span><span>Emerging</span></div>
-            <div class="topic"><span>Measurement and quantitative methods</span><span>Methods</span></div>
-            <div class="topic"><span>Consumer experience of electric vehicles</span><span>Field research</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="section" id="institution">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-index mono">02 / Beyond the classroom</div>
-          <div><h2>Building programmes.<br>Studying experience.</h2><p class="section-intro">Some of my work is about creating the conditions for learning and research, not only delivering a course or publishing a paper. These projects connect academic ideas with the systems around them.</p></div>
-        </div>
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="project-top"><span class="project-num">I / 01</span><span class="project-type">Programme design</span></div>
-            <h3>Business Analytics & AI at SAU</h3>
-            <p>Contributed to the development and launch of South Asian University's MS in Business Analytics and AI, from course design and programme promotion to admissions and teaching. The goal is to help students translate business questions into analytical questions and decisions.</p>
-            <span class="text-link">South Asian University · New Delhi</span>
-          </article>
-          <article class="project-card">
-            <div class="project-top"><span class="project-num">I / 02</span><span class="project-type">Curriculum building</span></div>
-            <h3>Digital Business Management</h3>
-            <p>At IIM Bodh Gaya, I was part of the launch team for the MBA in Digital Business Management and designed the marketing-domain course structure, linking product, brand and digital business decisions.</p>
-            <span class="text-link">Indian Institute of Management Bodh Gaya</span>
-          </article>
-          <article class="project-card">
-            <div class="project-top"><span class="project-num">R / 03</span><span class="project-type">Longitudinal field research</span></div>
-            <h3>Electric vehicle experience</h3>
-            <p>An international study following EV owners' experiences of product quality and defects over time. The project uses a purpose-built Android application and brings together collaborators at the American University of Switzerland, University of Geneva and UC Davis.</p>
-            <span class="text-link">Consumer experience · Product quality · Time</span>
-          </article>
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;align-items:center;">
-          <span class="mono" style="color:var(--muted);margin-right:4px;">Visiting & concurrent work</span>
-          <span style="border:1px solid var(--line);padding:7px 10px;font-size:.78rem;">Tecnológico de Monterrey</span>
-          <span style="border:1px solid var(--line);padding:7px 10px;font-size:.78rem;">American University of Switzerland</span>
-          <span style="border:1px solid var(--line);padding:7px 10px;font-size:.78rem;">HSE Moscow</span>
-          <span style="border:1px solid var(--line);padding:7px 10px;font-size:.78rem;">Intellipaat Executive Programmes</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="building">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-index mono">02 / Building in practice</div>
-          <div><h2>Research-minded.<br>Classroom-tested.</h2><p class="section-intro">I also build small digital products around recurring problems in management education. These projects are practical experiments, not technology for its own sake.</p></div>
-        </div>
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="project-top"><span class="project-num">P / 01</span><span class="project-type">Simulation</span></div>
-            <h3>Mercatura</h3>
-            <p>A marketing decision simulation where participants manage pricing, promotion, distribution and positioning, then see how choices affect market outcomes across multiple periods.</p>
-            <a class="text-link" href="mailto:rameshroshandg@gmail.com?subject=Mercatura%20marketing%20simulation">Ask about Mercatura <span>↗</span></a>
-          </article>
-          <article class="project-card">
-            <div class="project-top"><span class="project-num">P / 02</span><span class="project-type">Assessment</span></div>
-            <h3>Academex</h3>
-            <p>A lightweight assessment platform exploring how instructors can run classroom quizzes with clearer evidence, practical controls and more confidence in the integrity of student work.</p>
-            <a class="text-link" href="mailto:rameshroshandg@gmail.com?subject=Academex%20assessment%20platform">Ask about Academex <span>↗</span></a>
-          </article>
-          <article class="project-card">
-            <div class="project-top"><span class="project-num">P / 03</span><span class="project-type">Group learning</span></div>
-            <h3>PeerPulse</h3>
-            <p>A peer-evaluation tool designed to help instructors understand contribution in group projects, compare student perspectives, and use peer evidence as an input to academic judgment.</p>
-            <a class="text-link" href="mailto:rameshroshandg@gmail.com?subject=PeerPulse%20peer-evaluation%20tool">Ask about PeerPulse <span>↗</span></a>
-          </article>
-        </div>
-        <p style="margin:19px 0 0;color:var(--muted);font-size:.8rem;">These tools are evolving projects. Their presence here describes the design intent, not a claim that every feature is complete.</p>
-      </div>
-    </section>
-
-    <section class="section teaching" id="teaching">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-index mono">03 / Teaching philosophy</div>
-          <div><h2>Less framework-reciting.<br>More thinking.</h2><p class="section-intro">Across marketing, analytics and research methods, I want students to understand why a concept matters, when it is useful, and what it cannot tell them.</p></div>
-        </div>
-        <div class="teaching-grid">
-          <div>
-            <p class="teaching-quote">The goal is not to remember a tool. It is to know <span>when to trust it</span>, when to question it, and what to do next.</p>
-            <p class="teaching-note">My classroom connects concepts to real decisions, evidence and consequences. Students should leave able to explain their reasoning, not merely reproduce a model.</p>
-            <a class="text-link" href="teaching.html">More on teaching and feedback <span>↗</span></a>
-          </div>
-          <div class="principles">
-            <div class="principle"><div class="principle-num">01</div><div><h3>Begin with a meaningful question</h3><p>Start from a decision, customer problem or research puzzle before introducing the framework.</p></div></div>
-            <div class="principle"><div class="principle-num">02</div><div><h3>Make reasoning visible</h3><p>Use cases, demonstrations, data and structured discussion to show how conclusions are reached.</p></div></div>
-            <div class="principle"><div class="principle-num">03</div><div><h3>Build critical independence</h3><p>Ask students to test assumptions, recognise uncertainty and identify where an answer may fail.</p></div></div>
-            <div class="principle"><div class="principle-num">04</div><div><h3>Use technology with purpose</h3><p>AI and analytics should extend inquiry and judgment, not replace either one.</p></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="journey">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-index mono">04 / Academic journey</div>
-          <div><h2>Different settings.<br>A connected point of view.</h2><p class="section-intro">My work has moved between research, teaching, industry and institution building. Each setting has shaped how I approach the others.</p></div>
-        </div>
-        <div class="timeline">
-          <article class="timeline-item"><div class="timeline-date">2025 — Present</div><div><h3>Senior Assistant Professor of Marketing</h3><div class="timeline-org">South Asian University · New Delhi</div><p>Founding faculty member in the Faculty of Management. Contributing to programme development, teaching across marketing and business analytics, and doctoral supervision.</p></div></article>
-          <article class="timeline-item"><div class="timeline-date">2025</div><div><h3>Assistant Professor of Marketing</h3><div class="timeline-org">Indian Institute of Management Ranchi</div><p>Taught Marketing Management to the postgraduate cohort.</p></div></article>
-          <article class="timeline-item"><div class="timeline-date">2021 — 2024</div><div><h3>Assistant Professor of Marketing</h3><div class="timeline-org">Indian Institute of Management Bodh Gaya</div><p>Contributed to the launch of the MBA in Digital Business Management, taught marketing courses, and served in academic and alumni-related roles.</p></div></article>
-          <article class="timeline-item"><div class="timeline-date">2015 — 2020</div><div><h3>Doctoral research and teaching</h3><div class="timeline-org">University of Geneva · Switzerland</div><p>Completed doctoral research on customers' experienced product quality and taught undergraduate and graduate courses, while supervising student dissertations.</p></div></article>
-          <article class="timeline-item"><div class="timeline-date">Before academia</div><div><h3>Software, industrial operations and consulting</h3><div class="timeline-org">Infosys · Steel Authority of India · FactWorks</div><p>Worked in software engineering, energy management in an integrated steel plant, and consumer research consulting. This experience continues to inform my interest in how analytical ideas work in practice.</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section publications" id="writing">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-index mono">05 / Selected scholarship</div>
-          <div><h2>Published work and<br>questions in progress.</h2><p class="section-intro">A short selection here keeps the page readable. For the full publication record and current research pipeline, please use Google Scholar or the academic CV.</p></div>
-        </div>
-        <div class="pub-layout">
-          <aside class="pub-aside"><span class="big-number">02</span><div class="mono">Published journal articles</div><p>Both published articles appear in the <em>European Journal of Marketing</em> and address product quality and customer-brand relationships.</p><a class="text-link" href="https://scholar.google.com/citations?user=BUsJnvUAAAAJ&hl=en" target="_blank" rel="noopener">Full profile on Google Scholar ↗</a></aside>
-          <div class="pub-list">
-            <article class="pub-item"><div class="mono">European Journal of Marketing · 2020</div><h3>Customers' experienced product quality: scale development and validation</h3><p>R. R. Das Guru and M. Paulssen · 54(4), 645–670</p></article>
-            <article class="pub-item"><div class="mono">European Journal of Marketing · 2024</div><h3>Role of brand attachment and satisfaction in driving customer behaviors for durables: A longitudinal study</h3><p>R. R. Das Guru, M. Paulssen and A. Japutra · 58(1), 217–254</p></article>
-            <article class="pub-item"><div class="mono">Current research</div><h3>Quality, loyalty, sustainability and consumer choice</h3><p>Ongoing projects examine the relationships among customer experience, brand behavior, product field quality, and emerging questions around AI and sustainability.</p><span class="pub-status">Research in progress</span></article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="connect" id="contact">
-      <div class="wrap connect-grid">
-        <div><div class="mono" style="margin-bottom:17px;">Ideas, research and collaboration</div><h2>Have a good question?<br>Let's start there.</h2><p>I welcome conversations about consumer research, quantitative marketing, management education, and practical tools for learning and decision-making.</p></div>
-        <a class="button" href="mailto:rameshroshandg@gmail.com">Get in touch <span class="arrow">↗</span></a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer-inner">
-      <div>© <span id="year"></span> Ramesh Roshan Das Guru <span class="fineprint">· South Asian University, New Delhi</span></div>
-      <div class="footer-links"><a href="https://scholar.google.com/citations?user=BUsJnvUAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a><a href="https://www.researchgate.net/profile/Ramesh-Roshan-Das-Guru" target="_blank" rel="noopener">ResearchGate</a><a href="mailto:rameshroshandg@gmail.com">Email</a><a href="#top">Back to top ↑</a></div>
-    </div>
-  </footer>
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    menuToggle.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-    });
-    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }));
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<header class="topbar">
+<nav class="nav" aria-label="Main navigation">
+<a class="brand" href="#home" data-slide="0">Ramesh Roshan Das Guru <span> / SAU</span></a>
+<button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navlinks">Sections</button>
+<div class="navlinks" id="navlinks">
+<a href="#research" data-slide="1">Research</a><a href="#institution" data-slide="2">Institution building</a><a href="#projects" data-slide="3">Projects</a><a href="#teaching" data-slide="4">Teaching</a><a href="#journey" data-slide="5">Journey</a><a href="#writing" data-slide="6">Writing</a><a class="cv" href="CV_RR.pdf" target="_blank" rel="noopener">Academic CV ↗</a>
+</div>
+</nav>
+</header>
+<main class="deck" aria-label="Portfolio presentation">
+<div class="track" id="track">
+<section class="slide active" id="home" aria-label="Introduction">
+<div class="hero-orbit"></div><div class="slide-inner hero-grid">
+<div>
+<div class="kicker reveal">Marketing academic · South Asian University, New Delhi</div>
+<h1 class="reveal">Research. Teaching.<br><span class="serif">Making things</span><br>that work.</h1>
+<p class="lede reveal">I study how people experience product quality and build relationships with brands. I teach students to reason with evidence. And I build practical tools that bring ideas into the classroom and into use.</p>
+<div class="actions reveal"><a class="pill primary" href="#research" data-slide="1">Explore the work <span aria-hidden="true">→</span></a><a class="pill secondary" href="https://scholar.google.com/citations?user=BUsJnvUAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar ↗</a></div>
+</div>
+<div class="portrait reveal"><img src="rr.jpg" alt="Portrait of Ramesh Roshan Das Guru"><div class="portrait-caption">Scholar, teacher, builder. Based at South Asian University.</div></div>
+</div><div class="slide-index"><b>01</b> / 06 &nbsp; Introduction</div>
+</section>
+<section class="slide" id="research" aria-label="Research">
+<div class="slide-inner">
+<div class="kicker reveal">01 / Research</div>
+<div class="section-grid">
+<div class="reveal"><h2>Quality is more than a feature.</h2><p class="lede">It is an experience people form across encounters, expectations and outcomes.</p></div>
+<div class="reveal"><p class="big-statement">My research asks how customers experience product quality, how those judgments shape brand relationships over time, and what they mean for the choices people make.</p><div class="research-list">
+<div class="list-row"><strong>Customer-experienced product quality</strong><span>Core research stream</span></div>
+<div class="list-row"><strong>Brand attachment, satisfaction and loyalty</strong><span>Longitudinal</span></div>
+<div class="list-row"><strong>Measurement and quantitative methods</strong><span>Research methods</span></div>
+<div class="list-row"><strong>AI, sustainability and quality judgments</strong><span>Emerging work</span></div>
+<div class="list-row"><strong>Consumer experience of electric vehicles</strong><span>Field research</span></div>
+</div></div></div>
+<div class="slide-index"><b>02</b> / 06 &nbsp; Research</div>
+</section>
+<section class="slide" id="institution" aria-label="Institution building and research in practice">
+<div class="slide-inner">
+<div class="kicker reveal">02 / Institution building</div>
+<div class="section-grid">
+<div class="reveal"><h2>Build the conditions for good work.</h2><p class="lede">Academic work is not only papers and lectures. It is also the programmes, partnerships and practical systems that help people learn and do research.</p></div>
+<div class="reveal">
+<div class="note-panel"><div class="number">South Asian University · New Delhi</div><h3>Business Analytics & AI</h3><p>Contributing to the development and launch of the MS programme, from curriculum and programme promotion to admissions and teaching. The aim: help students translate business questions into analytical questions and decisions.</p></div>
+<div class="note-panel" style="margin-top:12px"><div class="number">Indian Institute of Management Bodh Gaya</div><h3>Digital Business Management</h3><p>Part of the launch team for the MBA in Digital Business Management; designed marketing-domain course structure linking product, brand and digital business decisions.</p></div>
+<div class="note-panel" style="margin-top:12px"><div class="number">International collaboration</div><h3>Electric vehicle experience</h3><p>A longitudinal study of EV owners' experienced product quality and defects, using a purpose-built Android application with collaborators at the American University of Switzerland, University of Geneva and UC Davis.</p></div>
+</div></div>
+</div><div class="slide-index"><b>03</b> / 06 &nbsp; Institution building</div>
+</section>
+<section class="slide" id="projects" aria-label="Digital projects">
+<div class="slide-inner">
+<div class="kicker reveal">03 / Tools in progress</div>
+<h2 class="reveal">Ideas should leave the page.</h2>
+<p class="lede reveal">I build small digital products around recurring problems in management education. Practical experiments, not technology for its own sake.</p>
+<div class="project-grid reveal">
+<article class="project"><div class="label">01 / Simulation</div><h3>Mercatura</h3><p>A marketing decision simulation where participants manage pricing, promotion, distribution and positioning, then see how choices affect market outcomes across multiple periods.</p><a href="mailto:rameshroshandg@gmail.com?subject=Mercatura%20marketing%20simulation">Ask about Mercatura ↗</a></article>
+<article class="project"><div class="label">02 / Assessment</div><h3>Academex</h3><p>A lightweight assessment platform exploring how instructors can run classroom quizzes with clearer evidence, practical controls and confidence in the integrity of student work.</p><a href="mailto:rameshroshandg@gmail.com?subject=Academex%20assessment%20platform">Ask about Academex ↗</a></article>
+<article class="project"><div class="label">03 / Group learning</div><h3>PeerPulse</h3><p>A peer-evaluation tool designed to help instructors understand contribution in group projects and use peer evidence as an input to academic judgment.</p><a href="mailto:rameshroshandg@gmail.com?subject=PeerPulse%20peer-evaluation%20tool">Ask about PeerPulse ↗</a></article>
+</div>
+<p class="project-note">These are evolving projects. This page describes their design intent, not a claim that every feature is complete.</p>
+</div><div class="slide-index"><b>04</b> / 06 &nbsp; Projects</div>
+</section>
+<section class="slide" id="teaching" aria-label="Teaching">
+<div class="slide-inner">
+<div class="kicker reveal">04 / Teaching and learning</div>
+<div class="teaching-layout">
+<div class="reveal"><p class="quote">The point is not to remember a tool. It is to know <em>when to trust it</em>, when to question it, and what to do next.</p><p class="muted" style="max-width:500px;line-height:1.6">Across marketing, analytics and research methods, I connect concepts to real decisions, evidence and consequences. Students should leave able to explain their reasoning, not merely reproduce a model.</p><a class="inline-link" href="teaching.html">Explore teaching evaluations and student feedback ↗</a></div>
+<div class="principles reveal">
+<div class="principle"><div class="n">01</div><div><h3>Start with a real question</h3><p>Begin with a decision, customer problem or research puzzle before introducing a framework.</p></div></div>
+<div class="principle"><div class="n">02</div><div><h3>Make reasoning visible</h3><p>Use cases, demonstrations, data and discussion to show how conclusions are reached.</p></div></div>
+<div class="principle"><div class="n">03</div><div><h3>Build critical independence</h3><p>Test assumptions, recognise uncertainty and identify where an answer may fail.</p></div></div>
+<div class="principle"><div class="n">04</div><div><h3>Use technology with purpose</h3><p>AI and analytics should extend inquiry and judgment, not replace either one.</p></div></div>
+</div></div>
+</div><div class="slide-index"><b>05</b> / 06 &nbsp; Teaching</div>
+</section>
+<section class="slide" id="journey" aria-label="Academic journey and publications">
+<div class="slide-inner">
+<div class="kicker reveal">05 / A connected point of view</div>
+<div class="journey-layout">
+<div class="reveal"><h2>Different settings.<br>Related questions.</h2><p class="lede">Research, teaching, industry and institution building have shaped how I approach one another.</p><div class="pub-aside"><strong>02</strong>Published journal articles in the <em>European Journal of Marketing</em> on experienced product quality and customer-brand relationships.<br><br><a class="inline-link" href="CV_RR.pdf" target="_blank" rel="noopener">Full academic CV ↗</a><br><a class="inline-link" href="https://scholar.google.com/citations?user=BUsJnvUAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar ↗</a></div></div>
+<div class="reveal"><div class="timeline">
+<div class="timeline-item"><time>2025 — Present</time><div><h3>Senior Assistant Professor of Marketing</h3><p>South Asian University, New Delhi. Founding faculty member in the Faculty of Management; programme development, teaching and doctoral supervision.</p></div></div>
+<div class="timeline-item"><time>2025</time><div><h3>Assistant Professor of Marketing</h3><p>Indian Institute of Management Ranchi. Taught Marketing Management to the postgraduate cohort.</p></div></div>
+<div class="timeline-item"><time>2021 — 2024</time><div><h3>Assistant Professor of Marketing</h3><p>Indian Institute of Management Bodh Gaya. MBA programme launch, marketing courses and academic/alumni roles.</p></div></div>
+<div class="timeline-item"><time>2015 — 2020</time><div><h3>Doctoral research and teaching</h3><p>University of Geneva, Switzerland. Doctoral work on customers' experienced product quality and undergraduate/graduate teaching.</p></div></div>
+<div class="timeline-item"><time>Before academia</time><div><h3>Software, industrial operations and consulting</h3><p>Infosys, Steel Authority of India and FactWorks. Software engineering, energy management and consumer research consulting.</p></div></div>
+</div></div></div>
+</div>
+<div class="slide-index"><b>06</b> / 07 &nbsp; Academic journey</div>
+</section>
+<section class="slide" id="writing" aria-label="Publications and contact">
+<div class="slide-inner">
+<div class="kicker reveal">06 / Selected scholarship</div>
+<div class="pub-layout">
+<div class="reveal"><h2>Published work.<br>Questions in progress.</h2><p class="lede">Two published articles in the <em>European Journal of Marketing</em> address experienced product quality and customer-brand relationships. My current work extends these questions into quality, loyalty, sustainability, field experience and consumer choice.</p><div class="pub-aside" style="margin-top:24px"><strong>02</strong>Published journal articles.<br><br><a class="inline-link" href="https://scholar.google.com/citations?user=BUsJnvUAAAAJ&hl=en" target="_blank" rel="noopener">Full profile on Google Scholar ↗</a><br><a class="inline-link" href="CV_RR.pdf" target="_blank" rel="noopener">Full academic CV ↗</a></div></div>
+<div class="reveal"><div class="pub-list">
+<article class="pub"><div class="venue">European Journal of Marketing · 2020</div><h3>Customers' experienced product quality: scale development and validation</h3><p>R. R. Das Guru and M. Paulssen · 54(4), 645–670</p></article>
+<article class="pub"><div class="venue">European Journal of Marketing · 2024</div><h3>Role of brand attachment and satisfaction in driving customer behaviors for durables: A longitudinal study</h3><p>R. R. Das Guru, M. Paulssen and A. Japutra · 58(1), 217–254</p></article>
+<div class="pub" style="color:var(--muted);font-size:13px;line-height:1.55">Research in progress: quality, loyalty, sustainability, consumer choice, and emerging questions around AI and product experience.</div>
+</div></div></div>
+<div class="contact-row"><div><h3 style="font-size:25px;margin-bottom:8px">Have a good question?</h3><p>Open to conversations about consumer research, quantitative marketing, management education, and practical tools for learning and decision-making.</p></div><a class="pill primary" href="mailto:rameshroshandg@gmail.com">Get in touch ↗</a></div>
+</div><div class="slide-index"><b>07</b> / 07 &nbsp; Writing & contact</div>
+</section>
+</div>
+</main>
+<div class="deck-controls" aria-label="Slide navigation">
+<button class="control-btn" id="prev" aria-label="Previous slide" title="Previous slide">‹</button>
+<div class="dots" id="dots" aria-label="Choose a slide">
+<button class="dot" data-go="0" aria-label="Slide 1" aria-current="true"></button><button class="dot" data-go="1" aria-label="Slide 2"></button><button class="dot" data-go="2" aria-label="Slide 3"></button><button class="dot" data-go="3" aria-label="Slide 4"></button><button class="dot" data-go="4" aria-label="Slide 5"></button><button class="dot" data-go="5" aria-label="Slide 6"></button><button class="dot" data-go="6" aria-label="Slide 7"></button>
+</div>
+<button class="control-btn" id="next" aria-label="Next slide" title="Next slide">›</button>
+</div>
+<div class="progress" aria-hidden="true"><span id="progress"></span></div>
+<script>
+(function(){
+const track=document.getElementById('track');
+const slides=Array.from(document.querySelectorAll('.slide'));
+const dots=Array.from(document.querySelectorAll('.dot'));
+const links=Array.from(document.querySelectorAll('[data-slide]'));
+const progress=document.getElementById('progress');
+const prev=document.getElementById('prev');
+const next=document.getElementById('next');
+const nav=document.getElementById('navlinks');
+const menu=document.getElementById('menuToggle');
+let current=0,startX=0,startY=0,lastWheel=0;
+function go(index,updateHash){
+ current=Math.max(0,Math.min(slides.length-1,index));
+ track.style.transform='translateX(-'+(current*100)+'vw)';
+ slides.forEach((s,i)=>{s.classList.toggle('active',i===current);s.setAttribute('aria-hidden',i===current?'false':'true')});
+ dots.forEach((d,i)=>d.setAttribute('aria-current',i===current?'true':'false'));
+ links.forEach(a=>{if(a.dataset.slide!==undefined){if(Number(a.dataset.slide)===current)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')}});
+ progress.style.width=((current+1)/slides.length*100)+'%';
+ prev.disabled=current===0;next.disabled=current===slides.length-1;
+ prev.style.opacity=current===0?'.35':'1';next.style.opacity=current===slides.length-1?'.35':'1';
+ if(updateHash&&history.replaceState)history.replaceState(null,'','#'+slides[current].id);
+ nav.classList.remove('open');menu.setAttribute('aria-expanded','false');
+}
+links.forEach(a=>a.addEventListener('click',e=>{const n=Number(a.dataset.slide);if(Number.isFinite(n)){e.preventDefault();go(n,true)}}));
+dots.forEach(d=>d.addEventListener('click',()=>go(Number(d.dataset.go),true)));
+prev.addEventListener('click',()=>go(current-1,true));next.addEventListener('click',()=>go(current+1,true));
+menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});
+document.addEventListener('keydown',e=>{
+ if(e.altKey||e.ctrlKey||e.metaKey)return;
+ if(['ArrowRight','PageDown'].includes(e.key)){e.preventDefault();go(current+1,true)}
+ if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(current-1,true)}
+ if(e.key==='Home'){e.preventDefault();go(0,true)}
+ if(e.key==='End'){e.preventDefault();go(slides.length-1,true)}
+});
+document.querySelector('.deck').addEventListener('touchstart',e=>{startX=e.changedTouches[0].clientX;startY=e.changedTouches[0].clientY},{passive:true});
+document.querySelector('.deck').addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-startX;const dy=e.changedTouches[0].clientY-startY;if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.2)go(current+(dx<0?1:-1),true)},{passive:true});
+document.querySelector('.deck').addEventListener('wheel',e=>{
+ const active=slides[current];
+ const canScroll=active.scrollHeight>active.clientHeight+3;
+ const atTop=active.scrollTop<=1;
+ const atBottom=active.scrollTop+active.clientHeight>=active.scrollHeight-2;
+ const horizontal=Math.abs(e.deltaX)>Math.abs(e.deltaY)&&Math.abs(e.deltaX)>25;
+ const vertical=Math.abs(e.deltaY)>28&&(!canScroll||(e.deltaY>0&&atBottom)||(e.deltaY<0&&atTop));
+ if(horizontal||vertical){e.preventDefault();if(Date.now()-lastWheel>650){const delta=horizontal?e.deltaX:e.deltaY;go(current+(delta>0?1:-1),true);lastWheel=Date.now()}}
+},{passive:false});
+window.addEventListener('hashchange',()=>{const id=location.hash.slice(1);const n=slides.findIndex(s=>s.id===id);if(n>=0)go(n,false)});
+const initial=slides.findIndex(s=>s.id===location.hash.slice(1));go(initial>=0?initial:0,false);
+})();
+</script>
 </body>
 </html>
