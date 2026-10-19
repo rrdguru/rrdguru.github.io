@@ -222,15 +222,57 @@
             .course-menu, .course-content { width: 100%; border-right: none; }
             .course-content { padding: 1.5rem; }
         }
-    </style>
+    
+/* Shared visual language with the main portfolio */
+:root{--primary:#183f32;--accent:#285a48;--bg-light:#f4f2ec;--text-main:#18231f;--border-color:#d8d8ce;--success-color:#285a48}
+body{font-family:'DM Sans',sans-serif;color:var(--text-main);background:var(--bg-light)}
+h1,h2,h3,h4,h5{font-family:'Manrope',sans-serif;letter-spacing:-.035em}
+.site-nav{position:sticky;top:0;z-index:30;background:rgba(244,242,236,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border-color)}
+.site-nav-inner{max-width:1180px;min-height:74px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.site-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--text-main);font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.04em}
+.site-mark{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--primary);color:#d5ef79;font:500 1.1rem 'Lora',serif}
+.site-nav-links{display:flex;align-items:center;gap:22px}
+.site-nav-links a{color:#68716b;text-decoration:none;font-size:.83rem;white-space:nowrap}
+.site-nav-links a:hover{color:var(--primary)}
+.site-nav-links .current{color:white;background:var(--primary);padding:9px 14px;border-radius:3px}
+.teaching-header{background:#ebe8df;color:var(--text-main);padding:64px 0 68px;margin:0 0 0;border-bottom:1px solid var(--border-color)}
+.teaching-header:after{display:none}
+.teaching-header h1{color:var(--text-main)!important;font-family:'Manrope',sans-serif;font-size:clamp(3rem,7vw,5.6rem);letter-spacing:-.075em;line-height:.98}
+.teaching-header .lead{color:#56635b!important;font-size:1.12rem;line-height:1.7}
+.teaching-kicker{font:.7rem 'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);margin-bottom:22px}
+.btn-back{background:transparent;color:var(--primary);border:1px solid #bfc8bd;border-radius:3px;padding:.55rem .95rem;font-size:.82rem}
+.btn-back:hover{background:var(--primary);color:white;border-color:var(--primary)}
+.section-title{font-family:'Manrope',sans-serif;font-size:clamp(1.8rem,3.5vw,2.7rem);letter-spacing:-.06em;font-weight:600;color:var(--text-main);border-bottom:1px solid var(--border-color)}
+.section-title:after{background:#d8755a;width:48px;height:2px}
+.stat-card,.theme-card,.dashboard-container{border-radius:3px;box-shadow:none;border-color:var(--border-color)}
+.stat-card{background:#fffefa;text-align:left;padding:2rem}
+.metric{font-family:'Manrope',sans-serif;color:var(--primary);font-size:clamp(2.5rem,4vw,3.4rem);letter-spacing:-.07em}
+.theme-card{background:#fffefa;padding:1.7rem;transition:transform .2s,border-color .2s}
+.theme-card:hover{transform:translateY(-3px);border-color:var(--primary)}
+.theme-card h4{font-size:1.08rem;letter-spacing:-.025em}
+.course-menu{background:#ebe8df;border-color:var(--border-color)}
+.course-menu button{border-color:var(--border-color)}
+.course-menu button:hover{background:#f4f2ec}
+.course-menu button.active{color:var(--primary);border-left:3px solid #d8755a}
+.course-content{background:#fffefa}
+.verbatim-quote{background:var(--bg-light);border-color:var(--border-color);border-radius:3px;color:#46534b}
+.verbatim-quote:before{color:#c9d0c5}
+.drive-link-card{background:#fffefa;border-color:var(--border-color);border-radius:3px;box-shadow:none}
+.drive-link-card:hover{border-color:var(--primary);color:var(--primary)}
+.drive-icon{color:var(--primary)}
+.teaching-footer{background:var(--text-main);color:#c6d2ca;padding:25px 0;font-size:.78rem}
+.teaching-footer .footer-inner{max-width:1180px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.teaching-footer a{color:#d5ef79;text-decoration:none}
+@media(max-width:768px){.site-nav-inner{align-items:flex-start;flex-direction:column;padding-top:14px;padding-bottom:13px;gap:12px}.site-nav-links{width:100%;gap:16px;overflow-x:auto;padding-bottom:3px}.teaching-header{padding:45px 0}.teaching-header h1{font-size:clamp(3rem,14vw,4.5rem)}.course-menu,.course-content{width:100%;border-right:none}.course-content{padding:1.5rem}.dashboard-container{display:block}}
+</style>
 </head>
 <body>
 
     <header class="teaching-header">
         <div class="container">
             <a href="index.html" class="btn-back mb-4 d-inline-block"><i class="fas fa-arrow-left me-2"></i> Back to Portfolio</a>
-            <h1 class="display-4 text-white fw-bold mb-3">Pedagogical Analytics</h1>
-            <p class="lead text-white-50" style="max-width: 800px; font-weight: 300;">An empirical analysis of student outcomes, instructional themes, and teaching evolution across a decade of instruction in Europe, Russia, and India.</p>
+            <div class="teaching-kicker">Teaching · Evidence · Reflection</div>\n            <h1 class="display-4 fw-bold mb-3">Teaching, examined.</h1>
+            <p class="lead text-white-50" style="max-width: 800px; font-weight: 300;">Teaching is a practice to keep questioning and improving. This page brings together student evaluations, recurring themes in feedback, selected comments, and the underlying evaluation archives from my teaching across Europe, Russia, and India.</p>
         </div>
     </header>
 
